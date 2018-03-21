@@ -8,6 +8,7 @@ using System.Web.Http;
 
 namespace InvestTracker.WebApi
 {
+    //just a comment
     public class Startup
     {
         public void Configuration(IAppBuilder appBuilder)
