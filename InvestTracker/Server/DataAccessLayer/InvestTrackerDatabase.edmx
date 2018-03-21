@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="InvestTrackerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BuyTransaction">
+          <Key>
+            <PropertyRef Name="Transaction_ID" />
+          </Key>
+          <Property Name="Transaction_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Fund_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Date" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="NumberOfUnits" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Amount" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fund">
+          <Key>
+            <PropertyRef Name="Fund_ID" />
+          </Key>
+          <Property Name="Fund_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FundName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="CurrentPrice" Type="money" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_BuyTransaction_Fund">
+          <End Role="Fund" Type="Self.Fund" Multiplicity="1" />
+          <End Role="BuyTransaction" Type="Self.BuyTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fund">
+              <PropertyRef Name="Fund_ID" />
+            </Principal>
+            <Dependent Role="BuyTransaction">
+              <PropertyRef Name="Fund_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="InvestTrackerModelStoreContainer">
+          <EntitySet Name="BuyTransaction" EntityType="Self.BuyTransaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fund" EntityType="Self.Fund" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BuyTransaction_Fund" Association="Self.FK_BuyTransaction_Fund">
+            <End Role="Fund" EntitySet="Fund" />
+            <End Role="BuyTransaction" EntitySet="BuyTransaction" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="InvestTrackerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BuyTransaction">
+          <Key>
+            <PropertyRef Name="Transaction_ID" />
+          </Key>
+          <Property Name="Transaction_ID" Type="Guid" Nullable="false" />
+          <Property Name="Fund_ID" Type="Guid" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="NumberOfUnits" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Fund" Relationship="Self.FK_BuyTransaction_Fund" FromRole="BuyTransaction" ToRole="Fund" />
+        </EntityType>
+        <EntityType Name="Fund">
+          <Key>
+            <PropertyRef Name="Fund_ID" />
+          </Key>
+          <Property Name="Fund_ID" Type="Guid" Nullable="false" />
+          <Property Name="FundName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Currency" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CurrentPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="BuyTransaction" Relationship="Self.FK_BuyTransaction_Fund" FromRole="Fund" ToRole="BuyTransaction" />
+        </EntityType>
+        <Association Name="FK_BuyTransaction_Fund">
+          <End Role="Fund" Type="Self.Fund" Multiplicity="1" />
+          <End Role="BuyTransaction" Type="Self.BuyTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fund">
+              <PropertyRef Name="Fund_ID" />
+            </Principal>
+            <Dependent Role="BuyTransaction">
+              <PropertyRef Name="Fund_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="InvestTrackerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BuyTransaction" EntityType="Self.BuyTransaction" />
+          <EntitySet Name="Fund" EntityType="Self.Fund" />
+          <AssociationSet Name="FK_BuyTransaction_Fund" Association="Self.FK_BuyTransaction_Fund">
+            <End Role="Fund" EntitySet="Fund" />
+            <End Role="BuyTransaction" EntitySet="BuyTransaction" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="InvestTrackerModelStoreContainer" CdmEntityContainer="InvestTrackerEntities">
+          <EntitySetMapping Name="BuyTransaction">
+            <EntityTypeMapping TypeName="InvestTrackerModel.BuyTransaction">
+              <MappingFragment StoreEntitySet="BuyTransaction">
+                <ScalarProperty Name="Transaction_ID" ColumnName="Transaction_ID" />
+                <ScalarProperty Name="Fund_ID" ColumnName="Fund_ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="NumberOfUnits" ColumnName="NumberOfUnits" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fund">
+            <EntityTypeMapping TypeName="InvestTrackerModel.Fund">
+              <MappingFragment StoreEntitySet="Fund">
+                <ScalarProperty Name="Fund_ID" ColumnName="Fund_ID" />
+                <ScalarProperty Name="FundName" ColumnName="FundName" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="CurrentPrice" ColumnName="CurrentPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
