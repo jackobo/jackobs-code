@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GGPDeveloperToolService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/GGPApprovalSystem/qa/devtools.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/GGPApprovalSystem/qa/devtools.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/GGPApprovalSystem/qa/devtools.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GGPGameServer.ApprovalSystem.DeveloperTool" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGGPDeveloperToolService_BeginBuild_InputMessage">
+    <wsdl:part name="parameters" element="tns:BeginBuild" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_BeginBuild_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BeginBuildResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_EndBuild_InputMessage">
+    <wsdl:part name="parameters" element="tns:EndBuild" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_EndBuild_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EndBuildResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_GetLatestVersionForEachComponent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatestVersionForEachComponent" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_GetLatestVersionForEachComponent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatestVersionForEachComponentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_GetProductionEnvironments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductionEnvironments" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_GetProductionEnvironments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductionEnvironmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_GetProductionInstallers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductionInstallers" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_GetProductionInstallers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductionInstallersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_GetQAInstallers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQAInstallers" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_GetQAInstallers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQAInstallersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_GetInstallerContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstallerContent" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_GetInstallerContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstallerContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_GetNextHotfixVersions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextHotfixVersions" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_GetNextHotfixVersions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextHotfixVersionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_RenameGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:RenameGame" />
+  </wsdl:message>
+  <wsdl:message name="IGGPDeveloperToolService_RenameGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RenameGameResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGGPDeveloperToolService">
+    <wsdl:operation name="BeginBuild">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/BeginBuild" message="tns:IGGPDeveloperToolService_BeginBuild_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/BeginBuildResponse" message="tns:IGGPDeveloperToolService_BeginBuild_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EndBuild">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/EndBuild" message="tns:IGGPDeveloperToolService_EndBuild_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/EndBuildResponse" message="tns:IGGPDeveloperToolService_EndBuild_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestVersionForEachComponent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/GetLatestVersionForEachComponent" message="tns:IGGPDeveloperToolService_GetLatestVersionForEachComponent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/GetLatestVersionForEachComponentResponse" message="tns:IGGPDeveloperToolService_GetLatestVersionForEachComponent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductionEnvironments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/GetProductionEnvironments" message="tns:IGGPDeveloperToolService_GetProductionEnvironments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/GetProductionEnvironmentsResponse" message="tns:IGGPDeveloperToolService_GetProductionEnvironments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductionInstallers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/GetProductionInstallers" message="tns:IGGPDeveloperToolService_GetProductionInstallers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/GetProductionInstallersResponse" message="tns:IGGPDeveloperToolService_GetProductionInstallers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQAInstallers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/GetQAInstallers" message="tns:IGGPDeveloperToolService_GetQAInstallers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/GetQAInstallersResponse" message="tns:IGGPDeveloperToolService_GetQAInstallers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallerContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/GetInstallerContent" message="tns:IGGPDeveloperToolService_GetInstallerContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/GetInstallerContentResponse" message="tns:IGGPDeveloperToolService_GetInstallerContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextHotfixVersions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/GetNextHotfixVersions" message="tns:IGGPDeveloperToolService_GetNextHotfixVersions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/GetNextHotfixVersionsResponse" message="tns:IGGPDeveloperToolService_GetNextHotfixVersions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RenameGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/RenameGame" message="tns:IGGPDeveloperToolService_RenameGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGGPDeveloperToolService/RenameGameResponse" message="tns:IGGPDeveloperToolService_RenameGame_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DeveloperToolAdapterEndpoint" type="tns:IGGPDeveloperToolService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BeginBuild">
+      <soap:operation soapAction="http://tempuri.org/IGGPDeveloperToolService/BeginBuild" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndBuild">
+      <soap:operation soapAction="http://tempuri.org/IGGPDeveloperToolService/EndBuild" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestVersionForEachComponent">
+      <soap:operation soapAction="http://tempuri.org/IGGPDeveloperToolService/GetLatestVersionForEachComponent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductionEnvironments">
+      <soap:operation soapAction="http://tempuri.org/IGGPDeveloperToolService/GetProductionEnvironments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductionInstallers">
+      <soap:operation soapAction="http://tempuri.org/IGGPDeveloperToolService/GetProductionInstallers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQAInstallers">
+      <soap:operation soapAction="http://tempuri.org/IGGPDeveloperToolService/GetQAInstallers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallerContent">
+      <soap:operation soapAction="http://tempuri.org/IGGPDeveloperToolService/GetInstallerContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextHotfixVersions">
+      <soap:operation soapAction="http://tempuri.org/IGGPDeveloperToolService/GetNextHotfixVersions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenameGame">
+      <soap:operation soapAction="http://tempuri.org/IGGPDeveloperToolService/RenameGame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GGPDeveloperToolService">
+    <wsdl:port name="DeveloperToolAdapterEndpoint" binding="tns:DeveloperToolAdapterEndpoint">
+      <soap:address location="http://localhost/GGPApprovalSystem/qa/devtools.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

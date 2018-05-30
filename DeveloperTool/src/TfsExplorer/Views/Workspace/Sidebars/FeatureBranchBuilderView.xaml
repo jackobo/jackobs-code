@@ -1,0 +1,101 @@
+﻿<wpfCommonViews:StandardViewUserControl x:Class="Spark.TfsExplorer.Views.Workspace.FeatureBranchBuilderView"
+             x:TypeArguments="workspaceViewModels:FeatureBranchBuilderViewModel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Spark.TfsExplorer.Views.Workspace"
+             xmlns:wpfCommonViews="clr-namespace:Spark.Wpf.Common.Views;assembly=Spark.Wpf.Common"
+             xmlns:workspaceViewModels="clr-namespace:Spark.TfsExplorer.ViewModels.Workspace;assembly=Spark.TfsExplorer.ViewModels"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             x:Name="featureBranchBuilderView">
+    <Grid>
+        <xctk:BusyIndicator x:Name="busyIndicator" IsBusy="{Binding IsBusy}" BusyContent="Generating feature branch...">
+            <xctk:BusyIndicator.Content>
+                <GroupBox DockPanel.Dock="Right" Padding="5">
+                    <GroupBox.Header>
+                        <TextBlock Text="Create new feature branch" FontSize="16" FontWeight="Bold"></TextBlock>
+                    </GroupBox.Header>
+                    <GroupBox.Style>
+                        <Style TargetType="GroupBox">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=IsActive}" Value="false">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </GroupBox.Style>
+                    <DockPanel>
+                        <DockPanel.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="12"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DockPanel.Resources>
+
+                        <StackPanel DockPanel.Dock="Top">
+                            <TextBlock Text="Enter feature branch name:"/>
+                            <TextBox Text="{Binding Path=FeatureName, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+
+
+                        <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right" >
+                            <Button Command="{Binding Path=CreateCommand}" Content="Create" FontSize="12" Cursor="Hand" FontWeight="Bold" Margin="0,0,10,0"/>
+                            <Button Command="{Binding Path=CancelCommand}" Content="Cancel" FontSize="12" Cursor="Hand" FontWeight="Bold" />
+                        </WrapPanel>
+
+                        <DockPanel Margin="0,5,0,5">
+                            <TextBlock DockPanel.Dock="Top" Text="Selected components:" Background="Gainsboro"/>
+                            <Grid>
+                                <TextBlock VerticalAlignment="Center" TextAlignment="Center" FontSize="12" FontWeight="Bold">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding AllComponentsAreSelected}" Value="true">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                    <Setter Property="Text" Value="All components are selected"/>
+                                                    <Setter Property="Foreground" Value="Green"/>
+                                                </DataTrigger>
+
+                                                <DataTrigger Binding="{Binding Path=SelectedComponents.Items.Count}" Value="0">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                    <Setter Property="Text" Value="No component selected"/>
+                                                    <Setter Property="Foreground" Value="Red"/>
+                                                </DataTrigger>
+
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+
+                                <wpfCommonViews:StandardExplorerBarView DataContext="{Binding Path=SelectedComponents}">
+                                    <wpfCommonViews:StandardExplorerBarView.Style>
+                                        <Style TargetType="{x:Type wpfCommonViews:StandardExplorerBarView}">
+                                            <Style.Triggers>
+
+                                                <DataTrigger Binding="{Binding ElementName=featureBranchBuilderView, Path=DataContext.SelectedComponents.Items.Count}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+
+
+                                                <DataTrigger Binding="{Binding ElementName=featureBranchBuilderView, Path=DataContext.AllComponentsAreSelected}" Value="true">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+
+
+                                            </Style.Triggers>
+                                        </Style>
+                                    </wpfCommonViews:StandardExplorerBarView.Style>
+                                </wpfCommonViews:StandardExplorerBarView>
+                            </Grid>
+                        </DockPanel>
+
+                    </DockPanel>
+                </GroupBox>
+            </xctk:BusyIndicator.Content>
+        </xctk:BusyIndicator>
+    </Grid>
+</wpfCommonViews:StandardViewUserControl>

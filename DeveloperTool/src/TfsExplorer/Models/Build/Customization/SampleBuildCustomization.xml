@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<buildCustomization>
+  <coreComponents>
+    <coreComponent name="GGPCore" componentTypeId="10">
+      <customizedFiles>
+        <file buildOutputRelativePath="RandomNumberGenerator\CryptoWrapper.dll" 
+              distributionRelativePath="CryptoWrapper.dll"
+              environment="All"/>
+        
+        <file buildOutputRelativePath="GGPGameServer.Simulations.dll" 
+              distributionRelativePath="GGPGameServer.Simulations.dll" 
+              environment="QA"/>
+        
+        <file buildOutputRelativePath="GGPGameServer.Simulations.pdb" 
+              distributionRelativePath="GGPGameServer.Simulations.pdb" 
+              environment="QA"/>
+      </customizedFiles>
+    </coreComponent>
+  </coreComponents>
+  
+  
+  
+</buildCustomization>

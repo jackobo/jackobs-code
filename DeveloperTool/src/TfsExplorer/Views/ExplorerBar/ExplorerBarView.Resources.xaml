@@ -1,0 +1,137 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Spark.TfsExplorer.Views.ExplorerBar"
+                    xmlns:viewModels="clr-namespace:Spark.TfsExplorer.ViewModels.ExplorerBar;assembly=Spark.TfsExplorer.ViewModels">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../CommonStyles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate DataType="{x:Type viewModels:RootBranchExplorerBarItem}">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="../Resources/RootBranch.png" Style="{StaticResource componentImageStyle}"></Image>
+            <TextBlock Text="{Binding Caption}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:QABranchExplorerBarItem}">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="../Resources/QABranch.png" Style="{StaticResource componentImageStyle}"></Image>
+            <TextBlock Text="{Binding Caption}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:DevBranchExplorerBarItem}">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="../Resources/DevBranch.png" Style="{StaticResource componentImageStyle}"></Image>
+            <TextBlock Text="{Binding Caption}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:DevFeaturesBranchesExplorerBarItem}">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="../Resources/DevFeatures.png" Style="{StaticResource componentImageStyle}"></Image>
+            <TextBlock Text="{Binding Caption}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:DevFeatureBranchExplorerBarItem}">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="../Resources/DevFeature.png" Style="{StaticResource componentImageStyle}"></Image>
+            <TextBlock Text="{Binding Caption}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:ProductionBranchExplorerBarItem}">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="../Resources/ProdBranch.png" Style="{StaticResource componentImageStyle}"></Image>
+            <TextBlock Text="{Binding Caption}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:DevMainBranchExplorerBarItem}">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="../Resources/DevMain.png" Style="{StaticResource componentImageStyle}"></Image>
+            <TextBlock Text="{Binding Caption}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:QaMainBranchExplorerBarItem}">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="../Resources/QAMain.png" Style="{StaticResource componentImageStyle}"></Image>
+            <TextBlock Text="{Binding Caption}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:QaFeaturesBranchesExplorerBarItem}">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="../Resources/QAFeatures.png" Style="{StaticResource componentImageStyle}"></Image>
+            <TextBlock Text="{Binding Caption}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:QAFeatureBranchExplorerBarItem}">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="../Resources/QAFeature.png" Style="{StaticResource componentImageStyle}"></Image>
+            <TextBlock Text="{Binding Caption}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+
+
+    <DataTemplate DataType="{x:Type viewModels:QAInstallersExplorerBarItem}">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="../Resources/QAInstallers.png" Style="{StaticResource componentImageStyle}"></Image>
+            <TextBlock Text="{Binding Caption}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type viewModels:QAInstallerExplorerBarItem}">
+        <StackPanel Orientation="Horizontal">
+            <Image>
+                <Image.Style>
+                    <Style TargetType="Image" BasedOn="{StaticResource componentImageStyle}">
+                        <Setter Property="Source" Value="../Resources/QAInstaller.png"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsBranched}" Value="true">
+                                <Setter Property="Source" Value="../Resources/BranchedQAInstaller.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <TextBlock Text="{Binding Caption}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:ProductionEnvironmentExplorerBarItem}">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="../Resources/ProductionEnvironment.png" Style="{StaticResource componentImageStyle}"></Image>
+            <TextBlock Text="{Binding Caption}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModels:ProductionInstallersExplorerBarItem}">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="../Resources/ProductionInstallers.png" Style="{StaticResource componentImageStyle}"></Image>
+            <TextBlock Text="{Binding Caption}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type viewModels:ProductionInstallerExplorerBarItem}">
+        <StackPanel Orientation="Horizontal">
+            <Image>
+                <Image.Style>
+                    <Style TargetType="Image" BasedOn="{StaticResource componentImageStyle}">
+                        <Setter Property="Source" Value="../Resources/ProductionInstaller.png"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsBranched}" Value="true">
+                                <Setter Property="Source" Value="../Resources/BranchedProductionInstaller.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <TextBlock Text="{Binding Caption}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+
+</ResourceDictionary>

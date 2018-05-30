@@ -1,0 +1,44 @@
+﻿<Window x:Class="Spark.Wpf.Common.Views.ExplorStyleMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:wpfCommon="clr-namespace:Spark.Wpf.Common"
+        mc:Ignorable="d"
+        Title="App Title" WindowState="Maximized">
+    <DockPanel>
+        <ContentControl DockPanel.Dock="Top" prism:RegionManager.RegionName="MainMenu" Margin="0,1,0,3"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.25*"/>
+                <ColumnDefinition Width="6"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.75*"/>
+                <!--<RowDefinition Height="6"/>-->
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ContentControl Grid.Column="0" prism:RegionManager.RegionName="{x:Static wpfCommon:WellKnowRegionNames.ExplorerBar}" Margin="5"/>
+            <GridSplitter Grid.Column="1" Background="DarkGray" Width="6" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+            <DockPanel Grid.Column="2">
+                <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static wpfCommon:WellKnowRegionNames.NavigationBar}" Margin="5"/>
+                </StackPanel>
+                <Separator DockPanel.Dock="Top"/>
+                <ContentControl DockPanel.Dock="Right" x:Name="sidebarContainer" prism:RegionManager.RegionName="{x:Static wpfCommon:WellKnowRegionNames.SidebarContainer}"/>
+                <ContentControl x:Name="workspaceContainer" prism:RegionManager.RegionName="{x:Static wpfCommon:WellKnowRegionNames.WorkspaceContainer}"/>
+            </DockPanel>
+
+            <!--<GridSplitter Grid.ColumnSpan="3" Grid.Row="1" Background="DarkGray" Height="6" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>-->
+
+            <ContentControl Grid.ColumnSpan="3" Grid.Row="1" prism:RegionManager.RegionName="{x:Static wpfCommon:WellKnowRegionNames.NotificationArea}" Margin="5">
+
+            </ContentControl>
+
+        </Grid>
+    </DockPanel>
+</Window>

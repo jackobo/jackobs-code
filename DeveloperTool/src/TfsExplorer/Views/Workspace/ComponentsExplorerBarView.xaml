@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Spark.TfsExplorer.Views.Workspace.ComponentsExplorerBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Spark.TfsExplorer.Views.Workspace"
+             xmlns:wpfCommonViews="clr-namespace:Spark.Wpf.Common.Views;assembly=Spark.Wpf.Common"
+             xmlns:viewModels="clr-namespace:Spark.TfsExplorer.ViewModels;assembly=Spark.TfsExplorer.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ComponentsExplorerBarView.Resources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel>
+        <GroupBox DockPanel.Dock="Bottom" Margin="0,5,0,0" Padding="5">
+            <GroupBox.Header>
+                <TextBlock Text="{Binding Path=CurrentItem.Description}" FontSize="14" FontWeight="Bold"/>
+            </GroupBox.Header>
+            <GroupBox.Style>
+                <Style TargetType="GroupBox">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=CurrentItem}" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=CurrentItem.MetaData.Length}" Value="0">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+
+            </GroupBox.Style>
+            <DataGrid ItemsSource="{Binding Path=CurrentItem.MetaData}" AutoGenerateColumns="False" HeadersVisibility="None" IsReadOnly="True" FontWeight="Bold">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Name, Mode=OneWay}" Width="Auto"/>
+                    <DataGridTextColumn Binding="{Binding Value, Mode=OneWay}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+        <Border BorderBrush="DarkGray" BorderThickness="1" Padding="2">
+            <wpfCommonViews:StandardExplorerBarView DataContext="{Binding}"/>
+        </Border>
+    </DockPanel>
+
+</UserControl>
