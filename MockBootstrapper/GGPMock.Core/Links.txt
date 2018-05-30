@@ -1,0 +1,10 @@
+﻿PRISM
+http://msdn.microsoft.com/en-us/library/gg406140.aspx
+
+
+systray
+http://stackoverflow.com/questions/14700606/minimizing-application-to-system-tray-using-wpf-not-using-notifyicon
+
+
+WCF Broadcast
+http://www.codeproject.com/Articles/596287/Broadcasting-Events-with-a-Duplex-WCF-Service

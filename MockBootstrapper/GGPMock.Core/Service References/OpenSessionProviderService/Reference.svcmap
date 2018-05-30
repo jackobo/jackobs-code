@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e32801f7-5546-49c8-a8d0-9cca60aaf5a5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8687/GGPMockOpenSessionProviderService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GGPMockOpenSessionProviderService.xsd" MetadataType="Schema" ID="7fa75d12-ec5f-48e3-850d-e34a64b922a0" SourceId="1" SourceUrl="http://localhost:8687/GGPMockOpenSessionProviderService?xsd=xsd1" />
+    <MetadataFile FileName="GGPMockOpenSessionProviderService.disco" MetadataType="Disco" ID="6bf60d2b-4609-4795-9952-39c932f80709" SourceId="1" SourceUrl="http://localhost:8687/GGPMockOpenSessionProviderService?disco" />
+    <MetadataFile FileName="GGPMockOpenSessionProviderService3.xsd" MetadataType="Schema" ID="09622ce4-7282-44be-aa15-c9eab445f6b9" SourceId="1" SourceUrl="http://localhost:8687/GGPMockOpenSessionProviderService?xsd=xsd3" />
+    <MetadataFile FileName="GGPMockOpenSessionProviderService.wsdl" MetadataType="Wsdl" ID="a47b61f0-c5f7-4f16-a5ef-72d6707e5c7d" SourceId="1" SourceUrl="http://localhost:8687/GGPMockOpenSessionProviderService?wsdl" />
+    <MetadataFile FileName="GGPMockOpenSessionProviderService2.xsd" MetadataType="Schema" ID="3ca8e956-7c09-4e31-bf85-5672e2d4c59f" SourceId="1" SourceUrl="http://localhost:8687/GGPMockOpenSessionProviderService?xsd=xsd0" />
+    <MetadataFile FileName="GGPMockOpenSessionProviderService1.xsd" MetadataType="Schema" ID="d2e8f984-22e4-4b29-8e08-09e7a325aca8" SourceId="1" SourceUrl="http://localhost:8687/GGPMockOpenSessionProviderService?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

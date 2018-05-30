@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5c4386a9-de6e-4bda-b8b2-e186683b9d15" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8687/GGPMockSupportService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GGPMockSupportService.xsd" MetadataType="Schema" ID="46c53d4c-0790-4b81-9275-ebdd41cdd8a5" SourceId="1" SourceUrl="http://localhost:8687/GGPMockSupportService?xsd=xsd3" />
+    <MetadataFile FileName="GGPMockSupportService1.xsd" MetadataType="Schema" ID="d63aea88-2b96-4c63-87e2-3918c8590bf3" SourceId="1" SourceUrl="http://localhost:8687/GGPMockSupportService?xsd=xsd1" />
+    <MetadataFile FileName="GGPMockSupportService.wsdl" MetadataType="Wsdl" ID="bef4ac89-1efd-40ef-9bd0-b8dcf9be1392" SourceId="1" SourceUrl="http://localhost:8687/GGPMockSupportService?wsdl" />
+    <MetadataFile FileName="GGPMockSupportService2.xsd" MetadataType="Schema" ID="0a6b3cc5-f744-48f6-9947-b716a2724b93" SourceId="1" SourceUrl="http://localhost:8687/GGPMockSupportService?xsd=xsd2" />
+    <MetadataFile FileName="GGPMockSupportService3.xsd" MetadataType="Schema" ID="049b75f8-f8b8-408e-b55b-f91dfb79b28e" SourceId="1" SourceUrl="http://localhost:8687/GGPMockSupportService?xsd=xsd0" />
+    <MetadataFile FileName="GGPMockSupportService.disco" MetadataType="Disco" ID="4d7dd30c-5f8d-4147-b2da-27798ba95688" SourceId="1" SourceUrl="http://localhost:8687/GGPMockSupportService?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

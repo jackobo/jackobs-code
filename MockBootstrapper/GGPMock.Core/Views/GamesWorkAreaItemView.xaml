@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="GGPMockBootstrapper.Views.GamesWorkAreaItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             x:Name="userControl">
+    <DockPanel>
+        <TabControl x:Name="tabControl" FontSize="14" FontWeight="Bold">
+            <TabControl.Items>
+                <TabItem Header="Games">
+                    <DataGrid FontSize="12" FontWeight="Bold" ItemsSource="{Binding Games}" AutoGenerateColumns="False" SelectionUnit="Cell">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Width="Auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Background="White" BorderThickness="0" BorderBrush="White">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image Source="{Binding Path=PlayGameAction.ImageSource}" Margin="0,0,3,0"/>
+                                                <Button Style="{StaticResource LinkButton}"  Content="{Binding Path=PlayGameAction.Caption}" Command="{Binding Path=PlayGameAction.Command}" Margin="2"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+                
+                            <DataGridTextColumn Header="Game Type" Binding="{Binding Id, Mode=OneWay}" Width="Auto" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=OneWay}" Width="Auto"  IsReadOnly="True"/>
+                            <DataGridTemplateColumn x:Name="colMainFlashFile" IsReadOnly="False" ClipboardContentBinding="{Binding SelectedSwfFile}" Header="Main Flash file" >
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ComboBox ItemsSource="{Binding AvailableSwfFiles}" SelectedItem="{Binding SelectedSwfFile, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            
+                                
+
+                            <DataGridTemplateColumn Width="Auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Cursor="Hand" Background="#FF3FF0F0" Content="{Binding Path=OpenSimulatorAction.Caption}" Command="{Binding Path=OpenSimulatorAction.Command}" Margin="2"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+
+                          
+                            
+                            <DataGridTemplateColumn Width="Auto" Header="Physical path/Base URL" ClipboardContentBinding="{Binding PhysicalPath}">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Style="{StaticResource LinkButton}"  Content="{Binding PhysicalPath}" Command="{Binding Path=OpenPhysicalFolderAction.Command}" Margin="2"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn Width="Auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" Background="White">
+                                            <StackPanel.Style>
+                                                <Style TargetType="StackPanel">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding AllowRemove}" Value="false">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </StackPanel.Style>
+                                            <Image Source="{Binding Path=RemoveGameAction.ImageSource}" Margin="0,0,3,0"/>
+                                            <Button Style="{StaticResource LinkButton}"  Content="{Binding Path=RemoveGameAction.Caption}" Command="{Binding Path=RemoveGameAction.Command}" Margin="2"/>
+                                        </StackPanel></DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+
+                            </DataGridTemplateColumn>
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+                <TabItem Header="Simulate">
+                    <TabItem.Style>
+                        <Style TargetType="TabItem">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding CurrentGameSimulatorUrl}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TabItem.Style>
+                    <DockPanel>
+                        <DockPanel DockPanel.Dock="Top" VerticalAlignment="Center">
+                            <Button DockPanel.Dock="Left" FontSize="12" Margin="5" Content="{Binding CurrentGameSimulatorUrl}" Style="{StaticResource LinkButton}" Command="{Binding Path=OpenCurrentGameSimulatorUrlInBrowserAction.Command}" />
+                            <TextBlock DockPanel.Dock="Right" Text="If you have trouble viewing the simulator here please open IE browser and clear its cache!" FontSize="14" FontWeight="Bold" Foreground="Green" Margin="5"/>
+                            <TextBlock/>
+                        </DockPanel>
+                        <WebBrowser x:Name="webBrowser"/>
+                    </DockPanel>
+                    
+                </TabItem>
+            </TabControl.Items>
+        </TabControl>
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBWrapper", "..\..\GGPSimulator\Head\Server\MongoDBWrapper\MongoDBWrapper.csproj", "{B4365069-BAD0-4043-AABC-9017DD005062}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGPGameServer.ApprovalSystem.Common", "..\..\GGPApprovalSystem\DEV\Common\GGPGameServer.ApprovalSystem.Common.csproj", "{BFA8FFFC-BF8F-4F7F-A179-AFAC20255808}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGPGameServer.Installer.Core", "..\..\GGPApprovalSystem\DEV\Installer\GGPGameServer.Installer.Core\GGPGameServer.Installer.Core.csproj", "{5ED3D8DF-563E-4B66-9890-5BDB684C2ED4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGPMockBootstrapper.ClickOnce.Intranet", "GGPMockBootstrapper.ClickOnce.Intranet\GGPMockBootstrapper.ClickOnce.Intranet.csproj", "{3B1C4E4D-A320-42E7-9577-1F105DDD92B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGPMockBootstrapper.XCopy", "GGPMockBootstrapper.XCopy\GGPMockBootstrapper.XCopy.csproj", "{83D9B96C-CC1A-4CB9-8562-65D7F9B0CF87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGPMock.Core", "GGPMock.Core\GGPMock.Core.csproj", "{D7620734-215E-4854-B2E3-02134FAC19DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGPMockBootstrapper.ClickOnce.Extranet", "GGPMockBootstrapper.ClickOnce.Extranet\GGPMockBootstrapper.ClickOnce.Extranet.csproj", "{7DE7D5D9-A188-4826-ABE7-392F6B0B6494}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGPMockBootstrapper.ClickOnce.Testing", "GGPMockBootstrapper.ClickOnce.Testing\GGPMockBootstrapper.ClickOnce.Testing.csproj", "{FB3F6FAA-6B23-4390-A311-7B7D9B4108D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4365069-BAD0-4043-AABC-9017DD005062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4365069-BAD0-4043-AABC-9017DD005062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4365069-BAD0-4043-AABC-9017DD005062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4365069-BAD0-4043-AABC-9017DD005062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFA8FFFC-BF8F-4F7F-A179-AFAC20255808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFA8FFFC-BF8F-4F7F-A179-AFAC20255808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFA8FFFC-BF8F-4F7F-A179-AFAC20255808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFA8FFFC-BF8F-4F7F-A179-AFAC20255808}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ED3D8DF-563E-4B66-9890-5BDB684C2ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED3D8DF-563E-4B66-9890-5BDB684C2ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED3D8DF-563E-4B66-9890-5BDB684C2ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED3D8DF-563E-4B66-9890-5BDB684C2ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B1C4E4D-A320-42E7-9577-1F105DDD92B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B1C4E4D-A320-42E7-9577-1F105DDD92B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B1C4E4D-A320-42E7-9577-1F105DDD92B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B1C4E4D-A320-42E7-9577-1F105DDD92B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83D9B96C-CC1A-4CB9-8562-65D7F9B0CF87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83D9B96C-CC1A-4CB9-8562-65D7F9B0CF87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D9B96C-CC1A-4CB9-8562-65D7F9B0CF87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83D9B96C-CC1A-4CB9-8562-65D7F9B0CF87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7620734-215E-4854-B2E3-02134FAC19DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7620734-215E-4854-B2E3-02134FAC19DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7620734-215E-4854-B2E3-02134FAC19DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7620734-215E-4854-B2E3-02134FAC19DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE7D5D9-A188-4826-ABE7-392F6B0B6494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE7D5D9-A188-4826-ABE7-392F6B0B6494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE7D5D9-A188-4826-ABE7-392F6B0B6494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE7D5D9-A188-4826-ABE7-392F6B0B6494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB3F6FAA-6B23-4390-A311-7B7D9B4108D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB3F6FAA-6B23-4390-A311-7B7D9B4108D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB3F6FAA-6B23-4390-A311-7B7D9B4108D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB3F6FAA-6B23-4390-A311-7B7D9B4108D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs2012:8080/tfs/defaultcollection_2010
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = GGPMockBootstrapper.XCopy\\GGPMockBootstrapper.XCopy.csproj
+		SccProjectName1 = GGPMockBootstrapper.XCopy
+		SccLocalPath1 = GGPMockBootstrapper.XCopy
+		SccProjectUniqueName2 = GGPMock.Core\\GGPMock.Core.csproj
+		SccProjectName2 = GGPMock.Core
+		SccLocalPath2 = GGPMock.Core
+		SccProjectUniqueName3 = GGPMockBootstrapper.ClickOnce.Intranet\\GGPMockBootstrapper.ClickOnce.Intranet.csproj
+		SccProjectName3 = GGPMockBootstrapper.ClickOnce.Intranet
+		SccLocalPath3 = GGPMockBootstrapper.ClickOnce.Intranet
+		SccProjectUniqueName4 = GGPMockBootstrapper.ClickOnce.Extranet\\GGPMockBootstrapper.ClickOnce.Extranet.csproj
+		SccProjectName4 = GGPMockBootstrapper.ClickOnce.Extranet
+		SccLocalPath4 = GGPMockBootstrapper.ClickOnce.Extranet
+		SccProjectUniqueName5 = GGPMockBootstrapper.ClickOnce.Testing\\GGPMockBootstrapper.ClickOnce.Testing.csproj
+		SccProjectName5 = GGPMockBootstrapper.ClickOnce.Testing
+		SccLocalPath5 = GGPMockBootstrapper.ClickOnce.Testing
+		SccProjectUniqueName6 = ..\\..\\GGPApprovalSystem\\DEV\\Common\\GGPGameServer.ApprovalSystem.Common.csproj
+		SccProjectName6 = ../../GGPApprovalSystem/DEV/Common
+		SccLocalPath6 = ..\\..\\GGPApprovalSystem\\DEV\\Common
+		SccProjectUniqueName7 = ..\\..\\GGPApprovalSystem\\DEV\\Installer\\GGPGameServer.Installer.Core\\GGPGameServer.Installer.Core.csproj
+		SccProjectName7 = ../../GGPApprovalSystem/DEV/Installer/GGPGameServer.Installer.Core
+		SccLocalPath7 = ..\\..\\GGPApprovalSystem\\DEV\\Installer\\GGPGameServer.Installer.Core
+		SccProjectUniqueName8 = ..\\..\\GGPSimulator\\Head\\Server\\MongoDBWrapper\\MongoDBWrapper.csproj
+		SccProjectName8 = ../../GGPSimulator/Head/Server/MongoDBWrapper
+		SccLocalPath8 = ..\\..\\GGPSimulator\\Head\\Server\\MongoDBWrapper
+	EndGlobalSection
+EndGlobal

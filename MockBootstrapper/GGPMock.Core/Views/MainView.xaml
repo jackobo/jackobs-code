@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="GGPMockBootstrapper.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewModels="clr-namespace:GGPMockBootstrapper.ViewModels"
+             mc:Ignorable="d" 
+             >
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="MinWidth" Value="100"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" BorderThickness="1" BorderBrush="Black" Margin="0,5,0,5" Padding="0,5,0,5">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Current Player: "/>
+                <ComboBox ItemsSource="{Binding AvailablePlayers}" SelectedItem="{Binding Path=CurrentSelectedPlayer}" MinWidth="200"/>
+                <Button Command="{Binding Path=AddNewUserAction.Command}" Content="+" MinWidth="25" FontWeight="Bold" FontSize="14" ToolTip="Add new user" Cursor="Hand" Margin="3,0,0,0"/>
+                <Button Command="{Binding Path=SelectCurrentUserAction.Command}" Content="..." MinWidth="25" FontWeight="Bold" FontSize="14" ToolTip="Select current user" Cursor="Hand" Margin="3,0,0,0"/>
+                <TextBlock Text="Currency: "/>
+                <TextBlock Text="{Binding CurrentPlayerData.BankrollCurrency}"/>
+                <Rectangle VerticalAlignment="Stretch" Width="1" Margin="2" Stroke="Black" />
+                <TextBlock Text="Balance: "/>
+                <TextBlock Text="{Binding CurrentPlayerData.RealMoneyBalance}"/>
+                <Rectangle VerticalAlignment="Stretch" Width="1" Margin="2" Stroke="Black" />
+                <TextBlock Text="Regulation: "/>
+                <TextBlock Text="{Binding CurrentPlayerData.Regulation}"/>
+            </StackPanel>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <TreeView Grid.Column="0" ItemsSource="{Binding Products}" FontSize="14" FontWeight="Bold">
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="{x:Type TreeViewItem}">
+                        <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}"/>
+                        <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"/>
+                    </Style>
+                </TreeView.ItemContainerStyle>
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate DataType="{x:Type viewModels:TreeViewItem}" ItemsSource="{Binding Items}">
+                        <StackPanel Orientation="Horizontal" Margin="2">
+                            <Image Source="{Binding ImageSource}" Style="{StaticResource standardImageSizeStyle}"/>
+                            <TextBlock Text="{Binding Caption}" Cursor="Hand"/>
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            
+            </TreeView>
+
+            <GridSplitter Grid.Column="1" Background="Black" Width="6" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+        
+            <DockPanel Grid.Column="2" x:Name="workArea">
+            </DockPanel>
+        </Grid>
+    </Grid>
+</UserControl>

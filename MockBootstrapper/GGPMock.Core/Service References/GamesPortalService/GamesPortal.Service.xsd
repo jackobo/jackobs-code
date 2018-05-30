@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GamesPortal.Service" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GamesPortal.Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" />
+  <xs:complexType name="GetGameResponse">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" minOccurs="0" name="Game" nillable="true" type="q1:GameDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGameResponse" nillable="true" type="tns:GetGameResponse" />
+  <xs:complexType name="GetAllGamesResponse">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" minOccurs="0" name="Games" nillable="true" type="q2:ArrayOfGameDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllGamesResponse" nillable="true" type="tns:GetAllGamesResponse" />
+  <xs:complexType name="GetGameVersionsResponse">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" minOccurs="0" name="GameVersions" nillable="true" type="q3:ArrayOfGameVersionDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGameVersionsResponse" nillable="true" type="tns:GetGameVersionsResponse" />
+  <xs:complexType name="GetLatestApprovedGameVersionForEachRegulationAndClientType">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" minOccurs="0" name="LatestApprovedGamesVersions" nillable="true" type="q4:ArrayOfLatestApprovedGameVersionForRegulationAndClientTypeDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetLatestApprovedGameVersionForEachRegulationAndClientType" nillable="true" type="tns:GetLatestApprovedGameVersionForEachRegulationAndClientType" />
+  <xs:complexType name="GetLatestGameVersionForEachGameResponse">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" minOccurs="0" name="Versions" nillable="true" type="q5:ArrayOfLatestGameVersionForRegulationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetLatestGameVersionForEachGameResponse" nillable="true" type="tns:GetLatestGameVersionForEachGameResponse" />
+  <xs:complexType name="GetNeverApprovedGameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Games" nillable="true" type="tns:ArrayOfNeverApprovedGameDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNeverApprovedGameResponse" nillable="true" type="tns:GetNeverApprovedGameResponse" />
+  <xs:complexType name="ArrayOfNeverApprovedGameDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NeverApprovedGameDto" nillable="true" type="tns:NeverApprovedGameDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNeverApprovedGameDto" nillable="true" type="tns:ArrayOfNeverApprovedGameDto" />
+  <xs:complexType name="NeverApprovedGameDto">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" minOccurs="0" name="GameInfrastructure" nillable="true" type="q6:GameInfrastructureDTO" />
+      <xs:element minOccurs="0" name="GameName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LatestVersion" type="xs:long" />
+      <xs:element minOccurs="0" name="MainGameType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NeverApprovedGameDto" nillable="true" type="tns:NeverApprovedGameDto" />
+  <xs:complexType name="GetGamesReleasesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FromDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ToDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGamesReleasesRequest" nillable="true" type="tns:GetGamesReleasesRequest" />
+  <xs:complexType name="GetGamesReleasesResponse">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" minOccurs="0" name="GameVersions" nillable="true" type="q7:ArrayOfGameVersionReleaseDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGamesReleasesResponse" nillable="true" type="tns:GetGamesReleasesResponse" />
+  <xs:complexType name="GetRegulationsInfoResponse">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" minOccurs="0" name="Regulations" nillable="true" type="q8:ArrayOfRegulationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetRegulationsInfoResponse" nillable="true" type="tns:GetRegulationsInfoResponse" />
+</xs:schema>

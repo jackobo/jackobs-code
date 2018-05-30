@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="GameDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" type="tns:GamingComponentCategory" />
+      <xs:element minOccurs="0" name="GameTypes" nillable="true" type="tns:ArrayOfGameTypeDTO" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsExternal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MainGameType" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupportedInfrastructures" nillable="true" type="tns:ArrayOfGameInfrastructureDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameDTO" nillable="true" type="tns:GameDTO" />
+  <xs:simpleType name="GamingComponentCategory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Wrapper" />
+      <xs:enumeration value="Chill" />
+      <xs:enumeration value="Game" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GamingComponentCategory" nillable="true" type="tns:GamingComponentCategory" />
+  <xs:complexType name="ArrayOfGameTypeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameTypeDTO" nillable="true" type="tns:GameTypeDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameTypeDTO" nillable="true" type="tns:ArrayOfGameTypeDTO" />
+  <xs:complexType name="GameTypeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperatorId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameTypeDTO" nillable="true" type="tns:GameTypeDTO" />
+  <xs:complexType name="ArrayOfGameInfrastructureDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameInfrastructureDTO" nillable="true" type="tns:GameInfrastructureDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameInfrastructureDTO" nillable="true" type="tns:ArrayOfGameInfrastructureDTO" />
+  <xs:complexType name="GameInfrastructureDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GameTechnology" type="tns:GameTechnology" />
+      <xs:element minOccurs="0" name="PlatformType" type="tns:PlatformType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameInfrastructureDTO" nillable="true" type="tns:GameInfrastructureDTO" />
+  <xs:simpleType name="GameTechnology">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Flash" />
+      <xs:enumeration value="Html5" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GameTechnology" nillable="true" type="tns:GameTechnology" />
+  <xs:simpleType name="PlatformType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="PC" />
+      <xs:enumeration value="Mobile" />
+      <xs:enumeration value="PcAndMobile" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PlatformType" nillable="true" type="tns:PlatformType" />
+  <xs:complexType name="ArrayOfGameDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameDTO" nillable="true" type="tns:GameDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameDTO" nillable="true" type="tns:ArrayOfGameDTO" />
+  <xs:complexType name="ArrayOfGameVersionDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameVersionDTO" nillable="true" type="tns:GameVersionDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameVersionDTO" nillable="true" type="tns:ArrayOfGameVersionDTO" />
+  <xs:complexType name="GameVersionDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GameInfrastructure" nillable="true" type="tns:GameInfrastructureDTO" />
+      <xs:element minOccurs="0" name="PropertiesChangeHistory" nillable="true" type="tns:ArrayOfGameVersionPropertyChangeHistoryDTO" />
+      <xs:element minOccurs="0" name="Regulations" nillable="true" type="tns:ArrayOfGameVersionRegulationDTO" />
+      <xs:element minOccurs="0" name="TriggeredBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VersionAsNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="VersionId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameVersionDTO" nillable="true" type="tns:GameVersionDTO" />
+  <xs:complexType name="ArrayOfGameVersionPropertyChangeHistoryDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameVersionPropertyChangeHistoryDTO" nillable="true" type="tns:GameVersionPropertyChangeHistoryDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameVersionPropertyChangeHistoryDTO" nillable="true" type="tns:ArrayOfGameVersionPropertyChangeHistoryDTO" />
+  <xs:complexType name="GameVersionPropertyChangeHistoryDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ChangeType" type="xs:int" />
+      <xs:element minOccurs="0" name="ChangedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OldValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PropertyKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Regulation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameVersionPropertyChangeHistoryDTO" nillable="true" type="tns:GameVersionPropertyChangeHistoryDTO" />
+  <xs:complexType name="ArrayOfGameVersionRegulationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameVersionRegulationDTO" nillable="true" type="tns:GameVersionRegulationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameVersionRegulationDTO" nillable="true" type="tns:ArrayOfGameVersionRegulationDTO" />
+  <xs:complexType name="GameVersionRegulationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientTypes" nillable="true" type="tns:ArrayOfGameVersionRegulationClientTypeDTO" />
+      <xs:element minOccurs="0" name="DownloadInfo" nillable="true" type="tns:DownloadInfoDTO" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Languages" nillable="true" type="tns:ArrayOfGameVersionRegulationLanguageDTO" />
+      <xs:element minOccurs="0" name="Regulation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameVersionRegulationDTO" nillable="true" type="tns:GameVersionRegulationDTO" />
+  <xs:complexType name="ArrayOfGameVersionRegulationClientTypeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameVersionRegulationClientTypeDTO" nillable="true" type="tns:GameVersionRegulationClientTypeDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameVersionRegulationClientTypeDTO" nillable="true" type="tns:ArrayOfGameVersionRegulationClientTypeDTO" />
+  <xs:complexType name="GameVersionRegulationClientTypeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PMApprovalInfo" nillable="true" type="tns:ApprovalInfoDTO" />
+      <xs:element minOccurs="0" name="ProductionUploadInfo" nillable="true" type="tns:ProductionUploadInfoDTO" />
+      <xs:element minOccurs="0" name="QAApprovalInfo" nillable="true" type="tns:ApprovalInfoDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameVersionRegulationClientTypeDTO" nillable="true" type="tns:GameVersionRegulationClientTypeDTO" />
+  <xs:complexType name="ApprovalInfoDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApprovalDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ApprovedBy" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApprovalInfoDTO" nillable="true" type="tns:ApprovalInfoDTO" />
+  <xs:complexType name="ProductionUploadInfoDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UploadDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductionUploadInfoDTO" nillable="true" type="tns:ProductionUploadInfoDTO" />
+  <xs:complexType name="DownloadInfoDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileSize" type="xs:long" />
+      <xs:element minOccurs="0" name="MD5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Uri" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DownloadInfoDTO" nillable="true" type="tns:DownloadInfoDTO" />
+  <xs:complexType name="ArrayOfGameVersionRegulationLanguageDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameVersionRegulationLanguageDTO" nillable="true" type="tns:GameVersionRegulationLanguageDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameVersionRegulationLanguageDTO" nillable="true" type="tns:ArrayOfGameVersionRegulationLanguageDTO" />
+  <xs:complexType name="GameVersionRegulationLanguageDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsMandatory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Language" nillable="true" type="tns:LanguageDTO" />
+      <xs:element minOccurs="0" name="ProductionUploadInfo" nillable="true" type="tns:ProductionUploadInfoDTO" />
+      <xs:element minOccurs="0" name="QaApprovalInfo" nillable="true" type="tns:ApprovalInfoDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameVersionRegulationLanguageDTO" nillable="true" type="tns:GameVersionRegulationLanguageDTO" />
+  <xs:complexType name="LanguageDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Iso2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Iso3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LanguageDTO" nillable="true" type="tns:LanguageDTO" />
+  <xs:complexType name="ArrayOfLatestApprovedGameVersionForRegulationAndClientTypeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LatestApprovedGameVersionForRegulationAndClientTypeDTO" nillable="true" type="tns:LatestApprovedGameVersionForRegulationAndClientTypeDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLatestApprovedGameVersionForRegulationAndClientTypeDTO" nillable="true" type="tns:ArrayOfLatestApprovedGameVersionForRegulationAndClientTypeDTO" />
+  <xs:complexType name="LatestApprovedGameVersionForRegulationAndClientTypeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GameId" type="ser:guid" />
+      <xs:element minOccurs="0" name="GameInfrastructure" nillable="true" type="tns:GameInfrastructureDTO" />
+      <xs:element minOccurs="0" name="GameName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsExternal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainGameType" type="xs:int" />
+      <xs:element minOccurs="0" name="PMVersionInfo" nillable="true" type="tns:LatestVersionInfoDTO" />
+      <xs:element minOccurs="0" name="PlatformType" type="tns:PlatformType" />
+      <xs:element minOccurs="0" name="QAVersionInfo" nillable="true" type="tns:LatestVersionInfoDTO" />
+      <xs:element minOccurs="0" name="Regulation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LatestApprovedGameVersionForRegulationAndClientTypeDTO" nillable="true" type="tns:LatestApprovedGameVersionForRegulationAndClientTypeDTO" />
+  <xs:complexType name="LatestVersionInfoDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DownloadInfo" nillable="true" type="tns:DownloadInfoDTO" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VersionId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LatestVersionInfoDTO" nillable="true" type="tns:LatestVersionInfoDTO" />
+  <xs:complexType name="ArrayOfLatestGameVersionForRegulationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LatestGameVersionForRegulationDTO" nillable="true" type="tns:LatestGameVersionForRegulationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLatestGameVersionForRegulationDTO" nillable="true" type="tns:ArrayOfLatestGameVersionForRegulationDTO" />
+  <xs:complexType name="LatestGameVersionForRegulationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DownloadInfo" nillable="true" type="tns:DownloadInfoDTO" />
+      <xs:element minOccurs="0" name="GameId" type="ser:guid" />
+      <xs:element minOccurs="0" name="GameInfrastructure" nillable="true" type="tns:GameInfrastructureDTO" />
+      <xs:element minOccurs="0" name="GameName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GameVersionId" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsExternal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MainGameType" type="xs:int" />
+      <xs:element minOccurs="0" name="Regulation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LatestGameVersionForRegulationDTO" nillable="true" type="tns:LatestGameVersionForRegulationDTO" />
+  <xs:complexType name="ArrayOfGameVersionReleaseDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameVersionReleaseDTO" nillable="true" type="tns:GameVersionReleaseDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameVersionReleaseDTO" nillable="true" type="tns:ArrayOfGameVersionReleaseDTO" />
+  <xs:complexType name="GameVersionReleaseDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DownloadUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GameId" type="ser:guid" />
+      <xs:element minOccurs="0" name="GameInfrastructure" nillable="true" type="tns:GameInfrastructureDTO" />
+      <xs:element minOccurs="0" name="GameVersionId" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsExternal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MainGameType" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Regulation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TriggeredBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameVersionReleaseDTO" nillable="true" type="tns:GameVersionReleaseDTO" />
+  <xs:complexType name="ArrayOfRegulationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RegulationDTO" nillable="true" type="tns:RegulationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRegulationDTO" nillable="true" type="tns:ArrayOfRegulationDTO" />
+  <xs:complexType name="RegulationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MandatoryLanguages" nillable="true" type="tns:ArrayOfLanguageDTO" />
+      <xs:element minOccurs="0" name="RegulationName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegulationDTO" nillable="true" type="tns:RegulationDTO" />
+  <xs:complexType name="ArrayOfLanguageDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LanguageDTO" nillable="true" type="tns:LanguageDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLanguageDTO" nillable="true" type="tns:ArrayOfLanguageDTO" />
+</xs:schema>
