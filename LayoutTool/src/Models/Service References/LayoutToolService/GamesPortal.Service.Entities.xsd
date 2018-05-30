@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCountryDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CountryDto" nillable="true" type="tns:CountryDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountryDto" nillable="true" type="tns:ArrayOfCountryDto" />
+  <xs:complexType name="CountryDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CountryDto" nillable="true" type="tns:CountryDto" />
+  <xs:complexType name="ArrayOfCurrencyDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CurrencyDto" nillable="true" type="tns:CurrencyDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurrencyDto" nillable="true" type="tns:ArrayOfCurrencyDto" />
+  <xs:complexType name="CurrencyDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Iso3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CurrencyDto" nillable="true" type="tns:CurrencyDto" />
+</xs:schema>

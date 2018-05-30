@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="LayoutTool.Views.Wpf.DynamicLayout.ValueEditors.MultiSelectValueEditorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LayoutTool.Views.Wpf.DynamicLayout.ValueEditors"
+             mc:Ignorable="d"
+             x:Name="multiselectUserControl"
+             
+             >
+
+    <DockPanel >
+        <Button Content="..." Command="{Binding SelectCommand}" Cursor="Hand" FontSize="14" FontWeight="Bold" DockPanel.Dock="Right" Margin="3,0,0,0" MinWidth="35" ToolTip="Click to select different items"/>
+        <TextBlock Text="{Binding Description}" MinWidth="250" FontSize="14" FontWeight="Bold"/>
+    </DockPanel>
+
+</UserControl>

@@ -1,0 +1,4 @@
+check arena 1009 don't have the attributes preserved
+defaultFavorites
+preserver attributes on top games and VIP games 
+templateId for games in lobby arena (with jackpot)

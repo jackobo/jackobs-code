@@ -1,0 +1,40 @@
+﻿<local:ViewBaseUserControl x:Class="LayoutTool.Views.Wpf.GameGroupLayoutCollectionView"
+             x:TypeArguments="viewModels:GameGroupLayoutCollectionViewModel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LayoutTool.Views.Wpf"
+             xmlns:viewModels="clr-namespace:LayoutTool.ViewModels;assembly=LayoutTool.ViewModels"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d" 
+             >
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Text="{Binding Title}" FontSize="18" FontWeight="Bold" Foreground="White" Background="Black" Margin="3"/>
+
+        <local:AddDynamicLayoutHandlerView DockPanel.Dock="Top" DataContext="{Binding AddDynamicLayoutHandler}" />
+        
+        <ItemsControl x:Name="gameGroupLayoutItemsControl" ItemsSource="{Binding}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel></StackPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <local:GameGroupLayoutView DataContext="{Binding}" Margin="10">
+                        <i:Interaction.Behaviors>
+                            <local:RemoveCollectionItemBehavior Enabled="{Binding Path=PlayerStatus.IsDynamicLayout}" 
+                                                                    ConfirmationMessage="Are you sure you want to remove this layout ?" 
+                                                                    Collection="{Binding ElementName=gameGroupLayoutItemsControl, Path=ItemsSource }"
+                                                                    />
+                        </i:Interaction.Behaviors>
+                    </local:GameGroupLayoutView>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+
+    </DockPanel>
+</local:ViewBaseUserControl>

@@ -1,0 +1,38 @@
+﻿<local:ViewBaseUserControl x:Class="LayoutTool.Views.Wpf.SkinToDesignSelectorView"
+                           x:TypeArguments="viewModels:SkinToDesignSelectorViewModel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:viewModels="clr-namespace:LayoutTool.ViewModels;assembly=LayoutTool.ViewModels"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LayoutTool.Views.Wpf"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             >
+
+
+    <xctk:BusyIndicator x:Name="busyIndicator" IsBusy="{Binding IsBusy}" BusyContent="Loading navigation plan...">
+        <xctk:BusyIndicator.Content>
+            <StackPanel>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <StackPanel Orientation="Horizontal">
+                        <Border BorderBrush="Black" BorderThickness="3" Margin="10">
+                            <local:SkinDefinitionBuilderSelectorView DataContext="{Binding SourceSkinSelector}" Margin="10"/>
+                        </Border>
+                        <Image Source="Resources/Arrow_LeftToRight_64x64.png"/>
+                        <Border BorderBrush="Black" BorderThickness="3" Margin="10">
+                            <local:SkinDefinitionBuilderSelectorView DataContext="{Binding DestinationSkinSelector}" Margin="10" Title="Choose target"/>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+                <Button DockPanel.Dock="Right" FontSize="16" FontWeight="Bold" Margin="10" Width="150" HorizontalAlignment="Left" Cursor="Hand" Command="{Binding StartDesignCommand}">
+                    <Hyperlink Command="{Binding StartDesignCommand}">
+                        <TextBlock Text="Start designer"/>
+                    </Hyperlink>
+                </Button>
+            </StackPanel>
+        </xctk:BusyIndicator.Content>
+
+    </xctk:BusyIndicator>
+
+</local:ViewBaseUserControl>

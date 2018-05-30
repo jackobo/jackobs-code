@@ -1,0 +1,6 @@
+dynamic layout for topGames 
+
+
+questions:
+
+what is gameElement.displayMode = 3;
