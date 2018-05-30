@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div style="cursor: pointer"
+        (click)="isCollapsed=!isCollapsed">
+        <span [ngClass]="{'glyphicon': true, 'glyphicon-collapse-up' : !isCollapsed, 'glyphicon-collapse-down' : isCollapsed }"></span>
+        Other Game Types
+        </div>
+    </div>
+    <ul class="list-group" [collapse]="isCollapsed">
+        <li *ngFor="let gameType of gameTypes" class="list-group-item">
+            {{gameType.Id}}
+            <span class="badge badge-primary">{{gameType.OperatorName}}</span>
+        </li>
+    </ul>
+</div>

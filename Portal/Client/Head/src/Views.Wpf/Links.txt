@@ -1,0 +1,2 @@
+﻿http://www.wpftutorial.net/datagrid.html#grouping
+http://www.wpf-tutorial.com/datagrid-control/details-row/

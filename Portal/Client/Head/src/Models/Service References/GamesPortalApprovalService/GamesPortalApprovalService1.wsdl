@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GamesPortalApprovalService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IGamesPortalApprovalService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/GamesPortalApprovalService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/GamesPortalApprovalService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/GamesPortalApprovalService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GamesPortal.Service" />
+      <xsd:import schemaLocation="http://localhost/GamesPortalApprovalService?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost/GamesPortalApprovalService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGamesPortalApprovalService_GetAvailableQAApprovalStates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableQAApprovalStates" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalApprovalService_GetAvailableQAApprovalStates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableQAApprovalStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalApprovalService_GetAvailablePMApprovalStates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailablePMApprovalStates" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalApprovalService_GetAvailablePMApprovalStates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailablePMApprovalStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalApprovalService_QAApprove_InputMessage">
+    <wsdl:part name="parameters" element="tns:QAApprove" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalApprovalService_QAApprove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QAApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalApprovalService_PMApprove_InputMessage">
+    <wsdl:part name="parameters" element="tns:PMApprove" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalApprovalService_PMApprove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PMApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalApprovalService_LanguageApprove_InputMessage">
+    <wsdl:part name="parameters" element="tns:LanguageApprove" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalApprovalService_LanguageApprove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LanguageApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalApprovalService_ForceSynchronization_InputMessage">
+    <wsdl:part name="parameters" element="tns:ForceSynchronization" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalApprovalService_ForceSynchronization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ForceSynchronizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalApprovalService_ForceGameSynchronization_InputMessage">
+    <wsdl:part name="parameters" element="tns:ForceGameSynchronization" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalApprovalService_ForceGameSynchronization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ForceGameSynchronizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalApprovalService_ForceLanguageSynchronization_InputMessage">
+    <wsdl:part name="parameters" element="tns:ForceLanguageSynchronization" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalApprovalService_ForceLanguageSynchronization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ForceLanguageSynchronizationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGamesPortalApprovalService">
+    <wsdl:operation name="GetAvailableQAApprovalStates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/GetAvailableQAApprovalStates" message="tns:IGamesPortalApprovalService_GetAvailableQAApprovalStates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/GetAvailableQAApprovalStatesResponse" message="tns:IGamesPortalApprovalService_GetAvailableQAApprovalStates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailablePMApprovalStates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/GetAvailablePMApprovalStates" message="tns:IGamesPortalApprovalService_GetAvailablePMApprovalStates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/GetAvailablePMApprovalStatesResponse" message="tns:IGamesPortalApprovalService_GetAvailablePMApprovalStates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QAApprove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/QAApprove" message="tns:IGamesPortalApprovalService_QAApprove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/QAApproveResponse" message="tns:IGamesPortalApprovalService_QAApprove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PMApprove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/PMApprove" message="tns:IGamesPortalApprovalService_PMApprove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/PMApproveResponse" message="tns:IGamesPortalApprovalService_PMApprove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LanguageApprove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/LanguageApprove" message="tns:IGamesPortalApprovalService_LanguageApprove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/LanguageApproveResponse" message="tns:IGamesPortalApprovalService_LanguageApprove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceSynchronization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/ForceSynchronization" message="tns:IGamesPortalApprovalService_ForceSynchronization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/ForceSynchronizationResponse" message="tns:IGamesPortalApprovalService_ForceSynchronization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceGameSynchronization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/ForceGameSynchronization" message="tns:IGamesPortalApprovalService_ForceGameSynchronization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/ForceGameSynchronizationResponse" message="tns:IGamesPortalApprovalService_ForceGameSynchronization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceLanguageSynchronization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/ForceLanguageSynchronization" message="tns:IGamesPortalApprovalService_ForceLanguageSynchronization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalApprovalService/ForceLanguageSynchronizationResponse" message="tns:IGamesPortalApprovalService_ForceLanguageSynchronization_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IGamesPortalApprovalService" type="tns:IGamesPortalApprovalService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IGamesPortalApprovalService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAvailableQAApprovalStates">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalApprovalService/GetAvailableQAApprovalStates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailablePMApprovalStates">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalApprovalService/GetAvailablePMApprovalStates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QAApprove">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalApprovalService/QAApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PMApprove">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalApprovalService/PMApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LanguageApprove">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalApprovalService/LanguageApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceSynchronization">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalApprovalService/ForceSynchronization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceGameSynchronization">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalApprovalService/ForceGameSynchronization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceLanguageSynchronization">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalApprovalService/ForceLanguageSynchronization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GamesPortalApprovalService">
+    <wsdl:port name="BasicHttpBinding_IGamesPortalApprovalService" binding="tns:BasicHttpBinding_IGamesPortalApprovalService">
+      <soap:address location="http://localhost/GamesPortalApprovalService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

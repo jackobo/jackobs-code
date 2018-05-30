@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<xs:schema 
+           attributeFormDefault="unqualified" 
+           elementFormDefault="qualified" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="GamesPortal.Service.Artifactory.ArtifactorySettings">
+    <xs:all>
+      <xs:element minOccurs="0" maxOccurs="1" name="ignoreUndefinedPropertiesValues" type="GamesPortal.Service.Artifactory.IgnoredUndefinedPropertyValueSettingsCollection"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="gamesRepositories" type="GamesPortal.Service.Artifactory.GamesRepositorySettingsCollection"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="chillWrapperRepositories" type="GamesPortal.Service.Artifactory.ChillWrapperRepositorySettingsCollection"/>
+    </xs:all>
+    <xs:attribute name="baseUrl" type="xs:string" use="required" />
+	  <xs:attribute name="userName" type="xs:string" />
+	  <xs:attribute name="password" type="xs:string" />
+	  <xs:attribute name="synchronizationEnabled" type="xs:boolean" />
+	  <xs:attribute name="synchronizationInterval" type="xs:string" />
+    <xs:attribute name="enableGamingComponentsSynchronization" type="xs:boolean" />
+  </xs:complexType>
+
+  <xs:complexType name="GamesPortal.Service.Artifactory.IgnoredUndefinedPropertyValueSettings">
+    <xs:attribute name="key" type="xs:string" use="required" />
+    <xs:attribute name="value" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="GamesPortal.Service.Artifactory.IgnoredUndefinedPropertyValueSettingsCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="clear"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="remove" type="GamesPortal.Service.Artifactory.IgnoredUndefinedPropertyValueSettings"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="add" type="GamesPortal.Service.Artifactory.IgnoredUndefinedPropertyValueSettings"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="GamesPortal.Service.Entities.GameTechnology">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Flash" />
+      <xs:enumeration value="Html5" />
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="GamesPortal.Service.Entities.PlatformType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PC" />
+      <xs:enumeration value="Mobile" />
+      <xs:enumeration value="PcAndMobile" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="GamesPortal.Service.Entities.GamingComponentCategory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Wrapper" />
+      <xs:enumeration value="Chill" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="GamesPortal.Service.Artifactory.GamesRepositorySettings">
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="gamesFolder" type="xs:string" />
+    <xs:attribute name="gameTechnology" type="GamesPortal.Service.Entities.GameTechnology"/>
+    <xs:attribute name="platformType" type="GamesPortal.Service.Entities.PlatformType"/>
+    <xs:attribute name="isExternal" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="GamesPortal.Service.Artifactory.ChillWrapperRepositorySettings">
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="folder" type="xs:string" />
+    <xs:attribute name="category" type="GamesPortal.Service.Entities.GamingComponentCategory"/>
+  </xs:complexType>
+
+
+  <xs:complexType name="GamesPortal.Service.Artifactory.GamesRepositorySettingsCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="clear"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="remove" type="GamesPortal.Service.Artifactory.GamesRepositorySettings"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="repository" type="GamesPortal.Service.Artifactory.GamesRepositorySettings"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="GamesPortal.Service.Artifactory.ChillWrapperRepositorySettingsCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="clear"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="remove" type="GamesPortal.Service.Artifactory.ChillWrapperRepositorySettings"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="repository" type="GamesPortal.Service.Artifactory.ChillWrapperRepositorySettings"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Spark.Infra.Configurations.LayoutToolPublisherSettings">
+    <xs:attribute name="tfsUrl" type="xs:string" />
+    <xs:attribute name="localWorkspaceFolder" type="xs:string" />
+    <xs:attribute name="mailingList" type="xs:string" />
+  </xs:complexType>
+
+  <xs:complexType name="Spark.Infra.Configurations.SignalRSettings">
+    <xs:attribute name="url" type="xs:string" />
+  </xs:complexType>
+    
+  <xs:element name="artifactory" type="GamesPortal.Service.Artifactory.ArtifactorySettings" />
+  <xs:element name="signalR" type="Spark.Infra.Configurations.SignalRSettings" />
+  <xs:element name="tfs" type="Spark.Infra.Configurations.LayoutToolPublisherSettings" />
+  
+</xs:schema>

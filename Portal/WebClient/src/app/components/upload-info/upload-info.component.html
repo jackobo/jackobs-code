@@ -1,0 +1,4 @@
+<div *ngIf="uploadInfo.any()">
+    <span class="badge">{{title}}</span> uploaded on <span class="text-primary">{{uploadInfo.content[0].uploadDate | date: 'medium' }}</span>
+</div>
+

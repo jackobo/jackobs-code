@@ -1,0 +1,34 @@
+﻿<Window x:Class="GamesPortal.Client.Views.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        Title="Games Portal Client" Height="480" Width="640" WindowState="Maximized" Icon="GamesPortal.ico">
+    
+    <DockPanel>
+        <ContentControl DockPanel.Dock="Top" prism:RegionManager.RegionName="MainMenu" Margin="0,1,0,3"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.25*"/>
+                <ColumnDefinition Width="6"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.75*"/>
+                <RowDefinition Height="6"/>
+                <RowDefinition Height="0.25*"/>
+            </Grid.RowDefinitions>
+        
+            <ContentControl Grid.Column="0" prism:RegionManager.RegionName="ExplorerBar" Margin="5"/>
+            <GridSplitter Grid.Column="1" Background="Black" Width="6" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+            <ContentControl Grid.Column="2" prism:RegionManager.RegionName="Workspace" Margin="5"/>
+
+            <GridSplitter Grid.ColumnSpan="3" Grid.Row="1" Background="Black" Height="6" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+
+            <ContentControl Grid.ColumnSpan="3" Grid.Row="2" prism:RegionManager.RegionName="NotificationArea" Margin="5">
+            
+            </ContentControl>
+
+        </Grid>
+    </DockPanel>
+</Window>

@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="GamesPortal.Client.Views.Wpf.GamesDownloadOptionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             >
+    <UserControl.Resources>
+        <ResourceDictionary Source="CommonStyles.xaml"/>
+    </UserControl.Resources>
+
+    <Expander Cursor="Hand" DockPanel.Dock="Bottom" FlowDirection="RightToLeft" Padding="5">
+        <Expander.Header>
+            <TextBlock FlowDirection="RightToLeft" Text="Download options" Foreground="Blue" TextDecorations="Underline" FontWeight="Bold" FontSize="14"/>
+        </Expander.Header>
+        <Border BorderBrush="Black" FlowDirection="LeftToRight" Padding="10" BorderThickness="2">
+            <StackPanel FlowDirection="LeftToRight">
+                <TextBlock Text="Download folder" FontSize="12" FontWeight="Bold"/>
+                <DockPanel>
+                    <Button DockPanel.Dock="Right" Command="{Binding DownloadCommand}" Margin="10,0,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="../Resources/Start.png" Style="{StaticResource standardImageSizeStyle}" Margin="0,0,2,0" />
+                            <TextBlock Text="Start download"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button DockPanel.Dock="Right" Command="{Binding SelectDestinationFolderCommand}" Cursor="Hand" Margin="3,0,0,0" ToolTip="Select destination folder">
+                        <Image Source="../Resources/OpenFolder24x24.png" Style="{StaticResource standardImageSizeStyle}" Margin="0" />
+                    </Button>
+
+
+
+                    <TextBox Text="{Binding DestinationFolder}" MinWidth="200"/>
+
+                </DockPanel>
+
+            </StackPanel>
+        </Border>
+    </Expander>
+
+</UserControl>

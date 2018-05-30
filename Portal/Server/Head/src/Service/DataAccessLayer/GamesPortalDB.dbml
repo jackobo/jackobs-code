@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GamesPortalDEV" Class="GamesPortalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=GamesPortalDEV;Integrated Security=True" SettingsObjectName="GamesPortal.Service.Properties.Settings" SettingsPropertyName="GamesPortalDEVConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.GameType" Member="GameTypes">
+    <Type Name="GameType">
+      <Column Name="Row_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GameType_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Game_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Operator_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Game_GameType" Member="Game" ThisKey="Game_ID" OtherKey="Game_ID" Type="Game" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ClientTypeToRegulationMapping" Member="ClientTypeToRegulationMappings">
+    <Type Name="ClientTypeToRegulationMapping">
+      <Column Name="Row_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClientType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Regulation" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UpgradeScripts" Member="UpgradeScripts">
+    <Type Name="UpgradeScript">
+      <Column Name="Script_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ScriptName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RunDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ScriptContent" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GameVersion_Property" Member="GameVersion_Properties">
+    <Type Name="GameVersion_Property">
+      <Column Name="Row_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PropertyKey" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyValue" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="GameVersion_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Regulation" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastChange" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="ChangedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsUserAdded" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PropertySet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="GameVersion_GameVersion_Property" Member="GameVersion" ThisKey="GameVersion_ID" OtherKey="GameVersion_ID" Type="GameVersion" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GameVersion_Property_History" Member="GameVersion_Property_Histories">
+    <Type Name="GameVersion_Property_History">
+      <Column Name="Row_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GameVersion_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Regulation" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyKey" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OldValue" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NewValue" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ChangeDate" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="ChangedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ChangeType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="GameVersion_GameVersion_Property_History" Member="GameVersion" ThisKey="GameVersion_ID" OtherKey="GameVersion_ID" Type="GameVersion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RegulationType" Member="RegulationTypes">
+    <Type Name="RegulationType">
+      <Column Name="RegulationType_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RegulationName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="RegulationType_RegulationType_MandatoryLanguage" Member="RegulationType_MandatoryLanguages" ThisKey="RegulationType_ID" OtherKey="RegulationType_ID" Type="RegulationType_MandatoryLanguage" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RegulationsNames" Member="RegulationsNames">
+    <Type Name="RegulationsName">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GameVersion" Member="GameVersions">
+    <Type Name="GameVersion">
+      <Column Name="GameVersion_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VersionFolder" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAsLong" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Technology" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Game_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TriggeredBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PlatformType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="GameVersion_GameVersion_Property" Member="GameVersion_Properties" ThisKey="GameVersion_ID" OtherKey="GameVersion_ID" Type="GameVersion_Property" />
+      <Association Name="GameVersion_GameVersion_Property_History" Member="GameVersion_Property_Histories" ThisKey="GameVersion_ID" OtherKey="GameVersion_ID" Type="GameVersion_Property_History" />
+      <Association Name="GameVersion_GameVersion_Language" Member="GameVersion_Languages" ThisKey="GameVersion_ID" OtherKey="GameVersion_ID" Type="GameVersion_Language" />
+      <Association Name="GameVersion_GameVersion_Regulation" Member="GameVersion_Regulations" ThisKey="GameVersion_ID" OtherKey="GameVersion_ID" Type="GameVersion_Regulation" />
+      <Association Name="Game_GameVersion" Member="Game" ThisKey="Game_ID" OtherKey="Game_ID" Type="Game" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GameVersion_Language_ToArtifactorySyncQueue" Member="GameVersion_Language_ToArtifactorySyncQueues">
+    <Type Name="GameVersion_Language_ToArtifactorySyncQueue">
+      <Column Name="Row_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GameVersion_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="InsertedTime" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NeverApprovedGames" Member="NeverApprovedGames">
+    <Type Name="NeverApprovedGame">
+      <Column Name="Game_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="GameName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="MainGameType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsExternal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Technology" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlatformType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LatestVersion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LatestVersionForEachGameAndRegulation" Member="LatestVersionForEachGameAndRegulations">
+    <Type Name="LatestVersionForEachGameAndRegulation">
+      <Column Name="GameVersion_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Game_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Technology" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlatformType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Regulation" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAsLong" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="VersionFolder" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="GameName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="MainGameType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsExternal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DownloadUri" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(260) NOT NULL" CanBeNull="false" />
+      <Column Name="FileSize" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MD5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RegulationType_MandatoryLanguage" Member="RegulationType_MandatoryLanguages">
+    <Type Name="RegulationType_MandatoryLanguage">
+      <Column Name="RegulationTypeLanguage_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RegulationType_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LanguageIso3" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Association Name="RegulationType_RegulationType_MandatoryLanguage" Member="RegulationType" ThisKey="RegulationType_ID" OtherKey="RegulationType_ID" Type="RegulationType" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GameVersion_Language" Member="GameVersion_Languages">
+    <Type Name="GameVersion_Language">
+      <Column Name="GameVersionLanguage_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GameVersion_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Regulation" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Language" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LanguageHash" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ArtifactoryLanguage" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="QAApprovalDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="QAApprovalUser" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ProductionUploadDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="GameVersion_GameVersion_Language" Member="GameVersion" ThisKey="GameVersion_ID" OtherKey="GameVersion_ID" Type="GameVersion" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GameVersion_LanguageQAApprovalInfo" Member="GameVersion_LanguageQAApprovalInfos">
+    <Type Name="GameVersion_LanguageQAApprovalInfo">
+      <Column Name="GameVersionLanguage_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="QAApprovalDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="QAApprovalUser" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Game" Member="Games">
+    <Type Name="Game">
+      <Column Name="Game_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GameName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="MainGameType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsExternal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ComponentCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Game_GameType" Member="GameTypes" ThisKey="Game_ID" OtherKey="Game_ID" Type="GameType" />
+      <Association Name="Game_GameVersion" Member="GameVersions" ThisKey="Game_ID" OtherKey="Game_ID" Type="GameVersion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GameVersion_Regulation" Member="GameVersion_Regulations">
+    <Type Name="GameVersion_Regulation">
+      <Column Name="GameVersionRegulation_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GameVersion_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Regulation" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DownloadUri" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(260) NOT NULL" CanBeNull="false" />
+      <Column Name="FileSize" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MD5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SHA1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="QAApprovalDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="QAApprovalUser" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PMApprovalDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="PMApprovalUser" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ProductionUploadDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="GameVersion_GameVersion_Regulation" Member="GameVersion" ThisKey="GameVersion_ID" OtherKey="GameVersion_ID" Type="GameVersion" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LatestApprovedGameVersionForEachRegulation" Member="LatestApprovedGameVersionForEachRegulations">
+    <Type Name="LatestApprovedGameVersionForEachRegulation">
+      <Column Name="Game_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="GameName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="MainGameType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LatestVersion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsExternal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Technology" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlatformType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegulationType_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Regulation" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="QA_VersionID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="QA_Version" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="QA_DownloadUri" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="QA_FileName" Type="System.String" DbType="NVarChar(260)" CanBeNull="true" />
+      <Column Name="QA_FileSize" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="QA_MD5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PM_VersionID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="PM_Version" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PM_DownloadUri" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PM_FileName" Type="System.String" DbType="NVarChar(260)" CanBeNull="true" />
+      <Column Name="PM_FileSize" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PM_MD5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PROD_VersionID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="PROD_Version" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PROD_DownloadUri" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PROD_FileName" Type="System.String" DbType="NVarChar(260)" CanBeNull="true" />
+      <Column Name="PROD_FileSize" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PROD_MD5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LatestQAApprovedVersion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.NormalizeApprovalStatusForAllLanguagesWithTheSameHash" Method="NormalizeApprovalStatusForAllLanguagesWithTheSameHash">
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

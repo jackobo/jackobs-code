@@ -1,0 +1,1 @@
+﻿update [dbo].[GameVersion_Regulation] Set PMApprovalDate = QAApprovalDate, PMApprovalUser = 'smaster' where ProductionUploadDate is not null and PMApprovalDate is null

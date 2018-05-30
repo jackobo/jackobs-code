@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GamesPortalService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/GamesPortalService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/GamesPortalService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/GamesPortalService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GamesPortal.Service" />
+      <xsd:import schemaLocation="http://localhost/GamesPortalService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGamesPortalService_GetGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGame" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetAllGames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGames" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetAllGames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetGameVersions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGameVersions" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetGameVersions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGameVersionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetLatestApprovedGameVersionForEachRegulation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatestApprovedGameVersionForEachRegulation" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetLatestApprovedGameVersionForEachRegulation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatestApprovedGameVersionForEachRegulationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetLatestGameVersionForEachRegulation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatestGameVersionForEachRegulation" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetLatestGameVersionForEachRegulation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatestGameVersionForEachRegulationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetNeverApprovedGames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNeverApprovedGames" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetNeverApprovedGames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNeverApprovedGamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOptions" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetGameReleases_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGameReleases" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetGameReleases_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGameReleasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetRegulationsInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegulationsInfo" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetRegulationsInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegulationsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetQAApprovedGamesInPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQAApprovedGamesInPeriod" />
+  </wsdl:message>
+  <wsdl:message name="IGamesPortalService_GetQAApprovedGamesInPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQAApprovedGamesInPeriodResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGamesPortalService">
+    <wsdl:operation name="GetGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalService/GetGame" message="tns:IGamesPortalService_GetGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalService/GetGameResponse" message="tns:IGamesPortalService_GetGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalService/GetAllGames" message="tns:IGamesPortalService_GetAllGames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalService/GetAllGamesResponse" message="tns:IGamesPortalService_GetAllGames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGameVersions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalService/GetGameVersions" message="tns:IGamesPortalService_GetGameVersions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalService/GetGameVersionsResponse" message="tns:IGamesPortalService_GetGameVersions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestApprovedGameVersionForEachRegulation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalService/GetLatestApprovedGameVersionForEachRegulation" message="tns:IGamesPortalService_GetLatestApprovedGameVersionForEachRegulation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalService/GetLatestApprovedGameVersionForEachRegulationResponse" message="tns:IGamesPortalService_GetLatestApprovedGameVersionForEachRegulation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestGameVersionForEachRegulation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalService/GetLatestGameVersionForEachRegulation" message="tns:IGamesPortalService_GetLatestGameVersionForEachRegulation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalService/GetLatestGameVersionForEachRegulationResponse" message="tns:IGamesPortalService_GetLatestGameVersionForEachRegulation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNeverApprovedGames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalService/GetNeverApprovedGames" message="tns:IGamesPortalService_GetNeverApprovedGames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalService/GetNeverApprovedGamesResponse" message="tns:IGamesPortalService_GetNeverApprovedGames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalService/GetOptions" message="tns:IGamesPortalService_GetOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalService/GetOptionsResponse" message="tns:IGamesPortalService_GetOptions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGameReleases">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalService/GetGameReleases" message="tns:IGamesPortalService_GetGameReleases_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalService/GetGameReleasesResponse" message="tns:IGamesPortalService_GetGameReleases_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegulationsInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalService/GetRegulationsInfo" message="tns:IGamesPortalService_GetRegulationsInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalService/GetRegulationsInfoResponse" message="tns:IGamesPortalService_GetRegulationsInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQAApprovedGamesInPeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGamesPortalService/GetQAApprovedGamesInPeriod" message="tns:IGamesPortalService_GetQAApprovedGamesInPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGamesPortalService/GetQAApprovedGamesInPeriodResponse" message="tns:IGamesPortalService_GetQAApprovedGamesInPeriod_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IGamesPortalService" type="tns:IGamesPortalService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetGame">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalService/GetGame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGames">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalService/GetAllGames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGameVersions">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalService/GetGameVersions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestApprovedGameVersionForEachRegulation">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalService/GetLatestApprovedGameVersionForEachRegulation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestGameVersionForEachRegulation">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalService/GetLatestGameVersionForEachRegulation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNeverApprovedGames">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalService/GetNeverApprovedGames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOptions">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalService/GetOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGameReleases">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalService/GetGameReleases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegulationsInfo">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalService/GetRegulationsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQAApprovedGamesInPeriod">
+      <soap:operation soapAction="http://tempuri.org/IGamesPortalService/GetQAApprovedGamesInPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GamesPortalService">
+    <wsdl:port name="BasicHttpBinding_IGamesPortalService" binding="tns:BasicHttpBinding_IGamesPortalService">
+      <soap:address location="http://localhost/GamesPortalService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

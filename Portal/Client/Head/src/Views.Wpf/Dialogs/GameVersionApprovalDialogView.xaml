@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dialogs="clr-namespace:GamesPortal.Client.ViewModels.Dialogs;assembly=GamesPortal.Client.ViewModels"
+                    xmlns:viewsWpf="clr-namespace:GamesPortal.Client.Views.Wpf">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Commons/CommonStyles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate DataType="{x:Type dialogs:GameVersionApprovalDialog}">
+        <DockPanel MinHeight="200">
+            
+            <TextBlock Text="{Binding Title}" DockPanel.Dock="Top" FontSize="18" FontWeight="Bold" Background="LightGray" TextAlignment="Center"/>
+            <Separator Margin="0,5,0,10" DockPanel.Dock="Top"/>
+            <TextBlock DockPanel.Dock="Top" 
+                       Text="Atention! The game will be approved for all the platforms in the selected regulations" 
+                       Foreground="Blue"
+                       FontWeight="Bold"
+                       FontSize="12"
+                       TextWrapping="Wrap"
+                       />
+            <Separator Margin="0,5,0,10" DockPanel.Dock="Top"/>
+
+            <viewsWpf:RegulationsSelectorView DataContext="{Binding RegulationsSelector}"/>
+
+        </DockPanel>
+    </DataTemplate>
+</ResourceDictionary>

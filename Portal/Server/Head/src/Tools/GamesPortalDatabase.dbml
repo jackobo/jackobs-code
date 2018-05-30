@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GamesPortalDEV" Class="GamesPortalDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=GamesPortalDEV;Integrated Security=True" SettingsObjectName="Tools.Properties.Settings" SettingsPropertyName="GamesPortalDB" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.RegulationType" Member="RegulationTypes">
+    <Type Name="RegulationType">
+      <Column Name="RegulationType_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RegulationName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="RegulationType_RegulationType_MandatoryLanguage" Member="RegulationType_MandatoryLanguages" ThisKey="RegulationType_ID" OtherKey="RegulationType_ID" Type="RegulationType_MandatoryLanguage" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RegulationType_MandatoryLanguage" Member="RegulationType_MandatoryLanguages">
+    <Type Name="RegulationType_MandatoryLanguage">
+      <Column Name="RegulationTypeLanguage_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RegulationType_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LanguageIso3" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Association Name="RegulationType_RegulationType_MandatoryLanguage" Member="RegulationType" ThisKey="RegulationType_ID" OtherKey="RegulationType_ID" Type="RegulationType" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GGPVersioningDB" Class="GGPVersioningDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.20.40.158;Initial Catalog=GGPVersioningDB;Integrated Security=True" SettingsObjectName="GamesPortal.Service.Properties.Settings" SettingsPropertyName="GGPVersioningDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Component" Member="Components">
+    <Type Name="Component">
+      <Column Name="Component_ID" Type="System.String" DbType="NVarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ComponentType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParentGameEngineID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Component_Component_GameType" Member="Component_GameTypes" ThisKey="Component_ID" OtherKey="Component_ID" Type="Component_GameType" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Component_GameType" Member="Component_GameTypes">
+    <Type Name="Component_GameType">
+      <Column Name="Row_ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Component_ID" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="GameType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Operator_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsBonusGame" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Component_Component_GameType" Member="Component" ThisKey="Component_ID" OtherKey="Component_ID" Type="Component" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

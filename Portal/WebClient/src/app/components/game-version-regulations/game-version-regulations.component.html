@@ -1,0 +1,25 @@
+<div class="btn-group btn-group-sm">
+    <button *ngFor="let r of regulations" 
+            [ngClass]="{'btn':true, 'btn-default': r.inProgress(), 'btn-warning': r.partialyApproved(), 'btn-success': r.readyForProduction() && !r.inProduction(), 'btn-primary': r.inProduction()}"
+            style="margin:3px" 
+            [popover]="regulationApprovalInfo" 
+            [popoverTitle]="r.regulationName + ': APPROVAL STATUS'"
+            placement="bottom"
+            triggers="mouseenter:mouseleave">
+            
+            <span>{{r.regulationName}}</span>
+            <template #regulationApprovalInfo>
+
+                <div *ngIf="r.inProgress()">
+                    In progress
+                </div>
+   
+                <approval-info [title]="'QA'" [approvalInfo]="r.qaApprovalInfo"></approval-info>
+                <approval-info [title]="'PM'" [approvalInfo]="r.pmApprovalInfo"></approval-info>
+                
+                <upload-info [title]="'Production'"
+                             [uploadInfo]="r.productionUploadInfo"></upload-info>
+                
+            </template>                                  
+        </button>
+</div>

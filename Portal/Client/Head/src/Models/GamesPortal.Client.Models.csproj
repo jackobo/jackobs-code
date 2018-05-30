@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B0649C95-0155-47CF-8724-0F851EBD01A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GamesPortal.Client.Models</RootNamespace>
+    <AssemblyName>GamesPortal.Client.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\Libraries\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Core.6.2.0\lib\net45\Prism.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism.Unity.Wpf, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Unity.6.2.0\lib\net45\Prism.Unity.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism.Wpf, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Wpf.6.2.0\lib\net45\Prism.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Wpf.6.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MandatoryLanguagesPerRegulationProvider.cs" />
+    <Compile Include="Service References\GamesPortalApprovalService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GamesPortalHubContracts\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\ApprovalInfo.cs" />
+    <Compile Include="Services\DownloadManager.cs" />
+    <Compile Include="Services\GamesRepository.cs" />
+    <Compile Include="ModelsModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\GamesPortalService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceReferencesPartials.cs" />
+    <Compile Include="Services\ZipFileExtractor.cs" />
+    <Compile Include="SignalRHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dependencies\Spark.Infra\Spark.Infra\Spark.Infra.csproj">
+      <Project>{02e9598a-f44e-4359-844a-dfc8bdc9e36c}</Project>
+      <Name>Spark.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Dependencies\Wpf.Common\Wpf.Common\Spark.Wpf.Common.csproj">
+      <Project>{4f07e2f4-7058-4026-948e-2f5c98013a62}</Project>
+      <Name>Spark.Wpf.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\GamesPortal.Client.Interfaces.csproj">
+      <Project>{6db1c292-b280-495e-9ea5-e174e54e9f7b}</Project>
+      <Name>GamesPortal.Client.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Service References\GamesPortalApprovalService\GamesPortal.Client.Models.GamesPortalApprovalService.ForceSynchronizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalApprovalService\GamesPortal.Client.Models.GamesPortalApprovalService.GetAvailablePMApprovalStatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalApprovalService\GamesPortal.Client.Models.GamesPortalApprovalService.GetAvailableQAApprovalStatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalApprovalService\GamesPortalApprovalService1.wsdl" />
+    <None Include="Service References\GamesPortalApprovalService\GamesPortalApprovalService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesPortalApprovalService\GamesPortalApprovalService51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesPortalApprovalService\GamesPortalApprovalService52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesPortalApprovalService\GamesPortalApprovalService53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesPortalApprovalService\GamesPortalApprovalService54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesPortalHubContracts\GamesPortalHubContext.wsdl" />
+    <None Include="Service References\GamesPortalHubContracts\GamesPortalHubContext.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesPortalHubContracts\GamesPortalHubContext1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesPortalHubContracts\GamesPortalHubContext2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesPortalHubContracts\GamesPortalHubContext3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\GamesPortalApprovalService\" />
+    <WCFMetadataStorage Include="Service References\GamesPortalHubContracts\" />
+    <WCFMetadataStorage Include="Service References\GamesPortalService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GamesPortalService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GamesPortalService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GamesPortalService\GamesPortal.Client.Models.GamesPortalService.GetAllGamesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GamesPortal.Client.Models.GamesPortalService.GetApprovedGamesInPeriodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GamesPortal.Client.Models.GamesPortalService.GetGameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GamesPortal.Client.Models.GamesPortalService.GetGamesReleasesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GamesPortal.Client.Models.GamesPortalService.GetGameVersionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GamesPortal.Client.Models.GamesPortalService.GetLatestApprovedGameVersionForEachRegulation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GamesPortal.Client.Models.GamesPortalService.GetLatestGameVersionForEachGameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GamesPortal.Client.Models.GamesPortalService.GetNeverApprovedGameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GamesPortal.Client.Models.GamesPortalService.GetRegulationsInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GamesPortalService1.wsdl" />
+    <None Include="Service References\GamesPortalService\GamesPortalService51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesPortalService\GamesPortalService52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesPortalService\GamesPortalService53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesPortalService\GamesPortalService54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesPortalService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GamesPortalApprovalService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GamesPortalApprovalService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GamesPortalApprovalService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GamesPortalService\GamesPortalService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GamesPortalHubContracts\GamesPortalHubContext.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GamesPortalHubContracts\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GamesPortalHubContracts\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GamesPortalHubContracts\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GamesPortalApprovalService\GamesPortalApprovalService1.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

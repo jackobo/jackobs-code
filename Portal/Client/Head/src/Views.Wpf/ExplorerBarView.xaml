@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="GamesPortal.Client.Views.Wpf.ExplorerBarView"
+             
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewModels="clr-namespace:GamesPortal.Client.ViewModels.ExplorerBar;assembly=GamesPortal.Client.ViewModels"
+             xmlns:views="clr-namespace:GamesPortal.Client.Views.Wpf"
+             xmlns:entities="clr-namespace:GamesPortal.Client.Interfaces.Entities;assembly=GamesPortal.Client.Interfaces"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary Source="ExplorerBarItems/TreeViewItems.xaml"/>
+    </UserControl.Resources>
+    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Search for a game (by name or by game type)" Margin="3,3,3,1" FontSize="14" FontWeight="Bold"/>
+            <TextBox x:Name="txtSearch"  Margin="3,0,3,3" Text="{Binding Path=GameSearch.Filter,UpdateSourceTrigger=PropertyChanged}"/>
+            <Popup x:Name="searchPopUp" IsOpen="{Binding Path=GameSearch.IsOpen}" PlacementTarget="{Binding ElementName=txtSearch}" MaxHeight="600"  MinWidth="{Binding ElementName=txtSearch, Path=ActualWidth}" StaysOpen="False">
+                <Border BorderThickness="1" BorderBrush="Gray">
+                    <Grid Background="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <DockPanel Grid.Row="0">
+                            <Button DockPanel.Dock="Right" Content="Close" Cursor="Hand" Command="{Binding Path=GameSearch.CloseCommand}" Margin="2" MaxWidth="100">    
+                            </Button>
+                            <DockPanel/>
+                        </DockPanel>
+                        <DataGrid Grid.Row="1" ItemsSource="{Binding Path=GameSearch.Items}" AutoGenerateColumns="False" SelectionUnit="Cell" HeadersVisibility="None" MinHeight="100" BorderThickness="0" Background="White" GridLinesVisibility="None">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Width="Auto">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button  Cursor="Hand" Command="{Binding GoToCommand}" Margin="1,1,5,1" Style="{StaticResource LinkButton}">
+                                                
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image >
+                                                        <Image.Style>
+                                                            <Style TargetType="Image" BasedOn="{StaticResource explorerBarItemImageStyle}">
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding Path=Infrastructure.GameTechnology}" Value="{x:Static entities:GameTechnology.Flash}">
+                                                                        <Setter Property="Source" Value="Resources/Flash24x24.png"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding Path=Infrastructure.GameTechnology}" Value="{x:Static entities:GameTechnology.Html5}">
+                                                                        <Setter Property="Source" Value="Resources/HTML5_24x24.png"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding Path=Infrastructure.GameTechnology}" Value="{x:Null}">
+                                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </Image.Style>
+                                                    </Image>
+                                                    <TextBlock Text="{Binding Caption}"/>
+                                                </StackPanel>
+                                                
+                                            </Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Border>
+            </Popup>
+        </StackPanel>
+        
+        <TreeView Grid.Row="1" ItemsSource="{Binding Items}" FontSize="14" FontWeight="Bold">
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="views:TreeViewItemBehavior.IsBroughtIntoViewWhenSelected" Value="{Binding IsSelected}"/>
+                    <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}"/>
+                    <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"/>
+                    <Setter Property="Focusable" Value="True"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                </Style>
+            </TreeView.ItemContainerStyle>
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate DataType="{x:Type viewModels:TreeViewItem}" ItemsSource="{Binding Items}">
+                    <ContentControl Content="{Binding .}" Focusable="False"/>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+    </Grid>
+</UserControl>

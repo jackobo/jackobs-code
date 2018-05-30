@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b0e0b21-5dfa-4945-93a1-75aea72a0e91" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8687/GamesPortalService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GamesPortalService.wsdl" MetadataType="Wsdl" ID="eeee5da4-36cc-43a8-a4b9-357db766b578" SourceId="1" SourceUrl="http://localhost:8687/GamesPortalService?wsdl" />
+    <MetadataFile FileName="GamesPortalService.xsd" MetadataType="Schema" ID="7711247e-b257-4f19-820b-4d3b7174ca0e" SourceId="1" SourceUrl="http://localhost:8687/GamesPortalService?xsd=xsd1" />
+    <MetadataFile FileName="GamesPortalService1.xsd" MetadataType="Schema" ID="ff0c632d-20c0-4c15-98c5-1bc04a30b5fe" SourceId="1" SourceUrl="http://localhost:8687/GamesPortalService?xsd=xsd0" />
+    <MetadataFile FileName="GamesPortalService2.xsd" MetadataType="Schema" ID="c28bb8a9-ec73-48dd-b14f-fe2e67c36879" SourceId="1" SourceUrl="http://localhost:8687/GamesPortalService?xsd=xsd3" />
+    <MetadataFile FileName="GamesPortalService3.xsd" MetadataType="Schema" ID="4dcb7ff9-1cf1-4537-8645-0eca3f5f58fc" SourceId="1" SourceUrl="http://localhost:8687/GamesPortalService?xsd=xsd2" />
+    <MetadataFile FileName="GamesPortalService4.xsd" MetadataType="Schema" ID="b883eadd-5735-406b-b795-970257b4d2c7" SourceId="1" SourceUrl="http://localhost:8687/GamesPortalService?xsd=xsd4" />
+    <MetadataFile FileName="GamesPortalService.disco" MetadataType="Disco" ID="81928038-cbf3-45f1-a8ff-423abd48f92d" SourceId="1" SourceUrl="http://localhost:8687/GamesPortalService?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

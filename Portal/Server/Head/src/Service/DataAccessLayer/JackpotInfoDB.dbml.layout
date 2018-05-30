@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="JackpotInfoDB">
+  <DataContextMoniker Name="/JackpotInfoDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="232c3be1-584c-428d-9f22-b9c229551906" absoluteBounds="2.375, 2, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/JackpotInfoDBDataContext/Jackpot" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da855aa8-8370-4f19-afdb-cf675cbe9343" absoluteBounds="2.39, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c914bf3c-bcfe-40df-965c-a05752334ea0" absoluteBounds="2.5, 4.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/JackpotInfoDBDataContext/JackpotGameType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18bd727d-02e7-4e86-a9e3-80d9a06da00c" absoluteBounds="2.515, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.4375 : 3.19399251302083); (3.4375 : 4.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/JackpotInfoDBDataContext/Jackpot/Jackpot__JackpotGameType" />
+      <nodes>
+        <classShapeMoniker Id="232c3be1-584c-428d-9f22-b9c229551906" />
+        <classShapeMoniker Id="c914bf3c-bcfe-40df-965c-a05752334ea0" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

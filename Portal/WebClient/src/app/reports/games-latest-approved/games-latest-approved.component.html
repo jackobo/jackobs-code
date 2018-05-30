@@ -1,0 +1,79 @@
+<div>
+    <h1>HTML5 Games - Latest approved versions</h1>
+
+    <div class="panel-group">
+
+    </div>
+    <div *ngFor="let game of games | async">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+
+            <a style="color: White;" role="button" (click)="navigateToGameDetails(game)">
+              <h4>
+                <span>{{game.gameName}}</span>
+                <span> - </span>
+                <span>{{game.mainGameType}}</span>
+              </h4>
+            </a>
+            <div>
+              <span class="badge">{{game.gameInfra}}</span>
+              <b>
+                <span *ngIf="!game.isMJC" class="label label-danger">Is NOT MJC</span>
+              </b>
+            </div>
+
+          </div>
+
+          <div class="panel-body">
+            <div>
+              <div *ngFor="let regulation of game.regulations" class="panel panel-info" style="float: left; margin-right: 6px">
+                <div class="panel-heading">
+                  <b>{{regulation.regulationName}}</b>
+                </div>
+                <div>
+                  <table class="table table-condensed">
+                    <tr>
+                      <td><span class="label label-warning">QA</span></td>
+                      <td>
+                        <span [ngClass]="{'label': true, 'label-default': regulation.isMJC, 'label-danger': !regulation.isMJC}"
+                              [attr.title]="!regulation.isMJC ? 'Is Not MJC' : ''">{{regulation.qaApprovedVersion}}</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span class="label label-primary">PM </span></td>
+                      <td><span class="label label-default">{{regulation.pmApprovedVersion}}</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="label label-success">Production </span></td>
+                      <td><span class="label label-default">{{regulation.productionVersion}}</span></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+
+            <div class="row">
+              <div class="col-sm-2">
+                <b>
+                  <span>Latest released version: </span>
+                  <span>{{game.latestReleasedVersion}}</span>
+                </b>
+
+              </div>
+              <div class="col-sm-2">
+                <b>
+                  <span>Latest QA approved version: </span>
+                  <span>{{game.latestQaApprovedVersion}}</span>
+                </b>
+              </div>
+              <div class="col-sm-8">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+</div>

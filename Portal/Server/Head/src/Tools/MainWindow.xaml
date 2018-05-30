@@ -1,0 +1,14 @@
+﻿<Window x:Class="Tools.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tools"
+        xmlns:views="clr-namespace:Tools.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="804">
+    <DockPanel>
+        <Button DockPanel.Dock="Top" Content="Compare" Click="Button_Click"/>
+        <views:GameLanguageGeneratorView DataContext="{Binding GameLanguagesGenerator}"/>
+    </DockPanel>
+</Window>

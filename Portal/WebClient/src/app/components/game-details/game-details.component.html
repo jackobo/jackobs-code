@@ -1,0 +1,32 @@
+<div>
+    <div *ngIf="game">
+        <div class="row">
+            <div class="col-sm-11">
+                <h3 class="game-title">{{game.Name}} - {{game.MainGameType}}</h3>
+            </div>
+        </div>
+
+        <hr>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2" *ngIf="game">
+            <ul class="nav nav-pills nav-stacked">
+                <li *ngFor="let gameInfra of game.SupportedInfrastructures" [class.active]="isGameInfraSelected(gameInfra)">
+                    <a role="button" (click)="navigateToVersions(gameInfra)">
+                        <game-infra-icons [infra]="gameInfra"></game-infra-icons>
+                        <span>{{gameInfra.toString()}}</span>
+                    </a> 
+                </li>
+
+            </ul>
+            <hr>
+
+            <game-types-list [gameTypes]="getOtherGameTypes()"></game-types-list>
+
+        </div>
+        <div class="col-sm-10">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

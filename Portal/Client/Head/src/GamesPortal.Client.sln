@@ -1,0 +1,174 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesPortal.Client.DEV", "Publish\Dev\GamesPortal.Client.DEV.csproj", "{C3A4547A-76E0-4340-B41E-4FA71EE27A00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesPortal.Client.Interfaces", "Interfaces\GamesPortal.Client.Interfaces.csproj", "{6DB1C292-B280-495E-9EA5-E174E54E9F7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesPortal.Client.Models", "Models\GamesPortal.Client.Models.csproj", "{B0649C95-0155-47CF-8724-0F851EBD01A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesPortal.Client.ViewModels", "ViewModels\GamesPortal.Client.ViewModels.csproj", "{9A61DF89-3EA9-454B-B6DF-FBA05806453A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesPortal.Client.Wpf", "Views.Wpf\GamesPortal.Client.Wpf.csproj", "{4AAD3E06-7862-4D15-ACE6-54657FE133D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{A57BAE19-B7D6-444F-881F-845DFBF4AE42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesPortal.Client.Bootstrapper", "Application.Bootstrapper\GamesPortal.Client.Bootstrapper.csproj", "{2C3F0D91-E3A6-48D2-ACF4-452C5012E79E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesPortal.Client.Production", "Publish\Production\GamesPortal.Client.Production.csproj", "{E76EF429-9C44-4377-A6F7-0A9B88C80C5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels.UnitTests", "ViewModels.UnitTests\ViewModels.UnitTests.csproj", "{6D0FE4C4-E7A1-4B1F-8315-C40B7D43D329}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Views.Wpf.UnitTests", "Views.Wpf.UnitTests\Views.Wpf.UnitTests.csproj", "{ACB1CA55-F396-41B7-96E9-56EB465C74E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Wpf.Common", "..\Dependencies\Wpf.Common\Wpf.Common\Spark.Wpf.Common.csproj", "{4F07E2F4-7058-4026-948E-2F5C98013A62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Wpf.Common.UnitTests", "..\Dependencies\Wpf.Common\Wpf.Common.UnitTests\Spark.Wpf.Common.UnitTests.csproj", "{37186D17-0E24-4108-BCD7-17E960BCBAF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Publish", "Publish", "{EB9D0C95-BD7D-4422-9AC4-828DED475252}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{9B4663AA-7E44-4E46-8194-E3B5A0382CFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesPortal.Client.QA", "Publish\QA\GamesPortal.Client.QA.csproj", "{915AC6C0-FDC1-4F34-B9A9-F6C900CAA88E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Infra", "..\Dependencies\Spark.Infra\Spark.Infra\Spark.Infra.csproj", "{02E9598A-F44E-4359-844A-DFC8BDC9E36C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Infra.Tests", "..\Dependencies\Spark.Infra\Spark.Infra.Tests\Spark.Infra.Tests.csproj", "{8CED340F-40CE-4E28-8286-0E08189B7310}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3A4547A-76E0-4340-B41E-4FA71EE27A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3A4547A-76E0-4340-B41E-4FA71EE27A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3A4547A-76E0-4340-B41E-4FA71EE27A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3A4547A-76E0-4340-B41E-4FA71EE27A00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DB1C292-B280-495E-9EA5-E174E54E9F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB1C292-B280-495E-9EA5-E174E54E9F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DB1C292-B280-495E-9EA5-E174E54E9F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB1C292-B280-495E-9EA5-E174E54E9F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0649C95-0155-47CF-8724-0F851EBD01A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0649C95-0155-47CF-8724-0F851EBD01A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0649C95-0155-47CF-8724-0F851EBD01A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0649C95-0155-47CF-8724-0F851EBD01A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A61DF89-3EA9-454B-B6DF-FBA05806453A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A61DF89-3EA9-454B-B6DF-FBA05806453A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A61DF89-3EA9-454B-B6DF-FBA05806453A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A61DF89-3EA9-454B-B6DF-FBA05806453A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AAD3E06-7862-4D15-ACE6-54657FE133D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AAD3E06-7862-4D15-ACE6-54657FE133D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AAD3E06-7862-4D15-ACE6-54657FE133D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AAD3E06-7862-4D15-ACE6-54657FE133D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C3F0D91-E3A6-48D2-ACF4-452C5012E79E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C3F0D91-E3A6-48D2-ACF4-452C5012E79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C3F0D91-E3A6-48D2-ACF4-452C5012E79E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C3F0D91-E3A6-48D2-ACF4-452C5012E79E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E76EF429-9C44-4377-A6F7-0A9B88C80C5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E76EF429-9C44-4377-A6F7-0A9B88C80C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E76EF429-9C44-4377-A6F7-0A9B88C80C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E76EF429-9C44-4377-A6F7-0A9B88C80C5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D0FE4C4-E7A1-4B1F-8315-C40B7D43D329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D0FE4C4-E7A1-4B1F-8315-C40B7D43D329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D0FE4C4-E7A1-4B1F-8315-C40B7D43D329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D0FE4C4-E7A1-4B1F-8315-C40B7D43D329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACB1CA55-F396-41B7-96E9-56EB465C74E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACB1CA55-F396-41B7-96E9-56EB465C74E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACB1CA55-F396-41B7-96E9-56EB465C74E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACB1CA55-F396-41B7-96E9-56EB465C74E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{915AC6C0-FDC1-4F34-B9A9-F6C900CAA88E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{915AC6C0-FDC1-4F34-B9A9-F6C900CAA88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{915AC6C0-FDC1-4F34-B9A9-F6C900CAA88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{915AC6C0-FDC1-4F34-B9A9-F6C900CAA88E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C3A4547A-76E0-4340-B41E-4FA71EE27A00} = {EB9D0C95-BD7D-4422-9AC4-828DED475252}
+		{E76EF429-9C44-4377-A6F7-0A9B88C80C5F} = {EB9D0C95-BD7D-4422-9AC4-828DED475252}
+		{6D0FE4C4-E7A1-4B1F-8315-C40B7D43D329} = {A57BAE19-B7D6-444F-881F-845DFBF4AE42}
+		{ACB1CA55-F396-41B7-96E9-56EB465C74E0} = {A57BAE19-B7D6-444F-881F-845DFBF4AE42}
+		{4F07E2F4-7058-4026-948E-2F5C98013A62} = {9B4663AA-7E44-4E46-8194-E3B5A0382CFB}
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4} = {9B4663AA-7E44-4E46-8194-E3B5A0382CFB}
+		{915AC6C0-FDC1-4F34-B9A9-F6C900CAA88E} = {EB9D0C95-BD7D-4422-9AC4-828DED475252}
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C} = {9B4663AA-7E44-4E46-8194-E3B5A0382CFB}
+		{8CED340F-40CE-4E28-8286-0E08189B7310} = {9B4663AA-7E44-4E46-8194-E3B5A0382CFB}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 15
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs2012:8080/tfs/defaultcollection_2010
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Application.Bootstrapper\\GamesPortal.Client.Bootstrapper.csproj
+		SccProjectName1 = Application.Bootstrapper
+		SccLocalPath1 = Application.Bootstrapper
+		SccProjectUniqueName2 = Views.Wpf\\GamesPortal.Client.Wpf.csproj
+		SccProjectName2 = Views.Wpf
+		SccLocalPath2 = Views.Wpf
+		SccProjectUniqueName3 = ViewModels\\GamesPortal.Client.ViewModels.csproj
+		SccProjectName3 = ViewModels
+		SccLocalPath3 = ViewModels
+		SccProjectUniqueName4 = Models\\GamesPortal.Client.Models.csproj
+		SccProjectName4 = Models
+		SccLocalPath4 = Models
+		SccProjectUniqueName5 = Interfaces\\GamesPortal.Client.Interfaces.csproj
+		SccProjectName5 = Interfaces
+		SccLocalPath5 = Interfaces
+		SccProjectUniqueName6 = ViewModels.UnitTests\\ViewModels.UnitTests.csproj
+		SccProjectTopLevelParentUniqueName6 = GamesPortal.Client.sln
+		SccProjectName6 = ViewModels.UnitTests
+		SccLocalPath6 = ViewModels.UnitTests
+		SccProjectUniqueName7 = Views.Wpf.UnitTests\\Views.Wpf.UnitTests.csproj
+		SccProjectTopLevelParentUniqueName7 = GamesPortal.Client.sln
+		SccProjectName7 = Views.Wpf.UnitTests
+		SccLocalPath7 = Views.Wpf.UnitTests
+		SccProjectUniqueName8 = ..\\Dependencies\\Wpf.Common\\Wpf.Common\\Spark.Wpf.Common.csproj
+		SccProjectTopLevelParentUniqueName8 = GamesPortal.Client.sln
+		SccProjectName8 = ../Dependencies/Wpf.Common/Wpf.Common
+		SccLocalPath8 = ..\\Dependencies\\Wpf.Common\\Wpf.Common
+		SccProjectUniqueName9 = ..\\Dependencies\\Wpf.Common\\Wpf.Common.UnitTests\\Spark.Wpf.Common.UnitTests.csproj
+		SccProjectTopLevelParentUniqueName9 = GamesPortal.Client.sln
+		SccProjectName9 = ../Dependencies/Wpf.Common/Wpf.Common.UnitTests
+		SccLocalPath9 = ..\\Dependencies\\Wpf.Common\\Wpf.Common.UnitTests
+		SccProjectUniqueName10 = ..\\Dependencies\\Spark.Infra\\Spark.Infra\\Spark.Infra.csproj
+		SccProjectTopLevelParentUniqueName10 = GamesPortal.Client.sln
+		SccProjectName10 = ../Dependencies/Spark.Infra/Spark.Infra
+		SccLocalPath10 = ..\\Dependencies\\Spark.Infra\\Spark.Infra
+		SccProjectUniqueName11 = ..\\Dependencies\\Spark.Infra\\Spark.Infra.Tests\\Spark.Infra.Tests.csproj
+		SccProjectTopLevelParentUniqueName11 = GamesPortal.Client.sln
+		SccProjectName11 = ../Dependencies/Spark.Infra/Spark.Infra.Tests
+		SccLocalPath11 = ..\\Dependencies\\Spark.Infra\\Spark.Infra.Tests
+		SccProjectUniqueName12 = Publish\\Dev\\GamesPortal.Client.DEV.csproj
+		SccProjectTopLevelParentUniqueName12 = GamesPortal.Client.sln
+		SccProjectName12 = Publish/Dev
+		SccLocalPath12 = Publish\\Dev
+		SccProjectUniqueName13 = Publish\\Production\\GamesPortal.Client.Production.csproj
+		SccProjectTopLevelParentUniqueName13 = GamesPortal.Client.sln
+		SccProjectName13 = Publish/Production
+		SccLocalPath13 = Publish\\Production
+		SccProjectUniqueName14 = Publish\\QA\\GamesPortal.Client.QA.csproj
+		SccProjectTopLevelParentUniqueName14 = GamesPortal.Client.sln
+		SccProjectName14 = Publish/QA
+		SccLocalPath14 = Publish\\QA
+	EndGlobalSection
+EndGlobal

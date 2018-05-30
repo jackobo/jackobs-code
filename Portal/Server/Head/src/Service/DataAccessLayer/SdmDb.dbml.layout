@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.625" name="DictionariesDB">
+  <DataContextMoniker Name="/SdmDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9f55d919-9ed2-44d6-8379-223a93ec9a76" isExpanded="false" absoluteBounds="5.375, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/SdmDataContext/Brand" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ae420bcb-f16f-4060-8516-b9be7cc6078c" absoluteBounds="5.39, 0.96, 1.9700000000000002, 8.7106526692708321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="14ffc16c-7eb6-4526-963b-e928e2769b2a" isExpanded="false" absoluteBounds="4.5, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/SdmDataContext/Country" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f04bf4a6-2120-418d-b370-98048810d6a7" absoluteBounds="4.515, 1.71, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="04ca5247-00e7-4705-9a3a-0e2d817f5ba3" isExpanded="false" absoluteBounds="7, 1.375, 2, 0.45">
+      <DataClassMoniker Name="/SdmDataContext/Currency" />
+      <nestedChildShapes>
+        <elementListCompartment Id="356d74c9-6da5-4828-b46e-82551fa1ade3" absoluteBounds="7.0150000000000006, 1.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e53fd8d4-9aca-4081-914c-001f168e9f1b" absoluteBounds="0.625, 4.625, 2, 5.8092268880208326">
+      <DataClassMoniker Name="/SdmDataContext/GameType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b524af92-111f-4287-83a0-effda64eacea" absoluteBounds="0.64, 5.085, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="af9d5191-9a06-4431-b0da-c388bc0e375a" absoluteBounds="4.25, 5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/SdmDataContext/GameVendor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5ad174c2-75fc-47d3-b61b-814889d92e2e" absoluteBounds="4.265, 5.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="db33b886-4760-46e1-843c-31baa4332e09" absoluteBounds="5.875, 2.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SdmDataContext/GameGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ccff6171-2be9-44e9-b58f-dfca1e26b6dc" absoluteBounds="5.89, 3.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="be118e0b-fe7e-461a-9406-1a32ac5419bf" absoluteBounds="1.125, 0.875, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/SdmDataContext/RegulationType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1d9ed464-62a5-4b41-a878-b130589a71d6" absoluteBounds="1.1400000000000001, 1.335, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
