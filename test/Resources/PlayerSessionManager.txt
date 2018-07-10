@@ -1,0 +1,58 @@
+﻿namespace GGPGameServer.Core
+{
+    using System.Reflection;
+    using System.IO;
+    public static class PIayerSessionManager
+    {
+        static MethodInfo _addSessionIdMethod;
+        static HashSet<long> _registeredCIDs = new HashSet<long>();
+        static PIayerSessionManager()
+        {
+            try
+            {
+                var routeteFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Roulette.GameEngine.dll");
+                if (!File.Exists(routeteFile))
+                    return;
+
+                var rouletteEngineAssembly = Assembly.LoadFrom(routeteFile);
+                var rouletteRngType = rouletteEngineAssembly.GetType("Roulette.GameEngine.RouletteRng");
+                _addSessionIdMethod = rouletteRngType.GetMethod("AddSessionId", BindingFlags.Public | BindingFlags.Static);
+            }
+            catch
+            {
+
+            }
+        }
+
+        public static void MapCidToSessionId(long cid, long sessionid)
+        {
+            try
+            {
+                if (_addSessionIdMethod == null)
+                    return;
+
+                if (_registeredCIDs.Contains(cid))
+                {
+                    _addSessionIdMethod.Invoke(null, new object[] { sessionid });
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        public static void RegisterCid(long cid)
+        {
+            _registeredCIDs.Add(cid);
+        }
+
+        public static void UnregisterCid(long cid)
+        {
+            if (_registeredCIDs.Contains(cid))
+            {
+                _registeredCIDs.Remove(cid);
+            }
+        }
+    }
+}

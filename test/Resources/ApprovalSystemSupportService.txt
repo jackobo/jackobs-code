@@ -1,0 +1,93 @@
+﻿namespace GGPGameServer.Host
+{
+    public partial interface IApprovalSystemSupportService
+    {
+        [OperationContract]
+        void RegisterCid(long cid);
+        [OperationContract]
+        void UnregisterCid(long cid);
+    }
+
+    public partial class ApprovalSystemSupportService
+    {
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        [System.ServiceModel.ServiceContractAttribute(ConfigurationName = "CoreOperationsService.ICoreOperationsService")]
+        public interface ICoreOperationsService
+        {
+            [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ICoreOperationsService/RegisterCid", ReplyAction = "http://tempuri.org/ICoreOperationsService/RegisterCidResponse")]
+            void RegisterCid(long cid);
+
+            [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/ICoreOperationsService/UnregisterCid", ReplyAction = "http://tempuri.org/ICoreOperationsService/UnregisterCidResponse")]
+            void UnregisterCid(long cid);
+        }
+
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+        public partial class CoreOperationsServiceClient : System.ServiceModel.ClientBase<ICoreOperationsService>, ICoreOperationsService
+        {
+
+            public CoreOperationsServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
+               base(binding, remoteAddress)
+            {
+            }
+
+            public void RegisterCid(long cid)
+            {
+                base.Channel.RegisterCid(cid);
+            }
+
+            public void UnregisterCid(long cid)
+            {
+                base.Channel.UnregisterCid(cid);
+            }
+        }
+        
+        private CoreOperationsServiceClient CreateServiceProxy()
+        {
+            return new CoreOperationsServiceClient(DefaultNetNamedPipeBinding, new EndpointAddress("net.pipe://localhost/CoreOperationsService0"));
+        }
+
+        private static readonly int Default_MaxReceivedMessageSize = 15728640; //15MB
+        private static readonly int Default_MaxBufferSize = Default_MaxReceivedMessageSize;
+
+        private static readonly int Default_MaxStringContentLength = 10485760; //10MB
+        private static readonly int Default_MaxArrayLength = 10485760; //10MB
+        private static readonly int Default_MaxBytesPerRead = 1048576; //1MB
+
+        private static NetNamedPipeBinding DefaultNetNamedPipeBinding
+        {
+            get
+            {
+                var binding = new NetNamedPipeBinding(NetNamedPipeSecurityMode.None)
+                {
+                    MaxBufferSize = Default_MaxBufferSize,
+                    MaxReceivedMessageSize = Default_MaxReceivedMessageSize
+                };
+
+                if (binding.ReaderQuotas == null)
+                    binding.ReaderQuotas = new System.Xml.XmlDictionaryReaderQuotas();
+
+                binding.ReaderQuotas.MaxStringContentLength = Default_MaxStringContentLength;
+                binding.ReaderQuotas.MaxArrayLength = Default_MaxArrayLength;
+                binding.ReaderQuotas.MaxBytesPerRead = Default_MaxBytesPerRead;
+                return binding;
+            }
+        }
+
+        public void RegisterCid(long cid)
+        {
+            using (var proxy = CreateServiceProxy())
+            {
+                proxy.RegisterCid(cid);
+            }   
+        }
+
+        public void UnregisterCid(long cid)
+        {
+            using (var proxy = CreateServiceProxy())
+            {
+                proxy.UnregisterCid(cid);
+            }
+        }
+    }
+}
