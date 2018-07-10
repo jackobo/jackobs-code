@@ -16,7 +16,10 @@
 
                 var rouletteEngineAssembly = Assembly.LoadFrom(routeteFile);
                 var rouletteRngType = rouletteEngineAssembly.GetType("Roulette.GameEngine.RouletteRng");
-                _addSessionIdMethod = rouletteRngType.GetMethod("AddSessionId", BindingFlags.Public | BindingFlags.Static);
+                if(rouletteRngType != null)
+                {
+                    _addSessionIdMethod = rouletteRngType.GetMethod("AddSessionId", BindingFlags.Public | BindingFlags.Static);
+                }
             }
             catch
             {

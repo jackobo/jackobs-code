@@ -3,9 +3,9 @@
     public partial interface IApprovalSystemSupportService
     {
         [OperationContract]
-        void RegisterCid(long cid);
+        string RegisterCid(long cid);
         [OperationContract]
-        void UnregisterCid(long cid);
+        string UnregisterCid(long cid);
     }
 
     public partial class ApprovalSystemSupportService
@@ -74,19 +74,36 @@
             }
         }
 
-        public void RegisterCid(long cid)
+        public string RegisterCid(long cid)
         {
-            using (var proxy = CreateServiceProxy())
+            try
             {
-                proxy.RegisterCid(cid);
-            }   
+                using (var proxy = CreateServiceProxy())
+                {
+                    proxy.RegisterCid(cid);
+                }
+                return "OK";
+            }
+            catch(Exception ex)
+            {
+                return ex.ToString();
+            }
         }
 
-        public void UnregisterCid(long cid)
+        public string UnregisterCid(long cid)
         {
-            using (var proxy = CreateServiceProxy())
+            try
             {
-                proxy.UnregisterCid(cid);
+                using (var proxy = CreateServiceProxy())
+                {
+                    proxy.UnregisterCid(cid);
+                }
+
+                return "OK";
+            }
+            catch(Exception ex)
+            {
+                return ex.ToString();
             }
         }
     }
