@@ -1,17 +1,16 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import Link from "./header-link-component";
+import Separator from "./nav-link-separator-component";
 
 const HeaderComponent: React.FunctionComponent = () => {
   const activeStyle = { color: "#F15B2A" };
   return (
     <nav>
-      <NavLink to="/" exact activeStyle={activeStyle}>
-        Home
-      </NavLink>
-      {" | "}
-      <NavLink to="/about" activeStyle={activeStyle}>
-        About
-      </NavLink>
+      <Link to="/" exact={true} text="Home" />
+      <Separator />
+      <Link to="/courses" text="Courses" />
+      <Separator />
+      <Link to="/about" text="About" />
     </nav>
   );
 };
