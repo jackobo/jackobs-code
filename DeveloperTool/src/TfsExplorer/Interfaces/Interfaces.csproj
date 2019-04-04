@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD2F5A4F-7927-487C-AADE-155F25151219}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Spark.TfsExplorer.Interfaces</RootNamespace>
+    <AssemblyName>Spark.TfsExplorer.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BranchRelatedInterfaces\IProductionBranch.cs" />
+    <Compile Include="BranchRelatedInterfaces\IProductionEnvironment.cs" />
+    <Compile Include="BranchRelatedInterfaces\IInstaller.cs" />
+    <Compile Include="DeployEnvironmentEnum.cs" />
+    <Compile Include="Events\ComponentDeletedEventData.cs" />
+    <Compile Include="Events\ComponentRenamedEventData.cs" />
+    <Compile Include="Events\CreateDevBranchFinishEventData.cs" />
+    <Compile Include="Events\FeatureBranchUpdateEventData.cs" />
+    <Compile Include="Events\NewFeatureBranchEventData.cs" />
+    <Compile Include="BranchRelatedInterfaces\IDevBranch.cs" />
+    <Compile Include="BranchRelatedInterfaces\IFeatureBranch.cs" />
+    <Compile Include="Events\NewProductionInstallerEventData.cs" />
+    <Compile Include="Events\NewQAInstallerEventData.cs" />
+    <Compile Include="Events\InstallerBranchedEventData.cs" />
+    <Compile Include="Events\NewRootBranchEventData.cs" />
+    <Compile Include="IComponentUniqueId.cs" />
+    <Compile Include="ILocalPath.cs" />
+    <Compile Include="IPublishPayloadSerializer.cs" />
+    <Compile Include="IServerPath.cs" />
+    <Compile Include="IWorkspaceSelector.cs" />
+    <Compile Include="LogicalComponents\IComponentDeleteTransaction.cs" />
+    <Compile Include="LogicalComponents\IComponentRenameTransaction.cs" />
+    <Compile Include="LogicalComponents\ICoreComponent.cs" />
+    <Compile Include="BranchRelatedInterfaces\IRootBranch.cs" />
+    <Compile Include="LogicalComponents\IGameComponent.cs" />
+    <Compile Include="LogicalComponents\IGameEngineComponent.cs" />
+    <Compile Include="LogicalComponents\ILogicalComponent.cs" />
+    <Compile Include="BranchRelatedInterfaces\IMainBranch.cs" />
+    <Compile Include="ComponentsPublishers\IComponentPublisher.cs" />
+    <Compile Include="ComponentsPublishers\ISupportPublishing.cs" />
+    <Compile Include="IPublishPayload.cs" />
+    <Compile Include="SourceControlRelatedInterfaces\IMergeSet.cs" />
+    <Compile Include="BranchRelatedInterfaces\IQABranch.cs" />
+    <Compile Include="LogicalComponents\IComponentsRepository.cs" />
+    <Compile Include="SourceControlRelatedInterfaces\ISourceControlFolder.cs" />
+    <Compile Include="SourceControlRelatedInterfaces\LatestMergeWorkItemsSettings.cs" />
+    <Compile Include="LogicalComponents\ILogicalComponentVisitor.cs" />
+    <Compile Include="LogicalComponents\LogicalComponentVisitor.cs" />
+    <Compile Include="ProgressCallbackData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Dependencies\Spark.Infra\Spark.Infra\Spark.Infra.csproj">
+      <Project>{02E9598A-F44E-4359-844A-DFC8BDC9E36C}</Project>
+      <Name>Spark.Infra</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

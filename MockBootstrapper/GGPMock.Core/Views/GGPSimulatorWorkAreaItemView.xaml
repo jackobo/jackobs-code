@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="GGPMockBootstrapper.Views.GGPSimulatorWorkAreaItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" VerticalAlignment="Center">
+            <Button DockPanel.Dock="Left" FontSize="14" FontWeight="Bold" Margin="10" Style="{StaticResource LinkButton}" Content="{Binding Path=OpenGGPSimulatorAction.Caption}" Command="{Binding Path=OpenGGPSimulatorAction.Command}"/>
+            <TextBlock DockPanel.Dock="Right" Text="If you have trouble viewing the simulator here please open IE browser and clear its cache!" FontSize="14" FontWeight="Bold" Foreground="Green" Margin="10"/>
+            <TextBlock/>
+        </DockPanel>
+
+        <WebBrowser x:Name="webBrowser"/>
+    </DockPanel>
+</UserControl>

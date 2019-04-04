@@ -1,0 +1,5 @@
+﻿mime-types to add
+
+.xmm text/xml
+.api application/octet-stream
+.lig application/octet-stream

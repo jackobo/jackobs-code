@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6f8282e3-27af-4a4b-9477-4bd2d3041ed3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>false</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/GamesPortalHubContext" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GamesPortalHubContext.wsdl" MetadataType="Wsdl" ID="763a1fb5-1097-423b-9ea0-9c9a9d1dba82" SourceId="1" SourceUrl="http://localhost/GamesPortalHubContext?wsdl" />
+    <MetadataFile FileName="GamesPortalHubContext3.xsd" MetadataType="Schema" ID="57409677-4aa6-4967-a5a9-eba0d4571a6d" SourceId="1" SourceUrl="http://localhost/GamesPortalHubContext?xsd=xsd3" />
+    <MetadataFile FileName="GamesPortalHubContext1.xsd" MetadataType="Schema" ID="b0055cf4-368b-4306-ac22-046eff7fb631" SourceId="1" SourceUrl="http://localhost/GamesPortalHubContext?xsd=xsd0" />
+    <MetadataFile FileName="GamesPortalHubContext.disco" MetadataType="Disco" ID="a11d836d-616a-4c5c-97c7-7e969a25fb1d" SourceId="1" SourceUrl="http://localhost/GamesPortalHubContext?disco" />
+    <MetadataFile FileName="GamesPortalHubContext2.xsd" MetadataType="Schema" ID="2f63df5d-dcb7-4ac5-bb9e-9413a66a1f60" SourceId="1" SourceUrl="http://localhost/GamesPortalHubContext?xsd=xsd2" />
+    <MetadataFile FileName="GamesPortalHubContext.xsd" MetadataType="Schema" ID="b9e0b625-bea0-4868-86b6-7dd56eebd2c7" SourceId="1" SourceUrl="http://localhost/GamesPortalHubContext?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

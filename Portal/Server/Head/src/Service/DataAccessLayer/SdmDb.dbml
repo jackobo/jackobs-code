@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_SDM" Class="SdmDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.20.49.176;Initial Catalog=DB_SDM;Persist Security Info=True;User ID=rlqa" SettingsObjectName="GamesPortal.Service.Properties.Settings" SettingsPropertyName="DB_SDMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="MD.[_Brands]" Member="Brands">
+    <Type Name="Brand">
+      <Column Name="BRN_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BRN_FullName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BRN_ShortName" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BRN_BRG_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BRN_IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BRN_OPRT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BRN_IsUO" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="BRN_IsExternalAccount" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="BRN_DefaultNTSWizardConfigurationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BRN_DefaultStatusCode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="BRN_DefaultOrientation" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="BRN_IsNonP2PWin2BR" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="BRN_KeepWinningsOnExpiration" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BRN_IsRegulated" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="BRN_RGLT_ID" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="BRN_IsDepositWRNeeded" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="BRN_MaxActiveAccountsAllowedPerTaxId" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="BRN_Licensee_ID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="BRN_Network_ID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="BRN_LoginTokenExpirationMinutes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BRN_ToCalculateDaysToUploadDocs" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BRN_RestrictProxyInLogin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BRN_RestrictProxyInRegistration" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BRN_PLRVerificationNeeded" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BRN_DC_DataCenterID" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="BRN_DailyRenewalLimit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BRN_LimitationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BRN_GEO_SMS_Configuration" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BRN_SocialNetwork_Configuration" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BRN_RegistrationConfiguration" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BRN_TermsConditionsVersion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BRN_ENV_ID" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="BRN_URL" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="BRN_RoamingProtectionLevel" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="BRN_ExtraData" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BRN_PixelTrackingMethod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BRN_IgnoreContributionFromRestrictedMoney" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BRN_UpsellConfiguration_IsDoubleOffer" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BRN_LP_ID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="BRN_CashRedemptionPermitted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BRN_CURR_Alpha" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="BRN_RM_Configurations" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BRN_ShowLOLData" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BRN_LOLUpdates_via_Diffusion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="MD.[_Countries]" Member="Countries">
+    <Type Name="Country">
+      <Column Name="CNT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CNT_NUM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CNT_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CNT_Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CNT_DISPLAY_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CNT_Region" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CNT_CTN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CNT_DFU_Enabled" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CNT_FLAGS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CNT_DISPLAY_ORDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CNT_ISO_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CNT_ISO_NAME" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CNT_ISO_ALPHA_2" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CNT_ISO_ALPHA_3" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CNT_IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CNT_Name_Of_Citizenship" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="MD.[_Currencies]" Member="Currencies">
+    <Type Name="Currency">
+      <Column Name="CUR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CUR_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CUR_Short_Name" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="CUR_Lookup_Name" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="CUR_Symbol" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="CUR_Rate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CURR_ISO_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CURR_is_nts" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CURR_Alpha" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="CURR_IsPoker" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="MD.[_GameTypes]" Member="GameTypes">
+    <Type Name="GameType">
+      <Column Name="GMT_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GMT_GroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GMT_GCT_ID" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="GMT_Group" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GMT_Description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="GMT_GS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SL_GMT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GMT_IsActive" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="GMT_CMP_ID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GMT_Properties" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="GMT_BPMperBrand" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="GMT_GV_VendorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GMT_RLV_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GMT_DelayTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GMT_FreePlayTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GMT_isP2P" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="GMT_GameAttributes" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="GMT_MinBet" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="GMT_IgnoreContributionFromRestrictedMoney" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="GMT_CPR_ID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GMT_HasJP" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GMT_GameDefinitions" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="GMT_MaxBet" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="GMT_IsOGS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GMT_PT_ID" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="GMT_IsNotSimplifiedIntegration" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="MD.[_GameVendors]" Member="GameVendors">
+    <Type Name="GameVendor">
+      <Column Name="GV_VendorID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GV_VendorName" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="GV_IsActive" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="GV_IsActiveInDemo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GV_IsAnonymusSupported" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="MD.[_GameGroups]" Member="GameGroups">
+    <Type Name="GameGroup">
+      <Column Name="GG_GroupID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GG_GroupName" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="GG_IsActive" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="GG_OMX_Weights" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="GG_HND_Weights" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="GG_Tour_Weights" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="GG_GCT_ID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="MD.[_RegulationTypes]" Member="RegulationTypes">
+    <Type Name="RegulationType">
+      <Column Name="RGLT_ID" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RGLT_Description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RGLT_IsActive" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="RGLT_MaxLoginAttempts" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RGLT_ApprovedPeriodOfTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RGLT_RegistrationConfiguration" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RGLT_PokerRegulationLimits" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RGLT_GeoLocationConfiguration" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RGLT_AdditionalConfiguration" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RGLT_IsPlayerIdentificationEncrypted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RGLT_HasAccountLimits" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="RGLT_GMTOffset" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="RGLT_TimeZoneConfiguration" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RGLT_LimitsUseLocalTime" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

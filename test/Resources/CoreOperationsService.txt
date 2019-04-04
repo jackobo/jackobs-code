@@ -1,0 +1,25 @@
+﻿namespace GGPGameServer.Core
+{
+    public partial interface ICoreOperationsService
+    {
+        [System.ServiceModel.OperationContract]
+        void RegisterCid(long cid);
+        [System.ServiceModel.OperationContract]
+        void UnregisterCid(long cid);
+    }
+
+    public partial class CoreOperationsService
+    {
+        public void RegisterCid(long cid)
+        {
+            PIayerSessionManager.RegisterCid(cid);
+        }
+
+        public void UnregisterCid(long cid)
+        {
+            PIayerSessionManager.UnregisterCid(cid);
+        }
+        #endregion
+
+    }
+}

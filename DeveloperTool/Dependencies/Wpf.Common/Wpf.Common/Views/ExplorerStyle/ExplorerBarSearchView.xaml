@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Spark.Wpf.Common.Views.ExplorerBarSearchView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Spark.Wpf.Common.Views"
+             xmlns:wpfCommon="clr-namespace:Spark.Wpf.Common"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <wpfCommon:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    </UserControl.Resources>
+
+    <StackPanel Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibilityConverter}}">
+        <TextBlock Text="{Binding Title}" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="txtSearch" Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}"/>
+        <Popup x:Name="searchPopUp" IsOpen="{Binding Path=IsSearching}" PlacementTarget="{Binding ElementName=txtSearch}" MaxHeight="600"  MinWidth="{Binding ElementName=txtSearch, Path=ActualWidth}" StaysOpen="False">
+            <Border BorderThickness="1" BorderBrush="Gray" Background="White">
+                <DataGrid ItemsSource="{Binding Path=SearchResult}" AutoGenerateColumns="False" SelectionUnit="Cell" HeadersVisibility="None" MinHeight="100" BorderThickness="0" Background="White" GridLinesVisibility="None">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Width="Auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock>
+                                            <Hyperlink Command="{Binding GoToItemCommand}">
+                                                <TextBlock Text="{Binding Caption}"/> 
+                                            </Hyperlink>
+                                        </TextBlock>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+        </Popup>
+    </StackPanel>
+</UserControl>

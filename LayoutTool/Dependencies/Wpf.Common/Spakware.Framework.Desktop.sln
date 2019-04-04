@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Wpf.Common", "Wpf.Common\Spark.Wpf.Common.csproj", "{4F07E2F4-7058-4026-948E-2F5C98013A62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Wpf.Common.UnitTests", "Wpf.Common.UnitTests\Spark.Wpf.Common.UnitTests.csproj", "{37186D17-0E24-4108-BCD7-17E960BCBAF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Infra", "..\Dependencies\Spark.Infra\Spark.Infra\Spark.Infra.csproj", "{02E9598A-F44E-4359-844A-DFC8BDC9E36C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{5D0FE900-A694-4880-9FBB-C8CC83F6E6BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Infra.Tests", "..\Dependencies\Spark.Infra\Spark.Infra.Tests\Spark.Infra.Tests.csproj", "{8CED340F-40CE-4E28-8286-0E08189B7310}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C} = {5D0FE900-A694-4880-9FBB-C8CC83F6E6BB}
+		{8CED340F-40CE-4E28-8286-0E08189B7310} = {5D0FE900-A694-4880-9FBB-C8CC83F6E6BB}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs2012:8080/tfs/defaultcollection_2010
+		SccProjectUniqueName0 = Wpf.Common\\Spark.Wpf.Common.csproj
+		SccProjectName0 = Wpf.Common
+		SccAuxPath0 = http://tfs2012:8080/tfs/defaultcollection_2010
+		SccLocalPath0 = Wpf.Common
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = Wpf.Common.UnitTests\\Spark.Wpf.Common.UnitTests.csproj
+		SccProjectName1 = Wpf.Common.UnitTests
+		SccAuxPath1 = http://tfs2012:8080/tfs/defaultcollection_2010
+		SccLocalPath1 = Wpf.Common.UnitTests
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = ..\\Dependencies\\Spark.Infra\\Spark.Infra\\Spark.Infra.csproj
+		SccProjectTopLevelParentUniqueName2 = Spakware.Framework.Desktop.sln
+		SccProjectName2 = ../Dependencies/Spark.Infra/Spark.Infra
+		SccAuxPath2 = http://tfs2012:8080/tfs/defaultcollection_2010
+		SccLocalPath2 = ..\\Dependencies\\Spark.Infra\\Spark.Infra
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = ..\\Dependencies\\Spark.Infra\\Spark.Infra.Tests\\Spark.Infra.Tests.csproj
+		SccProjectTopLevelParentUniqueName3 = Spakware.Framework.Desktop.sln
+		SccProjectName3 = ../Dependencies/Spark.Infra/Spark.Infra.Tests
+		SccAuxPath3 = http://tfs2012:8080/tfs/defaultcollection_2010
+		SccLocalPath3 = ..\\Dependencies\\Spark.Infra\\Spark.Infra.Tests
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C5001D0-630D-4D30-AD08-A7DC81211539}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Spark.TfsExplorer.Models</RootNamespace>
+    <AssemblyName>Spark.TfsExplorer.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Prism, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Core.6.2.0\lib\net45\Prism.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism.Unity.Wpf, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Unity.6.2.0\lib\net45\Prism.Unity.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism.Wpf, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Wpf.6.2.0\lib\net45\Prism.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Wpf.6.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Build\Builders\Actions\PostCompile\CreateComponentUniqueIdTxtAction.cs" />
+    <Compile Include="Build\Builders\Actions\PostCompile\Deployment\CreateComponentDescriptionTxtAction.cs" />
+    <Compile Include="Build\Builders\Actions\PostCompile\WritePublishHistoryAction.cs" />
+    <Compile Include="Build\Builders\Implementations\AntPropertyNames.cs" />
+    <Compile Include="Build\Builders\Implementations\GenericComponentDescriptionBuilder.cs" />
+    <Compile Include="Build\BuildType.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\ComponentUniqueIdBuilder.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\GamePartContentProvider.cs" />
+    <Compile Include="Build\ContentProviders\Interfaces\IComponentUniqueIdBuilder.cs" />
+    <Compile Include="Build\Customization\BuildCustomizationConfiguration.cs" />
+    <Compile Include="Build\Customization\VoidCustomizationProvider.cs" />
+    <Compile Include="Build\Services\Implementations\FileSystemAdapter.cs" />
+    <Compile Include="Build\Services\Interfaces\IFileSystemAdapter.cs" />
+    <Compile Include="Design\Branches\ComponentsRenameDeleteExecutor.cs" />
+    <Compile Include="Design\Branches\MergeSetsReader.cs" />
+    <Compile Include="Design\Branches\RootBranchBuilder.cs" />
+    <Compile Include="Design\Interfaces\IMergeSetsReader.cs" />
+    <Compile Include="Design\Interfaces\IRootBranchExtended.cs" />
+    <Compile Include="Design\Interfaces\IRootBranchGenerator.cs" />
+    <Compile Include="Design\LogicalComponents\ComponentDeleteTransaction.cs" />
+    <Compile Include="Design\LogicalComponents\ComponentRelocatedEventData.cs" />
+    <Compile Include="Design\LogicalComponents\ComponentRenameTransaction.cs" />
+    <Compile Include="Design\LogicalComponents\NonDeployableComponents.cs" />
+    <Compile Include="FileBasedComponentUniqueID.cs" />
+    <Compile Include="Design\Branches\BranchBuilder.cs" />
+    <Compile Include="Build\Customization\BuildCustomizationProvider.cs" />
+    <Compile Include="Build\Customization\IBuildCustomizationProvider.cs" />
+    <Compile Include="Build\Builders\Actions\PostCompile\Validation\CheckOutputFileExistAction.cs" />
+    <Compile Include="Build\Builders\Actions\PreCompile\CreateDeploymentContent.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\BuildOutputFileCustomizer.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\OutputFiles\CoreComponentOutputFile.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\OutputFiles\GameEngineOutputFile.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\OutputFiles\GameLimitsOutputFile.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\OutputFiles\GameMathOutputFile.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\OutputFiles\GameOutputFile.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\OutputFiles\BinaryOutputFile.cs" />
+    <Compile Include="Build\ContentProviders\Interfaces\DeployableFileDefinition.cs" />
+    <Compile Include="Build\ContentProviders\Interfaces\IOutputFile.cs" />
+    <Compile Include="Build\Services\Implementations\ApprovalSystemAdapter.cs" />
+    <Compile Include="Build\Services\Implementations\GGPDeploymentContent.cs" />
+    <Compile Include="Build\Builders\Actions\PreCompile\Bm2AsBeginAction.cs" />
+    <Compile Include="Build\Builders\Actions\PostCompile\Bm2AsEndAction.cs" />
+    <Compile Include="Build\Builders\Actions\PostCompile\CheckInAction.cs" />
+    <Compile Include="Build\Builders\Actions\Compile\CompileAction.cs" />
+    <Compile Include="Build\Builders\Actions\PostCompile\Deployment\DeployFileAction.cs" />
+    <Compile Include="Build\Builders\Actions\PreCompile\AssemblyInfoVersionUpdateAction.cs" />
+    <Compile Include="Build\Builders\Actions\PreCompile\GameFileVersionUpdateAction.cs" />
+    <Compile Include="Build\Services\Implementations\BuildContentInfoBuilder.cs" />
+    <Compile Include="Build\Services\Implementations\BuildContext.cs" />
+    <Compile Include="Build\Services\Implementations\BuildServices.cs" />
+    <Compile Include="Build\Services\Implementations\ComponentsBuildersReader.cs" />
+    <Compile Include="Build\Builders\Implementations\CoreComponentBuilder.cs" />
+    <Compile Include="Build\Builders\Implementations\GameEngineBuilder.cs" />
+    <Compile Include="Build\Builders\Implementations\GameLimitsBuilder.cs" />
+    <Compile Include="Build\Builders\Implementations\GameMathBuilder.cs" />
+    <Compile Include="Build\Services\Implementations\MockSourceControlAdapter.cs" />
+    <Compile Include="Build\Services\Implementations\TfsSourceControlAdapter.cs" />
+    <Compile Include="Build\Services\Interfaces\IApprovalSystemAdapter.cs" />
+    <Compile Include="Build\Services\Interfaces\ISourceControlAdapter.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\GGPSolutionParser.cs" />
+    <Compile Include="Build\ContentProviders\Interfaces\IGGPSolutionParser.cs" />
+    <Compile Include="Build\GGPSolutionBuilder.cs" />
+    <Compile Include="Build\Builders\Interfaces\IBuildAction.cs" />
+    <Compile Include="Build\Services\Interfaces\IBuildContext.cs" />
+    <Compile Include="Build\Builders\Interfaces\IComponentBuilder.cs" />
+    <Compile Include="Build\Services\Interfaces\IDeploymentContentBuilder.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\PackagesContentProvider.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\CompilableComponentContentProvider.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\CompilableCoreComponentContentProvider.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\GameContentProvider.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\GameEngineContentProvider.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\GameLimitsContentProvider.cs" />
+    <Compile Include="Build\ContentProviders\Implementations\GameMathContentProvider.cs" />
+    <Compile Include="Build\Builders\Implementations\ComponentBuilderFactory.cs" />
+    <Compile Include="Build\ContentProviders\Interfaces\ICompilableComponentContentProvider.cs" />
+    <Compile Include="Build\ContentProviders\Interfaces\IComponentContentProvider.cs" />
+    <Compile Include="Build\ContentProviders\Interfaces\ICoreComponentContentProvider.cs" />
+    <Compile Include="Build\ContentProviders\Interfaces\IGameContentProvider.cs" />
+    <Compile Include="Build\ContentProviders\Interfaces\IGameEngineContentProvider.cs" />
+    <Compile Include="Build\Builders\Interfaces\IComponentBuilderFactory.cs" />
+    <Compile Include="Build\Services\Interfaces\IComponentsBuildersReader.cs" />
+    <Compile Include="Build\VisualStudio\IVisualStudioProject.cs" />
+    <Compile Include="Build\Services\Interfaces\IBuildServices.cs" />
+    <Compile Include="Build\VisualStudio\VisualStudioProjectExtensions.cs" />
+    <Compile Include="Build\VisualStudio\VisualStudioNames.cs" />
+    <Compile Include="Build\VisualStudio\VisualStudioProject.cs" />
+    <Compile Include="Design\Branches\DevBranch.cs" />
+    <Compile Include="Design\Branches\EnvironmentBranch.cs" />
+    <Compile Include="Design\Branches\FeatureBranch.cs" />
+    <Compile Include="Design\Branches\FeaturesBranchesReader.cs" />
+    <Compile Include="Design\Branches\Installer.cs" />
+    <Compile Include="Design\LogicalComponents\InstallerComponentsReader.cs" />
+    <Compile Include="Design\Branches\InstallerSynchronizer.cs" />
+    <Compile Include="Design\Branches\ProductionInstaller.cs" />
+    <Compile Include="Design\Branches\InstallerBranchBuilder.cs" />
+    <Compile Include="Design\Branches\LogicalBranchComponentFactory.cs" />
+    <Compile Include="Design\Branches\ProductionBranch.cs" />
+    <Compile Include="Design\Branches\ProductionEnvironment.cs" />
+    <Compile Include="Design\Branches\QAInstaller.cs" />
+    <Compile Include="Design\Interfaces\IComponentsReader.cs" />
+    <Compile Include="Design\Interfaces\IComponentsReaderFactory.cs" />
+    <Compile Include="Design\LogicalComponents\ComponentsReader.cs" />
+    <Compile Include="Design\LogicalComponents\LogicalComponentFactory.cs" />
+    <Compile Include="DeveloperToolServiceProxyFactory.cs" />
+    <Compile Include="Folders\DevFolder.cs" />
+    <Compile Include="Folders\GGPBootstrapperFolder.cs" />
+    <Compile Include="Folders\IInstallerFolder.cs" />
+    <Compile Include="Folders\KnownFiles\BuildCustomizationXml.cs" />
+    <Compile Include="Folders\KnownFiles\ComponentUniqueIdTxt.cs" />
+    <Compile Include="Folders\KnownFiles\HotfixTriggerIni.cs" />
+    <Compile Include="Folders\KnownFiles\WellKnownFileName.cs" />
+    <Compile Include="Folders\NonDeployableFolder.cs" />
+    <Compile Include="Folders\ProdFolder.cs" />
+    <Compile Include="Folders\ProductionEnvironmentFolder.cs" />
+    <Compile Include="Folders\HotFixTriggerFolder.cs" />
+    <Compile Include="Folders\ProductionInstallerFolder.cs" />
+    <Compile Include="Folders\ProductionInstallersFolder.cs" />
+    <Compile Include="Folders\QAFolder.cs" />
+    <Compile Include="Folders\QAInstallerFolder.cs" />
+    <Compile Include="Folders\QAInstallersFolders.cs" />
+    <Compile Include="MemoryBasedComponentUniqueID.cs" />
+    <Compile Include="Publish\ComponentPublisher.cs" />
+    <Compile Include="Publish\ComponentsPublishersReader.cs" />
+    <Compile Include="Publish\CoreComponentPublisher.cs" />
+    <Compile Include="Publish\GameEnginePublisher.cs" />
+    <Compile Include="Publish\GameLimitsPublisher.cs" />
+    <Compile Include="Publish\GameMathPublisher.cs" />
+    <Compile Include="Publish\HotFixVersionsProvider.cs" />
+    <Compile Include="Publish\Interfaces\IComponentsPublishersReader.cs" />
+    <Compile Include="Publish\MetadataBuilder.cs" />
+    <Compile Include="Publish\NextVersionHolder.cs" />
+    <Compile Include="Publish\PublishPayload.cs" />
+    <Compile Include="Publish\PublishPayloadBuilder.cs" />
+    <Compile Include="Folders\BaseClasses\BranchFolder.cs" />
+    <Compile Include="Folders\BaseClasses\ChildFolderHolder.cs" />
+    <Compile Include="Folders\BaseClasses\FolderWithBranchingSupport.cs" />
+    <Compile Include="Folders\KnownFiles\PublishXml.cs" />
+    <Compile Include="Folders\TriggerFolder.cs" />
+    <Compile Include="Folders\BuildToolsFolder.cs" />
+    <Compile Include="Folders\ComponentsFolder.cs" />
+    <Compile Include="Folders\CoreComponentFolder.cs" />
+    <Compile Include="Folders\CoreFolder.cs" />
+    <Compile Include="Folders\EngineFolder.cs" />
+    <Compile Include="Folders\EnginesAndGamesFolder.cs" />
+    <Compile Include="Folders\EnvironmentFolder.cs" />
+    <Compile Include="Folders\FeatureFolder.cs" />
+    <Compile Include="Folders\FeaturesFolder.cs" />
+    <Compile Include="Folders\GameEngineFolder.cs" />
+    <Compile Include="Folders\GameFolder.cs" />
+    <Compile Include="Folders\GameLimitsFolder.cs" />
+    <Compile Include="Folders\GameMathFolder.cs" />
+    <Compile Include="Folders\GamesFolder.cs" />
+    <Compile Include="Folders\Interfaces\IBranchFolder.cs" />
+    <Compile Include="Folders\Interfaces\IFileHolder.cs" />
+    <Compile Include="Folders\Interfaces\IFolderHolder.cs" />
+    <Compile Include="Folders\Interfaces\IFolderWithBranchingSupport.cs" />
+    <Compile Include="Folders\BaseClasses\FileHolder.cs" />
+    <Compile Include="Folders\KnownFiles\GGPGameServerSln.cs" />
+    <Compile Include="Folders\KnownFiles\LatestPublishXmlFile.cs" />
+    <Compile Include="Folders\MainFolder.cs" />
+    <Compile Include="Folders\Interfaces\IRootFolder.cs" />
+    <Compile Include="Folders\PackagesFolder.cs" />
+    <Compile Include="Folders\PublishHistoryFolder.cs" />
+    <Compile Include="Publish\Interfaces\IComponentVersionProvider.cs" />
+    <Compile Include="Design\Interfaces\ILogicalBranchComponentFactory.cs" />
+    <Compile Include="Design\Interfaces\ILogicalComponentFactory.cs" />
+    <Compile Include="Design\Interfaces\IFeaturesBranchesReader.cs" />
+    <Compile Include="Design\Interfaces\IMainDevBranchBuilder.cs" />
+    <Compile Include="Design\Interfaces\ISupportBranching.cs" />
+    <Compile Include="Design\Branches\RootBranch.cs" />
+    <Compile Include="Design\LogicalComponents\ComponentsReaderFactory.cs" />
+    <Compile Include="Folders\RootBranchFolder.cs" />
+    <Compile Include="Design\LogicalComponents\CoreComponent.cs" />
+    <Compile Include="Design\LogicalComponents\CoreComponentBase.cs" />
+    <Compile Include="Design\LogicalComponents\GameComponent.cs" />
+    <Compile Include="Design\LogicalComponents\GameEngineComponent.cs" />
+    <Compile Include="Design\LogicalComponents\LogicalComponent.cs" />
+    <Compile Include="Design\LogicalComponents\MergeSet.cs" />
+    <Compile Include="Design\Branches\MainDevBranchBuilder.cs" />
+    <Compile Include="Design\LogicalComponents\PackagesComponent.cs" />
+    <Compile Include="ModelsModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Design\Branches\ComponentsRepository.cs" />
+    <Compile Include="Design\Branches\QaBranch.cs" />
+    <Compile Include="Publish\PublishPayloadXmlSerializer.cs" />
+    <Compile Include="LocalPath.cs" />
+    <Compile Include="Publish\RegularVersionsProvider.cs" />
+    <Compile Include="Service References\DeveloperToolService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TFS\AutomaticWorkspaceSelector.cs" />
+    <Compile Include="TFS\GenericWorkspaceSelector.cs" />
+    <Compile Include="TFS\HistoryCache.cs" />
+    <Compile Include="TFS\ICheckinTransaction.cs" />
+    <Compile Include="TFS\ITfsWorkspace.cs" />
+    <Compile Include="TFS\TfsCachedItems.cs" />
+    <Compile Include="TFS\TfsCache.cs" />
+    <Compile Include="TFS\ITfsGateway.cs" />
+    <Compile Include="TFS\TfsCollectionFactory.cs" />
+    <Compile Include="TFS\TfsFile.cs" />
+    <Compile Include="TFS\TfsFilesCache.cs" />
+    <Compile Include="TFS\TfsFolderCache.cs" />
+    <Compile Include="TFS\TfsGateway.cs" />
+    <Compile Include="TFS\TfsMergeableChangeSet.cs" />
+    <Compile Include="TFS\TfsFolder.cs" />
+    <Compile Include="TFS\ServerPath.cs" />
+    <Compile Include="TFS\TfsWorkItem.cs" />
+    <Compile Include="TFS\TfsWorkspaceWrapper.cs" />
+    <Compile Include="TFS\VersionControlServerExtensions.cs" />
+    <Compile Include="TFS\WorkspaceExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Dependencies\Spark.Infra\Spark.Infra\Spark.Infra.csproj">
+      <Project>{02e9598a-f44e-4359-844a-dfc8bdc9e36c}</Project>
+      <Name>Spark.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Dependencies\Wpf.Common\Wpf.Common\Spark.Wpf.Common.csproj">
+      <Project>{4f07e2f4-7058-4026-948e-2f5c98013a62}</Project>
+      <Name>Spark.Wpf.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{cd2f5a4f-7927-487c-aade-155f25151219}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Service References\DeveloperToolService\devtools.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DeveloperToolService\devtools36.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DeveloperToolService\devtools37.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DeveloperToolService\devtools38.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DeveloperToolService\GGPDeveloperToolService12.wsdl" />
+    <None Include="Service References\DeveloperToolService\Spark.TfsExplorer.Models.DeveloperToolService.BeginBuildResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DeveloperToolService\Spark.TfsExplorer.Models.DeveloperToolService.GetComponentsLatestVersionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DeveloperToolService\Spark.TfsExplorer.Models.DeveloperToolService.GetHotfixVersionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DeveloperToolService\Spark.TfsExplorer.Models.DeveloperToolService.GetInstallerContentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DeveloperToolService\Spark.TfsExplorer.Models.DeveloperToolService.GetProductionEnvironmentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DeveloperToolService\Spark.TfsExplorer.Models.DeveloperToolService.GetProductionInstallersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DeveloperToolService\Spark.TfsExplorer.Models.DeveloperToolService.GetQAInstallersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Build\Customization\SampleBuildCustomization.xml" />
+    <None Include="Service References\DeveloperToolService\devtools12.disco" />
+    <Content Include="TO DO.txt" />
+    <None Include="Service References\DeveloperToolService\configuration91.svcinfo" />
+    <None Include="Service References\DeveloperToolService\configuration.svcinfo" />
+    <None Include="Service References\DeveloperToolService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="TFS\TfsRequirement.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DeveloperToolService\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

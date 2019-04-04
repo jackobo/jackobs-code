@@ -1,0 +1,11 @@
+﻿Starting to Develop Visual Studio Extensions
+https://msdn.microsoft.com/en-us/library/bb166030.aspx
+
+Visual Studio Extensibility Architecture
+https://msdn.microsoft.com/en-us/library/bb165114.aspx
+
+Autoload a Visual Studio package
+https://www.mztools.com/articles/2013/MZ2013027.aspx
+
+Getting start with a Team Explorer Plugin for VS 2013 Part 1
+https://binary-stuff.com/post/getting-start-with-a-team-explorer-plugin-for-vs-2013

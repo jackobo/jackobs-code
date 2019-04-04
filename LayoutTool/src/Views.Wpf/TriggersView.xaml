@@ -1,0 +1,42 @@
+﻿<local:ViewBaseUserControl x:Class="LayoutTool.Views.Wpf.TriggersView"
+                           x:TypeArguments="dl:TriggerViewModelCollection"   
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LayoutTool.Views.Wpf"
+             xmlns:dl="clr-namespace:LayoutTool.ViewModels.DynamicLayout;assembly=LayoutTool.ViewModels"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d" 
+             x:Name="triggersView"
+             >
+    <DockPanel Margin="5">
+        <TextBlock DockPanel.Dock="Top" Text="Dynamic Layouts" FontSize="18" FontWeight="Bold" Foreground="White" Background="Black" Margin="0,0,0,10"/>
+        
+        <local:AddDynamicLayoutHandlerView DataContext="{Binding AddDynamicLayoutHandler}" DockPanel.Dock="Top" Caption="Add Dynamic Layout Conditions"/>
+        
+        <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="14" FontWeight="Bold" VerticalContentAlignment="Center" SelectionUnit="Cell">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="Auto" Header="Dynamic layout name" IsReadOnly="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DockPanel>
+                                <TextBox Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Padding="0,0,25,0" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" VerticalContentAlignment="Center">
+                                    <i:Interaction.Behaviors>
+                                        <local:RemoveCollectionItemBehavior  
+                                                                    ConfirmationMessage="Are you sure you want to remove this trigger ?" 
+                                                                    Collection="{Binding ElementName=triggersView, Path=DataContext }"
+                                                                    HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+                            </DockPanel>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding Path=ConditionsDescription, Mode=OneWay}" Width="*" Header="Conditions" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+            
+    </DockPanel>
+</local:ViewBaseUserControl>

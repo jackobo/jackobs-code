@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-sm-12">
+
+        <a role="button" (click)="navigateToVersions()" class="view-versions-link" >
+            <h4>View Versions</h4>
+        </a>
+        <h4 class="section-title" style="line-height: 40px; margin: 0px">HISTORY</h4>
+        
+        <div class="table-responsive">
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr class="info">
+                        <th>Game version</th>
+                        <th>Property</th>
+                        <th>Old value</th>
+                        <th>New value</th>
+                        <th>Regulation</th>
+                        <th>Change date</th>
+                        <th>Changed by</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let record of historyRecords | async">
+                        <td>{{record.version}}</td>
+                        <td>{{record.historyRecord.propertyKey}}</td>
+                        <td>{{record.historyRecord.oldValue}}</td>
+                        <td>{{record.historyRecord.newValue}}</td>
+                        <td>{{record.historyRecord.regulation}}</td>
+                        <td>{{record.historyRecord.changeDate | date: 'medium'}}</td>
+                        <td>{{record.historyRecord.changedBy}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

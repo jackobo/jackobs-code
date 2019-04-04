@@ -1,0 +1,757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7620734-215E-4854-B2E3-02134FAC19DD}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GGPMockBootstrapper</RootNamespace>
+    <AssemblyName>GGPMock.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\Libraries\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Libraries\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Administration, Version=7.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Libraries\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Artifactory\ArtifactoryException.cs" />
+    <Compile Include="Artifactory\ArtifactoryStorage.cs" />
+    <Compile Include="Artifactory\IArtifactoryStorage.cs" />
+    <Compile Include="Artifactory\PropertySet.cs" />
+    <Compile Include="Artifactory\StorageItem.cs" />
+    <Compile Include="Artifactory\StorageItemChild.cs" />
+    <Compile Include="Artifactory\StorageItemProperty.cs" />
+    <Compile Include="ClickOnceBackgroundUpdater.cs" />
+    <Compile Include="ConfigExtensionMethods.cs" />
+    <Compile Include="Extensions\ServerManagerExtensionMethods.cs" />
+    <Compile Include="GenericSearchTemplate.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Actions\ProductInstallAction.cs" />
+    <Compile Include="Models\ApplicationFolders.cs" />
+    <Compile Include="Models\BrandInfo.cs" />
+    <Compile Include="Models\Brands.cs" />
+    <Compile Include="Models\Client\ClientProduct.cs" />
+    <Compile Include="Models\Client\CustomHtmlGame.cs" />
+    <Compile Include="Models\Client\InstallActions\Html5ClientInstallAction.cs" />
+    <Compile Include="Models\Client\InstallActions\OpenWebsitePortInTheFirewallAction.cs" />
+    <Compile Include="Models\Client\InstallActions\ThinClientInstallAction.cs" />
+    <Compile Include="Models\Client\InstalledFlashGame.cs" />
+    <Compile Include="Models\Client\ISwfFilesProvider.cs" />
+    <Compile Include="Models\Client\JoinTypeEnum.cs" />
+    <Compile Include="Models\FlashPolicyServer\FlashPolicyServerProduct.cs" />
+    <Compile Include="Models\FlashPolicyServer\InstallActions\FlashPolicyServerInstallAction.cs" />
+    <Compile Include="Models\GamesInformationProvider.cs" />
+    <Compile Include="Models\GGPMockDataManager.cs" />
+    <Compile Include="Models\GGPMockLoggerConnector.cs" />
+    <Compile Include="Models\GGPSimulator\GGPSimulatorProduct.cs" />
+    <Compile Include="Models\GGPSimulator\InstallActions\GGPSimulatorClientInstallAction.cs" />
+    <Compile Include="Models\GGPSimulator\InstallActions\GGPSimulatorServiceInstallAction.cs" />
+    <Compile Include="Models\GGP\GGP.cs" />
+    <Compile Include="Models\GGP\InstallActions\AddGGPHttpHandlerFirewallException.cs" />
+    <Compile Include="Models\GGP\InstallActions\HistoryHandlerInstallAction.cs" />
+    <Compile Include="Models\GGP\InstallActions\RunGGPInstallerAction.cs" />
+    <Compile Include="Models\GlobalSettings.cs" />
+    <Compile Include="Models\IApplicationServices.cs" />
+    <Compile Include="Models\IInstalationContext.cs" />
+    <Compile Include="Models\IInstallAction.cs" />
+    <Compile Include="Models\IIS\IISAppInstallActionBase.cs" />
+    <Compile Include="Models\IIS\MimeTypeDefinition.cs" />
+    <Compile Include="Models\InstallationContext.cs" />
+    <Compile Include="Models\InstalledBrowsersProvider.cs" />
+    <Compile Include="Models\MainProxy\MainProxyProduct.cs" />
+    <Compile Include="Models\MainProxy\MainProxyInstallAction.cs" />
+    <Compile Include="Models\OpenGameParameters.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Service References\GamesInformationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GamesPortalService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GGPMockDataProvider\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GGPMockLoggerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\InstallationProgressFeedbackService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MockHistoryRecordsProvider\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OpenSessionProviderService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ToolService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SysTrayManager.cs" />
+    <Compile Include="UtilExtensions.cs" />
+    <Compile Include="ViewModels\ActionViewModel.cs" />
+    <Compile Include="ViewModels\AddNewUserDialog.cs" />
+    <Compile Include="ViewModels\Artifactory\ArtifactoryGameSelector.cs" />
+    <Compile Include="ViewModels\Command.cs" />
+    <Compile Include="ViewModels\ExplorerBar\AvailableGamesTreeViewItem.cs" />
+    <Compile Include="ViewModels\ExplorerBar\ClientTreeViewItem.cs" />
+    <Compile Include="ViewModels\ExplorerBar\FlashGamesTreeViewItem.cs" />
+    <Compile Include="ViewModels\ExplorerBar\GGPLogTreeViewItem.cs" />
+    <Compile Include="ViewModels\ExplorerBar\GGPMockDataEditorTreeViewItem.cs" />
+    <Compile Include="ViewModels\ExplorerBar\GGPSimulatorTreeViewItem.cs" />
+    <Compile Include="ViewModels\ExplorerBar\GGPTreeViewItem.cs" />
+    <Compile Include="ViewModels\ExplorerBar\HistoryRecordsTreeViewItem.cs" />
+    <Compile Include="ViewModels\ExplorerBar\Html5GamesTreeViewItem.cs" />
+    <Compile Include="ViewModels\ExplorerBar\OpenSessionsTreeViewItem.cs" />
+    <Compile Include="ViewModels\ExplorerBar\TreeViewItem.cs" />
+    <Compile Include="ViewModels\GameTypeViewModel.cs" />
+    <Compile Include="ViewModels\GGPSimulatorProductViewModel.cs" />
+    <Compile Include="ViewModels\IActionViewModel.cs" />
+    <Compile Include="ViewModels\IDialogShowService.cs" />
+    <Compile Include="ViewModels\IExplorerBar.cs" />
+    <Compile Include="ViewModels\IGameLuncher.cs" />
+    <Compile Include="ViewModels\InstallActionViewModel.cs" />
+    <Compile Include="ViewModels\InstallationProgressViewModel.cs" />
+    <Compile Include="ViewModels\IOkCancelDialogViewModel.cs" />
+    <Compile Include="ViewModels\IViewModel.cs" />
+    <Compile Include="ViewModels\IWorkArea.cs" />
+    <Compile Include="ViewModels\IWorkAreaItemViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\OkCancelDialogViewModel.cs" />
+    <Compile Include="ViewModels\OpenGameParametersViewModel.cs" />
+    <Compile Include="ViewModels\ResourcesProvider.cs" />
+    <Compile Include="ViewModels\SelectUserDialog.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\WorkArea\AddNewHtml5GameViewModel.cs" />
+    <Compile Include="ViewModels\WorkArea\AvailableGamesViewModel.cs" />
+    <Compile Include="ViewModels\WorkArea\FlashGamesWorkAreaItem.cs" />
+    <Compile Include="ViewModels\WorkArea\GamesWorkAreaItem.cs" />
+    <Compile Include="ViewModels\WorkArea\GGPLogWorkAreaItem.cs" />
+    <Compile Include="ViewModels\WorkArea\GGPMockDataEditorWorkAreaItem.cs" />
+    <Compile Include="ViewModels\WorkArea\GGPSimulatorWorkAreaItem.cs" />
+    <Compile Include="ViewModels\WorkArea\GGPWorkAreaItem.cs" />
+    <Compile Include="ViewModels\WorkArea\HistoryRecordsWorkAreaItem.cs" />
+    <Compile Include="ViewModels\WorkArea\Html5GamesWorkAreaItem.cs" />
+    <Compile Include="ViewModels\WorkArea\OpenSessionsWorkAreaItem.cs" />
+    <Compile Include="ViewModels\WorkArea\WorkAreaItemBase.cs" />
+    <Compile Include="Views\AddNewHtml5GameView.xaml.cs">
+      <DependentUpon>AddNewHtml5GameView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddNewUserView.xaml.cs">
+      <DependentUpon>AddNewUserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ArtifactoryGameSelectorView.xaml.cs">
+      <DependentUpon>ArtifactoryGameSelectorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AvailableGamesView.xaml.cs">
+      <DependentUpon>AvailableGamesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectUserView.xaml.cs">
+      <DependentUpon>SelectUserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FlashGamesWorkAreaView.xaml.cs">
+      <DependentUpon>FlashGamesWorkAreaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GamesWorkAreaItemView.xaml.cs">
+      <DependentUpon>GamesWorkAreaItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GGPLogView.xaml.cs">
+      <DependentUpon>GGPLogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GGPMockDataEditorView.xaml.cs">
+      <DependentUpon>GGPMockDataEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GGPSimulatorWorkAreaItemView.xaml.cs">
+      <DependentUpon>GGPSimulatorWorkAreaItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GGPWorkAreaItemView.xaml.cs">
+      <DependentUpon>GGPWorkAreaItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HistoryRecordsView.xaml.cs">
+      <DependentUpon>HistoryRecordsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Html5GamesWorkAreaView.xaml.cs">
+      <DependentUpon>Html5GamesWorkAreaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InstallationProgressView.xaml.cs">
+      <DependentUpon>InstallationProgressView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IView.cs" />
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OkCancelDialogView.xaml.cs">
+      <DependentUpon>OkCancelDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OpenGameParametersView.xaml.cs">
+      <DependentUpon>OpenGameParametersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OpenSessionsView.xaml.cs">
+      <DependentUpon>OpenSessionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewFactory.cs" />
+    <Compile Include="Views\ViewModelAttribute.cs" />
+    <Compile Include="Views\WpfDialogShowService.cs" />
+    <Compile Include="WcfClientProxySafeRelease.cs" />
+    <Compile Include="WpfApplicationServices.cs" />
+    <Resource Include="..\Images\Clear24x24.png">
+      <Link>Resources\Clear24x24.png</Link>
+    </Resource>
+    <Resource Include="..\Images\Client24x24.png">
+      <Link>Resources\Client24x24.png</Link>
+    </Resource>
+    <Resource Include="..\Images\Error.png">
+      <Link>Resources\Error.png</Link>
+    </Resource>
+    <Resource Include="..\Images\Excluded.png">
+      <Link>Resources\Excluded.png</Link>
+    </Resource>
+    <Resource Include="..\Images\Flash24x24.png">
+      <Link>Resources\Flash24x24.png</Link>
+    </Resource>
+    <Resource Include="..\Images\GGP.png">
+      <Link>Resources\GGP.png</Link>
+    </Resource>
+    <Resource Include="..\Images\GGPMockData24x24.png">
+      <Link>Resources\GGPMockData24x24.png</Link>
+    </Resource>
+    <Resource Include="..\Images\GGPSimulator.gif">
+      <Link>Resources\GGPSimulator.gif</Link>
+    </Resource>
+    <Resource Include="..\Images\History24x24.png">
+      <Link>Resources\History24x24.png</Link>
+    </Resource>
+    <Resource Include="..\Images\HTML5.png">
+      <Link>Resources\HTML5.png</Link>
+    </Resource>
+    <Resource Include="..\Images\Logger.24x24.png">
+      <Link>Resources\Logger.24x24.png</Link>
+    </Resource>
+    <Resource Include="..\Images\OpenFile24x24.png">
+      <Link>Resources\OpenFile24x24.png</Link>
+    </Resource>
+    <Resource Include="..\Images\OpenSign24.x24.png">
+      <Link>Resources\OpenSign24.x24.png</Link>
+    </Resource>
+    <Resource Include="..\Images\Pause24x24.png">
+      <Link>Resources\Pause24x24.png</Link>
+    </Resource>
+    <Resource Include="..\Images\Resume24x24.png">
+      <Link>Resources\Resume24x24.png</Link>
+    </Resource>
+    <Resource Include="..\Images\Save24x24.png">
+      <Link>Resources\Save24x24.png</Link>
+    </Resource>
+    <Resource Include="..\Images\Warning.png">
+      <Link>Resources\Warning.png</Link>
+    </Resource>
+    <Resource Include="..\Images\Games.png">
+      <Link>Resources\Games.png</Link>
+    </Resource>
+    <Resource Include="..\Images\MissingImage.png">
+      <Link>Resources\MissingImage.png</Link>
+    </Resource>
+    <Content Include="Content\MainProxy\MainProxyMock.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Simulator\MongoX86.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\GamesPortalService\GGPMockBootstrapper.GamesPortalService.GetAllGamesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GGPMockBootstrapper.GamesPortalService.GetGameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GGPMockBootstrapper.GamesPortalService.GetGamesReleasesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GGPMockBootstrapper.GamesPortalService.GetGameVersionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GGPMockBootstrapper.GamesPortalService.GetLatestApprovedGameVersionForEachRegulationAndClientType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GGPMockBootstrapper.GamesPortalService.GetLatestGameVersionForEachGameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GGPMockBootstrapper.GamesPortalService.GetNeverApprovedGameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\GGPMockBootstrapper.GamesPortalService.GetRegulationsInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesPortalService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\GamesPortalService\configuration.svcinfo" />
+    <None Include="Service References\GamesPortalService\configuration91.svcinfo" />
+    <None Include="Service References\GamesPortalService\GamesPortal.Service.Entities.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesPortalService\GamesPortal.Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesPortalService\service.wsdl" />
+    <None Include="Service References\GamesPortalService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesPortalService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GGPMockDataProvider\GGPMockBootstrapper.GGPMockDataProvider.AvailablePlayer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GGPMockDataProvider\GGPMockBootstrapper.GGPMockDataProvider.GetPlayerDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GGPMockDataProvider\GGPMockBootstrapper.GGPMockDataProvider.LanguageMock.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GGPMockDataProvider\GGPMockBootstrapper.GGPMockDataProvider.PlayerData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GGPMockDataProvider\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\GGPMockDataProvider\configuration.svcinfo" />
+    <None Include="Service References\GGPMockDataProvider\configuration91.svcinfo" />
+    <None Include="Service References\GGPMockDataProvider\GGPMockSupportService.disco" />
+    <None Include="Service References\GamesInformationService\GamesInformationService1.disco" />
+    <None Include="packages.config" />
+    <None Include="Service References\GamesInformationService\GamesInformationService1.wsdl" />
+    <None Include="Service References\GamesInformationService\GamesInformationService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesInformationService\GamesInformationService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesInformationService\GamesInformationService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GamesInformationService\GamesInformationService43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GGPMockDataProvider\GGPMockSupportService.wsdl" />
+    <None Include="Service References\GGPMockDataProvider\GGPMockSupportService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GGPMockDataProvider\GGPMockSupportService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GGPMockDataProvider\GGPMockSupportService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GGPMockDataProvider\GGPMockSupportService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MockHistoryRecordsProvider\GGPMockBootstrapper.MockHistoryRecordsProvider.HistoryRecord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MockHistoryRecordsProvider\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\MockHistoryRecordsProvider\configuration.svcinfo" />
+    <None Include="Service References\MockHistoryRecordsProvider\configuration91.svcinfo" />
+    <None Include="Service References\MockHistoryRecordsProvider\MockHistoryRecordsProvider.disco" />
+    <None Include="Service References\InstallationProgressFeedbackService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\InstallationProgressFeedbackService\configuration.svcinfo" />
+    <None Include="Service References\InstallationProgressFeedbackService\configuration91.svcinfo" />
+    <None Include="Service References\InstallationProgressFeedbackService\mex.disco" />
+    <None Include="Service References\InstallationProgressFeedbackService\InstallationProgressFeedbackService.wsdl" />
+    <None Include="Service References\InstallationProgressFeedbackService\mex.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InstallationProgressFeedbackService\mex1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InstallationProgressFeedbackService\mex2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MockHistoryRecordsProvider\MockHistoryRecordsProvider.wsdl" />
+    <None Include="Service References\MockHistoryRecordsProvider\MockHistoryRecordsProvider.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MockHistoryRecordsProvider\MockHistoryRecordsProvider1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MockHistoryRecordsProvider\MockHistoryRecordsProvider2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OpenSessionProviderService\GGPMockOpenSessionProviderService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ToolService\GGPMockBootstrapper.ToolService.BaseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ToolService\GGPMockBootstrapper.ToolService.IterationsPerCallLimits.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ToolService\GGPMockBootstrapper.ToolService.RoundNums.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ToolService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ToolService\configuration.svcinfo" />
+    <None Include="Service References\ToolService\configuration91.svcinfo" />
+    <None Include="Service References\ToolService\ToolService.disco" />
+    <None Include="Service References\OpenSessionProviderService\GGPMockBootstrapper.OpenSessionProviderService.GetOpenSessionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OpenSessionProviderService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\OpenSessionProviderService\configuration.svcinfo" />
+    <None Include="Service References\OpenSessionProviderService\configuration91.svcinfo" />
+    <None Include="Service References\OpenSessionProviderService\GGPMockOpenSessionProviderService.disco" />
+    <None Include="Service References\GGPMockLoggerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\GGPMockLoggerService\configuration.svcinfo" />
+    <None Include="Service References\GGPMockLoggerService\configuration91.svcinfo" />
+    <None Include="Service References\GGPMockLoggerService\GGPMockLoggerService.disco" />
+    <None Include="Service References\GamesInformationService\GGPMockBootstrapper.GamesInformationService.GameInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GamesInformationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\GamesInformationService\configuration.svcinfo" />
+    <None Include="Service References\GamesInformationService\configuration91.svcinfo" />
+    <None Include="Service References\GGPMockLoggerService\GGPMockLoggerService.wsdl" />
+    <None Include="Service References\GGPMockLoggerService\GGPMockLoggerService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GGPMockLoggerService\GGPMockLoggerService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GGPMockLoggerService\GGPMockLoggerService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OpenSessionProviderService\GGPMockOpenSessionProviderService.wsdl" />
+    <None Include="Service References\OpenSessionProviderService\GGPMockOpenSessionProviderService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OpenSessionProviderService\GGPMockOpenSessionProviderService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OpenSessionProviderService\GGPMockOpenSessionProviderService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ToolService\ToolService.wsdl" />
+    <None Include="Service References\ToolService\ToolService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ToolService\ToolService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ToolService\ToolService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ToolService\ToolService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Resource Include="GGPMockBootstrapper.ico" />
+    <Resource Include="Links.txt" />
+    <Resource Include="to do.txt" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <Content Include="Content\Client\Html5Games.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Client\ThinClient.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\FlashPolicyServer\FlashPolicyServer.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\GGP\GGPConfigs.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\GGP\GGPInstaller.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\GGP\HistoryHandler.web.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\GGP\HistoryHandler.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Simulator\Client.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Simulator\data.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Simulator\GGPSimulatorService.exe.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Simulator\Server.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\GGPSimulator\Head\Server\MongoDBWrapper\MongoDBWrapper.csproj">
+      <Project>{b4365069-bad0-4043-aabc-9017dd005062}</Project>
+      <Name>MongoDBWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GGPApprovalSystem\DEV\Common\GGPGameServer.ApprovalSystem.Common.csproj">
+      <Project>{bfa8fffc-bf8f-4f7f-a179-afac20255808}</Project>
+      <Name>GGPGameServer.ApprovalSystem.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GGPApprovalSystem\DEV\Installer\GGPGameServer.Installer.Core\GGPGameServer.Installer.Core.csproj">
+      <Project>{5ed3d8df-563e-4b66-9890-5bdb684c2ed4}</Project>
+      <Name>GGPGameServer.Installer.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Client\IISConfig.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\GGP\Logging.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AddNewHtml5GameView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddNewUserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ArtifactoryGameSelectorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AvailableGamesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\SelectUserView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FlashGamesWorkAreaView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\GamesWorkAreaItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\GGPLogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\GGPMockDataEditorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\GGPSimulatorWorkAreaItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\GGPWorkAreaItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\HistoryRecordsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Html5GamesWorkAreaView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\InstallationProgressView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\OkCancelDialogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\OpenGameParametersView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\OpenSessionsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\GamesInformationService\" />
+    <WCFMetadataStorage Include="Service References\GamesPortalService\" />
+    <WCFMetadataStorage Include="Service References\GGPMockDataProvider\" />
+    <WCFMetadataStorage Include="Service References\GGPMockLoggerService\" />
+    <WCFMetadataStorage Include="Service References\InstallationProgressFeedbackService\" />
+    <WCFMetadataStorage Include="Service References\MockHistoryRecordsProvider\" />
+    <WCFMetadataStorage Include="Service References\OpenSessionProviderService\" />
+    <WCFMetadataStorage Include="Service References\ToolService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

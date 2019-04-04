@@ -1,0 +1,6 @@
+<input [(ngModel)]="searchText"
+       [typeahead]="allGames"
+       typeaheadOptionField="fullName"
+       (typeaheadOnSelect)="selectGame($event.item)"
+       class="form-control"
+       placeholder="Search game">

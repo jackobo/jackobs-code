@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="GamesPortal.Client.Views.Wpf.ClientTypesSelectorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <ResourceDictionary Source="CommonStyles.xaml"/>
+    </UserControl.Resources>
+    <DockPanel>
+        
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="10,10,10,0">
+            <RadioButton Content="View by client type" Command="{Binding ViewByClientTypeCommand}" Margin="3" IsChecked="True" Cursor="Hand" FontWeight="Bold"/>
+            <RadioButton Content="View by regulation" Command="{Binding ViewByRegulationCommand}" Margin="3" IsChecked="False" Cursor="Hand" FontWeight="Bold"/>
+        </StackPanel>
+        
+        <GroupBox Margin="10" Padding="5">
+            <GroupBox.Header>
+                <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                    <Button Content="Select all" Command="{Binding Path=CurrentViewMode.SelectAllCommand}" Style="{StaticResource LinkButton}"/>
+                    <Button Content="Unselect all" Command="{Binding Path=CurrentViewMode.UnselectAllCommand}" Style="{StaticResource LinkButton}" Margin="10,0,0,0"/>
+                </StackPanel>
+            </GroupBox.Header>
+            <ItemsControl ItemsSource="{Binding Path=CurrentViewMode.Items}">
+
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"  IsItemsHost="True" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel Margin="10" >
+                        <Border DockPanel.Dock="Top"  BorderBrush="Black" BorderThickness="1" Padding="5">
+                            <StackPanel Margin="0">
+                                <TextBlock Text="{Binding Name}" FontSize="16" FontWeight="Bold"  VerticalAlignment="Center" TextAlignment="Center"/>
+                                <StackPanel Orientation="Horizontal" Margin="0" HorizontalAlignment="Center">
+                                    <Button Content="all" Style="{StaticResource LinkButton}" Command="{Binding SelectAllCommand}" Margin="0,0,5,0" FontSize="14" FontWeight="Bold"/>
+                                    <Button Content="none" Style="{StaticResource LinkButton}" Command="{Binding UnselectAllCommand}" Margin="0"  FontSize="14" FontWeight="Bold"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                        <ListBox ItemsSource="{Binding Children}" BorderThickness="1" Padding="5">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding Selected}" Content="{Binding Name}" Cursor="Hand"  VerticalAlignment="Center" Margin="0,2,0,0"/>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </DockPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        </GroupBox>
+    </DockPanel>
+</UserControl>

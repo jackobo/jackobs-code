@@ -1,0 +1,4 @@
+Turning IIS feature on
+aspnet_regiis.exe 
+
+Logging

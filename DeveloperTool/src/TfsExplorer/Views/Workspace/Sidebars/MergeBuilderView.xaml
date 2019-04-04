@@ -1,0 +1,141 @@
+﻿<wpfCommonViews:StandardViewUserControl x:Class="Spark.TfsExplorer.Views.Workspace.MergeBuilderView"
+            x:TypeArguments="workspaceViewModels:MergeBuilderViewModel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Spark.TfsExplorer.Views.Workspace"
+             xmlns:wpfCommonViews="clr-namespace:Spark.Wpf.Common.Views;assembly=Spark.Wpf.Common"
+             xmlns:workspaceViewModels="clr-namespace:Spark.TfsExplorer.ViewModels.Workspace;assembly=Spark.TfsExplorer.ViewModels"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" >
+    <Grid>
+        <GroupBox Padding="5,10,5,5">
+            <GroupBox.Header>
+                <TextBlock Text="{Binding Title}" FontSize="16" FontWeight="Bold"/>
+            </GroupBox.Header>
+            <xctk:BusyIndicator IsBusy="{Binding IsBusy}" BusyContent="{Binding BusyActionDescription}">
+                <xctk:BusyIndicator.Content>
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button Content="OK" Command="{Binding OkCommand}" MinWidth="100" Margin="5" Cursor="Hand"/>
+                            <Button Content="Cancel" Command="{Binding CancelCommand}" MinWidth="100"  Margin="5" Cursor="Hand"/>
+                        </StackPanel>
+
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                            <StackPanel>
+                                <StackPanel>
+                                    <Separator/>
+                                    <TextBlock Text="Related Work Items" FontSize="14" FontWeight="Bold" Background="Gainsboro"/>
+                                    <Separator/>
+                                    <xctk:BusyIndicator DockPanel.Dock="Top" IsBusy="{Binding Path=RelatedWorkItems.IsBusy}" BusyContent="{Binding Path=RelatedWorkItems.BusyActionDescription}">
+                                        <xctk:BusyIndicator.Content>
+                                            <ListBox ItemsSource="{Binding Path=RelatedWorkItems.WorkItems}" BorderThickness="0">
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding Id}" FontWeight="Bold"/>
+                                                            <TextBlock Text=" - " FontWeight="Bold"/>
+                                                            <TextBlock Text="{Binding Title}" FontWeight="Bold"/>
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                        </xctk:BusyIndicator.Content>
+                                    </xctk:BusyIndicator>
+                                </StackPanel>
+
+                                <StackPanel Margin="0,20,0, 0">
+                                    <Separator/>
+                                    <TextBlock Text="Merge candidates" FontSize="14" FontWeight="Bold" Background="Gainsboro"/>
+                                    <Separator/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <RadioButton IsChecked="{Binding ViewByComponent, UpdateSourceTrigger=PropertyChanged}" Content="View by component" Margin="5" GroupName="ViewChangesetsBy" Cursor="Hand" FontWeight="Bold"/>
+                                            <RadioButton IsChecked="{Binding ViewByCommiter, UpdateSourceTrigger=PropertyChanged}" Content="View by commiter" Margin="5"  GroupName="ViewChangesetsBy" Cursor="Hand" FontWeight="Bold"/>
+                                            <RadioButton IsChecked="{Binding ViewByChangeset, UpdateSourceTrigger=PropertyChanged}" Content="View by changesets" Margin="5"  GroupName="ViewChangesetsBy" Cursor="Hand" FontWeight="Bold"/>
+                                        </StackPanel>
+
+                                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                            <TextBlock FontWeight="Bold" FontSize="14"><Hyperlink Command="{Binding SelectAllCommand}">Select all</Hyperlink></TextBlock>
+                                            <TextBlock FontWeight="Bold" FontSize="14" Margin="15,0,0,0"><Hyperlink Command="{Binding UnselectAllCommand}">Unselect all</Hyperlink></TextBlock>
+                                        </StackPanel>
+
+                                        <StackPanel Margin="0,5,0,0">
+                                            <StackPanel.Style>
+                                                <Style TargetType="StackPanel">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Path=Groups.Count}" Value="0">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </StackPanel.Style>
+                                            <Separator/>
+                                            <TextBlock Text="EXISTING COMPONENTS"  FontSize="14" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+                                            <Separator/>
+                                            <ItemsControl ItemsSource="{Binding Groups}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <StackPanel></StackPanel>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <DockPanel Margin="5">
+                                                            <WrapPanel DockPanel.Dock="Top">
+                                                                <CheckBox VerticalAlignment="Center" IsChecked="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,2,0" IsThreeState="True" Cursor="Hand"/>
+                                                                <TextBlock Text="{Binding Title}" FontSize="14" FontWeight="Bold"/>
+                                                            </WrapPanel>
+                                                            <local:MergeSetView DataContext="{Binding}"/>
+                                                        </DockPanel>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+
+                                            </ItemsControl>
+                                        </StackPanel>
+
+                                        <StackPanel Margin="0,5,0,0">
+                                            <StackPanel.Style>
+                                                <Style TargetType="StackPanel">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Path=NewComponentsMergeSets.Length}" Value="0">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </StackPanel.Style>
+                                            <Separator/>
+                                            <TextBlock Text="NEW COMPONENTS" FontSize="14" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+                                            <Separator/>
+                                            <ItemsControl ItemsSource="{Binding NewComponentsMergeSets}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <StackPanel></StackPanel>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <WrapPanel DockPanel.Dock="Top">
+                                                            <CheckBox VerticalAlignment="Center" IsChecked="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,2,0" Cursor="Hand"/>
+                                                            <TextBlock Text="{Binding ComponentName}" FontSize="14" FontWeight="Bold"/>
+                                                        </WrapPanel>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+
+                                            </ItemsControl>
+                                        </StackPanel>
+
+
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </DockPanel>
+                </xctk:BusyIndicator.Content>
+            </xctk:BusyIndicator>
+        </GroupBox>
+    </Grid>
+</wpfCommonViews:StandardViewUserControl>

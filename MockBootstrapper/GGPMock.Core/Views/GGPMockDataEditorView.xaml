@@ -1,0 +1,343 @@
+﻿<UserControl x:Class="GGPMockBootstrapper.Views.GGPMockDataEditorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:models="clr-namespace:GGPMockBootstrapper.Models"
+             xmlns:mockDataProvider="clr-namespace:GGPMockBootstrapper.GGPMockDataProvider"
+             xmlns:common="clr-namespace:GGPGameServer.ApprovalSystem.Common.WPF;assembly=GGPGameServer.ApprovalSystem.Common"
+             >
+    
+    <UserControl.Resources>
+        <Style x:Key="{x:Type TextBlock}" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <Style x:Key="{x:Type TextBox}" TargetType="TextBox">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="MinWidth" Value="100"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        
+    </UserControl.Resources>
+
+    <DockPanel  Margin="5">
+        <TextBlock DockPanel.Dock="Top" Text="GGP Mock data" FontSize="18" FontWeight="Bold"  />
+        <Separator DockPanel.Dock="Top" />
+        
+        <TextBlock DockPanel.Dock="Bottom" Text="{Binding MockStateDescription}" Foreground="Red">
+            <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding MockState}" Value="{x:Static models:GGPMockState.Connected}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <Grid>
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding MockState}" Value="{x:Static models:GGPMockState.Disconnected}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="1" Text="Connecting..." DockPanel.Dock="Top" FontSize="14" FontWeight="Bold" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding MockState}" Value="{x:Static models:GGPMockState.Connected}">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <common:CircularProgressBar Grid.Row="1" Width="220" Margin="10" StartupDelay="0" >
+                <common:CircularProgressBar.Style>
+                    <Style TargetType="common:CircularProgressBar">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding MockState}" Value="{x:Static models:GGPMockState.Connected}">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </common:CircularProgressBar.Style>
+            </common:CircularProgressBar>
+
+            <DockPanel Grid.Row="0">
+
+                <DockPanel.Style>
+                    <Style TargetType="DockPanel">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding MockState}" Value="{x:Static models:GGPMockState.Disconnected}">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DockPanel.Style>
+
+                <Button DockPanel.Dock="Top" Content="{Binding Path=UpdateGGPMockData.Caption}" Command="{Binding UpdateGGPMockData.Command}" Margin="0,0,0,10" Cursor="Hand" FontSize="14" FontWeight="Bold" MaxWidth="300" MinHeight="20" MinWidth="100" HorizontalAlignment="Left" Style="{StaticResource LinkButton}" />
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="6"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="32*"/>
+                            <ColumnDefinition Width="15*"/>
+                        </Grid.ColumnDefinitions>
+                   
+                        <Grid Grid.Column="0" Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Current user"/>
+                            <!--<TextBox IsReadOnly="True" Grid.Row="0" Grid.Column="1" Text="{Binding Path=MockData.CID, Mode=OneWay}" Background="LightGray"/>-->
+                            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+                                <TextBlock Text="{Binding Path=CurrentSelectedPlayer}" MinWidth="200"/>
+                            </StackPanel>
+
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Real money balance"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=MockData.RealMoneyBalance}"/>
+
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Bankroll currency"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=MockData.BankrollCurrency}"/>
+
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Jackpot data"/>
+                            <Grid Grid.Row="3" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Seed"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=MockData.JackpotData.JackpotSeed}"/>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Value"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=MockData.JackpotData.JackpotValue}"/>
+
+                            </Grid>
+
+                        </Grid>
+
+
+                        <GridSplitter Grid.Column="1" Background="Black" Width="6" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" x:Name="gridCurrentRegulation">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <DockPanel Margin="3">
+                                    <StackPanel DockPanel.Dock="Top">
+                                        <TextBlock Text="Current regulation" />
+                                        <ComboBox MinWidth="150" SelectedItem="{Binding Path=MockData.Regulation}" ItemsSource="{Binding Path=SupportedRegulations}"/>
+                                    </StackPanel>
+                                    <StackPanel DockPanel.Dock="Top">
+                                        <CheckBox Content="Automatically switch regulation according with the brand provided by the client" IsChecked="{Binding Path=MockData.EnableAutomaticRegulationSelection}"/>
+                                    </StackPanel>
+                                </DockPanel>
+                        
+
+                            </Grid>
+
+
+                            <Grid Grid.Row="1" x:Name="gridItalyRegulation">
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=MockData.Regulation.Id}" Value="{x:Static mockDataProvider:RegulationTypeMock.Italy}">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                 
+                                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="ITALY REGULATION DATA" Background="LightGray" TextAlignment="Center" Margin="0,10,0,10"/>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Max game loss limit"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=MockData.ItalyRegulationData.MaxGameLimit}"/>
+                            
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Current game loss limit"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=MockData.ItalyRegulationData.CurrentGameLimit}"/>
+
+                            </Grid>
+
+
+                            <Grid Grid.Row="2" x:Name="gridSpainRegulation">
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=MockData.Regulation.Id}" Value="{x:Static mockDataProvider:RegulationTypeMock.Spain}">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="SPAIN REGULATION DATA" Background="LightGray" TextAlignment="Center" Margin="0,10,0,10"/>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Game loss limit"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=MockData.SpainRegulationData.GameLimit}"/>
+
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="IntervalReminderInMinutes"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=MockData.SpainRegulationData.IntervalReminderInMinutes}"/>
+
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="RequestedTimeLimit"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=MockData.SpainRegulationData.RequestedTimeLimit}"/>
+
+                                <TextBlock Grid.Row="4" Grid.Column="0" Text="RestrictionPeriod"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=MockData.SpainRegulationData.RestrictionPeriod}"/>
+
+                                <TextBlock Grid.Row="5" Grid.Column="0" Text="SessionDuration"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=MockData.SpainRegulationData.SessionDuration}"/>
+
+                                <TextBlock Grid.Row="6" Grid.Column="0" Text="TotalBets"/>
+                                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Path=MockData.SpainRegulationData.TotalBets}"/>
+
+                                <TextBlock Grid.Row="7" Grid.Column="0" Text="TotalWins"/>
+                                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Path=MockData.SpainRegulationData.TotalWins}"/>
+
+                            </Grid>
+
+                        </Grid>
+                    </Grid>
+
+                    <GridSplitter Grid.Row="1" Background="Black" Height="6" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+                    
+                    <GroupBox Grid.Row="2" Header="Free Play" Margin="0,5,0, 5" FontSize="14" FontWeight="Bold" Padding="2,5,2,5" >
+                     
+                        <DockPanel>
+                            <Button DockPanel.Dock="Top" Margin="0,5,0,5" Style="{StaticResource LinkButton}"  Content="{Binding Path=AddNewFreePlayAction.Caption}" Command="{Binding Path=AddNewFreePlayAction.Command}"/>
+                                
+                            <DataGrid ItemsSource="{Binding FreePlay}" AutoGenerateColumns="False" FontSize="12" FontWeight="Normal" SelectionUnit="Cell" VerticalContentAlignment="Center" CanUserAddRows="True" CanUserDeleteRows="True">
+                                <DataGrid.Resources>
+                                    <Style x:Key="{x:Type TextBlock}" TargetType="TextBlock">
+                                        <Setter Property="FontSize" Value="12"/>
+                                        <Setter Property="FontWeight" Value="Normal"/>
+                                    </Style>
+                                </DataGrid.Resources>
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn IsReadOnly="False" ClipboardContentBinding="{Binding FreePlayType}" Header="Free Play Type" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding FreePlayTypes}" SelectedItem="{Binding FreePlayType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTextColumn Binding="{Binding Balance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="Auto" Header="Balance"/>
+                                    <DataGridTextColumn Binding="{Binding MaxBetAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="Auto" Header="MaxBetAmount"/>
+                                    <DataGridTextColumn Binding="{Binding MaxWinningCap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="Auto" Header="MaxWinningCap"/>
+                                    <DataGridTextColumn Binding="{Binding GameTypes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="Auto" Header="GamesTypes (for DL/NDL)" MinWidth="150"/>
+
+                                    <DataGridTextColumn Binding="{Binding TotalWinnings, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="Auto" Header="TotalWinnings"/>
+
+                                    <DataGridTemplateColumn IsReadOnly="False" ClipboardContentBinding="{Binding FreePlayType}" Header="Free Play State" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding FreePlayStates}" SelectedItem="{Binding FreePlayState, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTextColumn Binding="{Binding AlternativeGames, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="Auto" Header="AlternativeGames"/>
+                                    <DataGridTextColumn Binding="{Binding ExpirationDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="Auto" Header="ExpirationDate" MinWidth="150"/>
+                                    <DataGridTextColumn Binding="{Binding FreePlayID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="Auto" Header="FreePlayID" MinWidth="150"/>
+                                    
+                                    <DataGridTemplateColumn Header="" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Source="{Binding Path=DeleteAction.ImageSource}" Margin="0,0,3,0"/>
+                                                    <Button Style="{StaticResource LinkButton}"  Content="{Binding Path=DeleteAction.Caption}" Command="{Binding Path=DeleteAction.Command}" Margin="2"/>
+                                                </StackPanel>
+
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </DockPanel>
+                    </GroupBox>
+                    
+                  
+                </Grid>
+            </DockPanel>
+
+        </Grid>
+    </DockPanel>
+</UserControl>

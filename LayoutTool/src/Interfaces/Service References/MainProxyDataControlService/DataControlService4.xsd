@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GGPGameServer.Simulations.GGPMock" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GGPGameServer.Simulations.GGPMock" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/MainProxyMock/DataControlService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost/MainProxyMock/DataControlService?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="PlayerData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attributes" nillable="true" type="tns:ArrayOfPlayerAccountAttribute" />
+      <xs:element minOccurs="0" name="BankrollCurrency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CID" type="xs:int" />
+      <xs:element minOccurs="0" name="EnableAutomaticRegulationSelection" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FreePlay" nillable="true" type="tns:ArrayOfFreePlayMockData" />
+      <xs:element minOccurs="0" name="IsDefaultPlayer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItalyRegulationData" nillable="true" type="tns:ItalyRegulationMockData" />
+      <xs:element minOccurs="0" name="JackpotData" nillable="true" type="tns:JackpotMockData" />
+      <xs:element minOccurs="0" name="RealMoneyBalance" type="xs:long" />
+      <xs:element minOccurs="0" name="Regulation" nillable="true" type="tns:RegulationTypeMock" />
+      <xs:element minOccurs="0" name="SpainRegulationData" nillable="true" type="tns:SpainRegulationMockData" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlayerData" nillable="true" type="tns:PlayerData" />
+  <xs:complexType name="ArrayOfPlayerAccountAttribute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlayerAccountAttribute" nillable="true" type="tns:PlayerAccountAttribute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlayerAccountAttribute" nillable="true" type="tns:ArrayOfPlayerAccountAttribute" />
+  <xs:complexType name="PlayerAccountAttribute">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributeType" type="tns:PlayerAccountAttributeType" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlayerAccountAttribute" nillable="true" type="tns:PlayerAccountAttribute" />
+  <xs:simpleType name="PlayerAccountAttributeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="CID" />
+      <xs:enumeration value="CountryID" />
+      <xs:enumeration value="Age">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GenderId">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RegistrationDate">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IsNTSUser">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OrigCid">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VipTable">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">29</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VipLogo">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IsChatDenied">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">44</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FTDOrientationId">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">45</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ClientTypeId">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">46</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TaxId">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">47</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P2PPlayerType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">48</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RegulationStatusID">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">49</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DaysToUploadDocument">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">50</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SnapSELimit">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">51</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PatronProfile">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">52</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RegistrationStatusId">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">53</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IsTestAccount">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">54</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PlayerJoinDate">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">55</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RegistrationCurrency">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">56</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DateOfBirth">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">57</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PlayerAccountAttributeType" nillable="true" type="tns:PlayerAccountAttributeType" />
+  <xs:complexType name="ArrayOfFreePlayMockData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FreePlayMockData" nillable="true" type="tns:FreePlayMockData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFreePlayMockData" nillable="true" type="tns:ArrayOfFreePlayMockData" />
+  <xs:complexType name="FreePlayMockData">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AlternativeGames" nillable="true" type="q1:ArrayOfint" />
+      <xs:element minOccurs="0" name="Balance" type="xs:long" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FreePlayID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="FreePlayState" nillable="true" type="tns:FreePlayStateMock" />
+      <xs:element minOccurs="0" name="FreePlayType" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GamesTypes" nillable="true" type="q2:ArrayOfint" />
+      <xs:element minOccurs="0" name="MaxBetAmount" type="xs:long" />
+      <xs:element minOccurs="0" name="MaxWinningCap" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalWinnings" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FreePlayMockData" nillable="true" type="tns:FreePlayMockData" />
+  <xs:complexType name="FreePlayStateMock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FreePlayStateMock" nillable="true" type="tns:FreePlayStateMock" />
+  <xs:complexType name="ItalyRegulationMockData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentGameLimit" type="xs:long" />
+      <xs:element minOccurs="0" name="MaxGameLimit" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItalyRegulationMockData" nillable="true" type="tns:ItalyRegulationMockData" />
+  <xs:complexType name="JackpotMockData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="JackpotSeed" type="xs:double" />
+      <xs:element minOccurs="0" name="JackpotValue" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JackpotMockData" nillable="true" type="tns:JackpotMockData" />
+  <xs:complexType name="RegulationTypeMock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultCurrency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegulationTypeMock" nillable="true" type="tns:RegulationTypeMock" />
+  <xs:complexType name="SpainRegulationMockData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GameLimit" type="xs:long" />
+      <xs:element minOccurs="0" name="IntervalReminderInMinutes" type="xs:int" />
+      <xs:element minOccurs="0" name="RequestedTimeLimit" type="xs:long" />
+      <xs:element minOccurs="0" name="RestrictionPeriod" type="xs:long" />
+      <xs:element minOccurs="0" name="SessionDuration" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalBets" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalWins" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpainRegulationMockData" nillable="true" type="tns:SpainRegulationMockData" />
+</xs:schema>

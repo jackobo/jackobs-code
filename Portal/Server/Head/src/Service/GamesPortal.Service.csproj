@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{15B3E0D2-6217-493A-A690-158C497F5318}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GamesPortal.Service</RootNamespace>
+    <AssemblyName>GamesPortal.Service</AssemblyName>
+    <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <XsdCodeGenEnabled>True</XsdCodeGenEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Diagnostics, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Diagnostics.3.0.1\lib\net45\Microsoft.Owin.Diagnostics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.HttpListener.3.0.1\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.Diff, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Artifactory\Entities\RegulationArtifact.cs" />
+    <Compile Include="Artifactory\Implementations\ChillWrapperRepository.cs" />
+    <Compile Include="Artifactory\Implementations\ChillWrapperRepositoryDescriptor.cs" />
+    <Compile Include="Artifactory\Implementations\ComponentVersionRecordBuilder.cs" />
+    <Compile Include="Artifactory\Implementations\GamesRepository.cs" />
+    <Compile Include="Artifactory\Implementations\GamesRepositoryDescriptor.cs" />
+    <Compile Include="Artifactory\Implementations\GameVersionLanguageRecordsSynchronizer.cs" />
+    <Compile Include="Artifactory\Implementations\GameVersionRegulationRecordsSynchronizer.cs" />
+    <Compile Include="Artifactory\Interfaces\IArtifactoryRepositoryDescriptor.cs" />
+    <Compile Include="Artifactory\Interfaces\IChillWrapperRepository.cs" />
+    <Compile Include="Artifactory\Interfaces\IGamesRepository.cs" />
+    <Compile Include="Entities\LanguageDTO.cs" />
+    <Compile Include="Entities\RegulationDTO.cs" />
+    <Compile Include="Entities\Reporting\ApprovedGameVersionDTO.cs" />
+    <Compile Include="Internals\IGamesLanguageQAApprovalStatusNormalizer.cs" />
+    <Compile Include="Internals\IRegulationsDictionary.cs" />
+    <Compile Include="Artifactory\Implementations\ComponentSynchronizer.cs" />
+    <Compile Include="Artifactory\Interfaces\IArtifactorySynchronizationManager.cs" />
+    <Compile Include="Configurations\SignalRSettings.cs" />
+    <Compile Include="Configurations\LayoutToolPublisherSettings.cs" />
+    <Compile Include="DataAccessLayer\CommonInterfaces.cs" />
+    <Compile Include="DataAccessLayer\GamesPortalDatabaseUpgrader.cs" />
+    <Compile Include="DataAccessLayer\JackpotInfoDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JackpotInfoDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\JackpotInfoDBPartials.cs" />
+    <Compile Include="Entities\Language.cs" />
+    <Compile Include="Internals\ApplicationLifetimeManager.cs" />
+    <Compile Include="Internals\GamesPortalInternalServices.cs" />
+    <Compile Include="Internals\IGamesPortalInternalServices.cs" />
+    <Compile Include="Internals\ITfsGateway.cs" />
+    <Compile Include="Internals\LanguageDictionary.cs" />
+    <Compile Include="Internals\SynchronizerStopper.cs" />
+    <Compile Include="Services\Contracts\IGamesPortalToBuildMachineAdapter.cs" />
+    <Compile Include="Internals\GameLanguageApprover.cs" />
+    <Compile Include="Services\Implementations\GamesPortalToBuildMachineAdapter.cs" />
+    <Compile Include="Synchronizers\GameLanguageToArtifactorySynchronizer.cs" />
+    <Compile Include="Synchronizers\GamesBatchSynchronizationQueue.cs" />
+    <Compile Include="Synchronizers\GamesBatchSynchronizer.cs" />
+    <Compile Include="Synchronizers\GamesLanguageQAApprovalStatusNormalizer.cs" />
+    <Compile Include="Synchronizers\PendingGame.cs" />
+    <Compile Include="Synchronizers\Synchronizer.cs" />
+    <Compile Include="Synchronizers\TimerBasedSynchronizer.cs" />
+    <Compile Include="WorkspaceExtensions.cs" />
+    <None Include="DataAccessLayer\JackpotInfoDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>JackpotInfoDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>GamesPortal.Service.Jackpot</CustomToolNamespace>
+    </None>
+    <None Include="DependencyFactory.cs" />
+    <Compile Include="DataAccessLayer\GamesPortalDB.cs">
+      <DependentUpon>GamesPortalDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\GamesPortalDbPartials.cs" />
+    <Compile Include="DataAccessLayer\IDictionariesDBDataContext.cs" />
+    <Compile Include="DataAccessLayer\IGamesPortalDataContext.cs" />
+    <Compile Include="DataAccessLayer\IGGPVersioningDBDataContext.cs" />
+    <Compile Include="Internals\CallContextServices.cs" />
+    <Compile Include="Entities\CountryDto.cs" />
+    <Compile Include="Entities\CurrencyDto.cs" />
+    <Compile Include="Entities\GameInfrastructureDTO.cs" />
+    <Compile Include="Entities\Reporting\GameVersionReleaseDTO.cs" />
+    <Compile Include="Entities\Reporting\LatestGameVersionForRegulationDTO.cs" />
+    <Compile Include="Entities\LayoutTool\GameInfo.cs" />
+    <Compile Include="ServiceFramework.cs" />
+    <Compile Include="Services\Contracts\IGamesPortalApprovalService.cs" />
+    <Compile Include="Services\Contracts\ILayoutToolPublisher.cs" />
+    <Compile Include="Services\Contracts\ILayoutToolService.cs" />
+    <Compile Include="Services\Implementations\LayoutToolPublisher.cs" />
+    <Compile Include="Services\Implementations\LayoutToolService.cs" />
+    <Compile Include="SignalR\ISignalRDataContracts.cs" />
+    <Compile Include="Services\Implementations\GamesPortalApprovalService.cs" />
+    <Compile Include="Services\Implementations\WcfServiceBase.cs" />
+    <Compile Include="Services\WCF\DependencyInjectionInstanceProvider.cs" />
+    <Compile Include="Services\WCF\DependencyInjectionServiceBehavior.cs" />
+    <Compile Include="Services\WCF\DependencyInjectionServiceHost.cs" />
+    <Compile Include="SignalR\SignalRImplementation.cs" />
+    <Compile Include="Synchronizers\RegulationTypesSynchronizer.cs" />
+    <Compile Include="Utils\EnumerableExtensions.cs" />
+    <Compile Include="Artifactory\ArtifactorySettings.cs" />
+    <Compile Include="Artifactory\Entities\GameTypeDescriptor.cs" />
+    <Compile Include="Artifactory\Implementations\ArtifactoryRepositoryDescriptor.cs" />
+    <Compile Include="Artifactory\Implementations\ArtifactoryRepository.cs" />
+    <Compile Include="Artifactory\Implementations\ArtifactoryRestClient.cs" />
+    <Compile Include="Artifactory\Implementations\ArtifactoryRestClientFactory.cs" />
+    <Compile Include="Artifactory\Entities\Artifact.cs" />
+    <Compile Include="Artifactory\Entities\ArtifactoryResponse.cs" />
+    <Compile Include="Artifactory\Entities\ArtifactoryException.cs" />
+    <Compile Include="Artifactory\Implementations\ArtifactorySynchronizationManager.cs" />
+    <Compile Include="Artifactory\Implementations\ComponentSynchronizerDataAccessLayer.cs" />
+    <Compile Include="Artifactory\Interfaces\IArtifactoryRepository.cs" />
+    <Compile Include="Artifactory\Interfaces\IArtifactoryRestClient.cs" />
+    <Compile Include="Artifactory\Interfaces\IArtifactoryRestClientFactory.cs" />
+    <Compile Include="Artifactory\Interfaces\IComponentSynchronizerDataAccessLayer.cs" />
+    <Compile Include="Artifactory\Interfaces\IArtifactorySyncronizationLogger.cs" />
+    <Compile Include="Artifactory\Entities\PropertySet.cs" />
+    <Compile Include="Artifactory\Entities\ArtifactoryStorageItem.cs" />
+    <Compile Include="Artifactory\Entities\ArtifactoryStorageItemChild.cs" />
+    <Compile Include="Artifactory\Entities\ArtifactoryProperty.cs" />
+    <Compile Include="Artifactory\WellKnownErrorCodes.cs" />
+    <Compile Include="Artifactory\WellKnownNamesAndValues.cs" />
+    <Compile Include="Entities\Enums.cs" />
+    <Compile Include="Services\Implementations\GamesPortalService.cs" />
+    <Compile Include="DataAccessLayer\GamesPortalDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GamesPortalDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\SdmDb.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SdmDb.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\GGPVersioningDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GGPVersioningDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\GameDTO.cs" />
+    <Compile Include="Entities\GameTypeDTO.cs" />
+    <Compile Include="Entities\GameVersionDTO.cs" />
+    <Compile Include="Entities\Reporting\LatestApprovedGameVersionForRegulationDTO.cs" />
+    <Compile Include="Services\Contracts\IGamesPortalService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\GamesPortalDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>GamesPortalDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessLayer\SdmDb.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SdmDb.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>GamesPortal.Service.SDM</CustomToolNamespace>
+    </None>
+    <None Include="DataAccessLayer\GGPVersioningDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>GGPVersioningDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>GamesPortal.Service.GGPVersioning</CustomToolNamespace>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataAccessLayer\GGPVersioningDB.dbml.layout">
+      <DependentUpon>GGPVersioningDB.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataAccessLayer\SdmDb.dbml.layout">
+      <DependentUpon>SdmDb.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataAccessLayer\GamesPortalDB.dbml.layout">
+      <DependentUpon>GamesPortalDB.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dependencies\Spark.Infra\Spark.Infra\Spark.Infra.csproj">
+      <Project>{02e9598a-f44e-4359-844a-dfc8bdc9e36c}</Project>
+      <Name>Spark.Infra</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataAccessLayer\JackpotInfoDB.dbml.layout">
+      <DependentUpon>JackpotInfoDB.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0002.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0001.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0003.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0015.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0004.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0005.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0006.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0007.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0008.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0009.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0010.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0011.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0012.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0013.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0014.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0016.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0017.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0018.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0019.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0020.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0021.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0022.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0023.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0024.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0025.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0026.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0027.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0028.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0029.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0030.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0031.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0032.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0033.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0034.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0035.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0036.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0037.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0038.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0039.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0040.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0041.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0043.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0042.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0044.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0045.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0046.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0047.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0048.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0049.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0050.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0051.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0052.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0053.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0054.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0055.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0056.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0057.sql" />
+    <EmbeddedResource Include="DataAccessLayer\UpgradeScripts\0058.sql" />
+    <Content Include="DataAccessLayer\UsefulSqlScripts\GenerateLanguageClasses.sql" />
+    <Content Include="DataAccessLayer\UsefulSqlScripts\IncorectGamesVersionCronology.sql" />
+    <Content Include="language approval discussion.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
+        <WcfProjectProperties>
+          <AutoStart>True</AutoStart>
+        </WcfProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

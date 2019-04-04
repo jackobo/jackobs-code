@@ -1,0 +1,79 @@
+{
+	"abTests":
+	[
+		{
+			"ID":"9",
+			"Name":"Test name as string",
+			"Description":"Long description of the test",
+			"testCasesSets":[
+				{
+					"brand":"1",
+					"skin":"4",
+					"lang":"en",
+					"testCases":[
+						{
+							"ID":"1", "isDefault":"true", "Method":"1", "Name":"FLASH", "UsePercentage":"99", "Description":"MLNG is an FLASH game",
+							"ClientFolder":"",
+							"configurationPaths":{
+										"navigationPlanPath": "Configuration/navigation_plans/brand_0/skin_4/navigation_plan.json"
+							}
+						},
+						{
+							"ID":"2", "isDefault":"false", "Method":"1", "Name":"FLASH", "UsePercentage":"1", "Description":"MLNG is an FLASH game",
+							"ClientFolder":"",
+							"configurationPaths":{
+										"navigationPlanPath": "Configuration/navigation_plans/theme_4/brand_0/skin_4/navigation_plan.json",
+										"themePath": "navigation/theme/5/media/theme_5.json",
+										"preloaderPath": "navigation/theme/5/media/fwlib_base.swf",
+										"lobbyThemePath": "navigation/theme/5/media/lobby_theme.swf"
+							}
+						}
+					]
+				},
+        {
+          "brand": "1",
+          "skin": "5",
+          "lang": "en",
+          "testCases": [
+            {
+              "ID": "1",
+              "isDefault": "true",
+              "Method": "1",
+              "Name": "FLASH",
+              "UsePercentage": "99",
+              "Description": "MLNG is an FLASH game",
+              "ClientFolder": "",
+              "configurationPaths": {
+                "navigationPlanPath": "Configuration/navigation_plans/theme_4/brand_0/skin_5/navigation_plan.json",
+                "themePath": "navigation/theme/4/media/theme_4.json"
+              }
+            },
+            {
+              "ID": "2",
+              "isDefault": "false",
+              "Method": "2",
+              "Name": "FLASH",
+              "UsePercentage": "1",
+              "Description": "Full client override",
+              "ClientFolder": "versionX"
+            }
+          ]
+        },
+        {
+					"brand":"2",
+					"skin":"5",
+					"lang":"it",
+					"testCases":[
+						{
+							"ID":"1", "isDefault":"true", "Method":"1", "Name":"FLASH", "UsePercentage":"99", "Description":"MLNG is an FLASH game",
+							"ClientFolder":"",
+							"configurationPaths":{
+										"themePath": "navigation/theme/4/media/theme_4.json"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

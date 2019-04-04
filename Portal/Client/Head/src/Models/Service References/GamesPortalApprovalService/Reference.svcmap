@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c3303c64-f844-42a2-b7fd-86287d42034b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>false</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/GamesPortalApprovalService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GamesPortalApprovalService5.xsd" MetadataType="Schema" ID="5997a7f0-a817-4e42-93c9-c8cc1e902999" SourceId="1" SourceUrl="http://localhost/GamesPortalApprovalService?xsd=xsd1" />
+    <MetadataFile FileName="GamesPortalApprovalService1.wsdl" MetadataType="Wsdl" ID="3900ead8-75e7-4e0f-a3e2-13d3db9df59a" SourceId="1" SourceUrl="http://localhost/GamesPortalApprovalService?wsdl" />
+    <MetadataFile FileName="GamesPortalApprovalService51.xsd" MetadataType="Schema" ID="61cfb670-3909-470a-b8ef-b1f2c494bee9" SourceId="1" SourceUrl="http://localhost/GamesPortalApprovalService?xsd=xsd3" />
+    <MetadataFile FileName="GamesPortalApprovalService52.xsd" MetadataType="Schema" ID="2136a89c-b76b-455d-af2b-24d268bb3878" SourceId="1" SourceUrl="http://localhost/GamesPortalApprovalService?xsd=xsd0" />
+    <MetadataFile FileName="GamesPortalApprovalService53.xsd" MetadataType="Schema" ID="f3554b70-c744-4307-a4ad-46c9acaac2a1" SourceId="1" SourceUrl="http://localhost/GamesPortalApprovalService?xsd=xsd2" />
+    <MetadataFile FileName="GamesPortalApprovalService1.disco" MetadataType="Disco" ID="0739cc8c-b811-4dff-a815-b0ee62ac3232" SourceId="1" SourceUrl="http://localhost/GamesPortalApprovalService?disco" />
+    <MetadataFile FileName="GamesPortalApprovalService54.xsd" MetadataType="Schema" ID="6374db9e-bbdf-4c1e-a554-06b8790d27dd" SourceId="1" SourceUrl="http://localhost/GamesPortalApprovalService?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

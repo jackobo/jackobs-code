@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:wpfCommon="clr-namespace:Spark.Wpf.Common"
+                    xmlns:views="clr-namespace:Spark.Wpf.Common.Views"
+                    xmlns:viewModels="clr-namespace:Spark.Wpf.Common.ViewModels">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="..\StretchedTreeViewItemStyle.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <wpfCommon:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    
+    <DataTemplate DataType="{x:Type viewModels:LazyLoadingIndicatorExplorerBarItem}">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <views:SmallCircularProgressBar Width="20" 
+                                            Height="20" 
+                                            Margin="1" 
+                                            StartupDelay="0" 
+                                            Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}"/>
+            
+            <TextBlock Text="{Binding Caption}" FontWeight="Bold" FontStyle="Italic"/>
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>

@@ -1,0 +1,1 @@
+﻿EXECUTE sp_rename N'dbo.GameVersion.Version', N'VersionFolder', 'COLUMN' 

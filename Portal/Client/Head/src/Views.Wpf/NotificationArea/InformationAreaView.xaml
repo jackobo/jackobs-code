@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:notificationArea="clr-namespace:GamesPortal.Client.ViewModels.NotificationArea;assembly=GamesPortal.Client.ViewModels">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Commons/CommonStyles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <DataTemplate DataType="{x:Type notificationArea:InformationArea}">
+        <DockPanel>
+            <ToolBar DockPanel.Dock="Top" FontWeight="Bold" VerticalContentAlignment="Center">
+                <Button Cursor="Hand" Command="{Binding ClearCommand}" >
+                    <StackPanel Orientation="Horizontal" Margin="1">
+                        <Image Style="{StaticResource standardImageSizeStyle}" Source="../Resources/RemoveAll_24x24.png"/>
+                        <TextBlock Text="Clear"/>
+                    </StackPanel>
+                </Button>
+            </ToolBar>
+
+            <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="False" HeadersVisibility="None" Background="White" RowDetailsVisibilityMode="VisibleWhenSelected" IsReadOnly="True" FontSize="12" FontWeight="Bold">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Message, Mode=OneWay}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+        
+    </DataTemplate>
+
+</ResourceDictionary>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/GGPGameServer.ApprovalSystem.DeveloperTool" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GGPGameServer.ApprovalSystem.DeveloperTool" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/GGPApprovalSystem/qa/devtools.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost/GGPApprovalSystem/qa/devtools.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="BeginBuildRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildType" type="tns:BuildType" />
+      <xs:element minOccurs="0" name="CoreComponents" nillable="true" type="tns:ArrayOfCoreComponentPublishDTO" />
+      <xs:element minOccurs="0" name="CustomizedInstaller" nillable="true" type="tns:InstallerCustomizationInfoDTO" />
+      <xs:element minOccurs="0" name="GameEngines" nillable="true" type="tns:ArrayOfGameEnginePublishDTO" />
+      <xs:element minOccurs="0" name="GamesLimits" nillable="true" type="tns:ArrayOfGameLimitsPublishDTO" />
+      <xs:element minOccurs="0" name="GamesMaths" nillable="true" type="tns:ArrayOfGameMathPublishDTO" />
+      <xs:element minOccurs="0" name="PublisherEmailAddress" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BeginBuildRequest" nillable="true" type="tns:BeginBuildRequest" />
+  <xs:simpleType name="BuildType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Main" />
+      <xs:enumeration value="ProductionHotfix" />
+      <xs:enumeration value="QAHotfix" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BuildType" nillable="true" type="tns:BuildType" />
+  <xs:complexType name="ArrayOfCoreComponentPublishDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CoreComponentPublishDTO" nillable="true" type="tns:CoreComponentPublishDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCoreComponentPublishDTO" nillable="true" type="tns:ArrayOfCoreComponentPublishDTO" />
+  <xs:complexType name="CoreComponentPublishDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ComponentPublishDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ComponentType" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CoreComponentPublishDTO" nillable="true" type="tns:CoreComponentPublishDTO" />
+  <xs:complexType name="ComponentPublishDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComponentDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComponentUniqueId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistributionServerPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProjectFullServerPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentPublishDTO" nillable="true" type="tns:ComponentPublishDTO" />
+  <xs:complexType name="InstallerCustomizationInfoDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InstallerVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductionEnvironmentName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InstallerCustomizationInfoDTO" nillable="true" type="tns:InstallerCustomizationInfoDTO" />
+  <xs:complexType name="ArrayOfGameEnginePublishDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameEnginePublishDTO" nillable="true" type="tns:GameEnginePublishDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameEnginePublishDTO" nillable="true" type="tns:ArrayOfGameEnginePublishDTO" />
+  <xs:complexType name="GameEnginePublishDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ComponentPublishDTO">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GameEnginePublishDTO" nillable="true" type="tns:GameEnginePublishDTO" />
+  <xs:complexType name="ArrayOfGameLimitsPublishDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameLimitsPublishDTO" nillable="true" type="tns:GameLimitsPublishDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameLimitsPublishDTO" nillable="true" type="tns:ArrayOfGameLimitsPublishDTO" />
+  <xs:complexType name="GameLimitsPublishDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GamePublishDTO">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GameLimitsPublishDTO" nillable="true" type="tns:GameLimitsPublishDTO" />
+  <xs:complexType name="GamePublishDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ComponentPublishDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EngineUniqueId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GamePublishDTO" nillable="true" type="tns:GamePublishDTO" />
+  <xs:complexType name="ArrayOfGameMathPublishDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameMathPublishDTO" nillable="true" type="tns:GameMathPublishDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameMathPublishDTO" nillable="true" type="tns:ArrayOfGameMathPublishDTO" />
+  <xs:complexType name="GameMathPublishDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GamePublishDTO">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GameMathPublishDTO" nillable="true" type="tns:GameMathPublishDTO" />
+  <xs:complexType name="BeginBuildResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TransactionID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BeginBuildResponse" nillable="true" type="tns:BeginBuildResponse" />
+  <xs:complexType name="EndBuildRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeSetId" type="xs:int" />
+      <xs:element minOccurs="0" name="TransactionID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EndBuildRequest" nillable="true" type="tns:EndBuildRequest" />
+  <xs:complexType name="GetComponentsLatestVersionRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetComponentsLatestVersionRequest" nillable="true" type="tns:GetComponentsLatestVersionRequest" />
+  <xs:complexType name="GetComponentsLatestVersionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Versions" nillable="true" type="tns:ArrayOfComponentLatestVersion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetComponentsLatestVersionResponse" nillable="true" type="tns:GetComponentsLatestVersionResponse" />
+  <xs:complexType name="ArrayOfComponentLatestVersion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComponentLatestVersion" nillable="true" type="tns:ComponentLatestVersion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComponentLatestVersion" nillable="true" type="tns:ArrayOfComponentLatestVersion" />
+  <xs:complexType name="ComponentLatestVersion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeSet" type="xs:int" />
+      <xs:element minOccurs="0" name="ComponentUniqueId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistributionPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProjectPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentLatestVersion" nillable="true" type="tns:ComponentLatestVersion" />
+  <xs:complexType name="GetProductionEnvironmentsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Environments" nillable="true" type="tns:ArrayOfProductionEnvironmentDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetProductionEnvironmentsResponse" nillable="true" type="tns:GetProductionEnvironmentsResponse" />
+  <xs:complexType name="ArrayOfProductionEnvironmentDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductionEnvironmentDTO" nillable="true" type="tns:ProductionEnvironmentDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductionEnvironmentDTO" nillable="true" type="tns:ArrayOfProductionEnvironmentDTO" />
+  <xs:complexType name="ProductionEnvironmentDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductionEnvironmentDTO" nillable="true" type="tns:ProductionEnvironmentDTO" />
+  <xs:complexType name="GetProductionInstallersRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnvironmentId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetProductionInstallersRequest" nillable="true" type="tns:GetProductionInstallersRequest" />
+  <xs:complexType name="GetProductionInstallersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Installers" nillable="true" type="tns:ArrayOfProductionInstallerDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetProductionInstallersResponse" nillable="true" type="tns:GetProductionInstallersResponse" />
+  <xs:complexType name="ArrayOfProductionInstallerDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductionInstallerDTO" nillable="true" type="tns:ProductionInstallerDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductionInstallerDTO" nillable="true" type="tns:ArrayOfProductionInstallerDTO" />
+  <xs:complexType name="ProductionInstallerDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductionInstallerDTO" nillable="true" type="tns:ProductionInstallerDTO" />
+  <xs:complexType name="GetQAInstallersRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetQAInstallersRequest" nillable="true" type="tns:GetQAInstallersRequest" />
+  <xs:complexType name="GetQAInstallersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Installers" nillable="true" type="tns:ArrayOfQAInstallerDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetQAInstallersResponse" nillable="true" type="tns:GetQAInstallersResponse" />
+  <xs:complexType name="ArrayOfQAInstallerDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QAInstallerDTO" nillable="true" type="tns:QAInstallerDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQAInstallerDTO" nillable="true" type="tns:ArrayOfQAInstallerDTO" />
+  <xs:complexType name="QAInstallerDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QAInstallerDTO" nillable="true" type="tns:QAInstallerDTO" />
+  <xs:complexType name="GetInstallerContentRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InstallerId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetInstallerContentRequest" nillable="true" type="tns:GetInstallerContentRequest" />
+  <xs:complexType name="GetInstallerContentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoreComponents" nillable="true" type="tns:ArrayOfCoreComponentInsideInstallerDTO" />
+      <xs:element minOccurs="0" name="GameEngines" nillable="true" type="tns:ArrayOfGameEngineInsideInstallerDTO" />
+      <xs:element minOccurs="0" name="GamesLimits" nillable="true" type="tns:ArrayOfGameLimitsInsideInstallerDTO" />
+      <xs:element minOccurs="0" name="GamesMaths" nillable="true" type="tns:ArrayOfGameMathInsideInstallerDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetInstallerContentResponse" nillable="true" type="tns:GetInstallerContentResponse" />
+  <xs:complexType name="ArrayOfCoreComponentInsideInstallerDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CoreComponentInsideInstallerDTO" nillable="true" type="tns:CoreComponentInsideInstallerDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCoreComponentInsideInstallerDTO" nillable="true" type="tns:ArrayOfCoreComponentInsideInstallerDTO" />
+  <xs:complexType name="CoreComponentInsideInstallerDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ComponentInsideInstallerDTO">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CoreComponentInsideInstallerDTO" nillable="true" type="tns:CoreComponentInsideInstallerDTO" />
+  <xs:complexType name="ComponentInsideInstallerDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeSet" type="xs:int" />
+      <xs:element minOccurs="0" name="ComponentUniqueId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistributionFolder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProjectFolder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentInsideInstallerDTO" nillable="true" type="tns:ComponentInsideInstallerDTO" />
+  <xs:complexType name="ArrayOfGameEngineInsideInstallerDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameEngineInsideInstallerDTO" nillable="true" type="tns:GameEngineInsideInstallerDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameEngineInsideInstallerDTO" nillable="true" type="tns:ArrayOfGameEngineInsideInstallerDTO" />
+  <xs:complexType name="GameEngineInsideInstallerDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ComponentInsideInstallerDTO">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GameEngineInsideInstallerDTO" nillable="true" type="tns:GameEngineInsideInstallerDTO" />
+  <xs:complexType name="ArrayOfGameLimitsInsideInstallerDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameLimitsInsideInstallerDTO" nillable="true" type="tns:GameLimitsInsideInstallerDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameLimitsInsideInstallerDTO" nillable="true" type="tns:ArrayOfGameLimitsInsideInstallerDTO" />
+  <xs:complexType name="GameLimitsInsideInstallerDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ComponentInsideInstallerDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EngineName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EngineUniqueId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GameLimitsInsideInstallerDTO" nillable="true" type="tns:GameLimitsInsideInstallerDTO" />
+  <xs:complexType name="ArrayOfGameMathInsideInstallerDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameMathInsideInstallerDTO" nillable="true" type="tns:GameMathInsideInstallerDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameMathInsideInstallerDTO" nillable="true" type="tns:ArrayOfGameMathInsideInstallerDTO" />
+  <xs:complexType name="GameMathInsideInstallerDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ComponentInsideInstallerDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EngineName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EngineUniqueId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GameMathInsideInstallerDTO" nillable="true" type="tns:GameMathInsideInstallerDTO" />
+  <xs:complexType name="GetHotfixVersionsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InstallerID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetHotfixVersionsRequest" nillable="true" type="tns:GetHotfixVersionsRequest" />
+  <xs:complexType name="GetHotfixVersionsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HotfixVersions" nillable="true" type="tns:ArrayOfComponentNextHotfixVersion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetHotfixVersionsResponse" nillable="true" type="tns:GetHotfixVersionsResponse" />
+  <xs:complexType name="ArrayOfComponentNextHotfixVersion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComponentNextHotfixVersion" nillable="true" type="tns:ComponentNextHotfixVersion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComponentNextHotfixVersion" nillable="true" type="tns:ArrayOfComponentNextHotfixVersion" />
+  <xs:complexType name="ComponentNextHotfixVersion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeSet" type="xs:int" />
+      <xs:element minOccurs="0" name="ComponentUniqueId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentVersion" type="xs:long" />
+      <xs:element minOccurs="0" name="DistributionPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HotfixVersion" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComponentNextHotfixVersion" nillable="true" type="tns:ComponentNextHotfixVersion" />
+  <xs:complexType name="DeleteComponentsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ComponentsUniqueIDs" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteComponentsRequest" nillable="true" type="tns:DeleteComponentsRequest" />
+  <xs:complexType name="CreateNewBranchRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SourceBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetBranchName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateNewBranchRequest" nillable="true" type="tns:CreateNewBranchRequest" />
+</xs:schema>

@@ -1,0 +1,78 @@
+- save the layout in TFS + validations
+   - preffered location: $/GamingNDL/Develop/CasinoFlashClient/Configuration/HEAD
+
+- allow arena layout clone
+- Jackpot sums in the lobby
+- add Most Recently Saved layouts to the Load from file selector
+- provide default file name when saving the skin to a local file
+- Allow Drag & Drop multiple games 
+- A/B testing support for CCK
+- issue with drag & drop when all rows are selected
+
+
+OnGetUserGameSessions failed! CID: 1234567; UserName: Mock  Exception detailes: System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at http://localhost:8735/GameServerManagment/ that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:8735
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.InternalConnect(EndPoint remoteEP)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   --- End of inner exception stack trace ---
+
+
+
+
+
+#- names for the Dynamic Layout triggers	
+#- move GetClientUrlBuilder into the ISkinDefinitionBuilderFactory
+
+#- validation for the maximum number of filters (7)
+#- Pop up a message when the “New” indicator fails to be removed.
+#- Change the color of games which their approval status is unknown.
+
+1 w
+##- allow games other than the ones in the games_properties
+##- approved games
+#- take into account that in Artifactory now we have HTML5 PC & Mobile
+
+1 w
+##- A/B testing support ???? 1 week
+
+
+1 w
+##- JackpotVisible checkbox 
+
+##- add some animation for long operations
+
+#- Make the application  single instance application
+##- embed MainProxyMock inside Layout Tool
+##- enforce some items in the MyAccount not to be removed
+
+##- separate games in chunks of 10
+##- vendor name
+
+
+1 w
+##- Dynamic Layout triggers
+##- ViewMockup support for Dynamic Layout
+###- ViewMockup support for new Games ????
+
+
+
+====================================
+How to handle duplicated games defined in games_properties
+
+
+=====LONG TERM FEATURES===============================
+- Show the layout as a list
+- compare layouts
+
+
+==============validations==============
+A game that is in AlsoPlaying without beeing in any other place doesn't make sense
+##top games should have max 4 items
+
+
+Themes
+http://www.blogfodder.co.uk/2011/5/13/beginners-guide-to-using-wpf-themes

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="GameTechnology">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Flash" />
+      <xs:enumeration value="Html5" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GameTechnology" nillable="true" type="tns:GameTechnology" />
+  <xs:simpleType name="PlatformType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="PC" />
+      <xs:enumeration value="Mobile" />
+      <xs:enumeration value="PcAndMobile" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PlatformType" nillable="true" type="tns:PlatformType" />
+</xs:schema>

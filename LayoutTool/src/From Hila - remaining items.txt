@@ -1,0 +1,18 @@
+1.	Mockups screen – replace the bottom dynamic layouts part with a dropdown, to choose from default, layout 1, layout 2.
+	#2.	Allow duplicating content to a new dynamic layout, so you don’t have to start from scratch (as discussed – from scratch, from default, from another layout)
+3.	Replace between lobby arena and games arena on the left bar – PLEASE IGNORE this one. I will talk to Or and Ofir first
+	#4.	Add search bar to the games list on the right bar, and the games list in the center
+5.	Double click on error would take to the relevant screen
+	#6.	Allow adding multiple items at once (e.g. adding multiple games to an arena)
+7.	Add the option to export the data to an XL file
+8.	Add a warning message when the user tries to close the app without saving (see the end of the BRD for text)
+9.	Make the filters work (clicking on it will filter the list of games accordingly)
+10.	Filters list on the right will change according to the arena currently being edited.
+
+I’ll check with Ofir & Or:
+1.	Dynamic layouts condition no. of rounds works by game type - I’ll verify with Ofir that it’s OK
+2.	I’ll check if we can allow more than 2 dynamic layouts as requested by or
+3.	I’ll consult the order of the items in the list on the left
+
+
+

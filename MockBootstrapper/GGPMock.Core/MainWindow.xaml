@@ -1,0 +1,17 @@
+﻿<Window x:Class="GGPMockBootstrapper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Title="GGPMock Bootstrapper" Icon="GGPMockBootstrapper.ico" WindowStyle="SingleBorderWindow" WindowState="Maximized" >
+    
+    <DockPanel>
+        <Menu x:Name="mainMenu" Visibility="Collapsed" DockPanel.Dock="Top" Margin="0,0,0,5" FontSize="14" FontWeight="Bold">
+            <MenuItem Header="Program">
+                <MenuItem Header="Exit" Click="menuExit_Click">
+                 </MenuItem>
+            </MenuItem>
+        </Menu>
+         <DockPanel x:Name="contentContainer">
+             
+        </DockPanel>
+    </DockPanel>
+</Window>

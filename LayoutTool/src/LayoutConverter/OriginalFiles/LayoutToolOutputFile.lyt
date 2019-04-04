@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="utf-16"?>
+<skinDefinitionContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <publisher>SPARKWARE\florinia</publisher>
+  <sourceSkin clientVersion="7.4-0-241" brandId="0" brandName="888Casino" skinId="4" skinName="Non UK">
+    <selectorIdentity id="0a6b2da3-af86-485b-9bda-7675ed1f8013" description="Production" />
+  </sourceSkin>
+  <destinationSkin clientVersion="7.4-0-241" brandId="0" brandName="888Casino" skinId="4" skinName="Non UK">
+    <selectorIdentity id="0a6b2da3-af86-485b-9bda-7675ed1f8013" description="Production" />
+  </destinationSkin>
+  <skinDefinition>
+    <skinContent>
+      <topGames>
+        <layout>
+          <games>
+            <game gameType="130043" gameName="MILLIONAIRE GENIE" />
+            <game gameType="130128" gameName="DIAMONDS DELIGHT" />
+            <game gameType="130071" gameName="TREASURE FAIR" />
+            <game gameType="130134" gameName="RISE OF THE PHARAOHS" />
+          </games>
+        </layout>
+      </topGames>
+      <vipTopGames>
+        <layout>
+          <games>
+            <game gameType="130043" gameName="MILLIONAIRE GENIE" />
+            <game gameType="130128" gameName="DIAMONDS DELIGHT" />
+            <game gameType="130071" gameName="TREASURE FAIR" />
+            <game gameType="130134" gameName="RISE OF THE PHARAOHS" />
+          </games>
+        </layout>
+      </vipTopGames>
+      <arenas>
+        <arena type="1004" name="CARD &amp; TABLE GAMES" newGame="false">
+          <layouts>
+            <layout>
+              <attributes>
+                <attribute name="arenaLabelId" value="txtLineButtonCardsNTablesArena" />
+                <attribute name="type" value="1004" />
+                <attribute name="jpVisible" value="False" />
+                <attribute name="favoritesSize" value="4" />
+                <attribute name="newGame" value="False" />
+              </attributes>
+              <dataGridInfo>
+                <column>
+                  <attributes>
+                    <attribute name="field" value="gameTagLabelText" />
+                    <attribute name="columnWidth" value="330" />
+                    <attribute name="defaultSort" value="" />
+                    <attribute name="styleID" value="" />
+                    <attribute name="label" value="txtDataGridGameName" />
+                    <attribute name="sortBy" value="" />
+                  </attributes>
+                </column>
+                <column>
+                  <attributes>
+                    <attribute name="field" value="minBet" />
+                    <attribute name="columnWidth" value="125" />
+                    <attribute name="defaultSort" value="minBetNumber" />
+                    <attribute name="styleID" value="" />
+                    <attribute name="label" value="txtDataGridMinBet" />
+                    <attribute name="sortBy" value="minBetNumber" />
+                  </attributes>
+                </column>
+                <column>
+                  <attributes>
+                    <attribute name="field" value="maxBet" />
+                    <attribute name="columnWidth" value="126" />
+                    <attribute name="defaultSort" value="maxBetNumber" />
+                    <attribute name="styleID" value="" />
+                    <attribute name="label" value="txtDataGridMaxBet" />
+                    <attribute name="sortBy" value="maxBetNumber" />
+                  </attributes>
+                </column>
+              </dataGridInfo>
+              <filteringInfo>
+                <filter id="FILTER_ROULETTE" name="ROULETTE">
+                  <attributes>
+                    <attribute name="label" value="FILTER_ROULETTE" />
+                    <attribute name="field" value="roulette" />
+                    <attribute name="value" value="true" />
+                  </attributes>
+                </filter>
+                <filter id="FILTER_BLACKJACK" name="BLACKJACK">
+                  <attributes>
+                    <attribute name="label" value="FILTER_BLACKJACK" />
+                    <attribute name="field" value="blackJack" />
+                    <attribute name="value" value="true" />
+                  </attributes>
+                </filter>
+                <filter id="FILTER_POKER" name="POKER">
+                  <attributes>
+                    <attribute name="label" value="FILTER_POKER" />
+                    <attribute name="field" value="poker" />
+                    <attribute name="value" value="true" />
+                  </attributes>
+                </filter>
+                <filter id="FILTER_KENOGAME" name="KENO">
+                  <attributes>
+                    <attribute name="label" value="FILTER_KENOGAME" />
+                    <attribute name="field" value="kenoGame" />
+                    <attribute name="value" value="true" />
+                  </attributes>
+                </filter>
+                <filter id="FILTER_BACCARAT" name="BACCARAT">
+                  <attributes>
+                    <attribute name="label" value="FILTER_BACCARAT" />
+                    <attribute name="field" value="baccaratGame" />
+                    <attribute name="value" value="true" />
+                  </attributes>
+                </filter>
+              </filteringInfo>
+              <alsoPlayingGames>
+                <game gameType="130082" gameName="BACCARAT" />
+                <game gameType="130077" gameName="CARIBBEAN POKER" />
+              </alsoPlayingGames>
+              <games>
+                <game gameType="130008" gameName="EUROPEAN ROULETTE" />
+                <game gameType="130126" gameName="CLASSIC KENO" />
+                <game gameType="130012" gameName="MULTIHAND BLACKJACK" />
+                <game gameType="2330010" gameName="3D ROULETTE" />
+                <game gameType="130102" gameName="JACKS OR BETTER" />
+                <game gameType="120000" gameName="CLASSIC BLACKJACK" />
+                <game gameType="130009" gameName="HIGH LIMIT EUROPEAN ROULETTE" />
+                <game gameType="130001" gameName="CLASSIC EUROPEAN ROULETTE" />
+                <game gameType="130077" gameName="CARIBBEAN POKER" />
+                <game gameType="130122" gameName="JOKER'S WILD" />
+                <game gameType="130118" gameName="ACES &amp; FACES" />
+                <game gameType="130121" gameName="DEUCES WILD" />
+                <game gameType="130119" gameName="AMERICAN STARS" />
+                <game gameType="130120" gameName="BONUS POKER" />
+                <game gameType="130014" gameName="AMERICAN BLACKJACK" />
+                <game gameType="130004" gameName="FRENCH ROULETTE" />
+                <game gameType="2310124" gameName="OASIS POKER" />
+                <game gameType="130101" gameName="DEAL OR NO DEAL EUROPEAN ROULETTE" />
+                <game gameType="130006" gameName="AMERICAN ROULETTE" />
+                <game gameType="2310111" gameName="CASINO HOLD'EM POKER" />
+                <game gameType="130005" gameName="HIGH LIMIT FRENCH ROULETTE" />
+                <game gameType="130007" gameName="HIGH LIMIT AMERICAN ROULETTE" />
+                <game gameType="2310123" gameName="RED DOG PROGRESSIVE" />
+                <game gameType="130036" gameName="LOW STAKES ROULETTE" />
+                <game gameType="130082" gameName="BACCARAT" />
+                <game gameType="130022" gameName="TENS OR BETTER" />
+                <game gameType="2310167" gameName="DOUBLE EXPOSURE BLACKJACK" />
+                <game gameType="2310168" gameName="SINGLE DECK BLACKJACK" />
+                <game gameType="2310169" gameName="PONTOON PRO" />
+                <game gameType="2310170" gameName="PUNTO BANCO" />
+                <game gameType="2310171" gameName="TEXAS HOLDEM PRO" />
+                <game gameType="130066" gameName="KENO" />
+                <game gameType="120061" gameName="EUROPEAN ROULETTE VIP" />
+              </games>
+            </layout>
+          </layouts>
+        </arena>
+        <arena type="1000" name="SLOTS" newGame="false">
+          <layouts>
+            <layout>
+              <attributes>
+                <attribute name="arenaLabelId" value="txtLineButtonVideoSlots" />
+                <attribute name="type" value="1000" />
+                <attribute name="jpVisible" value="True" />
+                <attribute name="favoritesSize" value="4" />
+                <attribute name="newGame" value="False" />
+              </attributes>
+              <dataGridInfo>
+                <column>
+                  <attributes>
+                    <attribute name="field" value="gameTagLabelText" />
+                    <attribute name="columnWidth" value="330" />
+                    <attribute name="defaultSort" value="" />
+                    <attribute name="styleID" value="" />
+                    <attribute name="label" value="txtDataGridGameName" />
+                    <attribute name="sortBy" value="" />
+                  </attributes>
+                </column>
+                <column>
+                  <attributes>
+                    <attribute name="field" value="jackpot" />
+                    <attribute name="columnWidth" value="125" />
+                    <attribute name="defaultSort" value="numberJP" />
+                    <attribute name="styleID" value="" />
+                    <attribute name="label" value="txtDataGridJackpot" />
+                    <attribute name="sortBy" value="numberJP" />
+                  </attributes>
+                </column>
+                <column>
+                  <attributes>
+                    <attribute name="field" value="numOfLines" />
+                    <attribute name="columnWidth" value="126" />
+                    <attribute name="defaultSort" value="" />
+                    <attribute name="styleID" value="" />
+                    <attribute name="label" value="txtDataGridNumOfLines" />
+                    <attribute name="sortBy" value="" />
+                  </attributes>
+                </column>
+              </dataGridInfo>
+              <filteringInfo>
+                <filter id="FILTER_LINE_SET_1_20" name="1-20 LINES">
+                  <attributes>
+                    <attribute name="label" value="FILTER_LINE_SET_1_20" />
+                    <attribute name="field" value="lineSetTwo" />
+                    <attribute name="value" value="true" />
+                  </attributes>
+                </filter>
+                <filter id="FILTER_LINESET25PLUS" name="25+ LINES">
+                  <attributes>
+                    <attribute name="label" value="FILTER_LINESET25PLUS" />
+                    <attribute name="field" value="lineSetThree" />
+                    <attribute name="value" value="true" />
+                  </attributes>
+                </filter>
+                <filter id="FILTER_JACKPOT" name="JACKPOT">
+                  <attributes>
+                    <attribute name="label" value="FILTER_JACKPOT" />
+                    <attribute name="field" value="progressiveJackpot" />
+                    <attribute name="value" value="true" />
+                  </attributes>
+                </filter>
+                <filter id="FILTER_EXCLUSIVE" name="EXCLUSIVE">
+                  <attributes>
+                    <attribute name="label" value="FILTER_EXCLUSIVE" />
+                    <attribute name="field" value="exclusive" />
+                    <attribute name="value" value="true" />
+                  </attributes>
+                </filter>
+                <filter id="FILTER_NEWGAME" name="NEW">
+                  <attributes>
+                    <attribute name="label" value="FILTER_NEWGAME" />
+                    <attribute name="field" value="newGame" />
+                    <attribute name="value" value="true" />
+                  </attributes>
+                </filter>
+              </filteringInfo>
+              <alsoPlayingGames>
+                <game gameType="130114" gameName="THE BIG LEBOWSKI ONLINE SLOT ™" />
+                <game gameType="130128" gameName="DIAMONDS DELIGHT" />
+              </alsoPlayingGames>
+              <games>
+                <game gameType="130075" gameName="CAFE DE PARIS" />
+                <game gameType="130131" gameName="UNDER CONSTRUCTION" />
+                <game gameType="130135" gameName="SANTA'S SUPER SLOT" />
+                <game gameType="130113" gameName="JACK’S POT" />
+                <game gameType="130043" gameName="MILLIONAIRE GENIE" />
+                <game gameType="2310163" gameName="GUNS AND ROSES" />
+                <game gameType="130110" gameName="IRISH RICHES" />
+                <game gameType="130017" gameName="A NIGHTMARE ON ELM STREET" />
+                <game gameType="130071" gameName="TREASURE FAIR" />
+                <game gameType="130134" gameName="RISE OF THE PHARAOHS" />
+                <game gameType="130129" gameName="GODS OF GOLD" />
+                <game gameType="130123" gameName="PIRATES MILLIONS" />
+                <game gameType="130042" gameName="ULTIMATE UNIVERSE" />
+                <game gameType="2310080" gameName="STARBURST" />
+                <game gameType="2320024" gameName="SPARTACUS - GLADIATOR OF ROME" />
+                <game gameType="2330021" gameName="CLEOPATRA" />
+                <game gameType="2320025" gameName="RAINBOW RICHES" />
+                <game gameType="130091" gameName="ONCE UPON A DIME" />
+                <game gameType="130117" gameName="SECRETS OF SHANGHAI" />
+                <game gameType="130128" gameName="DIAMONDS DELIGHT" />
+                <game gameType="130127" gameName="CAT ME IF YOU CAN" />
+                <game gameType="130116" gameName="THE GLORIOUS 50'S" />
+                <game gameType="2310116" gameName="TWIN SPIN" />
+                <game gameType="130112" gameName="SAVED BY THE BELLS" />
+                <game gameType="130133" gameName="OKTOBERFEST SPINS" />
+                <game gameType="130114" gameName="THE BIG LEBOWSKI ONLINE SLOT ™" />
+                <game gameType="130088" gameName="DAWN OF THE DINOSAURS" />
+                <game gameType="2310146" gameName="DAZZLE ME" />
+                <game gameType="2330003" gameName="FAIREST OF THEM ALL" />
+                <game gameType="2320034" gameName="OMG KITTENS" />
+                <game gameType="130085" gameName="SUPERMAN" />
+                <game gameType="130037" gameName="CASINO REELS" />
+                <game gameType="130062" gameName="SNACK TIME" />
+                <game gameType="2310072" gameName="SOUTH PARK" />
+                <game gameType="130020" gameName="PARTY PIGS" />
+                <game gameType="2330020" gameName="WILD GAMBLER" />
+                <game gameType="130044" gameName="ULTIMATE GRILL THRILLS" />
+                <game gameType="130115" gameName="STEAMPUNK NATION" />
+                <game gameType="2330009" gameName="LEPRECHAUN'S LUCK" />
+                <game gameType="2330016" gameName="ZUMA SLOTS" />
+                <game gameType="2330014" gameName="IRON MAN 2" />
+                <game gameType="2330022" gameName="AMAZON WILD" />
+                <game gameType="2330023" gameName="BEJEWELED 2" />
+                <game gameType="2330008" gameName="CASPER'S MYSTERY MIRROR" />
+                <game gameType="130048" gameName="FREAKY FRUIT" />
+                <game gameType="130084" gameName="WONDER WOMAN" />
+                <game gameType="130092" gameName="JUNGLE GOAL$" />
+                <game gameType="130073" gameName="LOVE FROM LONDON" />
+                <game gameType="2310076" gameName="JACKHAMMER" />
+                <game gameType="130055" gameName="MAFIA MADNESS" />
+                <game gameType="130093" gameName="SEVEN GREAT WONDERS OF THE WORLD" />
+                <game gameType="130069" gameName="BOLLYWOOD BONANZA" />
+                <game gameType="2320003" gameName="THE WIZARD OF OZ - RUBY SLIPPERS" />
+                <game gameType="130034" gameName="VIVA L'ITALIA" />
+                <game gameType="2320015" gameName="ELVIS" />
+                <game gameType="2310118" gameName="MAGIC PORTALS" />
+                <game gameType="2310075" gameName="JACK AND THE BEANSTALK" />
+                <game gameType="130095" gameName="THE GREAT WAR" />
+                <game gameType="130094" gameName="GRINGO$ DINERO$" />
+                <game gameType="130023" gameName="JEWEL THIEF" />
+                <game gameType="2320022" gameName="AMAZON QUEEN" />
+                <game gameType="300003" gameName="KNIGHTS AND MAIDENS" />
+                <game gameType="2310071" gameName="GONZO'S QUEST" />
+                <game gameType="2320009" gameName="ZEUS" />
+                <game gameType="2320016" gameName="RAGING RHINO" />
+                <game gameType="130049" gameName="CITY LIFE" />
+                <game gameType="130076" gameName="$NOWY'S WONDERLAND" />
+                <game gameType="130070" gameName="4th OF JULY" />
+                <game gameType="130111" gameName="KITCHEN RUN" />
+                <game gameType="2310078" gameName="LUCKY ANGLER" />
+                <game gameType="130108" gameName="JACKPOT JOCKEY" />
+                <game gameType="2330019" gameName="ADVENTURES IN WONDERLAND" />
+                <game gameType="130109" gameName="GHOST IN THE SHELL" />
+                <game gameType="2310070" gameName="FRUIT SHOP" />
+                <game gameType="300014" gameName="ADVENTURES IN ORBIT" />
+                <game gameType="130021" gameName="PANDA MANGA" />
+                <game gameType="130046" gameName="THE ROYALS: GO CAMPING!" />
+                <game gameType="130056" gameName="EVANGELION" />
+                <game gameType="300017" gameName="EURO REELS" />
+                <game gameType="2320008" gameName="BIER HAUS" />
+                <game gameType="2310117" gameName="REEL RUSH" />
+                <game gameType="2320005" gameName="KRONOS" />
+                <game gameType="2310083" gameName="VICTORIOUS" />
+                <game gameType="130039" gameName="CITY LIFE 2" />
+                <game gameType="2310165" gameName="KOI PRINCESS" />
+                <game gameType="2320021" gameName="ZEUS III" />
+                <game gameType="130105" gameName="OLE ESPANA" />
+                <game gameType="2320040" gameName="COOL JEWELS" />
+                <game gameType="2310155" gameName="NEONSTAXX" />
+                <game gameType="2310152" gameName="HOOK'S HEROES" />
+                <game gameType="2320027" gameName="LUNARIS" />
+                <game gameType="2310131" gameName="BLOOD SUCKERS" />
+                <game gameType="2320062" gameName="ZEUS 1000" />
+                <game gameType="2310148" gameName="STEAM TOWER" />
+                <game gameType="2320026" gameName="MONTEZUMA" />
+                <game gameType="2320006" gameName="KISS: SHOUT IT OUT LOUD!" />
+                <game gameType="2330013" gameName="FANTASTIC FOUR" />
+                <game gameType="2320004" gameName="BRUCE LEE" />
+                <game gameType="2320023" gameName="GIANT'S GOLD" />
+              </games>
+            </layout>
+          </layouts>
+        </arena>
+        <arena type="1009" name="EXCLUSIVE GAMES" newGame="false">
+          <layouts>
+            <layout>
+              <attributes>
+                <attribute name="arenaLabelId" value="txtExclusiveGames" />
+                <attribute name="type" value="1009" />
+                <attribute name="jpVisible" value="False" />
+                <attribute name="favoritesSize" value="4" />
+                <attribute name="newGame" value="False" />
+              </attributes>
+              <dataGridInfo>
+                <column>
+                  <attributes>
+                    <attribute name="field" value="gameTagLabelText" />
+                    <attribute name="columnWidth" value="330" />
+                    <attribute name="defaultSort" value="" />
+                    <attribute name="styleID" value="" />
+                    <attribute name="label" value="txtDataGridGameName" />
+                    <attribute name="sortBy" value="" />
+                  </attributes>
+                </column>
+                <column>
+                  <attributes>
+                    <attribute name="field" value="jackpot" />
+                    <attribute name="columnWidth" value="125" />
+                    <attribute name="defaultSort" value="numberJP" />
+                    <attribute name="styleID" value="" />
+                    <attribute name="label" value="txtDataGridJackpot" />
+                    <attribute name="sortBy" value="numberJP" />
+                  </attributes>
+                </column>
+              </dataGridInfo>
+              <filteringInfo>
+                <filter id="FILTER_JACKPOT" name="JACKPOT">
+                  <attributes>
+                    <attribute name="label" value="FILTER_JACKPOT" />
+                    <attribute name="field" value="progressiveJackpot" />
+                    <attribute name="value" value="true" />
+                  </attributes>
+                </filter>
+              </filteringInfo>
+              <alsoPlayingGames>
+                <game gameType="130071" gameName="TREASURE FAIR" />
+                <game gameType="130112" gameName="SAVED BY THE BELLS" />
+              </alsoPlayingGames>
+              <games>
+                <game gameType="130084" gameName="WONDER WOMAN" />
+                <game gameType="130108" gameName="JACKPOT JOCKEY" />
+                <game gameType="130093" gameName="SEVEN GREAT WONDERS OF THE WORLD" />
+                <game gameType="130039" gameName="CITY LIFE 2" />
+                <game gameType="130062" gameName="SNACK TIME" />
+                <game gameType="130095" gameName="THE GREAT WAR" />
+                <game gameType="130094" gameName="GRINGO$ DINERO$" />
+                <game gameType="130105" gameName="OLE ESPANA" />
+                <game gameType="130046" gameName="THE ROYALS: GO CAMPING!" />
+                <game gameType="130111" gameName="KITCHEN RUN" />
+                <game gameType="130056" gameName="EVANGELION" />
+                <game gameType="130020" gameName="PARTY PIGS" />
+                <game gameType="130112" gameName="SAVED BY THE BELLS" />
+                <game gameType="130044" gameName="ULTIMATE GRILL THRILLS" />
+                <game gameType="130091" gameName="ONCE UPON A DIME" />
+                <game gameType="130092" gameName="JUNGLE GOAL$" />
+                <game gameType="130048" gameName="FREAKY FRUIT" />
+                <game gameType="130109" gameName="GHOST IN THE SHELL" />
+                <game gameType="130071" gameName="TREASURE FAIR" />
+                <game gameType="130034" gameName="VIVA L'ITALIA" />
+                <game gameType="130037" gameName="CASINO REELS" />
+                <game gameType="130073" gameName="LOVE FROM LONDON" />
+                <game gameType="130017" gameName="A NIGHTMARE ON ELM STREET" />
+                <game gameType="130055" gameName="MAFIA MADNESS" />
+                <game gameType="130043" gameName="MILLIONAIRE GENIE" />
+                <game gameType="130085" gameName="SUPERMAN" />
+                <game gameType="130023" gameName="JEWEL THIEF" />
+                <game gameType="130042" gameName="ULTIMATE UNIVERSE" />
+                <game gameType="130069" gameName="BOLLYWOOD BONANZA" />
+                <game gameType="130070" gameName="4th OF JULY" />
+                <game gameType="130123" gameName="PIRATES MILLIONS" />
+                <game gameType="130021" gameName="PANDA MANGA" />
+                <game gameType="130115" gameName="STEAMPUNK NATION" />
+                <game gameType="130076" gameName="$NOWY'S WONDERLAND" />
+                <game gameType="130066" gameName="KENO" />
+                <game gameType="130022" gameName="TENS OR BETTER" />
+                <game gameType="130100" gameName="DEAL OR NO DEAL TENS OR BETTER" />
+                <game gameType="130101" gameName="DEAL OR NO DEAL EUROPEAN ROULETTE" />
+                <game gameType="130049" gameName="CITY LIFE" />
+                <game gameType="130075" gameName="CAFE DE PARIS" />
+                <game gameType="130110" gameName="IRISH RICHES" />
+                <game gameType="130088" gameName="DAWN OF THE DINOSAURS" />
+                <game gameType="2310057" gameName="CLASH OF THE TITANS" />
+                <game gameType="130113" gameName="JACK’S POT" />
+                <game gameType="130116" gameName="THE GLORIOUS 50'S" />
+                <game gameType="130114" gameName="THE BIG LEBOWSKI ONLINE SLOT ™" />
+                <game gameType="130126" gameName="CLASSIC KENO" />
+              </games>
+            </layout>
+          </layouts>
+        </arena>
+        <arena type="1003" name="JACKPOT GAMES" newGame="false">
+          <layouts>
+            <layout>
+              <attributes>
+                <attribute name="arenaLabelId" value="txtVSJackpotArena" />
+                <attribute name="type" value="1003" />
+                <attribute name="jpVisible" value="True" />
+                <attribute name="favoritesSize" value="4" />
+                <attribute name="newGame" value="False" />
+              </attributes>
+              <dataGridInfo>
+                <column>
+                  <attributes>
+                    <attribute name="field" value="gameTagLabelText" />
+                    <attribute name="columnWidth" value="330" />
+                    <attribute name="defaultSort" value="" />
+                    <attribute name="styleID" value="" />
+                    <attribute name="label" value="txtDataGridGameName" />
+                    <attribute name="sortBy" value="" />
+                  </attributes>
+                </column>
+                <column>
+                  <attributes>
+                    <attribute name="field" value="minBet" />
+                    <attribute name="columnWidth" value="125" />
+                    <attribute name="defaultSort" value="minBetNumber" />
+                    <attribute name="styleID" value="" />
+                    <attribute name="label" value="txtDataGridMinBet" />
+                    <attribute name="sortBy" value="minBetNumber" />
+                  </attributes>
+                </column>
+                <column>
+                  <attributes>
+                    <attribute name="field" value="maxBet" />
+                    <attribute name="columnWidth" value="126" />
+                    <attribute name="defaultSort" value="maxBetNumber" />
+                    <attribute name="styleID" value="" />
+                    <attribute name="label" value="txtDataGridMaxBet" />
+                    <attribute name="sortBy" value="maxBetNumber" />
+                  </attributes>
+                </column>
+              </dataGridInfo>
+              <filteringInfo />
+              <alsoPlayingGames>
+                <game gameType="130110" gameName="IRISH RICHES" />
+                <game gameType="130091" gameName="ONCE UPON A DIME" />
+              </alsoPlayingGames>
+              <games>
+                <game gameType="130017" gameName="A NIGHTMARE ON ELM STREET" />
+                <game gameType="130071" gameName="TREASURE FAIR" />
+                <game gameType="130112" gameName="SAVED BY THE BELLS" />
+                <game gameType="130062" gameName="SNACK TIME" />
+                <game gameType="130123" gameName="PIRATES MILLIONS" />
+                <game gameType="130113" gameName="JACK’S POT" />
+                <game gameType="130042" gameName="ULTIMATE UNIVERSE" />
+                <game gameType="130114" gameName="THE BIG LEBOWSKI ONLINE SLOT ™" />
+                <game gameType="130108" gameName="JACKPOT JOCKEY" />
+                <game gameType="2240001" gameName="JACKPOT 15 KENO" />
+                <game gameType="130109" gameName="GHOST IN THE SHELL" />
+                <game gameType="130037" gameName="CASINO REELS" />
+                <game gameType="2330009" gameName="LEPRECHAUN'S LUCK" />
+                <game gameType="130076" gameName="$NOWY'S WONDERLAND" />
+                <game gameType="130084" gameName="WONDER WOMAN" />
+                <game gameType="130115" gameName="STEAMPUNK NATION" />
+                <game gameType="130092" gameName="JUNGLE GOAL$" />
+                <game gameType="130091" gameName="ONCE UPON A DIME" />
+                <game gameType="130043" gameName="MILLIONAIRE GENIE" />
+                <game gameType="130046" gameName="THE ROYALS: GO CAMPING!" />
+                <game gameType="2330019" gameName="ADVENTURES IN WONDERLAND" />
+                <game gameType="2090005" gameName="CASHDROP" />
+                <game gameType="130110" gameName="IRISH RICHES" />
+                <game gameType="130044" gameName="ULTIMATE GRILL THRILLS" />
+                <game gameType="2330003" gameName="FAIREST OF THEM ALL" />
+                <game gameType="130085" gameName="SUPERMAN" />
+              </games>
+            </layout>
+          </layouts>
+        </arena>
+        <arena type="2010004" name="LIVE CASINO" newGame="false">
+          <layouts>
+            <layout>
+              <attributes>
+                <attribute name="arenaLabelId" value="" />
+                <attribute name="type" value="2010004" />
+                <attribute name="jpVisible" value="False" />
+                <attribute name="favoritesSize" value="3" />
+                <attribute name="newGame" value="False" />
+              </attributes>
+              <dataGridInfo />
+              <filteringInfo />
+              <alsoPlayingGames />
+              <games>
+                <game gameType="2010001" gameName="LIVE BLACKJACK" />
+                <game gameType="2010002" gameName=" LIVE ROULETTE" />
+                <game gameType="2010003" gameName="LIVE BACCARAT" />
+                <game gameType="2010005" gameName="LIVE CASINO HOLDEM" />
+              </games>
+            </layout>
+          </layouts>
+        </arena>
+      </arenas>
+      <lobbies>
+        <lobby favoriteSize="4">
+          <items>
+            <item id="2010004" />
+            <item id="1004" />
+            <item id="1000" />
+            <item id="130135" />
+            <item id="130113" />
+            <item id="130129" />
+          </items>
+        </lobby>
+      </lobbies>
+      <myAccountLobby>
+        <item id="MY_ACCOUNT_ITEM" name="MY ACCOUNT">
+          <attributes>
+            <attribute name="id" value="MY_ACCOUNT_ITEM" />
+            <attribute name="onClick" value="MY_ACCOUNT_BTN_CLICK" />
+            <attribute name="iconID" value="myAccount" />
+            <attribute name="navigationLink" value="Account" />
+            <attribute name="disable" value="demo" />
+          </attributes>
+        </item>
+        <item id="MY_ACCOUNT_DEPOSIT_ITEM" name="DEPOSIT">
+          <attributes>
+            <attribute name="id" value="MY_ACCOUNT_DEPOSIT_ITEM" />
+            <attribute name="onClick" value="MY_ACCOUNT_DEPOSIT_CLICK" />
+            <attribute name="iconID" value="myAccountDeposit" />
+            <attribute name="navigationLink" value="MyAccountDeposit" />
+            <attribute name="disable" value="demo" />
+          </attributes>
+        </item>
+        <item id="COMP_POINTS_ITEM" name="COMP POINTS">
+          <attributes>
+            <attribute name="id" value="COMP_POINTS_ITEM" />
+            <attribute name="onClick" value="COMP_POINTS_CLICK" />
+            <attribute name="iconID" value="compPoints" />
+            <attribute name="navigationLink" value="CompPoints" />
+            <attribute name="disable" value="demo" />
+          </attributes>
+        </item>
+        <item id="MY_HISTORY_ITEM" name="MY HISTORY">
+          <attributes>
+            <attribute name="id" value="MY_HISTORY_ITEM" />
+            <attribute name="onClick" value="MY_HISTORY_CLICK" />
+            <attribute name="iconID" value="myHistory" />
+          </attributes>
+        </item>
+        <item id="TRANSACTION_HISTORY_ITEM" name="CASHIER HISTORY">
+          <attributes>
+            <attribute name="id" value="TRANSACTION_HISTORY_ITEM" />
+            <attribute name="onClick" value="OPEN_WEB_LINK_EVENT" />
+            <attribute name="iconID" value="deposit" />
+            <attribute name="navigationLink" value="TransactionHistory" />
+            <attribute name="disable" value="demo" />
+          </attributes>
+        </item>
+        <item id="REALITY_CHECK_ITEM" name="REMINDERS">
+          <attributes>
+            <attribute name="id" value="REALITY_CHECK_ITEM" />
+            <attribute name="onClick" value="REALITY_CHECK_CLICK" />
+            <attribute name="iconID" value="realityCheck" />
+            <attribute name="disable" value="demo" />
+          </attributes>
+        </item>
+        <item id="PERSONOLISE_LOBBY_BTN_CLICK" name="SET MY LOBBY">
+          <attributes>
+            <attribute name="id" value="PERSONOLISE_LOBBY_BTN_CLICK" />
+            <attribute name="onClick" value="PERSONOLISE_LOBBY_BTN_CLICK" />
+            <attribute name="iconID" value="settings" />
+            <attribute name="disable" value="demo" />
+          </attributes>
+        </item>
+        <item id="ABOUT_ITEM" name="ABOUT">
+          <attributes>
+            <attribute name="id" value="ABOUT_ITEM" />
+            <attribute name="onClick" value="ABOUT_CLICK_EVENT" />
+            <attribute name="iconID" value="aboutUs" />
+          </attributes>
+        </item>
+        <item id="LOGOUT_ITEM" name="LOGOUT">
+          <attributes>
+            <attribute name="id" value="LOGOUT_ITEM" />
+            <attribute name="onClick" value="LOGOUT_CLICK" />
+            <attribute name="iconID" value="logout" />
+          </attributes>
+        </item>
+      </myAccountLobby>
+      <myAccountHistory>
+        <item id="COMP_POINTS_ITEM" name="COMP POINTS">
+          <attributes>
+            <attribute name="id" value="COMP_POINTS_ITEM" />
+            <attribute name="onClick" value="COMP_POINTS_CLICK" />
+            <attribute name="iconID" value="compPoints" />
+            <attribute name="navigationLink" value="CompPoints" />
+            <attribute name="disable" value="demo" />
+          </attributes>
+        </item>
+        <item id="TRANSACTION_HISTORY_ITEM" name="CASHIER HISTORY">
+          <attributes>
+            <attribute name="id" value="TRANSACTION_HISTORY_ITEM" />
+            <attribute name="onClick" value="OPEN_WEB_LINK_EVENT" />
+            <attribute name="iconID" value="deposit" />
+            <attribute name="navigationLink" value="TransactionHistory" />
+            <attribute name="disable" value="demo" />
+          </attributes>
+        </item>
+        <item id="ABOUT_ITEM" name="ABOUT">
+          <attributes>
+            <attribute name="id" value="ABOUT_ITEM" />
+            <attribute name="onClick" value="ABOUT_CLICK_EVENT" />
+            <attribute name="iconID" value="aboutUs" />
+          </attributes>
+        </item>
+        <item id="LOGOUT_ITEM" name="LOGOUT">
+          <attributes>
+            <attribute name="id" value="LOGOUT_ITEM" />
+            <attribute name="onClick" value="LOGOUT_CLICK" />
+            <attribute name="iconID" value="logout" />
+          </attributes>
+        </item>
+      </myAccountHistory>
+      <triggers />
+    </skinContent>
+  </skinDefinition>
+  <errors />
+  <availableGames>
+    <game gameType="2010002" gameName=" LIVE ROULETTE" />
+    <game gameType="130076" gameName="$NOWY'S WONDERLAND" />
+    <game gameType="2330010" gameName="3D ROULETTE" />
+    <game gameType="130070" gameName="4th OF JULY" />
+    <game gameType="130017" gameName="A NIGHTMARE ON ELM STREET" />
+    <game gameType="130118" gameName="ACES &amp; FACES" />
+    <game gameType="300014" gameName="ADVENTURES IN ORBIT" />
+    <game gameType="2330019" gameName="ADVENTURES IN WONDERLAND" />
+    <game gameType="2320022" gameName="AMAZON QUEEN" />
+    <game gameType="2330022" gameName="AMAZON WILD" />
+    <game gameType="130014" gameName="AMERICAN BLACKJACK" />
+    <game gameType="130006" gameName="AMERICAN ROULETTE" />
+    <game gameType="130119" gameName="AMERICAN STARS" />
+    <game gameType="130082" gameName="BACCARAT" />
+    <game gameType="2330023" gameName="BEJEWELED 2" />
+    <game gameType="2320008" gameName="BIER HAUS" />
+    <game gameType="2310131" gameName="BLOOD SUCKERS" />
+    <game gameType="130069" gameName="BOLLYWOOD BONANZA" />
+    <game gameType="130120" gameName="BONUS POKER" />
+    <game gameType="2320004" gameName="BRUCE LEE" />
+    <game gameType="130075" gameName="CAFE DE PARIS" />
+    <game gameType="130077" gameName="CARIBBEAN POKER" />
+    <game gameType="2090005" gameName="CASHDROP" />
+    <game gameType="2310111" gameName="CASINO HOLD'EM POKER" />
+    <game gameType="130037" gameName="CASINO REELS" />
+    <game gameType="2330008" gameName="CASPER'S MYSTERY MIRROR" />
+    <game gameType="130127" gameName="CAT ME IF YOU CAN" />
+    <game gameType="130049" gameName="CITY LIFE" />
+    <game gameType="130039" gameName="CITY LIFE 2" />
+    <game gameType="2310057" gameName="CLASH OF THE TITANS" />
+    <game gameType="120000" gameName="CLASSIC BLACKJACK" />
+    <game gameType="130000" gameName="CLASSIC EUROPEAN ROULETTE" />
+    <game gameType="130001" gameName="CLASSIC EUROPEAN ROULETTE" />
+    <game gameType="130126" gameName="CLASSIC KENO" />
+    <game gameType="2330021" gameName="CLEOPATRA" />
+    <game gameType="2320040" gameName="COOL JEWELS" />
+    <game gameType="130088" gameName="DAWN OF THE DINOSAURS" />
+    <game gameType="2310146" gameName="DAZZLE ME" />
+    <game gameType="130101" gameName="DEAL OR NO DEAL EUROPEAN ROULETTE" />
+    <game gameType="130100" gameName="DEAL OR NO DEAL TENS OR BETTER" />
+    <game gameType="130121" gameName="DEUCES WILD" />
+    <game gameType="130128" gameName="DIAMONDS DELIGHT" />
+    <game gameType="2310167" gameName="DOUBLE EXPOSURE BLACKJACK" />
+    <game gameType="2320015" gameName="ELVIS" />
+    <game gameType="300017" gameName="EURO REELS" />
+    <game gameType="130008" gameName="EUROPEAN ROULETTE" />
+    <game gameType="120061" gameName="EUROPEAN ROULETTE VIP" />
+    <game gameType="130056" gameName="EVANGELION" />
+    <game gameType="2330003" gameName="FAIREST OF THEM ALL" />
+    <game gameType="2330013" gameName="FANTASTIC FOUR" />
+    <game gameType="130048" gameName="FREAKY FRUIT" />
+    <game gameType="130004" gameName="FRENCH ROULETTE" />
+    <game gameType="2310070" gameName="FRUIT SHOP" />
+    <game gameType="130109" gameName="GHOST IN THE SHELL" />
+    <game gameType="2320023" gameName="GIANT'S GOLD" />
+    <game gameType="130129" gameName="GODS OF GOLD" />
+    <game gameType="2310071" gameName="GONZO'S QUEST" />
+    <game gameType="130094" gameName="GRINGO$ DINERO$" />
+    <game gameType="2310163" gameName="GUNS AND ROSES" />
+    <game gameType="130007" gameName="HIGH LIMIT AMERICAN ROULETTE" />
+    <game gameType="130009" gameName="HIGH LIMIT EUROPEAN ROULETTE" />
+    <game gameType="130005" gameName="HIGH LIMIT FRENCH ROULETTE" />
+    <game gameType="2310152" gameName="HOOK'S HEROES" />
+    <game gameType="130110" gameName="IRISH RICHES" />
+    <game gameType="2330014" gameName="IRON MAN 2" />
+    <game gameType="2310075" gameName="JACK AND THE BEANSTALK" />
+    <game gameType="130113" gameName="JACK’S POT" />
+    <game gameType="2310076" gameName="JACKHAMMER" />
+    <game gameType="2240001" gameName="JACKPOT 15 KENO" />
+    <game gameType="130108" gameName="JACKPOT JOCKEY" />
+    <game gameType="130102" gameName="JACKS OR BETTER" />
+    <game gameType="130023" gameName="JEWEL THIEF" />
+    <game gameType="130122" gameName="JOKER'S WILD" />
+    <game gameType="130092" gameName="JUNGLE GOAL$" />
+    <game gameType="130066" gameName="KENO" />
+    <game gameType="2320006" gameName="KISS: SHOUT IT OUT LOUD!" />
+    <game gameType="130111" gameName="KITCHEN RUN" />
+    <game gameType="300003" gameName="KNIGHTS AND MAIDENS" />
+    <game gameType="2310165" gameName="KOI PRINCESS" />
+    <game gameType="2320005" gameName="KRONOS" />
+    <game gameType="2330009" gameName="LEPRECHAUN'S LUCK" />
+    <game gameType="2010003" gameName="LIVE BACCARAT" />
+    <game gameType="2010001" gameName="LIVE BLACKJACK" />
+    <game gameType="2010004" gameName="LIVE CASINO" />
+    <game gameType="2010005" gameName="LIVE CASINO HOLDEM" />
+    <game gameType="130073" gameName="LOVE FROM LONDON" />
+    <game gameType="130036" gameName="LOW STAKES ROULETTE" />
+    <game gameType="2310078" gameName="LUCKY ANGLER" />
+    <game gameType="2320027" gameName="LUNARIS" />
+    <game gameType="130055" gameName="MAFIA MADNESS" />
+    <game gameType="2310118" gameName="MAGIC PORTALS" />
+    <game gameType="130043" gameName="MILLIONAIRE GENIE" />
+    <game gameType="2320026" gameName="MONTEZUMA" />
+    <game gameType="130012" gameName="MULTIHAND BLACKJACK" />
+    <game gameType="2310155" gameName="NEONSTAXX" />
+    <game gameType="2310124" gameName="OASIS POKER" />
+    <game gameType="130133" gameName="OKTOBERFEST SPINS" />
+    <game gameType="130105" gameName="OLE ESPANA" />
+    <game gameType="2320034" gameName="OMG KITTENS" />
+    <game gameType="130091" gameName="ONCE UPON A DIME" />
+    <game gameType="130021" gameName="PANDA MANGA" />
+    <game gameType="130020" gameName="PARTY PIGS" />
+    <game gameType="130123" gameName="PIRATES MILLIONS" />
+    <game gameType="2310169" gameName="PONTOON PRO" />
+    <game gameType="2310170" gameName="PUNTO BANCO" />
+    <game gameType="2320016" gameName="RAGING RHINO" />
+    <game gameType="2320025" gameName="RAINBOW RICHES" />
+    <game gameType="2310123" gameName="RED DOG PROGRESSIVE" />
+    <game gameType="2310117" gameName="REEL RUSH" />
+    <game gameType="130134" gameName="RISE OF THE PHARAOHS" />
+    <game gameType="130135" gameName="SANTA'S SUPER SLOT" />
+    <game gameType="130112" gameName="SAVED BY THE BELLS" />
+    <game gameType="130117" gameName="SECRETS OF SHANGHAI" />
+    <game gameType="130093" gameName="SEVEN GREAT WONDERS OF THE WORLD" />
+    <game gameType="2310168" gameName="SINGLE DECK BLACKJACK" />
+    <game gameType="130062" gameName="SNACK TIME" />
+    <game gameType="2310072" gameName="SOUTH PARK" />
+    <game gameType="2320024" gameName="SPARTACUS - GLADIATOR OF ROME" />
+    <game gameType="2310080" gameName="STARBURST" />
+    <game gameType="2310148" gameName="STEAM TOWER" />
+    <game gameType="130115" gameName="STEAMPUNK NATION" />
+    <game gameType="130085" gameName="SUPERMAN" />
+    <game gameType="130022" gameName="TENS OR BETTER" />
+    <game gameType="2310171" gameName="TEXAS HOLDEM PRO" />
+    <game gameType="130114" gameName="THE BIG LEBOWSKI ONLINE SLOT ™" />
+    <game gameType="130116" gameName="THE GLORIOUS 50'S" />
+    <game gameType="130095" gameName="THE GREAT WAR" />
+    <game gameType="130046" gameName="THE ROYALS: GO CAMPING!" />
+    <game gameType="2320003" gameName="THE WIZARD OF OZ - RUBY SLIPPERS" />
+    <game gameType="130071" gameName="TREASURE FAIR" />
+    <game gameType="2310116" gameName="TWIN SPIN" />
+    <game gameType="310003" gameName="TXT_CARDS_OF_DESTINY_BONUS" />
+    <game gameType="310008" gameName="TXT_CASH_CUP_BONUS" />
+    <game gameType="310021" gameName="TXT_CASH_KEBAB_BONUS" />
+    <game gameType="310004" gameName="TXT_CAVALIERS_QUEST_BONUS" />
+    <game gameType="310012" gameName="TXT_CHRISTMAS_FRENZY" />
+    <game gameType="310018" gameName="TXT_COLLECTOR_S_EDITION" />
+    <game gameType="310016" gameName="TXT_COSMIC_VOYAGE" />
+    <game gameType="310014" gameName="TXT_CREEPY_CREATURES" />
+    <game gameType="310002" gameName="TXT_EMPEROR_S_CHOICE_BONUS" />
+    <game gameType="310019" gameName="TXT_EURO_CASH_CUP_BONUS" />
+    <game gameType="310010" gameName="TXT_FAR_OUT_FASHION_BONUS" />
+    <game gameType="310013" gameName="TXT_FORTUNE_FAIRGROUND" />
+    <game gameType="310015" gameName="TXT_FOUR_OF_A_FISH" />
+    <game gameType="310006" gameName="TXT_FREQUENT_FLYER_BONUS" />
+    <game gameType="310023" gameName="TXT_GALLEON_S_GOLD_BONUS" />
+    <game gameType="310005" gameName="TXT_JET_SET_BONUS" />
+    <game gameType="310007" gameName="TXT_MASTER_OF_SPIN" />
+    <game gameType="310017" gameName="TXT_PRIZE_KICKER" />
+    <game gameType="310011" gameName="TXT_STREETWISE" />
+    <game gameType="310009" gameName="TXT_TOMB_OF_TREASURES" />
+    <game gameType="310001" gameName="TXT_TROPICAL_COCKTAIL_BONUS" />
+    <game gameType="310020" gameName="TXT_WILD_ATHLETES" />
+    <game gameType="130044" gameName="ULTIMATE GRILL THRILLS" />
+    <game gameType="130042" gameName="ULTIMATE UNIVERSE" />
+    <game gameType="130131" gameName="UNDER CONSTRUCTION" />
+    <game gameType="2310083" gameName="VICTORIOUS" />
+    <game gameType="130034" gameName="VIVA L'ITALIA" />
+    <game gameType="2330020" gameName="WILD GAMBLER" />
+    <game gameType="130084" gameName="WONDER WOMAN" />
+    <game gameType="2320009" gameName="ZEUS" />
+    <game gameType="2320062" gameName="ZEUS 1000" />
+    <game gameType="2320021" gameName="ZEUS III" />
+    <game gameType="2330016" gameName="ZUMA SLOTS" />
+  </availableGames>
+  <availableArenaTypes>
+    <arenaType>
+      <Id>1004</Id>
+      <Name>CARD &amp; TABLE GAMES</Name>
+    </arenaType>
+    <arenaType>
+      <Id>1000</Id>
+      <Name>SLOTS</Name>
+    </arenaType>
+    <arenaType>
+      <Id>1009</Id>
+      <Name>EXCLUSIVE GAMES</Name>
+    </arenaType>
+    <arenaType>
+      <Id>1003</Id>
+      <Name>JACKPOT GAMES</Name>
+    </arenaType>
+    <arenaType>
+      <Id>2010004</Id>
+      <Name>LIVE CASINO</Name>
+    </arenaType>
+  </availableArenaTypes>
+  <availableFilters>
+    <filter id="FILTER_LINE_SET_1_20" name="1-20 LINES">
+      <attributes>
+        <attribute name="label" value="FILTER_LINE_SET_1_20" />
+        <attribute name="field" value="lineSetTwo" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_LINESET1TO5" name="1-5 LINES">
+      <attributes>
+        <attribute name="label" value="FILTER_LINESET1TO5" />
+        <attribute name="field" value="lineSetOne" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_LINESET25PLUS" name="25+ LINES">
+      <attributes>
+        <attribute name="label" value="FILTER_LINESET25PLUS" />
+        <attribute name="field" value="lineSetThree" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_ALL_PAYS" name="ALL PAYS">
+      <attributes>
+        <attribute name="label" value="FILTER_ALL_PAYS" />
+        <attribute name="field" value="allPays" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_BACCARAT" name="BACCARAT">
+      <attributes>
+        <attribute name="label" value="FILTER_BACCARAT" />
+        <attribute name="field" value="baccaratGame" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_BLACKJACK" name="BLACKJACK">
+      <attributes>
+        <attribute name="label" value="FILTER_BLACKJACK" />
+        <attribute name="field" value="blackJack" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_CARDGAME" name="CARD GAMES">
+      <attributes>
+        <attribute name="label" value="FILTER_CARDGAME" />
+        <attribute name="field" value="cardGame" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_CLASSICSLOT" name="CLASSIC SLOTS">
+      <attributes>
+        <attribute name="label" value="FILTER_CLASSICSLOT" />
+        <attribute name="field" value="classicSlot" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_CRAPSGAME" name="CRAPS">
+      <attributes>
+        <attribute name="label" value="FILTER_CRAPSGAME" />
+        <attribute name="field" value="crapsGame" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_EXCLUSIVE" name="EXCLUSIVE">
+      <attributes>
+        <attribute name="label" value="FILTER_EXCLUSIVE" />
+        <attribute name="field" value="exclusive" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FREESPINGAME" name="FreePlay GAMES">
+      <attributes>
+        <attribute name="label" value="FREESPINGAME" />
+        <attribute name="field" value="freeSpinGame" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_HILOGAME" name="HI-LO">
+      <attributes>
+        <attribute name="label" value="FILTER_HILOGAME" />
+        <attribute name="field" value="hiLoGame" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_JACKPOT" name="JACKPOT">
+      <attributes>
+        <attribute name="label" value="FILTER_JACKPOT" />
+        <attribute name="field" value="progressiveJackpot" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_KENOGAME" name="KENO">
+      <attributes>
+        <attribute name="label" value="FILTER_KENOGAME" />
+        <attribute name="field" value="kenoGame" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_LIVEGAME" name="LIVE">
+      <attributes>
+        <attribute name="label" value="FILTER_LIVEGAME" />
+        <attribute name="field" value="liveGame" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_MULTIPLAIERS" name="MULTIPLAIERS">
+      <attributes>
+        <attribute name="label" value="FILTER_MULTIPLAIERS" />
+        <attribute name="field" value="publicTable" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_NEWGAME" name="NEW">
+      <attributes>
+        <attribute name="label" value="FILTER_NEWGAME" />
+        <attribute name="field" value="newGame" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_POKER" name="POKER">
+      <attributes>
+        <attribute name="label" value="FILTER_POKER" />
+        <attribute name="field" value="poker" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_PRIVATE" name="PRIVATE">
+      <attributes>
+        <attribute name="label" value="FILTER_PRIVATE" />
+        <attribute name="field" value="privateTable" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_PUBLIC" name="PUBLIC">
+      <attributes>
+        <attribute name="label" value="FILTER_PUBLIC" />
+        <attribute name="field" value="publicTable" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_ROULETTE" name="ROULETTE">
+      <attributes>
+        <attribute name="label" value="FILTER_ROULETTE" />
+        <attribute name="field" value="roulette" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_SPORTGAME" name="SPORTS">
+      <attributes>
+        <attribute name="label" value="FILTER_SPORTGAME" />
+        <attribute name="field" value="sportGame" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_TABLEGAME" name="TABLE GAME">
+      <attributes>
+        <attribute name="label" value="FILTER_TABLEGAME" />
+        <attribute name="field" value="tableGame" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_VIDEOPOKER" name="VIDEO POKER">
+      <attributes>
+        <attribute name="label" value="FILTER_VIDEOPOKER" />
+        <attribute name="field" value="videoPoker" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_VIDEOSLOT" name="VIDEO SLOTS">
+      <attributes>
+        <attribute name="label" value="FILTER_VIDEOSLOT" />
+        <attribute name="field" value="videoSlot" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_VIP" name="VIP">
+      <attributes>
+        <attribute name="label" value="FILTER_VIP" />
+        <attribute name="field" value="vipGame" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_WIDEGAME" name="WIDE GAME">
+      <attributes>
+        <attribute name="label" value="FILTER_WIDEGAME" />
+        <attribute name="field" value="wideGame" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+    <filter id="FILTER_ROULETTEZEROS" name="ZEROS">
+      <attributes>
+        <attribute name="label" value="FILTER_ROULETTEZEROS" />
+        <attribute name="field" value="rouletteZeros" />
+        <attribute name="value" value="true" />
+      </attributes>
+    </filter>
+  </availableFilters>
+</skinDefinitionContext>

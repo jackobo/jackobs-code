@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="GGPMockBootstrapper.Views.Html5GamesWorkAreaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             >
+
+    <DockPanel Margin="5">
+        <TextBlock DockPanel.Dock="Top" Text="HTML5 games" FontSize="18" FontWeight="Bold"  />
+        <Separator DockPanel.Dock="Top" Margin="0,10,0,5" />
+
+        
+        
+        <DockPanel>
+            <StackPanel Margin="0,5,0,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <TextBlock Text="Use this GGPHttpHandler address in the chill config.js:" Margin="0,0,2,0" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtHttpHandlerAddress" Text="{Binding GGPHttpHandlerRelativeUrl, Mode=OneWay}" Margin="5,0,2,0" FontSize="16" FontWeight="Bold" IsReadOnly="True" VerticalAlignment="Center" Foreground="Blue" Padding="5,0,5,0" GotFocus="txtHttpHandlerAddress_GotFocus"/>
+            </StackPanel>
+
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                <Button  Command="{Binding Path=AddNewGameAction.Command}" Content="Add a game with my own base URL" Style="{StaticResource LinkButton}" Margin="5" FontSize="16" FontWeight="Bold"/>
+                <Button Command="{Binding Path=AddGameFromArtifactoryAction.Command}" Content="Add game from Artifactory" Style="{StaticResource LinkButton}" Margin="10,5,5,5" FontSize="16" FontWeight="Bold" Visibility="{Binding AddGameFromArtifactoryVisible}"/>
+            </StackPanel>
+
+
+            <StackPanel DockPanel.Dock="Bottom">
+                <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding DownloadStarted}" Value="false">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Style>
+                <StackPanel>
+                    <TextBlock Text="{Binding Path=DownloadHandler.GameDownloadDescription}"/>
+                    <ProgressBar Minimum="0" Maximum="100" Value="{Binding Path=DownloadHandler.GameDownloadProgress}" MinHeight="25"/>
+                </StackPanel>
+
+                <StackPanel Visibility="{Binding Path=DownloadHandler.ChillDownloadVisible}">
+                    <TextBlock Text="{Binding Path=DownloadHandler.ChillDownloadDescription}"/>
+                    <ProgressBar Minimum="0" Maximum="100" Value="{Binding Path=DownloadHandler.ChillDownloadProgress}" MinHeight="25"/>
+                </StackPanel>
+                
+            </StackPanel>
+
+            <DockPanel x:Name="holder">
+                
+            </DockPanel>
+            
+          
+        </DockPanel>
+
+    </DockPanel>
+</UserControl>

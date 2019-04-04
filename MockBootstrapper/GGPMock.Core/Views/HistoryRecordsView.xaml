@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="GGPMockBootstrapper.Views.HistoryRecordsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             >
+    <DockPanel>
+
+        <TextBlock DockPanel.Dock="Top" Text="History records (HTML5 games only)" FontSize="18" FontWeight="Black" Margin="5" />
+        <Separator DockPanel.Dock="Top" />
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+
+            <Button  Command="{Binding Path=SaveHistoryAction.Command}" Margin="5" Padding="2" Cursor="Hand">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding Path=SaveHistoryAction.ImageSource}" />
+                    <TextBlock Text="{Binding Path=SaveHistoryAction.Caption}"/>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=LoadHistoryAction.Command}" Margin="5"  Padding="2"  Cursor="Hand">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding Path=LoadHistoryAction.ImageSource}" />
+                    <TextBlock Text="{Binding Path=LoadHistoryAction.Caption}"/>
+                </StackPanel>
+            </Button>
+            
+            <Button Command="{Binding Path=ClearAction.Command}" Margin="5" Cursor="Hand" Padding="2" FontSize="12" FontWeight="Bold">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding Path=ClearAction.ImageSource}"/>
+                    <TextBlock Text="{Binding Path=ClearAction.Caption}"/>
+                </StackPanel>
+            </Button>
+            
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="5">
+            <TextBlock Text="Use this relative URL for GGPHistoryHandler in the chill configuration: " FontSize="16" FontWeight="Bold"  Margin="0,0,5,0"/>
+            <TextBox Text="{Binding GGPHistoryHandlerRelativeUrl, Mode=OneWay}" FontSize="16" FontWeight="Bold"  Foreground="Blue" IsReadOnly="True" Padding="5,0,5,0" />
+        </StackPanel>
+
+        
+        <DataGrid ItemsSource="{Binding History}" AutoGenerateColumns="False" Margin="5" SelectionUnit="Cell">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="{Binding Path=ShowHistoryAction.Caption}" Command="{Binding Path=ShowHistoryAction.Command}" Style="{StaticResource LinkButton}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="CID" Binding="{Binding CID, Mode=OneWay}" Width="Auto"/>
+                <DataGridTextColumn Header="Game type" Binding="{Binding GameType, Mode=OneWay}" Width="Auto"/>
+                <DataGridTextColumn Header="Game name" Binding="{Binding GameName, Mode=OneWay}" Width="Auto"/>
+                <DataGridTextColumn Header="GameID" Binding="{Binding GameID, Mode=OneWay}" Width="Auto"/>
+                <DataGridTextColumn Header="Game Currency" Binding="{Binding GameCurrencyCode, Mode=OneWay}" Width="Auto"/>
+                <DataGridTextColumn Header="Rounds count" Binding="{Binding RoundsCount, Mode=OneWay}" Width="Auto"/>
+                <DataGridTextColumn Header="Record creation time" Binding="{Binding TimeStamp, Mode=OneWay}" Width="Auto"/>
+
+                <DataGridTemplateColumn Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Background="White" BorderThickness="0" BorderBrush="White">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Path=RemoveAction.ImageSource}" Margin="0,0,3,0" Style="{StaticResource standardImageSizeStyle}"/>
+                                    <Button Style="{StaticResource LinkButton}"  Content="{Binding Path=RemoveAction.Caption}" Command="{Binding Path=RemoveAction.Command}" Margin="2"/>
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+            </DataGrid.Columns>
+        </DataGrid>
+        
+    </DockPanel>
+</UserControl>

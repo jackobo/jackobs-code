@@ -1,0 +1,20 @@
+Approve once the same language for all regulations
+
+Mandatory languages per regulations
+
+English language -> should approve all other games (theoretically)
+
+Initialization (day 0)
+
+Some games will not have language hashes (excluded games)
+
+If the game version is in production or approved deny language approval  but you can approve languages before approving game.
+
+Presentation before launching it to production.
+
+
+
+
+
+
+

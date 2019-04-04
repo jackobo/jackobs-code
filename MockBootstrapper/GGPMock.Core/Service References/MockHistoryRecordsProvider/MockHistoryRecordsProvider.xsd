@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GGPGameServer.Simulations.GGPMock.History" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GGPGameServer.Simulations.GGPMock.History" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfHistoryRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistoryRecord" nillable="true" type="tns:HistoryRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistoryRecord" nillable="true" type="tns:ArrayOfHistoryRecord" />
+  <xs:complexType name="HistoryRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateAndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Game" nillable="true" type="tns:GameHistory" />
+      <xs:element minOccurs="0" name="Rounds" nillable="true" type="tns:ArrayOfRoundHistory" />
+      <xs:element minOccurs="0" name="SimplifiedHistoryData" nillable="true" type="tns:SimplifiedHistoryMockData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistoryRecord" nillable="true" type="tns:HistoryRecord" />
+  <xs:complexType name="GameHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerID" type="xs:long" />
+      <xs:element minOccurs="0" name="GameCurrencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GameData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GameID" type="xs:long" />
+      <xs:element minOccurs="0" name="GameType" type="xs:int" />
+      <xs:element minOccurs="0" name="OperatorId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoundsCount" type="xs:long" />
+      <xs:element minOccurs="0" name="ServerID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameHistory" nillable="true" type="tns:GameHistory" />
+  <xs:complexType name="ArrayOfRoundHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoundHistory" nillable="true" type="tns:RoundHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoundHistory" nillable="true" type="tns:ArrayOfRoundHistory" />
+  <xs:complexType name="RoundHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GameHistory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GameID" type="xs:long" />
+      <xs:element minOccurs="0" name="GameType" type="xs:int" />
+      <xs:element minOccurs="0" name="RoundID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoundHistory" nillable="true" type="tns:RoundHistory" />
+  <xs:complexType name="SimplifiedHistoryMockData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BetAmount" type="xs:long" />
+      <xs:element minOccurs="0" name="FreePlayCurrentAmount" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="FreePlayID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FreePlayWinningAmount" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="RealMoneyBalance" type="xs:long" />
+      <xs:element minOccurs="0" name="RealMoneyWinningsAmount" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SimplifiedHistoryMockData" nillable="true" type="tns:SimplifiedHistoryMockData" />
+</xs:schema>

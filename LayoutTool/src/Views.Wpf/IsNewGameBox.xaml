@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="LayoutTool.Views.Wpf.IsNewGameBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LayoutTool.Views.Wpf"
+             mc:Ignorable="d" 
+             >
+    <Grid>
+        <ToggleButton IsChecked="{Binding IsNewGame, UpdateSourceTrigger=PropertyChanged}" Cursor="Hand" Margin="3,0,0,0">
+            <Image>
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsNewGame}" Value="true">
+                                <Setter Property="Source" Value="Resources/new_game_btn_normal.png"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsNewGame}" Value="false">
+                                <Setter Property="Source" Value="Resources/new_game_btn_disabled.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+        </ToggleButton>
+    </Grid>
+</UserControl>

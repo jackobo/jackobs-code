@@ -1,0 +1,25 @@
+﻿ALTER TABLE dbo.GameVersion_Language ADD CONSTRAINT
+	GameVersion_Language_UniqueLanguagePerGameVersionAndRegulation UNIQUE NONCLUSTERED 
+	(
+	GameVersion_ID,
+	Language,
+	Regulation
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+CREATE NONCLUSTERED INDEX GameVersion_Language_Regulation ON dbo.GameVersion_Language
+	(
+	Regulation
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX GameVersion_Language_GameVersion_ID ON dbo.GameVersion_Language
+	(
+	GameVersion_ID
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX GameVersion_Language_Language ON dbo.GameVersion_Language
+	(
+	Language
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+

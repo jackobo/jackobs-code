@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="GGPMockBootstrapper.Views.AvailableGamesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             >
+    <DockPanel Margin="5">
+
+        <TextBlock DockPanel.Dock="Top" Text="Games available on the server" FontSize="18" FontWeight="Bold"  />
+        <Separator DockPanel.Dock="Top" />
+
+        <StackPanel DockPanel.Dock="Top" Margin="0,10,0,5">
+            <TextBlock Text="Search" FontWeight="Bold"/>
+            <TextBox Text="{Binding Path=Filter, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+
+        <DataGrid x:Name="gridGames" Grid.Row="1" ItemsSource="{Binding Games}" AutoGenerateColumns="False" IsReadOnly="True" ClipboardCopyMode="IncludeHeader" SelectionUnit="Cell">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Game Type" Binding="{Binding GameType, Mode=OneWay}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=OneWay}"/>
+                <DataGridTextColumn Header="Version" Binding="{Binding Version, Mode=OneWay}"/>
+                <DataGridCheckBoxColumn Header="Is Subgame" Binding="{Binding IsSubGame, Mode=OneWay}"/>
+                <DataGridCheckBoxColumn Header="ISD enabled" Binding="{Binding IsISDEnabled, Mode=OneWay}"/>
+                <DataGridTextColumn Header="Operator" Binding="{Binding Operator, Mode=OneWay}"/>
+                <DataGridTextColumn Header="Brands/Networks" Binding="{Binding Groups, Mode=OneWay}"/>
+                <DataGridTextColumn Header="Engine assembly" Binding="{Binding EngineAssembly, Mode=OneWay}"/>
+                <DataGridTextColumn Header="Engine version" Binding="{Binding EngineVersion, Mode=OneWay}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</UserControl>

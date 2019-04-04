@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8776FF9C-612E-4979-BB3E-BC1DB0A2FE50}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Spark.TfsExplorer.ViewModels</RootNamespace>
+    <AssemblyName>Spark.TfsExplorer.ViewModels</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Prism, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Core.6.2.0\lib\net45\Prism.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism.Unity.Wpf, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Unity.6.2.0\lib\net45\Prism.Unity.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism.Wpf, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Wpf.6.2.0\lib\net45\Prism.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Wpf.6.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\CreateFeatureBranchAction.cs" />
+    <Compile Include="Actions\CreateInstallerBranchAction.cs" />
+    <Compile Include="Actions\CreateRootBranchAction.cs" />
+    <Compile Include="Actions\FeatureMergeAction.cs" />
+    <Compile Include="Actions\MainMergeAction.cs" />
+    <Compile Include="Actions\MergeAction.cs" />
+    <Compile Include="Actions\PublishToQAAction.cs" />
+    <Compile Include="Actions\RenameComponentAction.cs" />
+    <Compile Include="Actions\DeleteComponentAction.cs" />
+    <Compile Include="Actions\RenameDeleteAction.cs" />
+    <Compile Include="Components\ComponentsPublishersClassificationBuilder.cs" />
+    <Compile Include="Components\Implementations\Publishers\ComponentPublisherViewModel.cs" />
+    <Compile Include="Components\Implementations\Publishers\CoreComponentPublisherViewModel.cs" />
+    <Compile Include="Components\Implementations\Publishers\GameEnginePublisherPlaceholder.cs" />
+    <Compile Include="Components\Implementations\Publishers\GameEnginePublisherViewModel.cs" />
+    <Compile Include="Components\Implementations\Publishers\GameMathPublisherViewModel.cs" />
+    <Compile Include="Components\Implementations\Publishers\GamePublisherViewModel.cs" />
+    <Compile Include="Components\Implementations\Publishers\NextVersionProviderViewModel.cs" />
+    <Compile Include="Components\Implementations\Publishers\VoidNextVersionsHolderViewModel.cs" />
+    <Compile Include="Components\Interfaces\Components\ComponentMetaDataItem.cs" />
+    <Compile Include="Components\Implementations\Components\RandomWrapper.cs" />
+    <Compile Include="Components\ComponentsPublishersExplorerBar.cs" />
+    <Compile Include="Components\Implementations\Publishers\GameLimitsPublisherViewModel.cs" />
+    <Compile Include="Components\Interfaces\Publishers\IComponentPublisherViewModel.cs" />
+    <Compile Include="Components\Interfaces\Publishers\ICoreComponentPublisherViewModel.cs" />
+    <Compile Include="Components\Interfaces\Publishers\IGameEnginePublisherViewModel.cs" />
+    <Compile Include="Components\Interfaces\Publishers\IGameMathPublisherViewModel.cs" />
+    <Compile Include="Components\Interfaces\Publishers\IGamePublisherViewModel.cs" />
+    <Compile Include="Components\Interfaces\Publishers\INextVersionProviderViewModel.cs" />
+    <Compile Include="Components\Interfaces\Publishers\IGameLimitsPublisherViewModel.cs" />
+    <Compile Include="ExplorerBar\PROD\ProductionBranchExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\PROD\ProductionEnvironmentExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\PROD\ProductionInstallerExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\PROD\ProductionInstallersExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\QA\QAInstallerExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\QA\QAInstallersExplorerBarItem.cs" />
+    <Compile Include="Workspace\Common\InstallerWorkspaceItem.cs" />
+    <Compile Include="Workspace\PROD\ProductionBranchWorkspaceItem.cs" />
+    <Compile Include="Workspace\PROD\ProductionEnvironmentWorkspaceItem.cs" />
+    <Compile Include="Workspace\PROD\ProductionInstallersWorkspaceItem.cs" />
+    <Compile Include="Workspace\PROD\ProductionInstallerWorkspaceItem.cs" />
+    <Compile Include="Workspace\IBranchPublisherViewModel.cs" />
+    <Compile Include="IComponentRenameDeleteHandler.cs" />
+    <Compile Include="Workspace\QA\QAInstallersWorkspaceItem.cs" />
+    <Compile Include="Workspace\QA\QAInstallerWorkspaceItem.cs" />
+    <Compile Include="Workspace\Sidebars\AddComponentsToFeatureViewModel.cs" />
+    <Compile Include="Workspace\Sidebars\DeleteComponentViewModel.cs" />
+    <Compile Include="Workspace\Sidebars\RenameDeleteComponentViewModel.cs" />
+    <Compile Include="Workspace\Sidebars\MergeBuilderViewModel.cs" />
+    <Compile Include="Components\ComponentsHierarchy.cs" />
+    <Compile Include="Components\ComponentsExplorerBar.cs" />
+    <Compile Include="Components\Implementations\Components\ComponentViewModel.cs" />
+    <Compile Include="Components\Implementations\Components\CoreComponentViewModel.cs" />
+    <Compile Include="Components\Implementations\Components\GameEngineViewModel.cs" />
+    <Compile Include="Components\Implementations\Components\GameViewModel.cs" />
+    <Compile Include="Components\Interfaces\Components\ICoreComponentViewModel.cs" />
+    <Compile Include="Components\Interfaces\Components\IGameEngineViewModel.cs" />
+    <Compile Include="Components\Interfaces\Components\IGameViewModel.cs" />
+    <Compile Include="Components\ComponentsHierarchyBuilder.cs" />
+    <Compile Include="Components\Interfaces\Components\ILogicalComponentHolder.cs" />
+    <Compile Include="Actions\CreateDevelopmentBranchAction.cs" />
+    <Compile Include="ExplorerBar\Common\EnvironmentBranchExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\Common\MainBranchExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\DEV\DevBranchExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\DEV\DevFeatureBranchExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\DEV\DevFeaturesBranchesExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\DEV\DevMainBranchExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\ExplorerBarItemsRepository.cs" />
+    <Compile Include="ExplorerBar\ExplorerBarItemsRepositoryFactory.cs" />
+    <Compile Include="ExplorerBar\Common\FeatureBranchExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\Common\FeaturesBranchesExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\QA\QAFeatureBranchExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\QA\QaFeaturesBranchesExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\IExplorerBarItemsRepository.cs" />
+    <Compile Include="ExplorerBar\IExplorerBarItemsRepositoryFactory.cs" />
+    <Compile Include="ExplorerBar\RootBranchExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\NavigationAwareItem.cs" />
+    <Compile Include="ExplorerBar\QA\QABranchExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\QA\QaMainBranchExplorerBarItem.cs" />
+    <Compile Include="ExplorerBar\TfsExplorerBar.cs" />
+    <Compile Include="Components\Interfaces\Components\IComponentViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModelsModule.cs" />
+    <Compile Include="Workspace\Common\MainBranchWorkspaceItem.cs" />
+    <Compile Include="Workspace\DEV\DevBranchWorkspaceItem.cs" />
+    <Compile Include="Workspace\DEV\DevFeatureBranchWorkspaceItem.cs" />
+    <Compile Include="Workspace\DEV\DevFeaturesBranchesWorkspaceItem.cs" />
+    <Compile Include="Workspace\DEV\DevMainBranchWorkspaceItem.cs" />
+    <Compile Include="Workspace\Common\FeatureBranchWorkspaceItem.cs" />
+    <Compile Include="Workspace\Common\FeaturesBranchesWorkspaceItem.cs" />
+    <Compile Include="Workspace\RootBranchWorkspaceItem.cs" />
+    <Compile Include="Workspace\Sidebars\FeatureBranchBuilderViewModel.cs" />
+    <Compile Include="Workspace\QA\QABranchWorkspaceItem.cs" />
+    <Compile Include="Workspace\QA\QAFeaturesBranchesWorkspaceItem.cs" />
+    <Compile Include="Workspace\QA\QAFeatureBranchWorkspaceItem.cs" />
+    <Compile Include="Workspace\QA\QAMainBranchWorkspaceItem.cs" />
+    <Compile Include="Workspace\Sidebars\PublishToQAViewModel.cs" />
+    <Compile Include="Workspace\Sidebars\RenameComponentViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Dependencies\Spark.Infra\Spark.Infra\Spark.Infra.csproj">
+      <Project>{02e9598a-f44e-4359-844a-dfc8bdc9e36c}</Project>
+      <Name>Spark.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Dependencies\Wpf.Common\Wpf.Common\Spark.Wpf.Common.csproj">
+      <Project>{4f07e2f4-7058-4026-948e-2f5c98013a62}</Project>
+      <Name>Spark.Wpf.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{cd2f5a4f-7927-487c-aade-155f25151219}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

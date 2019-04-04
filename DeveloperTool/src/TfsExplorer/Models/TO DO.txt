@@ -1,0 +1,35 @@
+﻿DeliverInstaller action should be optional by making buildContext.BuildConfiguration.InstallerDeliveryFolder Optional<ILocalPath>
+
+zlib.net.dll should be removed
+
+--in the installer_content.txt append the game part to the name of the key.
+--GIB installer 1.5.x vs 3.x
+--!Don't forget about the version inside GGP computed from the installer version used to generate tickets.
+--!Rename the Generic engine folder to GenericVideoSlots ?
+--Some games are missing .limits files. I guess they should be removed
+--!!!!I made some changes to the ConfigurationEditor in order to work with the new installer
+--!!!!I made some changes in the GGPGameServer.Host regarding the location where PcMetaData.xml file is generated
+--!!!!Make GamesProxy a core component.
+--!!!!BuildCustomization.xml
+--Show more info about a component in the installer (ProjectDir, ChangeSet, DistributionFolder);
+--Deny publishing if there is a build in progress?
+--Dropdown with the branch in the PM Approval Tool when creating a new production installer.
+--Delete a component.
+--create 4.x
+--For the Installer Components use the ComponentUniqueID from DB instead the one from the ComponentUniqueID.txt file.
+--Rename a componente in all branches at once ?
+--after creating installer branch do a GetLatest
+--optimize the branching by removing the ResetCache call
+--Renaming a component is problematic
+--Make sure ComponentUniqueID is unique between components
+--different icons for branched installer
+--write in log current building installer version
+--GGPGameServer.Simulations.dll
+--CryptoWrapper.dll
+--ConfigurationSchemaGenerator project
+--Read BuildCustomization.xml file
+--Move Infra inside packages ?
+--component_description.txt
+--Add to the component_description.txt the ProjectDir 
+--PCMetadata.xml
+--PM Approval Tool - Should not be able to create prod installer if a game doesn't have both parts approved.

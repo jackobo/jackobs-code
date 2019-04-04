@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="JackPotInfo" Class="JackpotInfoDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=REAL-APR-DEV;Initial Catalog=JackPotInfo;Persist Security Info=True;User ID=rldev" SettingsObjectName="GamesPortal.Service.Properties.Settings" SettingsPropertyName="JackPotInfoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="NJP.[_Jackpots]" Member="Jackpots">
+    <Type Name="Jackpot">
+      <Column Name="JP_ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="JP_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Jackpot__JackpotGameType" Member="JackpotGameTypes" Storage="__JackpotGameTypes" ThisKey="JP_ID" OtherKey="JGT_JP_ID" Type="JackpotGameType" />
+    </Type>
+  </Table>
+  <Table Name="NJP.[_JackpotGameTypes]" Member="JackpotGameTypes">
+    <Type Name="JackpotGameType">
+      <Column Name="JGT_JP_ID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="JGT_GT_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Jackpot__JackpotGameType" Member="Jackpot" ThisKey="JGT_JP_ID" OtherKey="JP_ID" Type="Jackpot" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

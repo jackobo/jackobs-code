@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="faed37f3-566f-40db-b2a1-cb5e363304d3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/LayoutToolService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="b6ff4503-20f3-41a9-8531-7044df6f0cce" SourceId="1" SourceUrl="http://localhost/LayoutToolService/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="10b9bf2f-023a-4ed4-9839-77b902435ee3" SourceId="1" SourceUrl="http://localhost/LayoutToolService/mex" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="d4e24520-70ac-43ec-8c63-798bbfe45ff5" SourceId="1" SourceUrl="http://localhost/LayoutToolService/mex" />
+    <MetadataFile FileName="GamesPortal.Service.LayoutTool.xsd" MetadataType="Schema" ID="c604d3ef-7615-4dc2-9a4d-b255b95e1477" SourceId="1" SourceUrl="http://localhost/LayoutToolService/mex" />
+    <MetadataFile FileName="GamesPortal.Service.Entities.LayoutTool.xsd" MetadataType="Schema" ID="6eacc47e-d137-4979-a46f-8f39eb0b357f" SourceId="1" SourceUrl="http://localhost/LayoutToolService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="d4d10ba9-a9cb-486a-ac57-72f20c76b961" SourceId="1" SourceUrl="http://localhost/LayoutToolService/mex" />
+    <MetadataFile FileName="GamesPortal.Service.Entities.xsd" MetadataType="Schema" ID="73d5f230-f0a3-4d75-ae82-f0e67626213e" SourceId="1" SourceUrl="http://localhost/LayoutToolService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

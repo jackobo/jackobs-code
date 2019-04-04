@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dedd7793-b5e8-4cdf-90d1-22287f38a7ec" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8687/ToolService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ToolService.xsd" MetadataType="Schema" ID="0b7bf833-6d51-4dbf-807a-3f07e1e77f6e" SourceId="1" SourceUrl="http://10.105.12.30:8687/ToolService?xsd=xsd2" />
+    <MetadataFile FileName="ToolService.disco" MetadataType="Disco" ID="8e3ec0a5-9d51-4a86-be77-fa6279d0889a" SourceId="1" SourceUrl="http://10.105.12.30:8687/ToolService?disco" />
+    <MetadataFile FileName="ToolService1.xsd" MetadataType="Schema" ID="ba87e349-411d-44c0-93d4-94edde3b894c" SourceId="1" SourceUrl="http://10.105.12.30:8687/ToolService?xsd=xsd3" />
+    <MetadataFile FileName="ToolService.wsdl" MetadataType="Wsdl" ID="d09acfe9-e37f-4c84-84e2-4bddf5b23c92" SourceId="1" SourceUrl="http://10.105.12.30:8687/ToolService?wsdl" />
+    <MetadataFile FileName="ToolService2.xsd" MetadataType="Schema" ID="c53e54a8-23d0-42a4-ad78-0911a970fd5c" SourceId="1" SourceUrl="http://10.105.12.30:8687/ToolService?xsd=xsd0" />
+    <MetadataFile FileName="ToolService3.xsd" MetadataType="Schema" ID="a6428fea-5022-415d-9c6f-134fa635c5ac" SourceId="1" SourceUrl="http://10.105.12.30:8687/ToolService?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

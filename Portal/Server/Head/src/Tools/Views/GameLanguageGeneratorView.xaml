@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="Tools.Views.GameLanguageGeneratorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tools.Views"
+             mc:Ignorable="d" 
+             
+             x:Name="userControl">
+
+
+    <StackPanel>
+        <TextBlock Text="Repository"/>
+        <ComboBox ItemsSource="{Binding AvailableRepositories}" SelectedItem="{Binding SelectedRepository}"/>
+        <TextBlock Text="Game Type:"/>
+        <ComboBox ItemsSource="{Binding AvailableGameTypes}" SelectedItem="{Binding GameType}"/>
+        <TextBlock Text="Game Version:"/>
+        <ComboBox ItemsSource="{Binding AvailableVersions}" SelectedItem="{Binding GameVersion}"/>
+        <WrapPanel>
+            <TextBlock Text="Available regulations for the selected version: "/>
+            <TextBlock Text="{Binding AvailableRegulationsForSelectedVersionDescription}"/>
+        </WrapPanel>
+
+
+        <GroupBox Header="Languages" Padding="8" Margin="3">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Right" >
+                    <Button Content="Generate new languages" Cursor="Hand" Margin="5,5,5,20" Command="{Binding GenerateDefaultLanguagesCommand}"/>
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Copy languages from version:"/>
+                        <ComboBox ItemsSource="{Binding AvailableVersions}" SelectedItem="{Binding VersionToCopyFrom}"/>
+                        <Button Content="Generate languages from selected version" Cursor="Hand" Command="{Binding CopyLanguagesFromOtherVersionCommand}"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <Menu DockPanel.Dock="Bottom" >
+                    <MenuItem Header="Add language" ItemsSource="{Binding LanguagesThatCanBeAdded}">
+                        <MenuItem.ItemTemplate>
+                            <DataTemplate>
+                                <MenuItem Header="{Binding Name}" Command="{Binding ElementName=userControl, Path=DataContext.AddLanguageCommand}" CommandParameter="{Binding}"/>
+                            </DataTemplate>
+                        </MenuItem.ItemTemplate>
+                    </MenuItem>
+                </Menu>
+                
+                <DataGrid ItemsSource="{Binding Languages}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        
+                        <DataGridTemplateColumn Header="Language" Width="Auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}" Content="{Binding Language}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTextColumn Header="Hash" Binding="{Binding Hash}" Width="*"/>
+
+                        <DataGridTemplateColumn Header="" Width="Auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="New Hash" Command="{Binding ElementName=userControl,Path=DataContext.NewHashCommand}" CommandParameter="{Binding}" Cursor="Hand"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </GroupBox>
+
+        <CheckBox IsChecked="{Binding UseLanguageToRegulationMapping, UpdateSourceTrigger=PropertyChanged}" Content="Use Language to regulation mapping" Margin="10"/>
+        <Button Content="Save languages" Command="{Binding SaveCommand}" FontSize="14" FontWeight="Bold" Margin="10" Cursor="Hand"></Button>
+
+        <Button Content="Synchronize game" Command="{Binding SynchronizeCommand}" FontSize="14" FontWeight="Bold" Margin="10" Cursor="Hand"></Button>
+
+    </StackPanel>
+
+</UserControl>

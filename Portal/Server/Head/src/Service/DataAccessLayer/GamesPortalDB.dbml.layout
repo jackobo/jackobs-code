@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15, 8.5" name="ClientApprovalSystemDB">
+  <DataContextMoniker Name="/GamesPortalDataContext" />
+  <nestedChildShapes>
+    <classShape Id="09a2f155-2108-4f3b-bc6d-ecf39e1a2ff0" isExpanded="false" absoluteBounds="6.375, 0.5, 1.375, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/GameType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8b3587fe-b906-4151-ac5c-43052d4d05fb" absoluteBounds="6.39, 0.96, 1.2200000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7b5b5117-1177-421b-a216-4bf330647498" isExpanded="false" absoluteBounds="9, 2, 2.375, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/ClientTypeToRegulationMapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c95a23ab-f87f-4356-873e-a50f3d3feae3" absoluteBounds="9.015, 2.46, 2.3449999999999998, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0926fe85-9416-4c49-af2b-d8a6399da027" isExpanded="false" absoluteBounds="9.375, 2.625, 2, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/UpgradeScript" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af0cf22c-6aa1-41df-967e-dfd3f592c978" absoluteBounds="9.39, 3.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3fbeb271-7ba1-4387-b0a3-8904bc5480f9" isExpanded="false" absoluteBounds="6.375, 2.625, 2, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/GameVersion_Property" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3951b741-3538-488c-8ffa-e080adc5dc41" absoluteBounds="6.39, 3.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c4be8c9c-9966-40a3-9854-0cd25b802a18" isExpanded="false" absoluteBounds="4, 4.375, 2.25, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/GameVersion_Property_History" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0008055b-7f76-44be-b701-604bc8c1a07f" absoluteBounds="4.015, 4.835, 2.2199999999999998, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1758a744-81d7-4cf1-ae0b-b1ce3cd97366" isExpanded="false" absoluteBounds="9.375, 3.375, 2, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/RegulationType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3f45fbdb-8b18-4287-8850-181545aa6c5c" absoluteBounds="9.39, 3.8350000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d95822e9-c0dc-40eb-9d62-49f6b46bbc95" isExpanded="false" absoluteBounds="9.375, 4.125, 2, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/RegulationsName" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8832dabb-237c-4721-ae76-e561abc79d03" absoluteBounds="9.39, 4.5850000000000009, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0ecafa3d-6054-495a-8eae-f1fac57eb637" isExpanded="false" absoluteBounds="3.5, 2.625, 2, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/GameVersion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c98f5a9-7487-4a9c-9561-0704c67cffaf" absoluteBounds="3.515, 3.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 2.85); (6.375 : 2.85)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GamesPortalDataContext/GameVersion/GameVersion_GameVersion_Property" />
+      <nodes>
+        <classShapeMoniker Id="0ecafa3d-6054-495a-8eae-f1fac57eb637" />
+        <classShapeMoniker Id="3fbeb271-7ba1-4387-b0a3-8904bc5480f9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.75 : 3.075); (4.75 : 4.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GamesPortalDataContext/GameVersion/GameVersion_GameVersion_Property_History" />
+      <nodes>
+        <classShapeMoniker Id="0ecafa3d-6054-495a-8eae-f1fac57eb637" />
+        <classShapeMoniker Id="c4be8c9c-9966-40a3-9854-0cd25b802a18" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="626a7e22-53f9-455a-b683-09c9b8712074" isExpanded="false" absoluteBounds="0.5, 1.875, 3.375, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/GameVersion_Language_ToArtifactorySyncQueue" />
+      <nestedChildShapes>
+        <elementListCompartment Id="684197ba-c315-4e8f-a06a-966a48096ef6" absoluteBounds="0.515, 2.335, 3.3449999999999998, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eceac3c2-aa0f-432b-b62f-bc579538df12" isExpanded="false" absoluteBounds="8.625, 5.5, 2, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/NeverApprovedGame" />
+      <nestedChildShapes>
+        <elementListCompartment Id="495a8fb6-080b-4c0d-a909-638a6cc734c0" absoluteBounds="8.64, 5.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9bbee926-fee1-4eee-9ef4-f0b4a99d799b" isExpanded="false" absoluteBounds="8.25, 0.625, 3.5, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/LatestVersionForEachGameAndRegulation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf8ed1b0-c767-4d78-b0d6-1370aa94c8ca" absoluteBounds="8.265, 1.085, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="85b7e3bb-2e1c-471e-81b4-d5d02d00116d" isExpanded="false" absoluteBounds="12.25, 3.375, 2.5, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/RegulationType_MandatoryLanguage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3df21157-f42a-4476-b14c-d046a6422636" absoluteBounds="12.265, 3.835, 2.9699999999999998, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.375 : 3.6); (12.25 : 3.6)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GamesPortalDataContext/RegulationType/RegulationType_RegulationType_MandatoryLanguage" />
+      <nodes>
+        <classShapeMoniker Id="1758a744-81d7-4cf1-ae0b-b1ce3cd97366" />
+        <classShapeMoniker Id="85b7e3bb-2e1c-471e-81b4-d5d02d00116d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2d481447-b2c1-429b-b8c8-c42898308fb7" isExpanded="false" absoluteBounds="1.125, 2.625, 2, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/GameVersion_Language" />
+      <nestedChildShapes>
+        <elementListCompartment Id="013d9101-ea70-42bd-9709-e15551f95ae8" absoluteBounds="1.1400000000000001, 3.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 2.85); (3.125 : 2.85)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GamesPortalDataContext/GameVersion/GameVersion_GameVersion_Language" />
+      <nodes>
+        <classShapeMoniker Id="0ecafa3d-6054-495a-8eae-f1fac57eb637" />
+        <classShapeMoniker Id="2d481447-b2c1-429b-b8c8-c42898308fb7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="558f4f6d-19a3-4873-8fb5-18e1affad48d" isExpanded="false" absoluteBounds="0.5, 0.5, 2.625, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/GameVersion_LanguageQAApprovalInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cd8ed489-531d-4837-bcd3-88f083f82da1" absoluteBounds="0.515, 0.96, 2.5949999999999998, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f2247394-71ff-4555-b695-be917e9eeae2" isExpanded="false" absoluteBounds="3.875, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/Game" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dde9870f-9e9d-40b6-a840-e4e8fd2f35fa" absoluteBounds="3.8899999999999997, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.875 : 0.725); (6.375 : 0.725)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GamesPortalDataContext/Game/Game_GameType" />
+      <nodes>
+        <classShapeMoniker Id="f2247394-71ff-4555-b695-be917e9eeae2" />
+        <classShapeMoniker Id="09a2f155-2108-4f3b-bc6d-ecf39e1a2ff0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.71875 : 0.95); (4.71875 : 2.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GamesPortalDataContext/Game/Game_GameVersion" />
+      <nodes>
+        <classShapeMoniker Id="f2247394-71ff-4555-b695-be917e9eeae2" />
+        <classShapeMoniker Id="0ecafa3d-6054-495a-8eae-f1fac57eb637" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5a87b1e9-ede0-41b5-b9a6-784bab73f655" isExpanded="false" absoluteBounds="0.875, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/GameVersion_Regulation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="38cd3d48-5dfb-4b7a-ac9c-c01ca0044407" absoluteBounds="0.89000000000000012, 4.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 3.075); (2.875 : 3.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GamesPortalDataContext/GameVersion/GameVersion_GameVersion_Regulation" />
+      <nodes>
+        <classShapeMoniker Id="0ecafa3d-6054-495a-8eae-f1fac57eb637" />
+        <classShapeMoniker Id="5a87b1e9-ede0-41b5-b9a6-784bab73f655" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="69bcd201-a70a-47d3-b06b-63f52af86332" isExpanded="false" absoluteBounds="2.5, 5.375, 4, 0.45">
+      <DataClassMoniker Name="/GamesPortalDataContext/LatestApprovedGameVersionForEachRegulation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b1689930-8a5b-46dc-9366-bb7a8c703597" absoluteBounds="2.515, 5.835, 3.9699999999999998, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

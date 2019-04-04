@@ -1,0 +1,192 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutTool.DEV", "LayoutTool.DEV\LayoutTool.DEV.csproj", "{C9B32513-EFA4-4337-AF80-85C1BA28D459}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutTool.Production", "LayoutTool.Production\LayoutTool.Production.csproj", "{67DA75AC-C166-4251-AEA5-9F8FE3B6871F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrapper", "Bootstrapper\Bootstrapper.csproj", "{6910029C-62CE-44F7-9F73-35501F96AEE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{55DEFE68-67BE-40E4-B758-841246151B1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{FE12D28C-2383-4609-9F61-CC228740499A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels", "ViewModels\ViewModels.csproj", "{EB2E4428-D4C5-466D-921C-50C27FF3824D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Views.Wpf", "Views.Wpf\Views.Wpf.csproj", "{852368E0-BE36-4159-A865-43672DBC764A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Wpf.Common", "..\Dependencies\Wpf.Common\Wpf.Common\Spark.Wpf.Common.csproj", "{4F07E2F4-7058-4026-948E-2F5C98013A62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Wpf.Common.UnitTests", "..\Dependencies\Wpf.Common\Wpf.Common.UnitTests\Spark.Wpf.Common.UnitTests.csproj", "{37186D17-0E24-4108-BCD7-17E960BCBAF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{27CE3C19-9475-4066-96AA-F3DB1B204CBF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{3434D74F-37CB-4283-A98D-2AD4704B4434}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels.UnitTests", "ViewModels.UnitTests\ViewModels.UnitTests.csproj", "{C4ED3001-8E1E-4C15-BF0E-23F623DB426B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models.UnitTests", "Models.UnitTests\Models.UnitTests.csproj", "{385CED9E-8C04-4061-A19B-BDF9B15E43E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainProxyMockAdapter", "MainProxyMockAdapter\MainProxyMockAdapter.csproj", "{D6AE3A79-B824-44FD-A248-598CCE2A422F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutTool.QA", "LayoutTool.QA\LayoutTool.QA.csproj", "{836E5450-9398-42A8-8C7D-C99A09E4EF67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Publish", "Publish", "{2FD37040-F7FE-4B2A-A752-920F830D26B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Infra", "..\Dependencies\Spark.Infra\Spark.Infra\Spark.Infra.csproj", "{02E9598A-F44E-4359-844A-DFC8BDC9E36C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Infra.Tests", "..\Dependencies\Spark.Infra\Spark.Infra.Tests\Spark.Infra.Tests.csproj", "{8CED340F-40CE-4E28-8286-0E08189B7310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutConverter", "LayoutConverter\LayoutConverter.csproj", "{6B906AB2-6D62-4A82-A357-BF5B01B5ED0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9B32513-EFA4-4337-AF80-85C1BA28D459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B32513-EFA4-4337-AF80-85C1BA28D459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B32513-EFA4-4337-AF80-85C1BA28D459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B32513-EFA4-4337-AF80-85C1BA28D459}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67DA75AC-C166-4251-AEA5-9F8FE3B6871F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67DA75AC-C166-4251-AEA5-9F8FE3B6871F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67DA75AC-C166-4251-AEA5-9F8FE3B6871F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67DA75AC-C166-4251-AEA5-9F8FE3B6871F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6910029C-62CE-44F7-9F73-35501F96AEE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6910029C-62CE-44F7-9F73-35501F96AEE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6910029C-62CE-44F7-9F73-35501F96AEE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6910029C-62CE-44F7-9F73-35501F96AEE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55DEFE68-67BE-40E4-B758-841246151B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55DEFE68-67BE-40E4-B758-841246151B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55DEFE68-67BE-40E4-B758-841246151B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55DEFE68-67BE-40E4-B758-841246151B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE12D28C-2383-4609-9F61-CC228740499A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE12D28C-2383-4609-9F61-CC228740499A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE12D28C-2383-4609-9F61-CC228740499A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE12D28C-2383-4609-9F61-CC228740499A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB2E4428-D4C5-466D-921C-50C27FF3824D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB2E4428-D4C5-466D-921C-50C27FF3824D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB2E4428-D4C5-466D-921C-50C27FF3824D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB2E4428-D4C5-466D-921C-50C27FF3824D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{852368E0-BE36-4159-A865-43672DBC764A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{852368E0-BE36-4159-A865-43672DBC764A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{852368E0-BE36-4159-A865-43672DBC764A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{852368E0-BE36-4159-A865-43672DBC764A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4ED3001-8E1E-4C15-BF0E-23F623DB426B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4ED3001-8E1E-4C15-BF0E-23F623DB426B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4ED3001-8E1E-4C15-BF0E-23F623DB426B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4ED3001-8E1E-4C15-BF0E-23F623DB426B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{385CED9E-8C04-4061-A19B-BDF9B15E43E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{385CED9E-8C04-4061-A19B-BDF9B15E43E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{385CED9E-8C04-4061-A19B-BDF9B15E43E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{385CED9E-8C04-4061-A19B-BDF9B15E43E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6AE3A79-B824-44FD-A248-598CCE2A422F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6AE3A79-B824-44FD-A248-598CCE2A422F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6AE3A79-B824-44FD-A248-598CCE2A422F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6AE3A79-B824-44FD-A248-598CCE2A422F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{836E5450-9398-42A8-8C7D-C99A09E4EF67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{836E5450-9398-42A8-8C7D-C99A09E4EF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{836E5450-9398-42A8-8C7D-C99A09E4EF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{836E5450-9398-42A8-8C7D-C99A09E4EF67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B906AB2-6D62-4A82-A357-BF5B01B5ED0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B906AB2-6D62-4A82-A357-BF5B01B5ED0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B906AB2-6D62-4A82-A357-BF5B01B5ED0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B906AB2-6D62-4A82-A357-BF5B01B5ED0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C9B32513-EFA4-4337-AF80-85C1BA28D459} = {2FD37040-F7FE-4B2A-A752-920F830D26B7}
+		{67DA75AC-C166-4251-AEA5-9F8FE3B6871F} = {2FD37040-F7FE-4B2A-A752-920F830D26B7}
+		{4F07E2F4-7058-4026-948E-2F5C98013A62} = {3434D74F-37CB-4283-A98D-2AD4704B4434}
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4} = {3434D74F-37CB-4283-A98D-2AD4704B4434}
+		{C4ED3001-8E1E-4C15-BF0E-23F623DB426B} = {27CE3C19-9475-4066-96AA-F3DB1B204CBF}
+		{385CED9E-8C04-4061-A19B-BDF9B15E43E4} = {27CE3C19-9475-4066-96AA-F3DB1B204CBF}
+		{836E5450-9398-42A8-8C7D-C99A09E4EF67} = {2FD37040-F7FE-4B2A-A752-920F830D26B7}
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C} = {3434D74F-37CB-4283-A98D-2AD4704B4434}
+		{8CED340F-40CE-4E28-8286-0E08189B7310} = {3434D74F-37CB-4283-A98D-2AD4704B4434}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 17
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs2012:8080/tfs/defaultcollection_2010
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = LayoutTool.Production\\LayoutTool.Production.csproj
+		SccProjectTopLevelParentUniqueName1 = LayoutTool.sln
+		SccProjectName1 = LayoutTool.Production
+		SccLocalPath1 = LayoutTool.Production
+		SccProjectUniqueName2 = Bootstrapper\\Bootstrapper.csproj
+		SccProjectName2 = Bootstrapper
+		SccLocalPath2 = Bootstrapper
+		SccProjectUniqueName3 = Models\\Models.csproj
+		SccProjectName3 = Models
+		SccLocalPath3 = Models
+		SccProjectUniqueName4 = ViewModels\\ViewModels.csproj
+		SccProjectName4 = ViewModels
+		SccLocalPath4 = ViewModels
+		SccProjectUniqueName5 = Views.Wpf\\Views.Wpf.csproj
+		SccProjectName5 = Views.Wpf
+		SccLocalPath5 = Views.Wpf
+		SccProjectUniqueName6 = Interfaces\\Interfaces.csproj
+		SccProjectName6 = Interfaces
+		SccLocalPath6 = Interfaces
+		SccProjectUniqueName7 = ViewModels.UnitTests\\ViewModels.UnitTests.csproj
+		SccProjectTopLevelParentUniqueName7 = LayoutTool.sln
+		SccProjectName7 = ViewModels.UnitTests
+		SccLocalPath7 = ViewModels.UnitTests
+		SccProjectUniqueName8 = Models.UnitTests\\Models.UnitTests.csproj
+		SccProjectTopLevelParentUniqueName8 = LayoutTool.sln
+		SccProjectName8 = Models.UnitTests
+		SccLocalPath8 = Models.UnitTests
+		SccProjectUniqueName9 = MainProxyMockAdapter\\MainProxyMockAdapter.csproj
+		SccProjectName9 = MainProxyMockAdapter
+		SccLocalPath9 = MainProxyMockAdapter
+		SccProjectUniqueName10 = LayoutTool.QA\\LayoutTool.QA.csproj
+		SccProjectTopLevelParentUniqueName10 = LayoutTool.sln
+		SccProjectName10 = LayoutTool.QA
+		SccLocalPath10 = LayoutTool.QA
+		SccProjectUniqueName11 = LayoutTool.DEV\\LayoutTool.DEV.csproj
+		SccProjectTopLevelParentUniqueName11 = LayoutTool.sln
+		SccProjectName11 = LayoutTool.DEV
+		SccLocalPath11 = LayoutTool.DEV
+		SccProjectUniqueName12 = ..\\Dependencies\\Wpf.Common\\Wpf.Common\\Spark.Wpf.Common.csproj
+		SccProjectTopLevelParentUniqueName12 = LayoutTool.sln
+		SccProjectName12 = ../Dependencies/Wpf.Common/Wpf.Common
+		SccLocalPath12 = ..\\Dependencies\\Wpf.Common\\Wpf.Common
+		SccProjectUniqueName13 = ..\\Dependencies\\Wpf.Common\\Wpf.Common.UnitTests\\Spark.Wpf.Common.UnitTests.csproj
+		SccProjectTopLevelParentUniqueName13 = LayoutTool.sln
+		SccProjectName13 = ../Dependencies/Wpf.Common/Wpf.Common.UnitTests
+		SccLocalPath13 = ..\\Dependencies\\Wpf.Common\\Wpf.Common.UnitTests
+		SccProjectUniqueName14 = ..\\Dependencies\\Spark.Infra\\Spark.Infra\\Spark.Infra.csproj
+		SccProjectTopLevelParentUniqueName14 = LayoutTool.sln
+		SccProjectName14 = ../Dependencies/Spark.Infra/Spark.Infra
+		SccLocalPath14 = ..\\Dependencies\\Spark.Infra\\Spark.Infra
+		SccProjectUniqueName15 = ..\\Dependencies\\Spark.Infra\\Spark.Infra.Tests\\Spark.Infra.Tests.csproj
+		SccProjectTopLevelParentUniqueName15 = LayoutTool.sln
+		SccProjectName15 = ../Dependencies/Spark.Infra/Spark.Infra.Tests
+		SccLocalPath15 = ..\\Dependencies\\Spark.Infra\\Spark.Infra.Tests
+		SccProjectUniqueName16 = LayoutConverter\\LayoutConverter.csproj
+		SccProjectName16 = LayoutConverter
+		SccLocalPath16 = LayoutConverter
+	EndGlobalSection
+EndGlobal

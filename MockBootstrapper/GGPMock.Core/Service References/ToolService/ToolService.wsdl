@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ToolService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://10.105.12.30:8687/ToolService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://10.105.12.30:8687/ToolService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://10.105.12.30:8687/ToolService?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://10.105.12.30:8687/ToolService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GGPGameServer.Core" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IToolService_GetServerVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerVersion" />
+  </wsdl:message>
+  <wsdl:message name="IToolService_GetServerVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToolService_GetCurrentGameID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentGameID" />
+  </wsdl:message>
+  <wsdl:message name="IToolService_GetCurrentGameID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentGameIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToolService_GetCurrentGGPHistoryPending_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentGGPHistoryPending" />
+  </wsdl:message>
+  <wsdl:message name="IToolService_GetCurrentGGPHistoryPending_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentGGPHistoryPendingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToolService_GetCurrentPlayers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentPlayers" />
+  </wsdl:message>
+  <wsdl:message name="IToolService_GetCurrentPlayers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentPlayersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_GetRndNum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRndNum" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_GetRndNum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRndNumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_GetRndNums_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRndNums" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_GetRndNums_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRndNumsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_GetLongRndNums_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLongRndNums" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_GetLongRndNums_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLongRndNumsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_GetFrenchRouletteRnd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFrenchRouletteRnd" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_GetFrenchRouletteRnd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFrenchRouletteRndResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_GetAmericanRouletteRnd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmericanRouletteRnd" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_GetAmericanRouletteRnd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmericanRouletteRndResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_GetLimitForRNGType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLimitForRNGType" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_GetLimitForRNGType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLimitForRNGTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_GetShuffle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShuffle" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_GetShuffle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShuffleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_BC_GenerateRandomNumbers_InputMessage">
+    <wsdl:part name="parameters" element="tns:BC_GenerateRandomNumbers" />
+  </wsdl:message>
+  <wsdl:message name="IRNG_BC_GenerateRandomNumbers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BC_GenerateRandomNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupportService_UnLockGameSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnLockGameSession" />
+  </wsdl:message>
+  <wsdl:message name="ISupportService_UnLockGameSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnLockGameSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupportService_ForceCloseSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:ForceCloseSession" />
+  </wsdl:message>
+  <wsdl:message name="ISupportService_ForceCloseSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ForceCloseSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupportService_AutoplaySession_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutoplaySession" />
+  </wsdl:message>
+  <wsdl:message name="ISupportService_AutoplaySession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutoplaySessionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IToolService">
+    <wsdl:operation name="GetServerVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolService/GetServerVersion" message="tns:IToolService_GetServerVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolService/GetServerVersionResponse" message="tns:IToolService_GetServerVersion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentGameID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolService/GetCurrentGameID" message="tns:IToolService_GetCurrentGameID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolService/GetCurrentGameIDResponse" message="tns:IToolService_GetCurrentGameID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentGGPHistoryPending">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolService/GetCurrentGGPHistoryPending" message="tns:IToolService_GetCurrentGGPHistoryPending_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolService/GetCurrentGGPHistoryPendingResponse" message="tns:IToolService_GetCurrentGGPHistoryPending_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentPlayers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolService/GetCurrentPlayers" message="tns:IToolService_GetCurrentPlayers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolService/GetCurrentPlayersResponse" message="tns:IToolService_GetCurrentPlayers_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IRNG">
+    <wsdl:operation name="GetRndNum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRNG/GetRndNum" message="tns:IRNG_GetRndNum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRNG/GetRndNumResponse" message="tns:IRNG_GetRndNum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRndNums">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRNG/GetRndNums" message="tns:IRNG_GetRndNums_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRNG/GetRndNumsResponse" message="tns:IRNG_GetRndNums_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLongRndNums">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRNG/GetLongRndNums" message="tns:IRNG_GetLongRndNums_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRNG/GetLongRndNumsResponse" message="tns:IRNG_GetLongRndNums_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFrenchRouletteRnd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRNG/GetFrenchRouletteRnd" message="tns:IRNG_GetFrenchRouletteRnd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRNG/GetFrenchRouletteRndResponse" message="tns:IRNG_GetFrenchRouletteRnd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAmericanRouletteRnd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRNG/GetAmericanRouletteRnd" message="tns:IRNG_GetAmericanRouletteRnd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRNG/GetAmericanRouletteRndResponse" message="tns:IRNG_GetAmericanRouletteRnd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLimitForRNGType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRNG/GetLimitForRNGType" message="tns:IRNG_GetLimitForRNGType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRNG/GetLimitForRNGTypeResponse" message="tns:IRNG_GetLimitForRNGType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShuffle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRNG/GetShuffle" message="tns:IRNG_GetShuffle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRNG/GetShuffleResponse" message="tns:IRNG_GetShuffle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BC_GenerateRandomNumbers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRNG/BC_GenerateRandomNumbers" message="tns:IRNG_BC_GenerateRandomNumbers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRNG/BC_GenerateRandomNumbersResponse" message="tns:IRNG_BC_GenerateRandomNumbers_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISupportService">
+    <wsdl:operation name="UnLockGameSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupportService/UnLockGameSession" message="tns:ISupportService_UnLockGameSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupportService/UnLockGameSessionResponse" message="tns:ISupportService_UnLockGameSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceCloseSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupportService/ForceCloseSession" message="tns:ISupportService_ForceCloseSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupportService/ForceCloseSessionResponse" message="tns:ISupportService_ForceCloseSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutoplaySession">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupportService/AutoplaySession" message="tns:ISupportService_AutoplaySession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupportService/AutoplaySessionResponse" message="tns:ISupportService_AutoplaySession_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IToolService" type="tns:IToolService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServerVersion">
+      <soap:operation soapAction="http://tempuri.org/IToolService/GetServerVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentGameID">
+      <soap:operation soapAction="http://tempuri.org/IToolService/GetCurrentGameID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentGGPHistoryPending">
+      <soap:operation soapAction="http://tempuri.org/IToolService/GetCurrentGGPHistoryPending" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentPlayers">
+      <soap:operation soapAction="http://tempuri.org/IToolService/GetCurrentPlayers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IRNG" type="tns:IRNG">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRndNum">
+      <soap:operation soapAction="http://tempuri.org/IRNG/GetRndNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRndNums">
+      <soap:operation soapAction="http://tempuri.org/IRNG/GetRndNums" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLongRndNums">
+      <soap:operation soapAction="http://tempuri.org/IRNG/GetLongRndNums" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFrenchRouletteRnd">
+      <soap:operation soapAction="http://tempuri.org/IRNG/GetFrenchRouletteRnd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmericanRouletteRnd">
+      <soap:operation soapAction="http://tempuri.org/IRNG/GetAmericanRouletteRnd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLimitForRNGType">
+      <soap:operation soapAction="http://tempuri.org/IRNG/GetLimitForRNGType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShuffle">
+      <soap:operation soapAction="http://tempuri.org/IRNG/GetShuffle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BC_GenerateRandomNumbers">
+      <soap:operation soapAction="http://tempuri.org/IRNG/BC_GenerateRandomNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ISupportService" type="tns:ISupportService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UnLockGameSession">
+      <soap:operation soapAction="http://tempuri.org/ISupportService/UnLockGameSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceCloseSession">
+      <soap:operation soapAction="http://tempuri.org/ISupportService/ForceCloseSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutoplaySession">
+      <soap:operation soapAction="http://tempuri.org/ISupportService/AutoplaySession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ToolService">
+    <wsdl:port name="BasicHttpBinding_IToolService" binding="tns:BasicHttpBinding_IToolService">
+      <soap:address location="http://10.105.12.30:8687/ToolService" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IRNG" binding="tns:BasicHttpBinding_IRNG">
+      <soap:address location="http://10.105.12.30:8687/ToolService" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ISupportService" binding="tns:BasicHttpBinding_ISupportService">
+      <soap:address location="http://10.105.12.30:8687/ToolService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

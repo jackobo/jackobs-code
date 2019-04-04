@@ -1,0 +1,8 @@
+﻿<Application x:Class="Spark.TfsExplorer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Spark.TfsExplorer">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

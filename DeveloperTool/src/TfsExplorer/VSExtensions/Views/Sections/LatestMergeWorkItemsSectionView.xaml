@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Spark.VisualStudio.Extensions.Views.Sections.LatestMergeWorkItemsSectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Spark.VisualStudio.Extensions.Views.Sections"
+             mc:Ignorable="d" 
+             >
+    <StackPanel Margin="7,0,0,0">
+
+        <StackPanel>
+            
+            <TextBlock Margin="0,0,0,2" TextAlignment="Left">
+                    <Hyperlink Command="{Binding Path=LatestMergeWorkItems.AddRelatedWorkItemsCommand}">Add all to Related Work Items</Hyperlink>
+            </TextBlock>
+            
+            <ListBox ItemsSource="{Binding Path=LatestMergeWorkItems.WorkItems}" MinHeight="10" BorderThickness="0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Id}"/>
+                            <TextBlock Text=" - "/>
+                            <TextBlock Text="{Binding Title}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+
+        </StackPanel>
+
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,225 @@
+﻿<loggingConfiguration name="Logging Application Block"
+                      tracingEnabled="true"
+                      defaultCategory="General"
+                      logWarningsWhenNoCategoriesMatch="true">
+
+  <!-- ============================
+        Formatters - add nodes attributes -
+                      name - The name of the formatter
+                      type - The type name of a class that implements the ILogFormatter interface
+  -->
+  <formatters>
+    <add type="Microsoft.Practices.EnterpriseLibrary.Logging.Formatters.TextFormatter, Microsoft.Practices.EnterpriseLibrary.Logging" name="TextFormatter" template="{priority}{tab}({category}){tab}{timestamp(local)}{tab}{message}" />
+    
+    <add type="RL.Common.Logging.Formatters.RLLogServerFormatter, RL.Common.Logging"
+         name="RL logger simple formatter" />
+    <add type="RL.Common.Logging.Formatters.RLLogServerDetailedFormatter, RL.Common.Logging"
+         name="RL logger detailed formatter" />
+    <add type="RL.Common.Logging.Formatters.RLLogServerDetailedFlatFileFormatter, RL.Common.Logging"
+        name="RL flat file detailed formatter" />
+    <add type="RL.Common.Logging.Formatters.RLLogServerDetailedCategorizedFormatter, RL.Common.Logging"
+         name="RL logger categorized formatter" />
+  </formatters>
+
+
+  <!-- ============================
+        Listeners - add nodes attributes -
+                      name - The name of the trace listener
+                      listenerDataType - The type name of a class that derives from the TraceListenerData class
+                      type - The type name of a class that derives from the TraceListener class
+                      formatter - The name of the formatter that formats the LogEntry object into a string
+  -->
+  <listeners>
+    
+    <!-- This listener will write file and recreate new file when it reached the specified size -->
+    <add name="Rolling File Listener"
+				type="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.RollingFlatFileTraceListener, Microsoft.Practices.EnterpriseLibrary.Logging"
+				listenerDataType="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.RollingFlatFileTraceListenerData, Microsoft.Practices.EnterpriseLibrary.Logging"
+				fileName ="c:\GGPMock\GGPLogs\trace.log"
+				formatter="TextFormatter"
+        rollSizeKB="20000"
+        rollFileExistsBehavior="Increment"
+        maxArchivedFiles="20"/>
+
+    <!-- This listener will write to the event viewer of the server -->
+    <add name="Event viewer Listener"
+         listenerDataType="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.FormattedEventLogTraceListenerData, Microsoft.Practices.EnterpriseLibrary.Logging"
+         type="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.FormattedEventLogTraceListener, Microsoft.Practices.EnterpriseLibrary.Logging"
+         log="Application"
+         source="GenGa" />
+
+    <!-- This listener will write log to the GGP Mock UI -->
+    <add name="GGPMock Listener"
+         listenerDataType="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.CustomTraceListenerData, Microsoft.Practices.EnterpriseLibrary.Logging"
+         type="GGPGameServer.Simulations.GGPMock.Logging.GGPMockLoggerListener, GGPGameServer.Simulations"
+         formatter="RL logger detailed formatter" />
+
+    
+  </listeners>
+
+
+  <!-- ============================
+        Filters
+        1 - DEBUG
+        3 - NORMAL
+        4 - WARN
+        5 - ERROR, FATAL
+        
+        name - The name of the log filter
+        type - The type name of the class that implements the ILogFilter interface
+        minimumPriority - Specifies the minimum priority a log entry must have to be logged. 
+        maximumPriority - Specifies the maximum priority a log entry can have to be logged.  
+        categoryFilterMode - Specifies whether the categories listed under <categoryFilters> are allowed or denied. 
+          This attribute applies to the CategoryFilter class. Possible values are AllowAllExceptDenied and DenyAllExceptAllowed. 
+  -->
+  <logFilters>
+    <add name="Priority" type="Microsoft.Practices.EnterpriseLibrary.Logging.Filters.PriorityFilter, Microsoft.Practices.EnterpriseLibrary.Logging" 
+         minimumPriority="0" maximumPriority="10" />
+    <add name="Category Filter" type="Microsoft.Practices.EnterpriseLibrary.Logging.Filters.CategoryFilter, Microsoft.Practices.EnterpriseLibrary.Logging" 
+         categoryFilterMode="AllowAllExceptDenied" >
+      <categoryFilters>
+        <add name="Trace" />
+      </categoryFilters>
+    </add>
+  </logFilters>
+
+  <!-- ============================
+        Category sources
+        In additional to "allEvents" in "Special sources".
+        add nodes attributes -
+          name - The name of the log entry category that this trace source accepts
+          switchValue - Specifies the severity level of events that are handled by this trace source.
+                        Possible values are ActivityTracing, All, Critical, Error, Information, Off, Verbose, and Warning.
+  -->
+  <categorySources>
+    <add switchValue="Warning" name="DistributedCache">
+      <listeners>
+        <add name="Rolling File Listener" /> 
+        <add name="GGPMock Listener" />
+      </listeners>
+    </add>    
+    <add switchValue="Warning" name="Jackpots">
+      <listeners>
+        <add name="Rolling File Listener" /> 
+        <add name="GGPMock Listener" />
+      </listeners>
+    </add>
+    <add switchValue="Warning" name="ServiceBridge">
+      <listeners>
+        <add name="Rolling File Listener" /> 
+        <add name="GGPMock Listener" />
+      </listeners>
+    </add>
+    <add switchValue="Warning" name="Operator888">
+      <listeners>
+        <add name="Rolling File Listener" /> 
+        <add name="GGPMock Listener" />
+      </listeners>
+    </add>
+    <add switchValue="Warning" name="OperatorBip">
+      <listeners>
+        <add name="Rolling File Listener" />
+        <add name="GGPMock Listener" />
+      </listeners>
+    </add>
+
+    <add switchValue="Warning" name="ApplicationCritical">
+      <listeners>
+        <add name="Rolling File Listener" /> 
+        <add name="GGPMock Listener" />
+      </listeners>
+    </add>
+
+    <add switchValue="All" name="ServerSDK">
+      <listeners>
+        <add name="Rolling File Listener" />
+        <add name="GGPMock Listener" />
+      </listeners>
+    </add>
+    
+    <add switchValue="Warning" name="AbstractionLayer">
+      <listeners>
+        <add name="Rolling File Listener" /> 
+        <add name="GGPMock Listener" />
+      </listeners>
+    </add>
+
+    <add switchValue="Warning" name="Application">
+      <listeners>
+        <add name="Rolling File Listener" /> 
+        <add name="GGPMock Listener" />
+      </listeners>
+    </add>
+
+    <add switchValue="All" name="General">
+      <listeners>
+        <add name="Rolling File Listener" /> 
+        <add name="GGPMock Listener" />
+      </listeners>
+    </add>
+
+    <add switchValue="Warning" name="Statistics">
+      <listeners>
+        <add name="Rolling File Listener" /> 
+        <add name="GGPMock Listener" />
+      </listeners>
+    </add>
+
+    <add switchValue="All" name="Communication">
+      <listeners>
+        <add name="Rolling File Listener" /> 
+        <add name="GGPMock Listener" />
+      </listeners>
+    </add>
+
+    <add switchValue="Warning" name="Database">
+      <listeners>
+        <add name="Rolling File Listener" /> 
+        <add name="GGPMock Listener" />
+      </listeners>
+    </add>
+    <add switchValue="Warning" name="HistoryWriter">
+      <listeners>
+        <add name="Rolling File Listener" /> 
+        <add name="GGPMock Listener" />
+      </listeners>
+    </add>
+    <add switchValue="Warning" name="Trace">
+      <listeners>
+        <add name="Rolling File Listener" /> 
+        <add name="GGPMock Listener" />
+      </listeners>
+    </add>
+  </categorySources>
+
+  <!-- ============================
+        Special sources
+        Write all events to (including no category and logging errors):
+        1. RL Trace Listener
+        2. System.Diagnostics TraceListener
+  -->
+  <specialSources>
+    
+    <!--the MASTER_LOGGING capture everything!
+        change the switchValue from Warning to All when ever you need additional logging. 
+        it can be the only thing you will need to change when having any issue that requires more logs.
+        No need to restart the server
+    -->
+    <allEvents switchValue="Error" name="MASTER_LOGGING">
+      <listeners>
+        <add name="Rolling File Listener" />
+        <add name="Event viewer Listener" />
+      </listeners>
+    </allEvents>
+
+    <!--the errors refer to the logs of the logger it self-->
+    <errors switchValue="All" name="Errors" >
+      <listeners>
+        <add name="Rolling File Listener" /> 
+        <add name="Event viewer Listener" />
+      </listeners>
+    </errors>
+
+  </specialSources>
+
+</loggingConfiguration>

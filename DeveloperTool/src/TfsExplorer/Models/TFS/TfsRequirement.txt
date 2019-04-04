@@ -1,0 +1,17 @@
+﻿RequirementID = 698638
+Task 1 = 698640
+Task 2 = 698641
+http://tfs2012:8080/tfs/DefaultCollection_2010/GamingNDL/_workitems?_a=edit&id=698638&fullScreen=false
+
+C# Programmatically Checking in code changes with TFS API while associating the changeset to a Work Item
+https://social.msdn.microsoft.com/Forums/vstudio/en-US/72fa2e9e-5cf0-4243-b51d-77d09cc5a732/c-programmatically-checking-in-code-changes-with-tfs-api-while-associating-the-changeset-to-a-work?forum=tfsworkitemtracking
+
+Listing the work items associated with changesets for a path
+https://blogs.msdn.microsoft.com/buckh/2012/02/01/listing-the-work-items-associated-with-changesets-for-a-path/
+
+Programmatically open Pending Changes window and add Work Item
+https://social.msdn.microsoft.com/Forums/vstudio/en-US/a4066695-dfec-48cf-8743-eef6088923cf/programmatically-open-pending-changes-window-and-add-work-item?forum=vsx
+
+
+TFS - VS Extension: Add work item to pending changes via API
+http://stackoverflow.com/questions/25331871/tfs-vs-extension-add-work-item-to-pending-changes-via-api

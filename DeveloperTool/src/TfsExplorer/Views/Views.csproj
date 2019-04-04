@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DDD53835-65FB-417B-9E43-B251460BFD4E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Spark.TfsExplorer.Views</RootNamespace>
+    <AssemblyName>Spark.TfsExplorer.Views</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.TreeView">
+      <HintPath>.\ICSharpCode.TreeView.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Core.6.2.0\lib\net45\Prism.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism.Unity.Wpf, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Unity.6.2.0\lib\net45\Prism.Unity.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism.Wpf, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Wpf.6.2.0\lib\net45\Prism.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Wpf.6.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.3.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.3.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.3.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.3.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.3.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.3.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExplorerBar\ExplorerBarView.xaml.cs">
+      <DependentUpon>ExplorerBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ViewsModule.cs" />
+    <Compile Include="Workspace\ComponentsExplorerBarItemView.xaml.cs">
+      <DependentUpon>ComponentsExplorerBarItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\NextVersionsHolderView.xaml.cs">
+      <DependentUpon>NextVersionsHolderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\PROD\ProductionEnvironmentWorkspaceItemView.xaml.cs">
+      <DependentUpon>ProductionEnvironmentWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\PROD\ProductionBranchWorkspaceItemView.xaml.cs">
+      <DependentUpon>ProductionBranchWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\ComponentsPublishersExplorerBarView.xaml.cs">
+      <DependentUpon>ComponentsPublishersExplorerBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\ComponentPublisherTreeItemView.xaml.cs">
+      <DependentUpon>ComponentPublisherTreeItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\PROD\ProductionInstallerWorkspaceItemView.xaml.cs">
+      <DependentUpon>ProductionInstallerWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\PROD\ProductionInstallersWorkspaceItemView.xaml.cs">
+      <DependentUpon>ProductionInstallersWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\QA\QAInstallersWorkspaceItemView.xaml.cs">
+      <DependentUpon>QAInstallersWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\QA\QAInstallerWorkspaceItemView.xaml.cs">
+      <DependentUpon>QAInstallerWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\Sidebars\AddComponentsToFeatureView.xaml.cs">
+      <DependentUpon>AddComponentsToFeatureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\Sidebars\PublishToQAView.xaml.cs">
+      <DependentUpon>PublishToQAView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\Sidebars\MergeSetView.xaml.cs">
+      <DependentUpon>MergeSetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\ComponentsExplorerBarView.xaml.cs">
+      <DependentUpon>ComponentsExplorerBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\Sidebars\MergeBuilderView.xaml.cs">
+      <DependentUpon>MergeBuilderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\DEV\DevFeatureBranchWorkspaceItemView.xaml.cs">
+      <DependentUpon>DevFeatureBranchWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\DEV\DevFeaturesBranchesWorkspaceItemView.xaml.cs">
+      <DependentUpon>DevFeaturesBranchesWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\DEV\DevBranchWorkspaceItemView.xaml.cs">
+      <DependentUpon>DevBranchWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\DEV\DevMainBranchWorkspaceItemView.xaml.cs">
+      <DependentUpon>DevMainBranchWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\Common\FeaturesBranchesWorkspaceItemView.xaml.cs">
+      <DependentUpon>FeaturesBranchesWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\Common\FeatureBranchWorkspaceItemView.xaml.cs">
+      <DependentUpon>FeatureBranchWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\RootBranchWorkspaceItemView.xaml.cs">
+      <DependentUpon>RootBranchWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\Common\MainBranchWorkspaceItemView.xaml.cs">
+      <DependentUpon>MainBranchWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\Sidebars\FeatureBranchBuilderView.xaml.cs">
+      <DependentUpon>FeatureBranchBuilderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\QA\QABranchWorkspaceItemView.xaml.cs">
+      <DependentUpon>QABranchWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\QA\QAFeatureBranchWorkspaceItemView.xaml.cs">
+      <DependentUpon>QAFeatureBranchWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\QA\QAFeaturesBranchesWorkspaceItemView.xaml.cs">
+      <DependentUpon>QAFeaturesBranchesWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\QA\QAMainBranchWorkspaceItemView.xaml.cs">
+      <DependentUpon>QAMainBranchWorkspaceItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\Sidebars\DeleteComponentView.xaml.cs">
+      <DependentUpon>DeleteComponentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\Sidebars\RenameComponentView.xaml.cs">
+      <DependentUpon>RenameComponentView.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CommonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExplorerBar\ExplorerBarView.Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExplorerBar\ExplorerBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\ComponentsExplorerBarItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\ComponentsExplorerBarView.Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\NextVersionsHolderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\PROD\ProductionEnvironmentWorkspaceItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workspace\PROD\ProductionBranchWorkspaceItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workspace\ComponentsPublishersExplorerBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\ComponentPublisherTreeItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\PROD\ProductionInstallerWorkspaceItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workspace\PROD\ProductionInstallersWorkspaceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\QA\QAInstallersWorkspaceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\QA\QAInstallerWorkspaceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\Sidebars\AddComponentsToFeatureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\Sidebars\PublishToQAView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workspace\Sidebars\MergeSetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\ComponentsExplorerBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\Sidebars\MergeBuilderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\DEV\DevFeatureBranchWorkspaceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\DEV\DevFeaturesBranchesWorkspaceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\DEV\DevBranchWorkspaceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\DEV\DevMainBranchWorkspaceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\Common\FeaturesBranchesWorkspaceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\Common\FeatureBranchWorkspaceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\RootBranchWorkspaceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\Common\MainBranchWorkspaceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\Sidebars\FeatureBranchBuilderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\QA\QABranchWorkspaceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\QA\QAFeatureBranchWorkspaceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\QA\QAFeaturesBranchesWorkspaceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\QA\QAMainBranchWorkspaceItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workspace\Sidebars\DeleteComponentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workspace\Sidebars\RenameComponentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Dependencies\Spark.Infra\Spark.Infra\Spark.Infra.csproj">
+      <Project>{02e9598a-f44e-4359-844a-dfc8bdc9e36c}</Project>
+      <Name>Spark.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Dependencies\Wpf.Common\Wpf.Common\Spark.Wpf.Common.csproj">
+      <Project>{4f07e2f4-7058-4026-948e-2f5c98013a62}</Project>
+      <Name>Spark.Wpf.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{CD2F5A4F-7927-487C-AADE-155F25151219}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModels\ViewModels.csproj">
+      <Project>{8776ff9c-612e-4979-bb3e-bc1db0a2fe50}</Project>
+      <Name>ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EnginesAndGames.png" />
+    <Resource Include="Resources\Game.png" />
+    <Resource Include="Resources\GameLimits.png" />
+    <Resource Include="Resources\GameMath.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CoreComponent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GameEngine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CoreComponents.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RootBranch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QABranch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DevBranch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ProdBranch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QAInstaller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ProductionInstaller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ProductionInstallers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QAInstallers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QAFeatures.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DevFeature.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DevFeatures.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QAFeature.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QAMain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DevMain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ProductionEnvironment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BranchedProductionInstaller.png" />
+    <Resource Include="Resources\BranchedQAInstaller.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

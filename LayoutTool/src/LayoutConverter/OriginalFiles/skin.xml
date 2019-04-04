@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<setup destination="skinSetup">
+  <brandMainColor value="0x0" />
+  <brandSecondColor value="0x666666" />
+  <brandFontColor value="0x0000FF" />
+  <brandFontHighlightsColor value="0xFFFFFF" />
+  <brandName value="888casino" />
+  <brandSupportPhoneNumber value="123-22-333" />
+  <brandSupportFaxNumber value=" +350-200 42693" />
+  <brandSupportMail value="support@888casino.com" />
+  <subBrandId value="0" />
+  <subBrandName value="888casino" />
+  <links url="%SKIN_PATH%/skin_links.xml" />
+  <linksOverride url="%SKIN_PATH%/localization/%LANG%/skin_links_override.xml" />
+  <effects url="%SKIN_PATH%/resources/skin_effects.xml" />
+  <maxCountRuningGamesMoney>2</maxCountRuningGamesMoney>
+  <maxCountRuningGamesDemo>1</maxCountRuningGamesDemo>
+  <lobby_data>
+    <data language="default" url="%SKIN_PATH%/resources/skin_lobby.xml" />
+  </lobby_data>
+  <behavior>
+    <instructionsOnFp value="false" />
+    <instructionsShow value="false" />
+    <rememberMe value="true" />
+    <doNotSwitchOnMaxTabReached value="false" />
+  </behavior>
+  <dateTimeFormat dateTimeFormat="DD.MM.YY hh:mm:ss" dateFormat="DD.MM.YY" timeFormat="hh:mm:ss" />
+  <defaultLanguage value="en" />
+  <languages>
+    <!--Example for language override-->
+    <!--<language id="en" dateTimeFormat="DD.MM.YY hh:mm:ss" dateFormat="DD.MM.YY" timeFormat="hh:mm:ss" />-->
+    <language id="en" />
+    <language id="sv" />
+    <language id="pt" />
+    <language id="de" />
+    <language id="es" />
+    <language id="fr" />
+    <language id="it" />
+    <language id="el" />
+    <language id="ru" />
+    <language id="fi" />
+  </languages>
+  <triggers>
+    <trigger name="Demo_inLobby_FTDPlayer" priority="1">
+      <action name="switchToRealWithPromo" type="Phase=30">
+        <conditions>
+          <condition updateType="multi" type="bankroll" equationType="greaterThen" value="300000" />
+          <condition updateType="single" type="playMode" value="demo" />
+          <condition updateType="multi" type="playerLocation" value="lobby" />
+          <condition updateType="multi" type="isFTD" value="false" />
+          <condition updateType="single" type="oncePerSession" value="true" />
+          <condition updateType="single" type="userHasDisconnectedSession" value="false" />
+          <!--<condition updateType="multi" type="triggerCoockie" value="false"/>-->
+        </conditions>
+      </action>
+    </trigger>
+    <trigger name="Real_inLobby_NewPlayer_SmallBankroll_NonUK" priority="2">
+      <action name="openLivePerson" type="Phase=30">
+        <conditions>
+          <condition updateType="multi" type="bankroll" equationType="lessThen" value="500" />
+          <condition updateType="single" type="playMode" value="real" />
+          <condition updateType="multi" type="playerLocation" value="lobby" />
+          <condition updateType="single" type="playerStatus">
+            <value>0</value>
+            <value>1</value>
+            <value>2</value>
+          </condition>
+        </conditions>
+      </action>
+    </trigger>
+    <trigger name="Real_FP_inLobby_NewPlayer_SmallBankroll_UkOnly" priority="1">
+      <action name="openLivePerson" type="Phase=31">
+        <conditions>
+          <condition updateType="multi" type="bankroll" equationType="lessThen" value="500" />
+          <condition updateType="single" type="playMode" value="real" />
+          <condition updateType="multi" type="playerLocation" value="lobby" />
+          <condition updateType="multi" type="freeSpins" value="completedFreeSpins" />
+          <condition updateType="single" type="playerStatus">
+            <value>0</value>
+            <value>1</value>
+            <value>2</value>
+          </condition>
+        </conditions>
+      </action>
+    </trigger>
+    <trigger name="Demo_BRgreateThn5000_new1" priority="1">
+      <action name="openLivePerson" type="Phase=32">
+        <conditions>
+          <condition updateType="multi" type="bankroll" equationType="greaterThen" value="500000" />
+          <condition updateType="single" type="playMode" value="demo" />
+          <condition updateType="single" type="playerStatus" value="0" />
+        </conditions>
+      </action>
+    </trigger>
+
+        <!--
+    Dynamic Layout triggers.
+    ++++++++++++++++++++++++
+    Proiruty:     The lower the priority number is, the sooner the trigger will be fired. 
+    Actions:      action name="updatePlayerStatus_new1" ==> playerStatus=new1 
+                  action name="updatePlayerStatus_new2" ==> playerStatus=new2
+    Update Type:  updateType="multi" or "single"
+    Types:        type="checkFirstRegistrationDate"/“isVIP”/o	“excedeedRoundsPlayed_#GameType” 
+    Equations:    equationType="equal"/"change"/"lessThen"/"greaterThen"/"greaterThenOrEqual"
+    Date value must be in the format - DD/MM/YYYY
+    -->
+    
+ 
+    <!--<trigger name="DynamicLayoutNew1"  priority="1">
+      <action name="updatePlayerStatus_new1">
+        <conditions>
+          <condition updateType="multi" type="checkGender" equationType="equal" value="2"/>      --><!--Female--><!--
+          <condition updateType="multi" type="checkCountryId" equationType="equal" value="124"/> --><!--Canada--><!--
+        </conditions>
+      </action>
+    </trigger>
+
+    <trigger name="DynamicLayoutNew2"  priority="2">
+      <action name="updatePlayerStatus_new2">
+        <conditions>
+          <condition updateType="multi" type="checkGender" equationType="equal" value="2"/>          --><!--Female--><!--
+          <condition updateType="multi" type="checkCountryId" equationType="equal" value="752"/>     --><!--Sweden--><!--
+        </conditions>
+      </action>
+    </trigger>-->
+	<trigger name="DynamicLayoutNew1"  priority="1">
+		<action name="updatePlayerStatus_new1">
+			<conditions>
+				<condition updateType="single" type="checkCountryId" equationType="equal" value="8"/>     
+			</conditions>
+		</action>
+    </trigger>
+
+
+
+  </triggers>
+  
+  <externalPageConfigs>
+    <externalWindowConfigurations windowParamsDefault="default">
+      <windowParams name="default" isResizable="no" isScrollBar="yes" isMenuBar="no" isToolBar="no" isLocation="no" isStatus="no" isFullscreen="no" x="0" y="34" width="1008" height="605" />
+      <windowParams name="MY_ACCOUNT" isResizable="no" isScrollBar="yes" isMenuBar="no" isToolBar="no" isLocation="no" isStatus="no" isFullscreen="no" width="1024" height="768" />
+      <windowParams name="PENDING_APPLICATION" isResizable="no" isScrollBar="yes" isMenuBar="no" isToolBar="no" isLocation="no" isStatus="no" isFullscreen="no" width="1024" height="768" />
+      <windowParams name="ANDROID_ROULETTE" isResizable="no" isScrollBar="yes" isMenuBar="no" isToolBar="no" isLocation="no" isStatus="no" isFullscreen="no" width="1024" height="768" />
+      <windowParams name="IPAD_ROULETTE" isResizable="no" isScrollBar="yes" isMenuBar="no" isToolBar="no" isLocation="no" isStatus="no" isFullscreen="no" width="1024" height="768" />
+      <windowParams name="LIVE_DEALER" isResizable="no" isScrollBar="yes" isMenuBar="no" isToolBar="no" isLocation="no" isStatus="no" isFullscreen="no" width="1008" height="605" />
+      <windowParams name="888CASINO_3D" isResizable="yes" isScrollBar="yes" isMenuBar="yes" isToolBar="yes" isLocation="yes" isStatus="yes" isFullscreen="no" width="1024" height="768" />
+      <windowParams name="888SPORT" isResizable="no" isScrollBar="yes" isMenuBar="no" isToolBar="no" isLocation="no" isStatus="no" isFullscreen="no" width="1008" height="600" />
+      <windowParams name="NETENT" isResizable="no" isScrollBar="yes" isMenuBar="no" isToolBar="no" isLocation="no" isStatus="no" isFullscreen="no" width="1008" height="670" />
+      <windowParams name="WI" isResizable="no" isScrollBar="yes" isMenuBar="no" isToolBar="no" isLocation="no" isStatus="no" isFullscreen="no" width="1008" height="660" />
+      <windowParams name="NEMID" isResizable="no" isScrollBar="yes" isMenuBar="no" isToolBar="no" isLocation="no" isStatus="no" isFullscreen="no" x="15" y="152" width="500" height="320" />
+      <windowParams name="PLAYTECH" isResizable="no" isScrollBar="yes" isMenuBar="no" isToolBar="no" isLocation="no" isStatus="no" isFullscreen="no" width="980" height="600" />
+
+    </externalWindowConfigurations>
+	  <externalWindowParamList>
+      <!--<windowParamsList name="default" value="applicationId,langHardwareID,LinkID,TargetProductPackage,currency,sr,sid,UserInfo,runmode,CID,isImmediateAssistance,SessionType,targetPackageNavigationView,MachineID,currencyCode,nickname,brandId,LangID,Serial,Token,differentPlatformId,isFTD,TargetSubBrand,SessionSourceID,ClientVer,EncryptionType,SourceProductPackage,IsStandalone,SourceSubBrand,langIsoStr,GmtGap,ClientVersion,passwordEncryptionType,PlatformID,IsRealMode,specificNavigation,brand"/>-->
+      <windowParamsList name="PLAYTECH" value="UserInfo,LangID,brandId,SourceSubBrand,IsRealMode,TargetProductPackage,currencyCode,applicationId,specificNavigation,TargetSubBrand"/>
+    </externalWindowParamList>
+    <externalPageConfig id="PendingApp">
+      <productPackageId value="27" />
+      <!--ClientData.PRODUCT_PACKAGE_PENDING_APPLICATION-->
+      <targetSubBrand value="null" />
+      <!--Availble values are:
+																	empty string or string "null" (has the same effect if we not set this tag), 
+																	number value (of target sub brand id) 
+																	or variable %CURRENT_SUB_BRAND_ID% ( will be replaced in runtime with current sub brand id)
+											-->
+      <sessionSourceId value="1" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <!--Availble values are:
+																	string "true"
+																	string "false" or empty string or string "null" (has the same effect if we not set this tag),
+																	or variable %CURRENT_BRAND_EXTERNAL% ( will be replaced in runtime)
+											-->
+      <isImmediateAssistance value="false" />
+      <!--Availble values are:
+																	string "true"
+																	string "false" or empty string or string "null" (has the same effect if we not set this tag), 
+											-->
+      <specificNavigation><![CDATA[<XML><Pending_Event_Type ID="8" name="Login"></Pending_Event_Type></XML>]]></specificNavigation>
+      <externalWindowConfigName value="PENDING_APPLICATION" />
+        </externalPageConfig>
+
+    <externalPageConfig id="LiveDealerGames">
+      <productPackageId value="3" />
+      <!--ClientData.PRODUCT_PACKAGE_LIVE_DEALER-->
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <sessionSourceId value="1" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <openInTab value="true" />
+      <applicationId value="4" />
+      <externalWindowConfigName value="LIVE_DEALER" />
+    </externalPageConfig>
+    <externalPageConfig id="LiveRoulette">
+      <productPackageId value="3" />
+      <!--ClientData.PRODUCT_PACKAGE_LIVE_DEALER-->
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <sessionSourceId value="1" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <LinkID value="200" />
+      <applicationId value="4" />
+      <openInTab value="true" />
+      <externalWindowConfigName value="LIVE_DEALER" />
+    </externalPageConfig>
+    <externalPageConfig id="LiveBlackJack">
+      <productPackageId value="3" />
+      <!--ClientData.PRODUCT_PACKAGE_LIVE_DEALER-->
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <sessionSourceId value="1" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <LinkID value="300" />
+      <applicationId value="4" />
+      <openInTab value="true" />
+      <externalWindowConfigName value="LIVE_DEALER" />
+    </externalPageConfig>
+    <externalPageConfig id="LiveBaccarat">
+      <productPackageId value="3" />
+      <!--ClientData.PRODUCT_PACKAGE_LIVE_DEALER-->
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <sessionSourceId value="1" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <LinkID value="100" />
+      <applicationId value="4" />
+      <openInTab value="true" />
+      <externalWindowConfigName value="LIVE_DEALER" />
+    </externalPageConfig>
+    <externalPageConfig id="LiveDeutschesRoulette">
+      <productPackageId value="3" />
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <sessionSourceId value="1" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <LinkID value="201" />
+      <applicationId value="4" />
+      <openInTab value="true" />
+    </externalPageConfig>
+    <externalPageConfig id="LiveImmersiveRoulette">
+      <productPackageId value="3" />
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <sessionSourceId value="1" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <LinkID value="202" />
+      <applicationId value="4" />
+      <openInTab value="true" />
+    </externalPageConfig>
+    <externalPageConfig id="QuickDeposit">
+      <productPackageId value="11" />
+      <!--ClientData.PRODUCT_PACKAGE_NTS-->
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <!-- Don't add for "QD specificNavigation" next params: <PromCode>%PROM_CODE%</PromCode>.-->
+      <specificNavigation><![CDATA[<specificNavigation><PromCode>%PROM_CODE%</PromCode><SessionType>%SESSION_TYPE%</SessionType><IsCashierHostedInIframe>true</IsCashierHostedInIframe></specificNavigation>]]></specificNavigation>
+      <sessionType value="16" />
+      <openInTab value="true" />
+      <targetPackageNavigationView value="1" />
+      <groupId value="CashierGroup" />
+      <externalWindowConfigName value="default" />
+    </externalPageConfig>
+    <externalPageConfig id="MyAccountDeposit">
+      <productPackageId value="11" />
+      <!--ClientData.PRODUCT_PACKAGE_NTS-->
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <!-- Don't add for "QD specificNavigation" next params: <PromCode>%PROM_CODE%</PromCode>.-->
+      <specificNavigation><![CDATA[<specificNavigation><PromCode>%PROM_CODE%</PromCode><SessionType>%SESSION_TYPE%</SessionType><IsCashierHostedInIframe>true</IsCashierHostedInIframe></specificNavigation>]]></specificNavigation>
+      <sessionType value="16" />
+      <openInTab value="true" />
+      <targetPackageNavigationView value="1" />
+      <groupId value="CashierGroup" />
+      <externalWindowConfigName value="default" />
+    </externalPageConfig>
+    <externalPageConfig id="MyAccount">
+      <productPackageId value="10" />
+      <isReplaceArena value="true" />
+      <!--ClientData.PRODUCT_PACKAGE_MY_ACCOUNT-->
+      <targetSubBrand value="" />
+      <sessionSourceId value="1" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <specificNavigation><![CDATA[<XML><Specific_Tab ID="3" name="Bonuses"></Specific_Tab></XML>]]></specificNavigation>
+      <externalWindowConfigName value="MY_ACCOUNT" />
+      <openInTab value="true" />
+      <allowScrollBar value="true" />
+    </externalPageConfig>
+    <externalPageConfig id="888Sport">
+      <productPackageId value="77" />
+      <isLastTab value="true" />
+      <!--ClientData.PRODUCT_PACKAGE_MY_ACCOUNT-->
+      <targetSubBrand value="112" />
+      <sessionSourceId value="1" />
+      <allowScrollBar value="true" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <specificNavigation><![CDATA[<XML><CloseAction>PostMessage</CloseAction><Callbackdomain>%PARENT_URL%</Callbackdomain><CloseMessage>{"ActionHandler":"888SPORT_LOGOUT"}</CloseMessage></XML>]]></specificNavigation>
+      <externalWindowConfigName value="888SPORT" />
+      <openInTab value="true" />
+      <tabIsActive value="false" />
+    </externalPageConfig>
+    <externalPageConfig id="CompPoints">
+      <productPackageId value="75" />
+      <!--ClientData.PRODUCT_PACKAGE_MY_ACCOUNT-->
+      <targetSubBrand value="" />
+      <isReplaceArena value="true" />
+      <sessionSourceId value="1" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <specificNavigation><![CDATA[<XML><Specific_Tab ID="3" name="Bonuses"></Specific_Tab></XML>]]></specificNavigation>
+      <externalWindowConfigName value="default" />
+      <openInTab value="true" />
+      <allowScrollBar value="true" />
+    </externalPageConfig>
+    <externalPageConfig id="TFF">
+      <productPackageId value="19" />
+      <!--ClientData.PRODUCT_PACKAGE_TFF-->
+      <targetSubBrand value="null" />
+      <sessionSourceId value="7" />
+      <isExternalToken value="false" />
+      <externalWindowConfigName value="default" />
+    </externalPageConfig>
+    <externalPageConfig id="Deposit" actionID="2">
+      <productPackageId value="11" />
+      <!--ClientData.PRODUCT_PACKAGE_NTS-->
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <specificNavigation><![CDATA[<specificNavigation><PromCode>%PROM_CODE%</PromCode><SessionType>%SESSION_TYPE%</SessionType><IsCashierHostedInIframe>true</IsCashierHostedInIframe></specificNavigation>]]></specificNavigation>
+      <sessionType value="8" />
+      <openInTab value="true" />
+      <groupId value="CashierGroup" />
+      <externalWindowConfigName value="default" />
+    </externalPageConfig>
+    <externalPageConfig id="DepositHistory">
+      <productPackageId value="11" />
+      <!--ClientData.PRODUCT_PACKAGE_NTS-->
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <specificNavigation><![CDATA[<XML><specificNavigation><SessionType>5</SessionType></specificNavigation></XML>]]></specificNavigation>
+      <sessionType value="6" />
+      <openInTab value="true" />
+      <groupId value="CashierGroup" />
+      <externalWindowConfigName value="default" />
+    </externalPageConfig>
+	<externalPageConfig id="CashierVerifyID" actionID="7">
+      <productPackageId value="11" />
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <specificNavigation><![CDATA[<XML><specificNavigation><SessionType>20</SessionType></specificNavigation></XML>]]></specificNavigation>
+      <sessionType value="20" />
+      <openInTab value="true" />
+      <groupId value="CashierGroup" />
+      <externalWindowConfigName value="default" />
+    </externalPageConfig>
+    <externalPageConfig id="Cashout">
+      <productPackageId value="11" />
+      <!--ClientData.PRODUCT_PACKAGE_NTS-->
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <specificNavigation>%SESSION_TYPE%</specificNavigation>
+      <sessionType value="9" />
+      <openInTab value="true" />
+      <externalWindowConfigName value="default" />
+    </externalPageConfig>
+    <externalPageConfig id="3DCasino">
+      <productPackageId value="18" />
+      <!--ClientData.PRODUCT_PACKAGE_NTS-->
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <specificNavigation>%SESSION_TYPE%</specificNavigation>
+      <alternativeUrlID value="3888" />
+      <externalWindowConfigName value="888CASINO_3D" />
+    </externalPageConfig>
+    <externalPageConfig id="AndroidRoulette">
+      <productPackageId value="38" />
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <sessionSourceId value="1" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <openInTab value="false" />
+      <externalWindowConfigName value="default" />
+    </externalPageConfig>
+    <externalPageConfig id="MobileCasinoApp">
+      <productPackageId value="38" />
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <sessionSourceId value="1" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <openInTab value="false" />
+      <externalWindowConfigName value="default" />
+    </externalPageConfig>
+    <externalPageConfig id="NEGames">
+      <productPackageId value="3" />
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <!--<specificNavigation><![CDATA[{"AuthenticationBlock" : "3234234yiuchi3ueo2u3ehchc32iucoi372o7","GameType" : "2310076","CurrencyType" : "USD","Balance" : "1000","Sound" : "1","PlatformId" : "3","RegulationMode" : "0","LanguageId" : "eng","JPDispCurrency" : "USD","PlayerName" : "CasinoPlayer","Vip" : "0","CID" : "123123123123","gameMode" : "1","ParentUrl" : "http://ndl.888casino.com/","TabID" : "3"}]]></specificNavigation>-->
+      <specificNavigation><![CDATA[{"AuthenticationBlock" : "%AUTHENTICATION_TOKEN%","GameType" : "%CGT%","CurrencyType" : "%USER_CURRENCY%","Balance" : "%CURRENT_BALANCE%","Sound" : "%SOUND_STATE%","PlatformId" : "3","RegulationMode" : "%REGULATION_MODE%","LanguageId" : "%LANG%","JPDispCurrency" : "%JP_CURRENCY%","PlayerName" : "%PLAYER_NAME%","Vip" : "%VIP_STATUS%","CID" : "%CID%","gameMode" : "%GAME_MODE%","ParentUrl" : "%PARENT_URL%","TabID" : "%TAB_ID%","GameLimit" : "%GAME_LIMIT%"}]]></specificNavigation>
+      <LinkID value="59" />
+      <openInTab value="true" />
+      <externalWindowConfigName value="NETENT" />
+    </externalPageConfig>
+    <externalPageConfig id="NEGames_History">
+      <productPackageId value="66" />
+      <windowWidth value="917" />
+      <windowHeight value="508" />
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <specificNavigation><![CDATA[<XML><GameID>%GAME_ID%</GameID><AuthenticationBlock>%AUTHENTICATION_TOKEN%</AuthenticationBlock><PlatformId>3</PlatformId><GameType>%CGT%</GameType><LanguageId>%LANG%</LanguageId></XML>]]></specificNavigation>
+      <LinkID value="59" />
+      <allowScrollBar value="true" />
+      <externalWindowConfigName value="default" />
+    </externalPageConfig>
+    <externalPageConfig id="WIGames">
+      <applicationId value="2" />
+      <productPackageId value="3" />
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <specificNavigation><![CDATA[{"AuthenticationBlock" : "%AUTHENTICATION_TOKEN%","GameType" : "%CGT%","CurrencyType" : "%USER_CURRENCY%","Balance" : "%CURRENT_BALANCE%","Sound" : "%SOUND_STATE%","PlatformId" : "3","RegulationMode" : "%REGULATION_MODE%","LanguageId" : "%LANG%","JPDispCurrency" : "%JP_CURRENCY%","PlayerName" : "%PLAYER_NAME%","Vip" : "%VIP_STATUS%","CID" : "%CID%","gameMode" : "%GAME_MODE%","ParentUrl" : "%PARENT_URL%","TabID" : "%TAB_ID%"}]]></specificNavigation>
+      <LinkID value="60" />
+      <openInTab value="true" />
+      <productType value="1" />
+      <externalWindowConfigName value="WI" />
+    </externalPageConfig>
+    <externalPageConfig id="WIGames_History">
+      <applicationId value="2" />
+      <windowWidth value="917" />
+      <windowHeight value="508" />
+      <productPackageId value="72" />
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <specificNavigation><![CDATA[{"GameID" : "%GAME_ID%","TargetProductpackage" : "72","AuthenticationBlock" : "%AUTHENTICATION_TOKEN%","PlatformId" : "3","GameType" : "%CGT%","LanguageId" : "%LANG%","ParentUrl" : "%PARENT_URL%","Balance" : "%CURRENT_BALANCE%","Sound" : "%SOUND_STATE%","RegulationMode" : "%REGULATION_MODE%"}]]></specificNavigation>
+      <LinkID value="60" />
+      <openInTab value="true" />
+    </externalPageConfig>
+    <externalPageConfig id="PLAYTECHGames">
+      <applicationId value="3" />
+      <productPackageId value="3" />
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <specificNavigation><![CDATA[{"AuthenticationBlock" : "%AUTHENTICATION_TOKEN%","GameType" : "%CGT%","CurrencyType" : "%USER_CURRENCY%","Balance" : "%CURRENT_BALANCE%","Sound" : "%SOUND_STATE%","PlatformId" : "3","RegulationMode" : "%REGULATION_MODE%","LanguageId" : "%LANG%","JPDispCurrency" : "%JP_CURRENCY%","PlayerName" : "%PLAYER_NAME%","Vip" : "%VIP_STATUS%","CID" : "%CID%","gameMode" : "%GAME_MODE%","ParentUrl" : "%PARENT_URL%","TabID" : "%TAB_ID%"}]]></specificNavigation>
+	  <LinkID value="" />
+      <openInTab value="true" />
+      <!--<productType value="1" />-->
+      <externalWindowConfigName value="PLAYTECH" />
+     <paramListName value="PLAYTECH" /> 
+    </externalPageConfig>
+    <externalPageConfig id="PLAYTECHGames_History">
+      <applicationId value="3" />
+      <windowWidth value="917" />
+      <windowHeight value="508" />
+      <productPackageId value="79" />
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <specificNavigation><![CDATA[{"GameID" : "%GAME_ID%","AuthenticationBlock" : "%AUTHENTICATION_TOKEN%","PlatformId" : "3","GameType" : "%CGT%","LanguageId" : "%LANG%","ParentUrl" : "%PARENT_URL%","Balance" : "%CURRENT_BALANCE%","Sound" : "%SOUND_STATE%","RegulationMode" : "%REGULATION_MODE%"}]]></specificNavigation>
+      <LinkID value="" />
+      <openInTab value="true" />
+    </externalPageConfig>
+    <externalPageConfig id="Link888games">
+      <productPackageId value="5" />
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <sessionSourceId value="1" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <openInTab value="false" />
+      <externalWindowConfigName value="default" />
+    </externalPageConfig>
+    <externalPageConfig id="RSBLink" isGNWP="false">
+      <openInTab value="true" />
+      <isReplaceArena value="true" />
+      <allowScrollBar value="true" />
+      <tabIsActive value="true" />
+      <refreshContent value="true" />
+      <sendGAString value="true" />
+      <externalWindowConfigName value="default" />
+    </externalPageConfig>
+    <externalPageConfig id="OMG" isGNWP="false">
+      <openInTab value="true" />
+      <tabIsActive value="true" />
+      <isReplaceArena value="true" />
+      <allowScrollBar value="true" />
+      <refreshContent value="true" />
+      <sendGAString value="false" />
+      <externalWindowConfigName value="default" />
+    </externalPageConfig>
+    <externalPageConfig id="LiveRussianRoulette">
+      <productPackageId value="3" />
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <sessionSourceId value="1" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <LinkID value="203" />
+      <openInTab value="true" />
+    </externalPageConfig>
+    <externalPageConfig id="LiveCasinoHoldem">
+      <productPackageId value="3" />
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <sessionSourceId value="1" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <LinkID value="400" />
+      <openInTab value="true" />
+    </externalPageConfig>
+    <externalPageConfig id="NemId">
+      <productPackageId value="78" />
+      <targetSubBrand value="%CURRENT_SUB_BRAND_ID%" />
+      <isExternalToken value="%CURRENT_BRAND_EXTERNAL%" />
+      <noToken value="true" />
+      <specificNavigation><![CDATA[<XML><CallbackDomain>%PARENT_URL%</CallbackDomain></XML>]]></specificNavigation>
+      <openInTab value="true" />
+      <allowScrollBar value="true" />
+      <externalWindowConfigName value="NEMID" />
+    </externalPageConfig>
+  </externalPageConfigs>
+  <numberRecentlyPlayedGames value="20" />
+</setup>

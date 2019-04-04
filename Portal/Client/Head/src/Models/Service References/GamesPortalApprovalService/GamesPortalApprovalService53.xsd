@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/GamesPortal.Service" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GamesPortal.Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/GamesPortalApprovalService?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost/GamesPortalApprovalService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost/GamesPortalApprovalService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" />
+  <xs:complexType name="GetAvailableQAApprovalStatesResponse">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="States" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAvailableQAApprovalStatesResponse" nillable="true" type="tns:GetAvailableQAApprovalStatesResponse" />
+  <xs:complexType name="GetAvailablePMApprovalStatesResponse">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="States" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAvailablePMApprovalStatesResponse" nillable="true" type="tns:GetAvailablePMApprovalStatesResponse" />
+  <xs:complexType name="QAApproveRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ApproveRequestBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QAApproveRequest" nillable="true" type="tns:QAApproveRequest" />
+  <xs:complexType name="ApproveRequestBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GameVersionID" type="ser:guid" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Regulations" nillable="true" type="q3:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApproveRequestBase" nillable="true" type="tns:ApproveRequestBase" />
+  <xs:complexType name="PMApproveRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ApproveRequestBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PMApproveRequest" nillable="true" type="tns:PMApproveRequest" />
+  <xs:complexType name="LanguageApproveRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GameVersionId" type="ser:guid" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Languages" nillable="true" type="q4:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LanguageApproveRequest" nillable="true" type="tns:LanguageApproveRequest" />
+  <xs:complexType name="ForceSynchronizationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SynchronizationAlreadyInProgress" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ForceSynchronizationResponse" nillable="true" type="tns:ForceSynchronizationResponse" />
+  <xs:complexType name="ImplicitForceGameSynchronizationRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MainGameType" type="xs:int" />
+      <xs:element minOccurs="0" name="isExternal" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImplicitForceGameSynchronizationRequest" nillable="true" type="tns:ImplicitForceGameSynchronizationRequest" />
+  <xs:complexType name="ForceLanguageSynchronizationRequest">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" minOccurs="0" name="GameTechnology" type="q5:GameTechnology" />
+      <xs:element minOccurs="0" name="GameType" type="xs:int" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" minOccurs="0" name="PlatformType" type="q6:PlatformType" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ForceLanguageSynchronizationRequest" nillable="true" type="tns:ForceLanguageSynchronizationRequest" />
+</xs:schema>

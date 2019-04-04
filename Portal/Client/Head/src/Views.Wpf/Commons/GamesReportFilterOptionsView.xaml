@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="GamesPortal.Client.Views.Wpf.GamesReportFilterOptionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:GamesPortal.Client.Views.Wpf">
+    <UserControl.Resources>
+        <ResourceDictionary Source="CommonStyles.xaml"/>
+    </UserControl.Resources>
+    <DockPanel>
+       
+        <Expander Cursor="Hand" DockPanel.Dock="Top" FlowDirection="RightToLeft" IsExpanded="{Binding IsActive}" Padding="5">
+            <Expander.Header>
+                <TextBlock FlowDirection="RightToLeft" Text="Filter options" Foreground="Blue" TextDecorations="Underline" FontWeight="Bold" FontSize="14"/>
+            </Expander.Header>
+            
+            <Border FlowDirection="LeftToRight" Padding="10" BorderBrush="Black" BorderThickness="2" Margin="2">
+                <DockPanel>
+                    <GroupBox  FontSize="12" FontWeight="Bold" DockPanel.Dock="Right" Margin="5,0,0,0" Padding="5">
+                        <GroupBox.Header>
+                            <TextBlock Text="External/Internal games" FontSize="14" FontWeight="Bold"/>
+                        </GroupBox.Header>
+                        <StackPanel>
+                            <RadioButton Content="Only internal games" IsChecked="{Binding OnlyInternalGames}" Margin="3"/>
+                            <RadioButton Content="Only external games" IsChecked="{Binding OnlyExternalGames}" Margin="3"/>
+                            <RadioButton Content="Both internal and external games" IsChecked="{Binding BothInternalAndExternalGames}" Margin="3"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <GroupBox  FontSize="12" FontWeight="Bold" DockPanel.Dock="Right" Margin="5,0,0,0" Padding="5">
+                        <GroupBox.Header>
+                            <TextBlock Text="Game Platform &amp; Technology" FontSize="14" FontWeight="Bold"/>
+                        </GroupBox.Header>
+                        <local:GameInfrastructureSelectorView DataContext="{Binding InfrastructuresSelector}"/>
+                    </GroupBox>
+
+                    <GroupBox Padding="5">
+                        <GroupBox.Header>
+                            <TextBlock Text="Regulation selection" FontSize="14" FontWeight="Bold"/>
+                        </GroupBox.Header>
+
+                        <local:RegulationsSelectorView DataContext="{Binding RegulationsSelector}"/>
+
+                    </GroupBox>
+                </DockPanel>
+
+            </Border>
+        </Expander>
+    </DockPanel>
+</UserControl>

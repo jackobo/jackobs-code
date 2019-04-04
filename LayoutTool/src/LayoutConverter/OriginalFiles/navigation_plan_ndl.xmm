@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<setup>	
+  <triggers>
+    <trigger name="Demo_inLobby_FTDPlayer" priority="1">
+      <action name="switchToRealWithPromo" type="Phase=30">
+        <conditions>
+          <condition updateType="multi" type="bankroll" equationType="greaterThen" value="300000000000000000000" />
+          <condition updateType="single" type="playMode" value="demo" />
+          <condition updateType="multi" type="playerLocation" value="lobby" />
+          <condition updateType="multi" type="isFTD" value="false" />
+          <condition updateType="single" type="oncePerSession" value="true" />
+          <condition updateType="single" type="userHasDisconnectedSession" value="false" />
+          <!--<condition updateType="multi" type="triggerCoockie" value="false"/>-->
+        </conditions>
+      </action>
+    </trigger>
+    <trigger name="Real_inLobby_NewPlayer_SmallBankroll_NonUK" priority="2">
+      <action name="openLivePerson" type="Phase=30">
+        <conditions>
+          <condition updateType="multi" type="bankroll" equationType="lessThen" value="500" />
+          <condition updateType="single" type="playMode" value="real" />
+          <condition updateType="multi" type="playerLocation" value="lobby" />
+          <condition updateType="single" type="playerStatus">
+            <value>0</value>
+            <value>1</value>
+            <value>2</value>
+          </condition>
+        </conditions>
+      </action>
+    </trigger>
+    <trigger name="Real_FP_inLobby_NewPlayer_SmallBankroll_UkOnly" priority="1">
+      <action name="openLivePerson" type="Phase=31">
+        <conditions>
+          <condition updateType="multi" type="bankroll" equationType="lessThen" value="500" />
+          <condition updateType="single" type="playMode" value="real" />
+          <condition updateType="multi" type="playerLocation" value="lobby" />
+          <condition updateType="multi" type="freeSpins" value="completedFreeSpins" />
+          <condition updateType="single" type="playerStatus">
+            <value>0</value>
+            <value>1</value>
+            <value>2</value>
+          </condition>
+        </conditions>
+      </action>
+    </trigger>
+    <trigger name="Demo_BRgreateThn5000_new1" priority="1">
+      <action name="openLivePerson" type="Phase=32">
+        <conditions>
+          <condition updateType="multi" type="bankroll" equationType="greaterThen" value="500000" />
+          <condition updateType="single" type="playMode" value="demo" />
+          <condition updateType="single" type="playerStatus" value="0" />
+        </conditions>
+      </action>
+    </trigger>
+
+        <!--
+    Dynamic Layout triggers.
+    ++++++++++++++++++++++++
+    Proiruty:     The lower the priority number is, the sooner the trigger will be fired. 
+    Actions:      action name="updatePlayerStatus_new1" ==> playerStatus=new1 
+                  action name="updatePlayerStatus_new2" ==> playerStatus=new2
+    Update Type:  updateType="multi" or "single"
+    Types:        type="checkFirstRegistrationDate"/“isVIP”/o	“excedeedRoundsPlayed_#GameType” 
+    Equations:    equationType="equal"/"change"/"lessThen"/"greaterThen"/"greaterThenOrEqual"
+    Date value must be in the format - DD/MM/YYYY
+    -->
+    
+ <!--
+    <trigger name="DynamicLayoutNew1"  priority="1">
+      <action name="updatePlayerStatus_new1">
+        <conditions>
+          <condition updateType="multi" type="checkCountryId" equationType="equal" value="392"/> japan
+        </conditions>
+      </action>
+    </trigger>
+-->
+
+
+  </triggers>
+  
+  <defaultFavorites>
+      <favorites><general></general></favorites>
+  </defaultFavorites>
+
+  <!-- *** !!! NDL SECTION !!! *** -->
+  <lobby_data_ndl>
+    
+    <rects gameRectDefault="GAME_RECT">
+      <rect name="default" 	            x="0"     y="34"    width="1008"  height="605" />
+      <rect name="GAME_RECT_WIDE"	      x="14"    y="84"	  width="981"   height="547" />
+      <rect name="GAME_RECT" 		        x="106"   y="90"	  width="784"   height="540" />
+      <rect name="HISTORY_RECT" 	      x="2"     y="149"   width="981"   height="600" />
+      <rect name="CASHIER_RECT" 	      x="0"     y="34"    width="1000"  height="665" />
+      <rect name="LIVEDEALER_RECT" 	    x="0"     y="34"    width="1008"  height="605" />
+      <rect name="MODERN_GAME_RECT"     x="14"    y="85"	  width="981"   height="547" />
+      <rect name="NETENT_GAME_RECT"     x="6" 	  y="34"    width="1000"  height="670"/>
+      <rect name="WI_GAME_RECT"			    x="0"  	  y="34"	  width="1008"  height="665"/>
+	    <rect name="NEMID"				        x="13"	  y="152"	  width="500"	  height="320"/>
+	    <rect name="PLAYTECH_GAME_RECT"   x="14" 	  y="34"    width="980"   height="600"/>
+      <rect name="HTML5_RECT"	          x="24"    y="84"	  width="962"   height="540" />
+      <rect name="SPORT_RECT" 	        x="0"     y="34"    width="1008"  height="600" />
+      <rect name="MY_ACCOUNT" 	        x="0"     y="34"     width="1024"  height="768" />
+      <rect name="PENDING_APPLICATION"  x="0"     y="34"     width="1024"  height="768" />
+      <rect name="PROMOTIONS"           x="0"     y="34"      width="1008" height="665" />
+    </rects>
+
+    <!--########################################################-->
+    <!--filters templats-->
+    <!--##############-->
+    <filter label="FILTER_ROULETTE" field="roulette" value="true" />
+    <filter label="FILTER_PRIVATE" field="privateTable" value="true" />
+    <filter label="FILTER_PUBLIC" 	field="publicTable" value="true"/>
+    <filter label="FILTER_VIP" 	field="vipGame" value="true"/>
+    <filter label="FILTER_BLACKJACK" 	field="blackJack" value="true"/>
+    <filter label="FILTER_MULTIPLAIERS" 	field="publicTable" value="true"/>
+    <filter label="FILTER_LINESET1TO5" 	field="lineSetOne" value="true"/>
+    <filter label="FILTER_LINE_SET_1_20" 	field="lineSetTwo" value="true"/>
+    <filter label="FILTER_LINESET25PLUS" 	field="lineSetThree" value="true"/>
+    <filter label="FILTER_JACKPOT" 	field="progressiveJackpot" value="true"/>
+    <filter label="FILTER_NEWGAME" 	field="newGame" value="true"/>
+    <filter label="FILTER_VIDEOPOKER" 	field="videoPoker" value="true"/>
+    <filter label="FILTER_SPORTGAME" 	field="sportGame" value="true"/>
+    <filter label="FILTER_HILOGAME" 	field="hiLoGame" value="true"/>
+    <filter label="FILTER_POKER" 	field="poker" value="true"/>
+    <filter label="FILTER_CLASSICSLOT" 	field="classicSlot" value="true"/>
+    <filter label="FILTER_VIDEOSLOT" 	field="videoSlot" value="true"/>
+    <filter label="FILTER_CARDGAME" 	field="cardGame" value="true"/>
+    <filter label="FILTER_TABLEGAME" 	field="tableGame" value="true"/>
+    <filter label="FILTER_LIVEGAME" 	field="liveGame" value="true"/>
+    <filter label="FILTER_CRAPSGAME" 	field="crapsGame" value="true"/>
+    <filter label="FILTER_KENOGAME" 	field="kenoGame" value="true"/>
+    <filter label="FILTER_FREESPINGAME" 	field="freeSpinGame" value="true"/>
+    <filter label="FILTER_ROULETTEZEROS" 	field="rouletteZeros" value="true"/>
+    <filter label="FILTER_WIDEGAME" 	field="wideGame" value="true"/>
+    <filter label="FILTER_BACCARAT" 	field="baccaratGame" value="true"/>
+    <filter label="FILTER_ALL_PAYS" 			field="allPays" value="true" />
+    <filter label="FILTER_EXCLUSIVE"   field="exclusive"  value="true"/>
+    
+   <topGames buildaction = "copy">
+      <topGame gameType="130043"/><!-- Millionaire Genie -->
+      <topGame gameType="130128"/><!-- Diamonds Delight-->
+      <topGame gameType="130071"/><!--TreasureFair-->
+      <topGame gameType="130134"/><!-- Rise of the Pharaohs -->
+    </topGames>
+	
+    <vipGames buildaction = "copy">
+      <vipGame gameType="130043"/><!-- Millionaire Genie -->
+      <vipGame gameType="130128"/><!-- Diamonds Delight-->
+      <vipGame gameType="130071"/><!--TreasureFair-->
+      <vipGame gameType="130134"/><!-- Rise of the Pharaohs -->
+    </vipGames>
+
+    <arenas>
+
+      <!-- CARDS AND TABLE ARENA-->
+      <arena  type="1004"  arenaLabelId="txtLineButtonCardsNTablesArena"   helpLinkId="5000"   favoritesSize="4"   previewTemplateId="10"  JPVisible="false">
+
+        <dataGridInfo>
+          <column label="txtDataGridGameName" field="gameTagLabelText"  columnWidth="330"/>
+          <column label="txtDataGridMinBet" 	field="minBet"	          columnWidth="125" sortBy="minBetNumber"/>
+          <column label="txtDataGridMaxBet"   field="maxBet"            columnWidth="126" sortBy="maxBetNumber"/>
+        </dataGridInfo>
+
+        <filteringInfo>
+          <filter label="FILTER_ROULETTE"   field="roulette"  value="true"/>
+          <filter label="FILTER_BLACKJACK" 	field="blackJack" value="true"/>
+          <filter label="FILTER_POKER" 	    field="poker"     value="true"/>
+          <filter label="FILTER_KENOGAME" 	field="kenoGame"  value="true"/>
+          <filter label="FILTER_BACCARAT" 	field="baccaratGame" value="true"/>
+        </filteringInfo>
+
+        <alsoPlayingGames>
+          <alsoPlayingGame gameType="130082"/><!--Baccarat-->
+          <alsoPlayingGame gameType="130077"/>  <!--Caribbean Poker-->
+        </alsoPlayingGames>
+        
+        <game gameType="130008" rect="MODERN_GAME_RECT"/><!-- European Roulette -->
+        <game gameType="130126" rect="MODERN_GAME_RECT"/><!-- Classic Keno (add to Keno filter!) -->
+        <game gameType="130012" rect="MODERN_GAME_RECT" newGameLabel="true"/><!-- Multihand Blackjack -->
+        <game gameType="2330010" rect="PLAYTECH_GAME_RECT"/><!-- 3D Roulette (PT) -->
+        <game gameType="130102" rect="MODERN_GAME_RECT" newGameLabel="true"/><!-- Jacks or Better video poker -->
+        <game gameType="120000"/><!-- Classic Blackjack OGS -->
+        <game gameType="130009" rect="MODERN_GAME_RECT"/><!-- High Limit European Roulette -->
+        <game gameType="130001" rect="GAME_RECT"/><!-- Classic European Roulette OGS -->
+        <game gameType="130077" rect="MODERN_GAME_RECT"/><!-- Caribbean Poker  -->
+        <game gameType="130122" rect="MODERN_GAME_RECT" newGameLabel="true"/><!-- Joker's Wild video poker -->
+        <game gameType="130118" rect="MODERN_GAME_RECT" newGameLabel="true"/><!-- Aces and Faces video poker -->
+        <game gameType="130121" rect="MODERN_GAME_RECT" newGameLabel="true"/><!-- Deuces Wild video poker -->
+        <game gameType="130119" rect="MODERN_GAME_RECT" newGameLabel="true"/><!-- Americans Stars video poker -->
+        <game gameType="130120" rect="MODERN_GAME_RECT" newGameLabel="true"/><!-- Bonus Poker video poker -->
+        <game gameType="130014" rect="MODERN_GAME_RECT"/><!-- American Blackjack -->
+        <game gameType="130004" rect="MODERN_GAME_RECT"/><!-- French Roulette -->
+        <game gameType="2310124" rect="NETENT_GAME_RECT"/><!-- Oasis Poker  -->
+        <game gameType="130101" rect="MODERN_GAME_RECT"/><!-- Deal or No Deal European Roulette -->
+        <game gameType="130006" rect="MODERN_GAME_RECT"/><!-- American Roulette -->
+        <game gameType="2310111" rect="NETENT_GAME_RECT"/><!-- Casino Holdem -->
+        <game gameType="130005" rect="MODERN_GAME_RECT"/><!-- High Limit French Roulette -->
+        <game gameType="130007" rect="MODERN_GAME_RECT"/><!-- High Limit Amercian Roulette -->
+        <game gameType="2310123" rect="NETENT_GAME_RECT"/><!-- Red Dog Progressive -->
+        <game gameType="130036" rect="MODERN_GAME_RECT"/><!-- Low Stakes European Roulette -->
+        <game gameType="130082" rect="MODERN_GAME_RECT"/><!-- Baccarat -->
+        <game gameType="130022" rect="MODERN_GAME_RECT"/><!-- Tens or Better Video poker -->
+        <game gameType="2310167" rect="NETENT_GAME_RECT"/><!-- Double Exposure Blackjack -->
+        <game gameType="2310168" rect="NETENT_GAME_RECT"/><!-- Single Deck Blackjack -->
+        <game gameType="2310169" rect="NETENT_GAME_RECT"/><!-- Pontoon Pro -->
+        <game gameType="2310170" rect="NETENT_GAME_RECT"/><!-- Punto Bunco -->
+        <game gameType="2310171" rect="NETENT_GAME_RECT"/><!-- Texas Holdem Pro -->
+        <game gameType="130066" rect="MODERN_GAME_RECT"/><!-- Keno -->
+        <game gameType="120061" rect="GAME_RECT"/><!-- Classic European Roulette OGS VIP -->
+      
+      </arena>
+
+
+      <!-- SLOTS ARENA-->
+      <arena type="1000" arenaLabelId="txtLineButtonVideoSlots"  helpLinkId="5000" favoritesSize="4" previewTemplateId="6" JPVisible="true">
+        
+        <dataGridInfo>
+          <!-- item width="581" -->
+          <column label="txtDataGridGameName"   field="gameTagLabelText"  columnWidth="330"/>
+          <column label="txtDataGridJackpot" 	  field="jackpot"			      columnWidth="125"	sortBy="numberJP"/>
+          <column label="txtDataGridNumOfLines" field="numOfLines"	      columnWidth="126"/>
+        </dataGridInfo>
+
+        <filteringInfo>
+          <filter label="FILTER_LINE_SET_1_20" 	field="lineSetTwo"          value="true"/>
+          <filter label="FILTER_LINESET25PLUS" 	field="lineSetThree"        value="true"/>
+          <filter label="FILTER_JACKPOT" 			  field="progressiveJackpot"  value="true" />
+          <filter label="FILTER_EXCLUSIVE"      field="exclusive"           value="true"/>
+          <filter label="FILTER_NEWGAME" 			  field="newGame"             value="true"/>
+        </filteringInfo>
+
+        <alsoPlayingGames>
+          <alsoPlayingGame gameType="130114"/><!-- The Big Lebowski Online Slot -->
+          <alsoPlayingGame gameType="130128"/><!-- Diamonds Delight -->
+        </alsoPlayingGames>
+
+
+        <game gameType="130139" rect="HTML5_RECT" newGameLabel="true"/><!-- Valentine's Victory -->
+        <game gameType="130047" rect="MODERN_GAME_RECT"/>          <!-- Knights and maidens -->
+        <game gameType="130050" rect="MODERN_GAME_RECT"/>        <!-- Adventures in Orbit -->
+        <game gameType="130051" rect="MODERN_GAME_RECT"/>        <!-- Top Spin Snooker  -->
+        <game gameType="130052" rect="MODERN_GAME_RECT"/>          <!-- Euro Reels  -->
+        <game gameType="130135" rect="HTML5_RECT" newGameLabel="true"/><!-- Santa's Super Slot -->
+        <game gameType="130113" rect="MODERN_GAME_RECT"/><!-- Jack's Pot -->
+        <game gameType="130043" rect="MODERN_GAME_RECT"/><!-- Millionaire Genie -->
+        <game gameType="2310163" rect="NETENT_GAME_RECT"/><!-- Guns and Roses -->
+        <game gameType="130110" rect="MODERN_GAME_RECT"/><!-- Irish Riches -->
+        <game gameType="130017" rect="MODERN_GAME_RECT"/><!-- Elm St. -->
+        <game gameType="130071" rect="MODERN_GAME_RECT"/><!-- Treasure Fair -->
+        <game gameType="130134" rect="MODERN_GAME_RECT" newGameLabel="true"/><!-- Rise of the Pharaohs -->
+        <game gameType="130129" rect="MODERN_GAME_RECT" newGameLabel="true"/><!-- Gods of Gold -->
+        <game gameType="130131" rect="MODERN_GAME_RECT" newGameLabel="true"/><!-- Under Construction -->
+        <game gameType="130123" rect="MODERN_GAME_RECT" /><!-- Pirates Millions -->
+        <game gameType="130042" rect="MODERN_GAME_RECT"/><!-- Ultimate Universe -->
+        <game gameType="2310080" rect="NETENT_GAME_RECT"/><!-- Starburst -->
+        <game gameType="2320024" rect="WI_GAME_RECT"/><!-- Spartacus -->
+        <game gameType="2330021" rect="PLAYTECH_GAME_RECT"/><!-- Cleopatra (PT) -->
+        <game gameType="2320025" rect="WI_GAME_RECT"/><!-- Rainbow Riches -->
+        <game gameType="130091" rect="MODERN_GAME_RECT"/><!-- Once Upon a Dime -->
+        <game gameType="130117" rect="MODERN_GAME_RECT" newGameLabel="true"/><!-- Secrets of Shanghai -->
+        <game gameType="130128" rect="MODERN_GAME_RECT" newGameLabel="true"/><!-- Diamonds Delight -->
+        <game gameType="130127" rect="MODERN_GAME_RECT" newGameLabel="true"/><!-- Cat me if you can -->
+        <game gameType="130116" rect="MODERN_GAME_RECT"/><!-- Glorious 50 - please upgrade to V4.2! -->
+        <game gameType="2310116" rect="NETENT_GAME_RECT"/><!-- Twin Spin -->
+        <game gameType="130112" rect="MODERN_GAME_RECT"/><!-- Saved by the Bells -->
+        <game gameType="130133" rect="MODERN_GAME_RECT" /><!-- Oktoberfest -->
+        <game gameType="130114" rect="MODERN_GAME_RECT"/><!-- Big Lebowski Online Slot -->
+        <game gameType="130088" rect="HTML5_RECT"/>        <!-- Dawn of the Dinos -->
+        <game gameType="2310146" rect="NETENT_GAME_RECT"/><!-- Dazzle Me -->
+        <game gameType="2330003" rect="PLAYTECH_GAME_RECT"/><!-- Fairest of Them All (PT) -->
+        <game gameType="2320034" rect="WI_GAME_RECT"/><!-- OMG Kittens - make sure it's UK restricted from non Whitelisted pc -->
+        <game gameType="130085" rect="MODERN_GAME_RECT"/><!-- Superman -->
+        <game gameType="130037" rect="MODERN_GAME_RECT"/><!-- Casino Reels -->
+        <game gameType="130062" rect="MODERN_GAME_RECT"/><!-- Snacktime -->
+        <game gameType="2310072" rect="NETENT_GAME_RECT"/><!-- South Park -->
+        <game gameType="130020" rect="MODERN_GAME_RECT"/><!-- Party Pigs -->
+        <game gameType="2330020" rect="PLAYTECH_GAME_RECT"/><!-- Wild Gambler (PT) -->
+        <game gameType="130044" rect="MODERN_GAME_RECT"/><!-- Ultimate Grill Thrills -->
+        <game gameType="130115" rect="MODERN_GAME_RECT"/><!-- Steampunk Nation -->
+        <game gameType="2330009" rect="PLAYTECH_GAME_RECT"/><!-- Leprechaun's Luck (PT) -->
+        <game gameType="2330016" rect="PLAYTECH_GAME_RECT"/><!-- Zuma (PT) -->
+        <game gameType="2330014" rect="PLAYTECH_GAME_RECT"/><!-- Iron Man 2 (PT) -->
+        <game gameType="2330022" rect="PLAYTECH_GAME_RECT"/><!-- Amazon Wild (PT) -->
+        <game gameType="2330023" rect="PLAYTECH_GAME_RECT"/><!-- Bejeweled 2 (PT) -->
+        <game gameType="2330008" rect="PLAYTECH_GAME_RECT"/><!-- Casper (PT) -->
+        <game gameType="130048" rect="MODERN_GAME_RECT"/><!-- Freaky Fruit -->
+        <game gameType="130084" rect="MODERN_GAME_RECT"/><!-- Wonderwoman -->
+        <game gameType="130092" rect="MODERN_GAME_RECT"/><!-- Jungle Goal$ -->
+        <game gameType="130073" rect="MODERN_GAME_RECT"/><!-- Love From London -->
+        <game gameType="2310076" rect="NETENT_GAME_RECT"/><!-- Jackhammer -->
+        <game gameType="130055" rect="MODERN_GAME_RECT"/><!-- Mafia Madness -->
+        <game gameType="130093" rect="MODERN_GAME_RECT"/><!-- Seven Great Wonder of the World -->
+        <game gameType="130069" rect="MODERN_GAME_RECT"/><!-- Bollywood Bonanza -->
+        <game gameType="2320003" rect="WI_GAME_RECT"/><!-- Ruby Slippers -->
+        <game gameType="130034" rect="MODERN_GAME_RECT"/><!-- Viva L'Italia -->
+        <game gameType="130075" rect="MODERN_GAME_RECT"/><!-- Café de Paris -->
+        <game gameType="2320015" rect="WI_GAME_RECT"/><!-- Elvis -->
+        <game gameType="2310118" rect="NETENT_GAME_RECT"/><!-- Magic Portals -->
+        <game gameType="2310075" rect="NETENT_GAME_RECT"/><!-- Jack and the Beanstalk -->
+        <game gameType="130095" rect="MODERN_GAME_RECT"/><!-- The Great War -->
+        <game gameType="130094" rect="MODERN_GAME_RECT"/><!-- Gringos Dineros -->
+        <game gameType="130023" rect="MODERN_GAME_RECT"/><!-- Jewel Thief -->
+        <game gameType="2320022" rect="WI_GAME_RECT"/><!-- Amazon Queen -->
+        <game gameType="300003" rect="GAME_RECT_WIDE"/><!-- Knights&Maidens -->
+        <game gameType="2310071" rect="NETENT_GAME_RECT"/><!-- Gonzo’s Quest -->
+        <game gameType="2320009" rect="WI_GAME_RECT"/><!-- Zeus -->
+        <game gameType="2320016" rect="WI_GAME_RECT"/><!-- Raging Rhino -->
+        <game gameType="130049" rect="MODERN_GAME_RECT"/><!-- City Life -->
+        <game gameType="130076" rect="MODERN_GAME_RECT"/><!-- Snowy Wonderland -->
+        <game gameType="130070" rect="MODERN_GAME_RECT"/><!-- 4th of July -->
+        <game gameType="130111" rect="MODERN_GAME_RECT"/><!-- Kitchen Run -->
+        <game gameType="2310078" rect="NETENT_GAME_RECT"/><!-- Lucky Angler -->
+        <game gameType="130108" rect="MODERN_GAME_RECT"/><!-- Jackpot Jockey -->
+        <game gameType="2330019" rect="PLAYTECH_GAME_RECT"/><!-- Adventures in Wonderland (PT) -->
+        <game gameType="130109" rect="MODERN_GAME_RECT"/><!-- Ghost in the shell -->
+        <game gameType="2310070" rect="NETENT_GAME_RECT"/><!-- Fruit Shop -->
+        <game gameType="300014" rect="GAME_RECT_WIDE"/><!-- Adventures in Orbit -->
+        <game gameType="130021" rect="MODERN_GAME_RECT"/><!-- Panda Manga -->
+        <game gameType="130046" rect="MODERN_GAME_RECT"/><!-- The Royals -->
+        <game gameType="130056" rect="MODERN_GAME_RECT"/><!-- Evangelion -->
+        <game gameType="300017" /><!-- Euro Reels -->
+        <game gameType="2320008" rect="WI_GAME_RECT"/><!-- Bier Haus -->
+        <game gameType="2310117" rect="NETENT_GAME_RECT"/><!-- Reel Rush -->
+        <game gameType="2320005" rect="WI_GAME_RECT"/><!-- Kronos -->
+        <game gameType="2310083" rect="NETENT_GAME_RECT"/><!-- Victorious -->
+        <game gameType="130039" rect="MODERN_GAME_RECT"/><!-- City Life 2 -->
+        <game gameType="2310165" rect="NETENT_GAME_RECT"/><!-- Koi Princess -->
+        <game gameType="2320021" rect="WI_GAME_RECT"/><!-- Zeus 3 -->
+        <game gameType="130105" rect="MODERN_GAME_RECT"/><!-- Ole Espanaa -->
+        <game gameType="2320040" rect="WI_GAME_RECT"/><!-- Cool Jewels-  make sure it's UK restricted from non Whitelisted pc -->
+        <game gameType="2310155" rect="NETENT_GAME_RECT"/><!-- Neon Staxx -->
+        <game gameType="2310152" rect="NETENT_GAME_RECT"/><!-- Hook's Heros -->
+        <game gameType="2320027" rect="WI_GAME_RECT"/><!-- Lunaris - make sure it's UK restricted from non Whitelisted pc -->
+        <game gameType="2310131" rect="NETENT_GAME_RECT"/><!-- Blood suckers -->
+        <game gameType="2320062" rect="WI_GAME_RECT"/><!-- Zeus 1000 -->
+        <game gameType="2310148" rect="NETENT_GAME_RECT"/><!-- Steam Tower -->
+        <game gameType="2320026" rect="WI_GAME_RECT"/><!-- Montezuma - make sure it's UK restricted from non Whitelisted pc -->
+        <game gameType="2320006" rect="WI_GAME_RECT"/><!-- KISS -->
+        <game gameType="2330013" rect="PLAYTECH_GAME_RECT"/><!-- Fantastic 4 (PT) -->
+        <game gameType="2320004" rect="WI_GAME_RECT"/><!-- Bruce Lee -->
+        <game gameType="2320023" rect="WI_GAME_RECT"/><!-- Giant's Gold -->
+
+        <game gameType="2310180" rect="NETENT_GAME_RECT"/><!-- Giant's Gold -->
+        <game gameType="2310185" rect="NETENT_GAME_RECT"/><!-- Dead or Alive -->
+        <game gameType="2310186" rect="NETENT_GAME_RECT"/><!-- Fairytale Legends: Red Riding Hood -->
+        <game gameType="2320054" rect="WI_GAME_RECT"/><!-- 7s to Burn -->
+        <game gameType="2320066" rect="WI_GAME_RECT"/><!-- Thai Flower -->
+        <game gameType="2320067" rect="WI_GAME_RECT"/><!-- 88 Fortunes -->
+        <game gameType="2320068" rect="WI_GAME_RECT"/><!-- Titanic -->
+        <game gameType="2320069" rect="WI_GAME_RECT"/><!-- Michael Jackson: King of Pop -->
+
+      </arena>
+
+      <!-- LOBBY -->
+      <arena type="lobby" favoritesSize="4">
+        <game placeHolder="0" gameType="2010004" 	templateId="btnDynamicTexted"  x="6"  y="156" iconSize="BIG_ICON" rect="LIVEDEALER_RECT"/>
+        <game placeHolder="1" gameType="1004" 		templateId="btnDynamicTexted"  x="172" y="156" iconSize="BIG_ICON"/>
+        <game placeHolder="2" gameType="1000" 		templateId="mcDynamicTextedButtonPersonalize"  x="338" y="156" iconSize="BIG_ICON"/>
+        <game placeHolder="3" gameType="130135"		templateId="mcDynamicTextedButtonPersonalize"  x="504" y="156" iconSize="BIG_ICON"/><!-- Santa's Super Slot -->
+        <game placeHolder="4" gameType="130113"	  templateId="mcDynamicTextedButtonPersonalize"  x="670" y="156" iconSize="BIG_ICON"/><!-- Jack's Pot -->
+        <game placeHolder="5" gameType="130129"	  templateId="mcDynamicTextedButtonPersonalize"  x="836" y="156" iconSize="BIG_ICON"/><!-- Gods of Gold -->
+      </arena>
+
+      <!-- LIVE DEALER GAMES-->
+	    <arena type="2010004" favoritesSize="3">
+		    <game placeHolder="1" gameType="2010001" templateId="btnArenaTexedTemplate" wrapperType="liveDealerGamesWraperType"/>
+		    <game placeHolder="2" gameType="2010002" templateId="btnArenaTexedTemplate" wrapperType="liveDealerGamesWraperType"/>
+		    <game placeHolder="3" gameType="2010003" templateId="btnArenaTexedTemplate" wrapperType="liveDealerGamesWraperType"/>
+        <game placeHolder="3" gameType="2010005" templateId="btnArenaTexedTemplate" wrapperType="liveDealerGamesWraperType"/>
+        <game placeHolder="3" gameType="2010008" templateId="btnArenaTexedTemplate" wrapperType="liveDealerGamesWraperType"/>
+  	  </arena>
+      
+    </arenas>
+
+   
+  </lobby_data_ndl>
+</setup>

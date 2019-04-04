@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6DB1C292-B280-495E-9EA5-E174E54E9F7B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GamesPortal.Client.Interfaces</RootNamespace>
+    <AssemblyName>GamesPortal.Client.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApprovalStatusesDescriptions.cs" />
+    <Compile Include="Entities\DownloadInfo.cs" />
+    <Compile Include="Entities\ClientType.cs" />
+    <Compile Include="Entities\Game.cs" />
+    <Compile Include="Entities\GameInfrastructure.cs" />
+    <Compile Include="Entities\GameType.cs" />
+    <Compile Include="Entities\GameVersion.cs" />
+    <Compile Include="Entities\Language.cs" />
+    <Compile Include="Entities\Month.cs" />
+    <Compile Include="Entities\Reporting\ApprovedGameVersion.cs" />
+    <Compile Include="Entities\Reporting\GameVersionRelease.cs" />
+    <Compile Include="Entities\Reporting\LatestApprovedGameVersionForEachRegulation.cs" />
+    <Compile Include="Entities\Reporting\LatestGameVersionForRegulation.cs" />
+    <Compile Include="Entities\Reporting\NeverApprovedGame.cs" />
+    <Compile Include="Entities\RegulationType.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PubSubEvents\FullGamesSynchronizationFinishedData.cs" />
+    <Compile Include="PubSubEvents\GameSynchronizationEventData.cs" />
+    <Compile Include="Services\IDownloadManager.cs" />
+    <Compile Include="Services\IGamesRepository.cs" />
+    <Compile Include="Services\IReportingService.cs" />
+    <Compile Include="Services\IZipFileExtractor.cs" />
+    <Compile Include="SmartEnum.cs" />
+    <Compile Include="ValidationException.cs" />
+    <Compile Include="WellKnownModules.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dependencies\Spark.Infra\Spark.Infra\Spark.Infra.csproj">
+      <Project>{02e9598a-f44e-4359-844a-dfc8bdc9e36c}</Project>
+      <Name>Spark.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Dependencies\Wpf.Common\Wpf.Common\Spark.Wpf.Common.csproj">
+      <Project>{4F07E2F4-7058-4026-948E-2F5C98013A62}</Project>
+      <Name>Spark.Wpf.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

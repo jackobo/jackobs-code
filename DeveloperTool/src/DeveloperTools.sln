@@ -1,0 +1,266 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Views", "TfsExplorer\Views\Views.csproj", "{DDD53835-65FB-417B-9E43-B251460BFD4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "TfsExplorer\Models\Models.csproj", "{1C5001D0-630D-4D30-AD08-A7DC81211539}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels", "TfsExplorer\ViewModels\ViewModels.csproj", "{8776FF9C-612E-4979-BB3E-BC1DB0A2FE50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TfsExplorer", "TfsExplorer", "{384261C2-82D9-453E-B87C-CB804F160B36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootstrapper", "TfsExplorer\Bootstrapper\Bootstrapper.csproj", "{7293ED54-2A31-4E80-B96E-73C6ED5730A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "TfsExplorer\Interfaces\Interfaces.csproj", "{CD2F5A4F-7927-487C-AADE-155F25151219}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Publish", "Publish", "{4857467C-42FF-4DAD-94AD-AFA34AE651CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEV", "TfsExplorer\Publish\DEV\DEV.csproj", "{2147201D-9D5A-463A-B5BC-1E2F3DA8AA9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QA", "TfsExplorer\Publish\QA\QA.csproj", "{B9D19C4F-6FC4-491E-9FB7-57C0DC2B5E0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PROD", "TfsExplorer\Publish\PROD\PROD.csproj", "{FA9F311C-0AAC-43F1-A8F5-7F3A23D4F7ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{0DC48583-4282-41CD-8850-5564EE4D0F0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Infra", "..\Dependencies\Spark.Infra\Spark.Infra\Spark.Infra.csproj", "{02E9598A-F44E-4359-844A-DFC8BDC9E36C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Infra.Tests", "..\Dependencies\Spark.Infra\Spark.Infra.Tests\Spark.Infra.Tests.csproj", "{8CED340F-40CE-4E28-8286-0E08189B7310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Wpf.Common", "..\Dependencies\Wpf.Common\Wpf.Common\Spark.Wpf.Common.csproj", "{4F07E2F4-7058-4026-948E-2F5C98013A62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Wpf.Common.UnitTests", "..\Dependencies\Wpf.Common\Wpf.Common.UnitTests\Spark.Wpf.Common.UnitTests.csproj", "{37186D17-0E24-4108-BCD7-17E960BCBAF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{FB06931E-6EDD-4C85-BA0E-0312D870FFDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels.UnitTests", "TfsExplorer\UnitTests\ViewModels.UnitTests\ViewModels.UnitTests.csproj", "{9481AE44-2496-4491-BED7-7787A9405714}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestsHelpers", "TfsExplorer\UnitTests\UnitTestsHelpers\UnitTestsHelpers.csproj", "{CD6D9B15-9D5C-44E3-82FB-28D7A7262268}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSExtensions", "TfsExplorer\VSExtensions\VSExtensions.csproj", "{59A7DB94-A53B-4C9C-8FFB-BD60B9014071}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyGamesToOutputDir", "Utils\CopyGamesToOutputDir\CopyGamesToOutputDir.csproj", "{7AD20027-779C-43FC-9591-97DF064B290A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{3B171795-0111-4960-B482-A740436DC3FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSSolutionExplorer", "Utils\VSSolutionExplorer\VSSolutionExplorer.csproj", "{D5162AE4-F7A2-4158-BED8-0909A3495CAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models.UnitTests", "TfsExplorer\UnitTests\Models.UnitTests\Models.UnitTests.csproj", "{FF6FEDBF-59F7-42CD-A7CB-EA38066199C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGPBuilder", "Utils\GGPBuilder\GGPBuilder.csproj", "{9967DA6F-5F8F-4E45-9037-FE42CF988E3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGPInstallerBuilder", "Utils\GGPInstallerBuilder\GGPInstallerBuilder.csproj", "{7F53ACB9-7B28-46EC-AEE7-D1B18CAEB7DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanUpTestEnvironment", "Utils\CleanUpTestEnvironment\CleanUpTestEnvironment.csproj", "{D28D497F-C39A-4B7C-94C6-669CEA4734F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDD53835-65FB-417B-9E43-B251460BFD4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD53835-65FB-417B-9E43-B251460BFD4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDD53835-65FB-417B-9E43-B251460BFD4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDD53835-65FB-417B-9E43-B251460BFD4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C5001D0-630D-4D30-AD08-A7DC81211539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C5001D0-630D-4D30-AD08-A7DC81211539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C5001D0-630D-4D30-AD08-A7DC81211539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C5001D0-630D-4D30-AD08-A7DC81211539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8776FF9C-612E-4979-BB3E-BC1DB0A2FE50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8776FF9C-612E-4979-BB3E-BC1DB0A2FE50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8776FF9C-612E-4979-BB3E-BC1DB0A2FE50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8776FF9C-612E-4979-BB3E-BC1DB0A2FE50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7293ED54-2A31-4E80-B96E-73C6ED5730A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7293ED54-2A31-4E80-B96E-73C6ED5730A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7293ED54-2A31-4E80-B96E-73C6ED5730A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7293ED54-2A31-4E80-B96E-73C6ED5730A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD2F5A4F-7927-487C-AADE-155F25151219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2F5A4F-7927-487C-AADE-155F25151219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2F5A4F-7927-487C-AADE-155F25151219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD2F5A4F-7927-487C-AADE-155F25151219}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2147201D-9D5A-463A-B5BC-1E2F3DA8AA9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2147201D-9D5A-463A-B5BC-1E2F3DA8AA9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2147201D-9D5A-463A-B5BC-1E2F3DA8AA9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2147201D-9D5A-463A-B5BC-1E2F3DA8AA9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9D19C4F-6FC4-491E-9FB7-57C0DC2B5E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9D19C4F-6FC4-491E-9FB7-57C0DC2B5E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9D19C4F-6FC4-491E-9FB7-57C0DC2B5E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9D19C4F-6FC4-491E-9FB7-57C0DC2B5E0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA9F311C-0AAC-43F1-A8F5-7F3A23D4F7ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9F311C-0AAC-43F1-A8F5-7F3A23D4F7ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA9F311C-0AAC-43F1-A8F5-7F3A23D4F7ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA9F311C-0AAC-43F1-A8F5-7F3A23D4F7ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F07E2F4-7058-4026-948E-2F5C98013A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9481AE44-2496-4491-BED7-7787A9405714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9481AE44-2496-4491-BED7-7787A9405714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9481AE44-2496-4491-BED7-7787A9405714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9481AE44-2496-4491-BED7-7787A9405714}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD6D9B15-9D5C-44E3-82FB-28D7A7262268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD6D9B15-9D5C-44E3-82FB-28D7A7262268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD6D9B15-9D5C-44E3-82FB-28D7A7262268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD6D9B15-9D5C-44E3-82FB-28D7A7262268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59A7DB94-A53B-4C9C-8FFB-BD60B9014071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A7DB94-A53B-4C9C-8FFB-BD60B9014071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A7DB94-A53B-4C9C-8FFB-BD60B9014071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AD20027-779C-43FC-9591-97DF064B290A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AD20027-779C-43FC-9591-97DF064B290A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AD20027-779C-43FC-9591-97DF064B290A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AD20027-779C-43FC-9591-97DF064B290A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5162AE4-F7A2-4158-BED8-0909A3495CAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5162AE4-F7A2-4158-BED8-0909A3495CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5162AE4-F7A2-4158-BED8-0909A3495CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5162AE4-F7A2-4158-BED8-0909A3495CAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF6FEDBF-59F7-42CD-A7CB-EA38066199C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF6FEDBF-59F7-42CD-A7CB-EA38066199C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF6FEDBF-59F7-42CD-A7CB-EA38066199C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF6FEDBF-59F7-42CD-A7CB-EA38066199C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9967DA6F-5F8F-4E45-9037-FE42CF988E3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9967DA6F-5F8F-4E45-9037-FE42CF988E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9967DA6F-5F8F-4E45-9037-FE42CF988E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9967DA6F-5F8F-4E45-9037-FE42CF988E3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F53ACB9-7B28-46EC-AEE7-D1B18CAEB7DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F53ACB9-7B28-46EC-AEE7-D1B18CAEB7DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F53ACB9-7B28-46EC-AEE7-D1B18CAEB7DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F53ACB9-7B28-46EC-AEE7-D1B18CAEB7DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D28D497F-C39A-4B7C-94C6-669CEA4734F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D28D497F-C39A-4B7C-94C6-669CEA4734F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D28D497F-C39A-4B7C-94C6-669CEA4734F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D28D497F-C39A-4B7C-94C6-669CEA4734F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DDD53835-65FB-417B-9E43-B251460BFD4E} = {384261C2-82D9-453E-B87C-CB804F160B36}
+		{1C5001D0-630D-4D30-AD08-A7DC81211539} = {384261C2-82D9-453E-B87C-CB804F160B36}
+		{8776FF9C-612E-4979-BB3E-BC1DB0A2FE50} = {384261C2-82D9-453E-B87C-CB804F160B36}
+		{7293ED54-2A31-4E80-B96E-73C6ED5730A4} = {384261C2-82D9-453E-B87C-CB804F160B36}
+		{CD2F5A4F-7927-487C-AADE-155F25151219} = {384261C2-82D9-453E-B87C-CB804F160B36}
+		{4857467C-42FF-4DAD-94AD-AFA34AE651CC} = {384261C2-82D9-453E-B87C-CB804F160B36}
+		{2147201D-9D5A-463A-B5BC-1E2F3DA8AA9D} = {4857467C-42FF-4DAD-94AD-AFA34AE651CC}
+		{B9D19C4F-6FC4-491E-9FB7-57C0DC2B5E0F} = {4857467C-42FF-4DAD-94AD-AFA34AE651CC}
+		{FA9F311C-0AAC-43F1-A8F5-7F3A23D4F7ED} = {4857467C-42FF-4DAD-94AD-AFA34AE651CC}
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C} = {0DC48583-4282-41CD-8850-5564EE4D0F0A}
+		{8CED340F-40CE-4E28-8286-0E08189B7310} = {0DC48583-4282-41CD-8850-5564EE4D0F0A}
+		{4F07E2F4-7058-4026-948E-2F5C98013A62} = {0DC48583-4282-41CD-8850-5564EE4D0F0A}
+		{37186D17-0E24-4108-BCD7-17E960BCBAF4} = {0DC48583-4282-41CD-8850-5564EE4D0F0A}
+		{FB06931E-6EDD-4C85-BA0E-0312D870FFDB} = {384261C2-82D9-453E-B87C-CB804F160B36}
+		{9481AE44-2496-4491-BED7-7787A9405714} = {FB06931E-6EDD-4C85-BA0E-0312D870FFDB}
+		{CD6D9B15-9D5C-44E3-82FB-28D7A7262268} = {FB06931E-6EDD-4C85-BA0E-0312D870FFDB}
+		{59A7DB94-A53B-4C9C-8FFB-BD60B9014071} = {384261C2-82D9-453E-B87C-CB804F160B36}
+		{7AD20027-779C-43FC-9591-97DF064B290A} = {3B171795-0111-4960-B482-A740436DC3FC}
+		{D5162AE4-F7A2-4158-BED8-0909A3495CAD} = {3B171795-0111-4960-B482-A740436DC3FC}
+		{FF6FEDBF-59F7-42CD-A7CB-EA38066199C2} = {FB06931E-6EDD-4C85-BA0E-0312D870FFDB}
+		{9967DA6F-5F8F-4E45-9037-FE42CF988E3E} = {3B171795-0111-4960-B482-A740436DC3FC}
+		{7F53ACB9-7B28-46EC-AEE7-D1B18CAEB7DE} = {3B171795-0111-4960-B482-A740436DC3FC}
+		{D28D497F-C39A-4B7C-94C6-669CEA4734F5} = {3B171795-0111-4960-B482-A740436DC3FC}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 22
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs2012:8080/tfs/defaultcollection_2010
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\Dependencies\\Spark.Infra\\Spark.Infra\\Spark.Infra.csproj
+		SccProjectTopLevelParentUniqueName1 = DeveloperTools.sln
+		SccProjectName1 = ../Dependencies/Spark.Infra/Spark.Infra
+		SccLocalPath1 = ..\\Dependencies\\Spark.Infra\\Spark.Infra
+		SccProjectUniqueName2 = ..\\Dependencies\\Spark.Infra\\Spark.Infra.Tests\\Spark.Infra.Tests.csproj
+		SccProjectTopLevelParentUniqueName2 = DeveloperTools.sln
+		SccProjectName2 = ../Dependencies/Spark.Infra/Spark.Infra.Tests
+		SccLocalPath2 = ..\\Dependencies\\Spark.Infra\\Spark.Infra.Tests
+		SccProjectUniqueName3 = ..\\Dependencies\\Wpf.Common\\Wpf.Common\\Spark.Wpf.Common.csproj
+		SccProjectTopLevelParentUniqueName3 = DeveloperTools.sln
+		SccProjectName3 = ../Dependencies/Wpf.Common/Wpf.Common
+		SccLocalPath3 = ..\\Dependencies\\Wpf.Common\\Wpf.Common
+		SccProjectUniqueName4 = ..\\Dependencies\\Wpf.Common\\Wpf.Common.UnitTests\\Spark.Wpf.Common.UnitTests.csproj
+		SccProjectTopLevelParentUniqueName4 = DeveloperTools.sln
+		SccProjectName4 = ../Dependencies/Wpf.Common/Wpf.Common.UnitTests
+		SccLocalPath4 = ..\\Dependencies\\Wpf.Common\\Wpf.Common.UnitTests
+		SccProjectUniqueName5 = TfsExplorer\\Views\\Views.csproj
+		SccProjectTopLevelParentUniqueName5 = DeveloperTools.sln
+		SccProjectName5 = TfsExplorer/Views
+		SccLocalPath5 = TfsExplorer\\Views
+		SccProjectUniqueName6 = TfsExplorer\\Models\\Models.csproj
+		SccProjectTopLevelParentUniqueName6 = DeveloperTools.sln
+		SccProjectName6 = TfsExplorer/Models
+		SccLocalPath6 = TfsExplorer\\Models
+		SccProjectUniqueName7 = TfsExplorer\\ViewModels\\ViewModels.csproj
+		SccProjectTopLevelParentUniqueName7 = DeveloperTools.sln
+		SccProjectName7 = TfsExplorer/ViewModels
+		SccLocalPath7 = TfsExplorer\\ViewModels
+		SccProjectUniqueName8 = TfsExplorer\\Bootstrapper\\Bootstrapper.csproj
+		SccProjectTopLevelParentUniqueName8 = DeveloperTools.sln
+		SccProjectName8 = TfsExplorer/Bootstrapper
+		SccLocalPath8 = TfsExplorer\\Bootstrapper
+		SccProjectUniqueName9 = TfsExplorer\\Interfaces\\Interfaces.csproj
+		SccProjectTopLevelParentUniqueName9 = DeveloperTools.sln
+		SccProjectName9 = TfsExplorer/Interfaces
+		SccLocalPath9 = TfsExplorer\\Interfaces
+		SccProjectUniqueName10 = TfsExplorer\\Publish\\DEV\\DEV.csproj
+		SccProjectTopLevelParentUniqueName10 = DeveloperTools.sln
+		SccProjectName10 = TfsExplorer/Publish/DEV
+		SccLocalPath10 = TfsExplorer\\Publish\\DEV
+		SccProjectUniqueName11 = TfsExplorer\\Publish\\QA\\QA.csproj
+		SccProjectTopLevelParentUniqueName11 = DeveloperTools.sln
+		SccProjectName11 = TfsExplorer/Publish/QA
+		SccLocalPath11 = TfsExplorer\\Publish\\QA
+		SccProjectUniqueName12 = TfsExplorer\\Publish\\PROD\\PROD.csproj
+		SccProjectTopLevelParentUniqueName12 = DeveloperTools.sln
+		SccProjectName12 = TfsExplorer/Publish/PROD
+		SccLocalPath12 = TfsExplorer\\Publish\\PROD
+		SccProjectUniqueName13 = TfsExplorer\\UnitTests\\ViewModels.UnitTests\\ViewModels.UnitTests.csproj
+		SccProjectTopLevelParentUniqueName13 = DeveloperTools.sln
+		SccProjectName13 = TfsExplorer/UnitTests/ViewModels.UnitTests
+		SccLocalPath13 = TfsExplorer\\UnitTests\\ViewModels.UnitTests
+		SccProjectUniqueName14 = TfsExplorer\\UnitTests\\UnitTestsHelpers\\UnitTestsHelpers.csproj
+		SccProjectTopLevelParentUniqueName14 = DeveloperTools.sln
+		SccProjectName14 = TfsExplorer/UnitTests/UnitTestsHelpers
+		SccLocalPath14 = TfsExplorer\\UnitTests\\UnitTestsHelpers
+		SccProjectUniqueName15 = TfsExplorer\\VSExtensions\\VSExtensions.csproj
+		SccProjectTopLevelParentUniqueName15 = DeveloperTools.sln
+		SccProjectName15 = TfsExplorer/VSExtensions
+		SccLocalPath15 = TfsExplorer\\VSExtensions
+		SccProjectUniqueName16 = Utils\\CopyGamesToOutputDir\\CopyGamesToOutputDir.csproj
+		SccProjectTopLevelParentUniqueName16 = DeveloperTools.sln
+		SccProjectName16 = Utils/CopyGamesToOutputDir
+		SccLocalPath16 = Utils\\CopyGamesToOutputDir
+		SccProjectUniqueName17 = Utils\\VSSolutionExplorer\\VSSolutionExplorer.csproj
+		SccProjectTopLevelParentUniqueName17 = DeveloperTools.sln
+		SccProjectName17 = Utils/VSSolutionExplorer
+		SccLocalPath17 = Utils\\VSSolutionExplorer
+		SccProjectUniqueName18 = TfsExplorer\\UnitTests\\Models.UnitTests\\Models.UnitTests.csproj
+		SccProjectTopLevelParentUniqueName18 = DeveloperTools.sln
+		SccProjectName18 = TfsExplorer/UnitTests/Models.UnitTests
+		SccLocalPath18 = TfsExplorer\\UnitTests\\Models.UnitTests
+		SccProjectUniqueName19 = Utils\\GGPBuilder\\GGPBuilder.csproj
+		SccProjectTopLevelParentUniqueName19 = DeveloperTools.sln
+		SccProjectName19 = Utils/GGPBuilder
+		SccLocalPath19 = Utils\\GGPBuilder
+		SccProjectUniqueName20 = Utils\\GGPInstallerBuilder\\GGPInstallerBuilder.csproj
+		SccProjectTopLevelParentUniqueName20 = DeveloperTools.sln
+		SccProjectName20 = Utils/GGPInstallerBuilder
+		SccLocalPath20 = Utils\\GGPInstallerBuilder
+		SccProjectUniqueName21 = Utils\\CleanUpTestEnvironment\\CleanUpTestEnvironment.csproj
+		SccProjectTopLevelParentUniqueName21 = DeveloperTools.sln
+		SccProjectName21 = Utils/CleanUpTestEnvironment
+		SccLocalPath21 = Utils\\CleanUpTestEnvironment
+	EndGlobalSection
+EndGlobal

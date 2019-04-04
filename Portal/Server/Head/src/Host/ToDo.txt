@@ -1,0 +1,38 @@
+﻿missing languages ell
+
+if a game doesn't have the mandatory language for that regulation do not allow to approve the game
+
+chill approval
+
+cancel language approval
+
+
+
+
+- Report with games built for the wrong clienttype+regulation (example: a game built for Bingo in Spain regulation)
+
+select * from [dbo].[GameVersion_Regulation] where [GameVersionRegulation_ID]
+not in (select [GameVersionRegulation_ID] From [dbo].[GameVersion_Regulation_ClientType])
+
+
+
+Approve once the same language for all regulations
+
+Mandatory languages per regulations
+
+English language -> should approve all other games (theoretically)
+
+Initialization (day 0)
+
+Some games will not have language hashes (excluded games)
+
+If the game version is in production or approved then deny language approval  but you can approve languages before approving game.
+
+Presentation before launching it to production.
+
+
+
+
+
+
+

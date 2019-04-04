@@ -1,0 +1,7 @@
+<div *ngIf="approvalInfo.any()">
+    <div>
+        <span class="badge">{{title}}</span> approved by <span class="text-primary">{{approvalInfo.content[0].approvedBy}}</span>
+        <span>on {{approvalInfo.content[0].approvalDate | date: 'medium' }}</span>
+    </div>
+    <hr style="margin-top:0px">
+</div>

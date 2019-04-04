@@ -1,0 +1,168 @@
+﻿<local:ViewBaseUserControl x:Class="LayoutTool.Views.Wpf.SkinDesignerView"
+                           x:TypeArguments="viewModels:SkinDesignerViewModel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LayoutTool.Views.Wpf"
+             xmlns:viewModels="clr-namespace:LayoutTool.ViewModels;assembly=LayoutTool.ViewModels"
+             xmlns:interfaces="clr-namespace:LayoutTool.Interfaces;assembly=LayoutTool.Interfaces"
+             xmlns:prism="http://prismlibrary.com/"
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="800"
+            
+             x:Name="layoutDesignerUserControl"
+             
+             >
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#FFC77070" Margin="1">
+            <Grid VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Cursor="Hand" FontSize="16" FontWeight="Bold" Margin="3" VerticalAlignment="Center">
+                    <Hyperlink Command="{Binding SelectSkinCommand}">Change skin</Hyperlink>
+                </TextBlock>
+
+                <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="{Binding SourceSkinDescription}" FontSize="16" FontWeight="Bold" Margin="3" TextAlignment="Left" VerticalAlignment="Center"/>
+                    <Image Source="Resources/Arrow_LeftToRight_24x24.png" Margin="5,3,5,3"/>
+                    <TextBlock Text="{Binding DestinationSkinDescription}" FontSize="16" FontWeight="Bold" Margin="3" TextAlignment="Left"  VerticalAlignment="Center"/>
+                </StackPanel>
+                
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="6"/>
+                <ColumnDefinition Width="0.65*"/>
+                <ColumnDefinition Width="6"/>
+                <ColumnDefinition Width="0.35*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border BorderThickness="1" BorderBrush="Black" Grid.Column="0" Margin="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <local:ExplorerBarView  DataContext="{Binding ExplorerBar}" MinWidth="200" Grid.Row="0"/>
+
+                    <ItemsControl ItemsSource="{Binding Commands}" Grid.Row="1" Margin="0,0,0,50">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Width="150" Cursor="Hand" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold" Margin="5">
+                                    <Hyperlink Command="{Binding}"><TextBlock Text="{Binding Caption}"/></Hyperlink>
+                                </TextBlock>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        
+                    </ItemsControl>
+                    
+                </Grid>
+            </Border>
+            <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" Background="DarkGray" HorizontalAlignment="Stretch"/>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="0.2*"/>
+                </Grid.RowDefinitions>
+                <ContentControl Grid.Row="0" prism:RegionManager.RegionName="{x:Static interfaces:RegionNames.SkinDesignerWorkspace}"/>
+                <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="DarkGray" />
+                <local:ErrorListView Grid.Row="2" DataContext="{Binding ErrorList}"/>
+            </Grid>
+            
+
+            <GridSplitter Grid.Column="3" VerticalAlignment="Stretch" Background="DarkGray" HorizontalAlignment="Stretch"/>
+
+            <ScrollViewer Grid.Column="4" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+                <StackPanel>
+                    <Expander Margin="3">
+                        <Expander.Header>
+
+                            <TextBlock Text="Arenas" FontSize="14" FontWeight="Bold" Background="LightGray" Cursor="Hand"
+                                   Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Expander}}, Path=ActualWidth}"/>
+
+                        </Expander.Header>
+                        <local:AvailableArenasGridView DataContext="{Binding AvailableArenas}"  Margin="24,3,0,0"/>
+                    </Expander>
+                    
+                    <Expander Margin="3">
+                        <Expander.Header>
+
+                            <TextBlock Text="Filters" FontSize="14" FontWeight="Bold" Background="LightGray" Cursor="Hand"
+                                   Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Expander}}, Path=ActualWidth}"/>
+
+                        </Expander.Header>
+                        <local:AvailableFiltersGridView DataContext="{Binding AvailableFilters}"  Margin="24,3,0,0"/>
+                    </Expander>
+
+                    <Expander Margin="3">
+                        <Expander.Style>
+                            <Style TargetType="Expander">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=AvailableMyAccountItems.Count}" Value="0">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Expander.Style>
+                        <Expander.Header>
+
+                            <TextBlock Text="My Account" FontSize="14" FontWeight="Bold" Background="LightGray" Cursor="Hand"
+                                   Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Expander}}, Path=ActualWidth}"/>
+
+                        </Expander.Header>
+                        <local:AvailableMyAccountItemsGridView DataContext="{Binding AvailableMyAccountItems}"  Margin="24,3,0,0"/>
+                    </Expander>
+
+                    <Expander IsExpanded="True" Margin="3">
+                        <Expander.Header>
+                            <TextBlock Text="Games" FontSize="14" FontWeight="Bold" Background="LightGray" Cursor="Hand"
+                                    Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Expander}}, Path=ActualWidth}"/>
+                        </Expander.Header>
+                        <TabControl Margin="24,3,0,0">
+                            <TabItem>
+                                <TabItem.Header>
+                                    <TextBlock Text="Configured for target client" FontSize="14" FontWeight="Bold"/>
+                                </TabItem.Header>
+                                <local:AvailableGamesGridView DataContext="{Binding AvailableGames}"/>
+                            </TabItem>
+
+                            <TabItem >
+                                <TabItem.Header>
+                                    <TextBlock Text="All others" FontSize="14" FontWeight="Bold"/>
+                                </TabItem.Header>
+                                <local:AvailableGamesGridView DataContext="{Binding NewGames}" />
+                            </TabItem>
+                        </TabControl>
+                    </Expander>
+                </StackPanel>
+            </ScrollViewer>
+
+        </Grid>
+    </Grid>
+</local:ViewBaseUserControl>

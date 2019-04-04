@@ -1,0 +1,144 @@
+﻿<UserControl x:Class="GGPMockBootstrapper.Views.OpenSessionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Text="My open sessions" FontSize="18" FontWeight="Black" Margin="5" />
+        <Separator DockPanel.Dock="Top" />
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <Button  Command="{Binding Path=SaveOpenSessionsToFileAction.Command}" Margin="5" Padding="2" Cursor="Hand">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding Path=SaveOpenSessionsToFileAction.ImageSource}" />
+                    <TextBlock Text="{Binding Path=SaveOpenSessionsToFileAction.Caption}"/>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=LoadOpenSessionsFromFileAction.Command}" Margin="5"  Padding="2"  Cursor="Hand">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding Path=LoadOpenSessionsFromFileAction.ImageSource}" />
+                    <TextBlock Text="{Binding Path=LoadOpenSessionsFromFileAction.Caption}"/>
+                </StackPanel>
+            </Button>
+
+            <Button Command="{Binding Path=RemoveAllSessionsAction.Command}" Margin="5"  Padding="2"  Cursor="Hand">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding Path=RemoveAllSessionsAction.ImageSource}" />
+                    <TextBlock Text="{Binding Path=RemoveAllSessionsAction.Caption}"/>
+                </StackPanel>
+            </Button>
+
+        </StackPanel>
+
+        <DataGrid ItemsSource="{Binding OpenSessions}" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,10,0,0"  ClipboardCopyMode="IncludeHeader" SelectionUnit="Cell" CanUserResizeColumns="False" CanUserResizeRows="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="Auto" MinWidth="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Background="White" BorderThickness="0" BorderBrush="White">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Path=RemoveSessionAction.ImageSource}" Margin="0,0,3,0" Style="{StaticResource standardImageSizeStyle}"/>
+                                    <Button Style="{StaticResource LinkButton}"  Content="{Binding Path=RemoveSessionAction.Caption}" Command="{Binding Path=RemoveSessionAction.Command}" Margin="2"/>
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                        
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Play with" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ListBox ItemsSource="{Binding Actions}" VerticalContentAlignment="Center">
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel VerticalAlignment="Center"/>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" Margin="2,10,2,10">
+                                            <Image Source="{Binding Path=ImageSource}" Margin="0,0,3,0" Style="{StaticResource standardImageSizeStyle}"/>
+                                            <Button Content="{Binding Caption}" Command="{Binding Command}" Style="{StaticResource LinkButton}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding PlayerSessionID, Mode=OneWay}" Header="Session ID" Width="Auto">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding GameState, Mode=OneWay}" Header="Game State" Width="Auto">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding GameCurrencyCode, Mode=OneWay}" Header="Currency" Width="Auto">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding GameType, Mode=OneWay}" Header="Game Type" Width="Auto">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding SubGameType, Mode=OneWay}" Header="SubGame Type" Width="Auto">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding TimeStamp, Mode=OneWay}" Header="Time stamp" Width="Auto">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <DataGridTemplateColumn Header="Game string" Width="Auto" MaxWidth="600">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="150" >
+                                <TextBlock Text="{Binding GameString, Mode=OneWay}" TextWrapping="WrapWithOverflow">
+                                </TextBlock>
+                            </ScrollViewer>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="SubGame string" Width="*" MaxWidth="600">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="150" >
+                                <TextBlock Text="{Binding SubGameString, Mode=OneWay}" TextWrapping="WrapWithOverflow">
+                                </TextBlock>
+                            </ScrollViewer>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</UserControl>

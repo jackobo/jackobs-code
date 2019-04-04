@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GamesPortal.Service.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8687/GamesPortalService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfGameEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameEntity" nillable="true" type="tns:GameEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameEntity" nillable="true" type="tns:ArrayOfGameEntity" />
+  <xs:complexType name="GameEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GameTypes" nillable="true" type="tns:ArrayOfGameTypeEntity" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsExternal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MainGameType" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupportedTechnologies" nillable="true" type="tns:ArrayOfGameTechnology" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameEntity" nillable="true" type="tns:GameEntity" />
+  <xs:complexType name="ArrayOfGameTypeEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameTypeEntity" nillable="true" type="tns:GameTypeEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameTypeEntity" nillable="true" type="tns:ArrayOfGameTypeEntity" />
+  <xs:complexType name="GameTypeEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperatorId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameTypeEntity" nillable="true" type="tns:GameTypeEntity" />
+  <xs:complexType name="ArrayOfGameTechnology">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameTechnology" type="tns:GameTechnology" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameTechnology" nillable="true" type="tns:ArrayOfGameTechnology" />
+  <xs:simpleType name="GameTechnology">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Flash" />
+      <xs:enumeration value="Html5" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GameTechnology" nillable="true" type="tns:GameTechnology" />
+  <xs:complexType name="ArrayOfGameVersionEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameVersionEntity" nillable="true" type="tns:GameVersionEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameVersionEntity" nillable="true" type="tns:ArrayOfGameVersionEntity" />
+  <xs:complexType name="GameVersionEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Properties" nillable="true" type="tns:ArrayOfGameVersionPropertyEntity" />
+      <xs:element minOccurs="0" name="PropertiesChangeHistory" nillable="true" type="tns:ArrayOfGameVersionPropertyChangeHistoryEntity" />
+      <xs:element minOccurs="0" name="Technology" type="tns:GameTechnology" />
+      <xs:element minOccurs="0" name="TriggeredBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VersionId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameVersionEntity" nillable="true" type="tns:GameVersionEntity" />
+  <xs:complexType name="ArrayOfGameVersionPropertyEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameVersionPropertyEntity" nillable="true" type="tns:GameVersionPropertyEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameVersionPropertyEntity" nillable="true" type="tns:ArrayOfGameVersionPropertyEntity" />
+  <xs:complexType name="GameVersionPropertyEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Regulation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameVersionPropertyEntity" nillable="true" type="tns:GameVersionPropertyEntity" />
+  <xs:complexType name="ArrayOfGameVersionPropertyChangeHistoryEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GameVersionPropertyChangeHistoryEntity" nillable="true" type="tns:GameVersionPropertyChangeHistoryEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGameVersionPropertyChangeHistoryEntity" nillable="true" type="tns:ArrayOfGameVersionPropertyChangeHistoryEntity" />
+  <xs:complexType name="GameVersionPropertyChangeHistoryEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ChangeType" type="xs:int" />
+      <xs:element minOccurs="0" name="ChangedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OldValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PropertyKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Regulation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameVersionPropertyChangeHistoryEntity" nillable="true" type="tns:GameVersionPropertyChangeHistoryEntity" />
+  <xs:complexType name="ArrayOfLatestApprovedGameVersionEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LatestApprovedGameVersionEntity" nillable="true" type="tns:LatestApprovedGameVersionEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLatestApprovedGameVersionEntity" nillable="true" type="tns:ArrayOfLatestApprovedGameVersionEntity" />
+  <xs:complexType name="LatestApprovedGameVersionEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GameName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Game_ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsExternal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainGameType" type="xs:int" />
+      <xs:element minOccurs="0" name="PMApprovedVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QAApprovedVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Regulation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Technology" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LatestApprovedGameVersionEntity" nillable="true" type="tns:LatestApprovedGameVersionEntity" />
+</xs:schema>

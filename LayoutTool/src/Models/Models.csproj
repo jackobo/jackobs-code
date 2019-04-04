@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE12D28C-2383-4609-9F61-CC228740499A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LayoutTool.Models</RootNamespace>
+    <AssemblyName>LayoutTool.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BasicFormatsForCore, Version=2.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FiddlerCore.4.6.2.0\lib\net40\BasicFormatsForCore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BCMakeCert, Version=2.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FiddlerCore.4.6.2.0\lib\net40\BCMakeCert.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CertMaker, Version=4.5.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FiddlerCore.4.6.2.0\lib\net40\CertMaker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FiddlerCore4, Version=4.6.2.0, Culture=neutral, PublicKeyToken=67cb91587178ac5a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FiddlerCore.4.6.2.0\lib\net40\FiddlerCore4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Administration, Version=7.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Core.6.2.0\lib\net45\Prism.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism.Wpf, Version=6.2.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Wpf.6.2.0\lib\net45\Prism.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Wpf.6.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Builders\CCK\CCKUtils.cs" />
+    <Compile Include="Builders\CCK\DynamicsUtils.cs" />
+    <Compile Include="Builders\CCK\FilesDescriptors\LanguageJsonFileDescriptor.cs" />
+    <Compile Include="Builders\CCK\FilesDescriptors\NavigationPlanJsonFileDescriptor.cs" />
+    <Compile Include="Builders\CCK\IJsonConfigurationFileDescriptor.cs" />
+    <Compile Include="Builders\CCK\IJsonSkinDefinitionConverter.cs" />
+    <Compile Include="Builders\CCK\IJsonSkinDefinitionParser.cs" />
+    <Compile Include="Builders\CCK\JsonABTestingConfigurationReader.cs" />
+    <Compile Include="Builders\CCK\JsonClientUrlBuilder.cs" />
+    <Compile Include="Builders\CCK\JsonClientUrlBuilderFactory.cs" />
+    <Compile Include="Builders\CCK\JsonNames.cs" />
+    <Compile Include="Builders\CCK\JsonClientInformationProvider.cs" />
+    <Compile Include="Builders\CCK\JsonSkinDefinitionConverter.cs" />
+    <Compile Include="Builders\CCK\JsonSkinDefinitionParser.cs" />
+    <Compile Include="Builders\CCK\JsonSocketsSetupOverrideProvider.cs" />
+    <Compile Include="Builders\CCK\JsonUtils.cs" />
+    <Compile Include="Builders\CCK\JsonValues.cs" />
+    <Compile Include="Builders\CCK\PreloaderSetup.cs" />
+    <Compile Include="Builders\CCK\PreloaderSetupParser.cs" />
+    <Compile Include="Builders\ClientConfigurationFile.cs" />
+    <Compile Include="Builders\ClientUrlBuilderFactory.cs" />
+    <Compile Include="Builders\SocketsSetupOverrideProviderBase.cs" />
+    <Compile Include="Builders\VersionsFileContent.cs" />
+    <Compile Include="Builders\Xml\FilesDescriptors\BaseClasses\TextsXmlFileDescriptor.cs" />
+    <Compile Include="Builders\Xml\XmlABTestingConfigurationReader.cs" />
+    <Compile Include="Builders\Xml\XmlClientUrlBuilder.cs" />
+    <Compile Include="Builders\Xml\XmlClientUrlBuilderFactory.cs" />
+    <Compile Include="Builders\Xml\XmlSocketsSetupOverrideProvider.cs" />
+    <Compile Include="Builders\Xml\XmlUtils.cs" />
+    <Compile Include="Builders\Xml\XmlValues.cs" />
+    <Compile Include="CDNMappings.cs" />
+    <Compile Include="BrandInformationProvider.cs" />
+    <Compile Include="ClientUrlBuilder.cs" />
+    <Compile Include="CountryInformationProvider.cs" />
+    <Compile Include="CurrencyInformationProvider.cs" />
+    <Compile Include="FiddlerServices.cs" />
+    <Compile Include="GamesInformationProvider.cs" />
+    <Compile Include="IIS\IISVirtualDirectory.cs" />
+    <Compile Include="IIS\WebApp.cs" />
+    <Compile Include="IIS\IISServerManager.cs" />
+    <Compile Include="IIS\WebSite.cs" />
+    <Compile Include="JackpotInfoProvider.cs" />
+    <Compile Include="JsonEntities\ProductionClients.cs" />
+    <Compile Include="SkinPublisher.cs" />
+    <Compile Include="WcfServices\LayoutToolPublisherService.cs" />
+    <Compile Include="WcfServices\LayoutToolService.cs" />
+    <Compile Include="WcfServices\WcfServiceFactory.cs" />
+    <Compile Include="ModelsModule.cs" />
+    <None Include="Builders\Xml\FilesDescriptors\BrandXmlFileDescriptor.cs" />
+    <Compile Include="Builders\Xml\FilesDescriptors\GamesPropertiesXmmFileDescriptor.cs" />
+    <Compile Include="Builders\Xml\FilesDescriptors\GamesTextsXmlFileDescriptor.cs" />
+    <Compile Include="Builders\Xml\FilesDescriptors\IconResourcesXmlFileDescriptor.cs" />
+    <Compile Include="Builders\Xml\IXmlConfigurationFileDescriptor.cs" />
+    <Compile Include="Builders\Xml\FilesDescriptors\LobbyTextsXmlFileDescriptor.cs" />
+    <Compile Include="Builders\Xml\FilesDescriptors\NavigationPlanXmlFileDescriptor.cs" />
+    <Compile Include="Builders\Xml\FilesDescriptors\SkinXmlFileDescriptor.cs" />
+    <Compile Include="Builders\Xml\FilesDescriptors\BaseClasses\XmlClientConfigurationFileDescriptor.cs" />
+    <Compile Include="Builders\Xml\IXmlSkinDefinitionConverter.cs" />
+    <Compile Include="Builders\Xml\IXmlSkinDefinitionParser.cs" />
+    <Compile Include="Builders\Xml\XmlSkinDefinitionConverter.cs" />
+    <Compile Include="Builders\SkinDefinitionSerializer.cs" />
+    <Compile Include="Builders\Xml\XmlNames.cs" />
+    <Compile Include="Builders\ClientInformationProviderFactory.cs" />
+    <Compile Include="Builders\SkinDefinitionBuilder.cs" />
+    <Compile Include="Service References\LayoutToolPublisherService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TextFileReader.cs" />
+    <None Include="Service References\LayoutToolPublisherService\LayoutTool.Models.LayoutToolPublisherService.GetCurrentProductionNavigationPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LayoutToolPublisherService\LayoutToolPublisher.wsdl" />
+    <None Include="Service References\LayoutToolPublisherService\LayoutToolPublisher.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LayoutToolPublisherService\LayoutToolPublisher1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LayoutToolPublisherService\LayoutToolPublisher2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LayoutToolService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LayoutToolService\GamesPortal.Service.Entities.LayoutTool.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LayoutToolService\GamesPortal.Service.Entities.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LayoutToolService\GamesPortal.Service.LayoutTool.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Builders\Xml\XmlClientInformationProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\LayoutToolService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Builders\Xml\XmlSkinDefinitionParser.cs" />
+    <Compile Include="WcfServices\WcfServiceWrapperBase.cs" />
+    <Compile Include="WebClientFactory.cs" />
+    <Compile Include="WebClientWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Service References\LayoutToolService\LayoutTool.Models.LayoutToolService.DownloadFileContentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LayoutToolService\LayoutTool.Models.LayoutToolService.GetAllJackpotIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LayoutToolService\LayoutTool.Models.LayoutToolService.GetCountriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LayoutToolService\LayoutTool.Models.LayoutToolService.GetCurrenciesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LayoutToolService\LayoutTool.Models.LayoutToolService.GetGamesInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LayoutToolService\LayoutTool.Models.LayoutToolService.ReadLayoutFromTfsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LayoutToolService\service1.wsdl" />
+    <None Include="Service References\LayoutToolService\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LayoutToolService\service21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dependencies\Spark.Infra\Spark.Infra\Spark.Infra.csproj">
+      <Project>{02e9598a-f44e-4359-844a-dfc8bdc9e36c}</Project>
+      <Name>Spark.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Dependencies\Wpf.Common\Wpf.Common\Spark.Wpf.Common.csproj">
+      <Project>{4f07e2f4-7058-4026-948e-2f5c98013a62}</Project>
+      <Name>Spark.Wpf.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{55defe68-67be-40e4-b758-841246151b1a}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\LayoutToolPublisherService\" />
+    <WCFMetadataStorage Include="Service References\LayoutToolService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LayoutToolService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LayoutToolService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LayoutToolService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LayoutToolPublisherService\LayoutToolPublisher.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LayoutToolPublisherService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LayoutToolPublisherService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LayoutToolPublisherService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

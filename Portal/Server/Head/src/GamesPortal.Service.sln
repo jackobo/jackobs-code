@@ -1,0 +1,99 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesPortal.Service", "Service\GamesPortal.Service.csproj", "{15B3E0D2-6217-493A-A690-158C497F5318}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesPortal.Service.Host", "Host\GamesPortal.Service.Host.csproj", "{408A6E44-325D-4527-A305-F7F8A3990C58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesPortal.Service.UnitTests", "GamesPortal.Service.UnitTests\GamesPortal.Service.UnitTests.csproj", "{CDD1B077-8AB4-498A-9F4A-BB34EB16305D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{C1E1BBDE-688A-4459-8528-7C2E4D60E1B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Infra", "..\Dependencies\Spark.Infra\Spark.Infra\Spark.Infra.csproj", "{02E9598A-F44E-4359-844A-DFC8BDC9E36C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{846E273F-FF66-4AD5-80C8-9C713ED70426}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spark.Infra.Tests", "..\Dependencies\Spark.Infra\Spark.Infra.Tests\Spark.Infra.Tests.csproj", "{8CED340F-40CE-4E28-8286-0E08189B7310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scripts", "Scripts\Scripts.csproj", "{99A9C224-71A4-4FB0-9CBF-522ED0B97E02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{721E2271-64FD-45CF-AD19-5DBC2E894CEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{408A6E44-325D-4527-A305-F7F8A3990C58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{408A6E44-325D-4527-A305-F7F8A3990C58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{408A6E44-325D-4527-A305-F7F8A3990C58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{408A6E44-325D-4527-A305-F7F8A3990C58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDD1B077-8AB4-498A-9F4A-BB34EB16305D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDD1B077-8AB4-498A-9F4A-BB34EB16305D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDD1B077-8AB4-498A-9F4A-BB34EB16305D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDD1B077-8AB4-498A-9F4A-BB34EB16305D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1E1BBDE-688A-4459-8528-7C2E4D60E1B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1E1BBDE-688A-4459-8528-7C2E4D60E1B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1E1BBDE-688A-4459-8528-7C2E4D60E1B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1E1BBDE-688A-4459-8528-7C2E4D60E1B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CED340F-40CE-4E28-8286-0E08189B7310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99A9C224-71A4-4FB0-9CBF-522ED0B97E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99A9C224-71A4-4FB0-9CBF-522ED0B97E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99A9C224-71A4-4FB0-9CBF-522ED0B97E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99A9C224-71A4-4FB0-9CBF-522ED0B97E02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C1E1BBDE-688A-4459-8528-7C2E4D60E1B7} = {721E2271-64FD-45CF-AD19-5DBC2E894CEA}
+		{02E9598A-F44E-4359-844A-DFC8BDC9E36C} = {846E273F-FF66-4AD5-80C8-9C713ED70426}
+		{8CED340F-40CE-4E28-8286-0E08189B7310} = {846E273F-FF66-4AD5-80C8-9C713ED70426}
+		{99A9C224-71A4-4FB0-9CBF-522ED0B97E02} = {721E2271-64FD-45CF-AD19-5DBC2E894CEA}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs2012:8080/tfs/defaultcollection_2010
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Service\\GamesPortal.Service.csproj
+		SccProjectName1 = Service
+		SccLocalPath1 = Service
+		SccProjectUniqueName2 = Host\\GamesPortal.Service.Host.csproj
+		SccProjectName2 = Host
+		SccLocalPath2 = Host
+		SccProjectUniqueName3 = GamesPortal.Service.UnitTests\\GamesPortal.Service.UnitTests.csproj
+		SccProjectName3 = GamesPortal.Service.UnitTests
+		SccLocalPath3 = GamesPortal.Service.UnitTests
+		SccProjectUniqueName4 = Tools\\Tools.csproj
+		SccProjectTopLevelParentUniqueName4 = GamesPortal.Service.sln
+		SccProjectName4 = Tools
+		SccLocalPath4 = Tools
+		SccProjectUniqueName5 = ..\\Dependencies\\Spark.Infra\\Spark.Infra\\Spark.Infra.csproj
+		SccProjectTopLevelParentUniqueName5 = GamesPortal.Service.sln
+		SccProjectName5 = ../Dependencies/Spark.Infra/Spark.Infra
+		SccLocalPath5 = ..\\Dependencies\\Spark.Infra\\Spark.Infra
+		SccProjectUniqueName6 = ..\\Dependencies\\Spark.Infra\\Spark.Infra.Tests\\Spark.Infra.Tests.csproj
+		SccProjectTopLevelParentUniqueName6 = GamesPortal.Service.sln
+		SccProjectName6 = ../Dependencies/Spark.Infra/Spark.Infra.Tests
+		SccLocalPath6 = ..\\Dependencies\\Spark.Infra\\Spark.Infra.Tests
+		SccProjectUniqueName7 = Scripts\\Scripts.csproj
+		SccProjectTopLevelParentUniqueName7 = GamesPortal.Service.sln
+		SccProjectName7 = Scripts
+		SccLocalPath7 = Scripts
+	EndGlobalSection
+EndGlobal

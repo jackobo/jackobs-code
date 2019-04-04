@@ -1,0 +1,32 @@
+<div>
+
+    <a role="button" class="view-history-link" (click)="navigateToHistory()">
+        <h4>View History</h4>
+    </a>
+
+    <h4 class="section-title">VERSIONS</h4>
+    
+    <div>
+        <div *ngFor="let v of gameVersions | async">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <game-infra-icons [infra]="v.gameInfra"></game-infra-icons>
+                            <a role="button">
+                                <h4 style="display: inline">Version: {{v.version}}</h4>
+                            </a>
+                        </div>
+                        <div class="col-sm-9">
+                            <div>Created on: {{v.createdDate | date: 'medium'}}</div>
+                            <div>Triggerd by: {{v.triggeredBy}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <game-version-regulations [regulations]="v.regulations"></game-version-regulations>            
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

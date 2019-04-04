@@ -1,0 +1,143 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:notificationArea="clr-namespace:GamesPortal.Client.ViewModels.NotificationArea;assembly=GamesPortal.Client.ViewModels"
+                    xmlns:commonWpf="clr-namespace:Spark.Wpf.Common.Views;assembly=Spark.Wpf.Common">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Commons/CommonStyles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <DataTemplate DataType="{x:Type notificationArea:BackgroundActionsArea}">
+        <DockPanel>
+            <ToolBar DockPanel.Dock="Top" FontWeight="Bold" VerticalContentAlignment="Center">
+                <Button Cursor="Hand" Command="{Binding StopCommand}" >
+                    <StackPanel Orientation="Horizontal" Margin="1">
+                        <Image Style="{StaticResource standardImageSizeStyle}" Source="../Resources/Stop_24x24.png"/>
+                        <TextBlock Text="Stop"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Cursor="Hand" Command="{Binding ResumeUnfinishedCommand}" >
+                    <StackPanel Orientation="Horizontal" Margin="1">
+                        <Image Style="{StaticResource standardImageSizeStyle}" Source="../Resources/Start.png"/>
+                        <TextBlock Text="Resume"/>
+                    </StackPanel>
+                </Button>
+                
+                <Button Cursor="Hand" Command="{Binding RemoveAllActionsCommand}" >
+                    <StackPanel Orientation="Horizontal" Margin="1">
+                        <Image Style="{StaticResource standardImageSizeStyle}" Source="../Resources/RemoveAll_24x24.png"/>
+                        <TextBlock Text="Remove all"/>
+                    </StackPanel>
+                </Button>
+
+            
+
+            </ToolBar>
+            <DataGrid x:Name="theGrid" ItemsSource="{Binding Actions}" AutoGenerateColumns="False"  HeadersVisibility="None" GridLinesVisibility="None" Background="White" RowDetailsVisibilityMode="VisibleWhenSelected">
+
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="22">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <DockPanel>
+                                    <Image>
+                                        <Image.Style>
+                                            <Style TargetType="Image" BasedOn="{StaticResource standardImageSizeStyle}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Status}" Value="{x:Static notificationArea:BackgroundActionStatus.Waiting}">
+                                                        <Setter Property="Source" Value="../Resources/Waiting_24x24.png"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Status}" Value="{x:Static notificationArea:BackgroundActionStatus.Done}">
+                                                        <Setter Property="Source" Value="../Resources/Done_24x24.png"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Status}" Value="{x:Static notificationArea:BackgroundActionStatus.Error}">
+                                                        <Setter Property="Source" Value="../Resources/Error.png"/>
+                                                    </DataTrigger>
+                                                    
+                                                    <DataTrigger Binding="{Binding Status}" Value="{x:Static notificationArea:BackgroundActionStatus.Canceled}">
+                                                        <Setter Property="Source" Value="../Resources/Stop_24x24.png"/>
+                                                    </DataTrigger>
+                                                    
+
+                                                    <DataTrigger Binding="{Binding Status}" Value="{x:Static notificationArea:BackgroundActionStatus.InProgress}">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                    </DataTrigger>
+                                                    
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Image.Style>
+                                    </Image>
+                                    <commonWpf:SmallCircularProgressBar Width="20" Height="20" Margin="1" StartupDelay="0">
+                                        <commonWpf:SmallCircularProgressBar.Style>
+                                            <Style TargetType="commonWpf:SmallCircularProgressBar">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Status}" Value="{x:Static notificationArea:BackgroundActionStatus.InProgress}">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                            </Style>
+                                        </commonWpf:SmallCircularProgressBar.Style>
+                                    </commonWpf:SmallCircularProgressBar>
+                                </DockPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Caption}" Height="21" FontWeight="Bold"/>
+                                    <ProgressBar Value="{Binding ProgressPercentage, Mode=OneWay}" Maximum="100" Height="21">
+                                        <ProgressBar.Style>
+                                            <Style TargetType="ProgressBar">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Status}" Value="{x:Static notificationArea:BackgroundActionStatus.InProgress}">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                            </Style>
+                                        </ProgressBar.Style>
+                                    </ProgressBar>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="22">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Command="{Binding ElementName=theGrid, Path=DataContext.RemoveActionCommand}" CommandParameter="{Binding .}" ToolTip="Remove" Background="White" Cursor="Hand">
+                                    <Image Source="../Resources/Delete_16x16.png" Style="{StaticResource standardImageSizeStyle}" Margin="0"/>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+            
+                </DataGrid.Columns>
+
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                        <Expander Margin="20,0,0,0">
+                            <Expander.Header>
+                                <TextBlock Text="{Binding ErrorMessage}" FontWeight="Bold" Cursor="Hand"/>
+                            </Expander.Header>
+                            <Expander.Style>
+                                <Style TargetType="Expander">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Status}" Value="{x:Static notificationArea:BackgroundActionStatus.Error}">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </Style>
+                            </Expander.Style>
+                            
+                            <TextBox Text="{Binding ErrorDetails, Mode=OneWay}" Margin="25,1,1,1" IsReadOnly="True" />
+                        </Expander>
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
+
+            </DataGrid>
+        </DockPanel>
+    </DataTemplate>
+</ResourceDictionary>
