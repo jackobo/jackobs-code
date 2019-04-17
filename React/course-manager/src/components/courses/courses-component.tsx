@@ -1,23 +1,31 @@
 import React from "react";
+import Course from './course';
 
-interface Course {
-  title: string;
+
+interface CourseComponentState {
+  course: Course;
 }
 
 export default class CoursesComponent extends React.Component<Course> {
-  state: Course;
+ 
+  state: CourseComponentState = {
+    course: {
+      title: ''
+    } 
+  };
 
   constructor(props: Course) {
     super(props);
-    this.state = { ...props, title: "" };
   }
 
   handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ ...this.state, title: event.target.value });
+    const course = {...this.state.course, title: event.target.value};
+    this.setState({...this.state, course: course});
   };
 
   handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    alert(this.state.course.title);
   };
 
   render() {
@@ -27,8 +35,8 @@ export default class CoursesComponent extends React.Component<Course> {
         <h3>Add course</h3>
         <input
           type="text"
-          onChange={this.handleChange.bind(this)}
-          value={this.state.title}
+          onChange={this.handleChange}
+          value={this.state.course.title}
         />
 
         <input type="submit" value="Save" />
