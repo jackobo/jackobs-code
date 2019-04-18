@@ -1,46 +1,80 @@
 import React from "react";
-import Course from './course';
-
+import { Course } from "../../store/courses/types";
+import { connect } from "react-redux";
+import { AppState } from "../../store/app-state";
+import { createCourse } from "../../store/courses/actions";
 
 interface CourseComponentState {
   course: Course;
 }
 
-export default class CoursesComponent extends React.Component<Course> {
- 
+interface CoursesComponentStateToProps {
+  courses: Course[];
+}
+
+interface CoursesActions {
+  createCourse: (course: Course) => void;
+}
+
+type CoursesComponentProps = CoursesComponentStateToProps & CoursesActions;
+
+class CoursesComponent extends React.Component<CoursesComponentProps> {
   state: CourseComponentState = {
     course: {
-      title: ''
-    } 
+      title: ""
+    }
   };
 
-  constructor(props: Course) {
+  constructor(props: CoursesComponentProps) {
     super(props);
   }
 
   handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const course = {...this.state.course, title: event.target.value};
-    this.setState({...this.state, course: course});
+    const course = { ...this.state.course, title: event.target.value };
+    this.setState({ ...this.state, course: course });
   };
 
   handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    alert(this.state.course.title);
+    this.props.createCourse({
+      title: this.state.course.title
+    });
   };
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h2>Courses</h2>
-        <h3>Add course</h3>
-        <input
-          type="text"
-          onChange={this.handleChange}
-          value={this.state.course.title}
-        />
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <h2>Courses</h2>
+          <h3>Add course</h3>
+          <input
+            type="text"
+            onChange={this.handleChange}
+            value={this.state.course.title}
+          />
 
-        <input type="submit" value="Save" />
-      </form>
+          <input type="submit" value="Save" />
+        </form>
+
+        {this.props.courses.map(course => (
+          <div key={course.title}>{course.title}</div>
+        ))}
+      </div>
     );
   }
 }
+
+function mapStateToProps(appState: AppState): CoursesComponentStateToProps {
+  return {
+    courses: appState.coursesState.courses
+  };
+}
+
+const mapDispatchToProps: CoursesActions = {
+  createCourse
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CoursesComponent);

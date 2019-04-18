@@ -1,5 +1,0 @@
-const ACTION_TYPES = {
-    CREATE_COURSE: 'CREATE_COURSE'
-}
-
-export default ACTION_TYPES;
