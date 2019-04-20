@@ -1,8 +1,11 @@
 import React from "react";
-import { Course } from "../../store/courses/types";
+import { Course } from "../../store/courses/courses-types";
 import { connect } from "react-redux";
 import { AppState } from "../../store/app-state";
-import { createCourse } from "../../store/courses/actions";
+import {
+  createCourse,
+  deleteCourse
+} from "../../store/courses/courses-actions";
 
 interface CourseComponentState {
   course: Course;
@@ -14,6 +17,7 @@ interface CoursesComponentStateToProps {
 
 interface CoursesActions {
   createCourse: (course: Course) => void;
+  deleteCourse: (course: Course) => void;
 }
 
 type CoursesComponentProps = CoursesComponentStateToProps & CoursesActions;
@@ -59,7 +63,12 @@ class CoursesComponent extends React.Component<CoursesComponentProps> {
         </form>
 
         {this.props.courses.map(course => (
-          <div key={course.title}>{course.title}</div>
+          <div key={course.id}>
+            {course.title}{" "}
+            <button onClick={() => this.props.deleteCourse(course)}>
+              Delete
+            </button>
+          </div>
         ))}
       </div>
     );
@@ -73,7 +82,8 @@ function mapStateToProps(appState: AppState): CoursesComponentStateToProps {
 }
 
 const mapDispatchToProps: CoursesActions = {
-  createCourse
+  createCourse,
+  deleteCourse
 };
 
 export default connect(
