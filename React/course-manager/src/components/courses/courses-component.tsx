@@ -21,6 +21,7 @@ type CoursesComponentProps = CoursesComponentStateToProps & CoursesActions;
 class CoursesComponent extends React.Component<CoursesComponentProps> {
   state: CourseComponentState = {
     course: {
+      id: "",
       title: ""
     }
   };
@@ -37,6 +38,7 @@ class CoursesComponent extends React.Component<CoursesComponentProps> {
   handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     this.props.createCourse({
+      id: this.state.course.title,
       title: this.state.course.title
     });
   };
@@ -66,7 +68,7 @@ class CoursesComponent extends React.Component<CoursesComponentProps> {
 
 function mapStateToProps(appState: AppState): CoursesComponentStateToProps {
   return {
-    courses: appState.coursesState.courses
+    courses: Object.values(appState.courses)
   };
 }
 

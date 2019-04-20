@@ -1,16 +1,14 @@
-import { CoursesState, CREATE_COURSE, CoursesActionTypes } from "./types";
+import { Courses, CREATE_COURSE, CoursesActionTypes } from "./types";
 
-const initialState: CoursesState = {
-  courses: []
-};
+const initialState: Courses = {};
 
 export function coursesReducer(
-  state: CoursesState = initialState,
+  state: Courses = initialState,
   action: CoursesActionTypes
-): CoursesState {
+): Courses {
   switch (action.type) {
     case CREATE_COURSE: {
-      return { courses: [...state.courses, action.payload] };
+      return { ...state, [action.payload.id]: action.payload };
     }
     default: {
       return state;

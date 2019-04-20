@@ -1,9 +1,10 @@
 export interface Course {
+  id: string;
   title: string;
 }
 
-export interface CoursesState {
-  courses: Course[];
+export interface Courses {
+  [key: string]: Course;
 }
 
 export const CREATE_COURSE = "CREATE_COURSE";
