@@ -9,6 +9,7 @@ export interface Courses {
 
 export const CREATE_COURSE = "CREATE_COURSE";
 export const DELETE_COURSE = "DELETE_COURSE";
+export const LOAD_COURSES_SUCCESS = "LOAD_COURSES_SUCCESS";
 
 export interface CreateCourseAction {
   type: typeof CREATE_COURSE;
@@ -20,4 +21,11 @@ export interface DeleteCourseAction {
   payload: Course;
 }
 
-export type CoursesActionTypes = CreateCourseAction | DeleteCourseAction;
+export interface LoadCoursesSuccessAction {
+  type: typeof LOAD_COURSES_SUCCESS;
+  payload: Course[];
+}
+export type CoursesActionTypes =
+  | CreateCourseAction
+  | DeleteCourseAction
+  | LoadCoursesSuccessAction;
