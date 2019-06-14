@@ -1,38 +1,59 @@
 import React from "react";
+import { Course } from "../../store/courses/courses-types";
+import { connect } from "react-redux";
+import { AppState } from "../../store/app-state";
+import {
+  createCourse,
+  deleteCourse,
+  loadCourses
+} from "../../store/courses/courses-actions";
 
-interface Course {
-  title: string;
+interface CoursesComponentStateToProps {
+  courses: Course[];
 }
 
-export default class CoursesComponent extends React.Component<Course> {
-  state: Course;
+interface CoursesActions {
+  createCourse: (course: Course) => void;
+  deleteCourse: (course: Course) => void;
+  loadCourses: () => void;
+}
 
-  constructor(props: Course) {
-    super(props);
-    this.state = { ...props, title: "" };
+type CoursesComponentProps = CoursesComponentStateToProps & CoursesActions;
+
+class CoursesComponent extends React.Component<CoursesComponentProps> {
+  componentDidMount() {
+    this.props.loadCourses();
   }
-
-  handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ ...this.state, title: event.target.value });
-  };
-
-  handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-  };
-
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h2>Courses</h2>
-        <h3>Add course</h3>
-        <input
-          type="text"
-          onChange={this.handleChange.bind(this)}
-          value={this.state.title}
-        />
-
-        <input type="submit" value="Save" />
-      </form>
+      <>
+        <h1>Courses</h1>
+        {this.props.courses.map(course => (
+          <div key={course.id}>
+            <button onClick={() => this.props.deleteCourse(course)}>
+              Delete
+            </button>{" "}
+            {course.title}
+          </div>
+        ))}
+      </>
     );
   }
 }
+
+function mapStateToProps(appState: AppState): CoursesComponentStateToProps {
+  return {
+    courses: Object.values(appState.courses)
+  };
+}
+
+const mapDispatchToProps: CoursesActions = {
+  createCourse,
+  deleteCourse,
+  loadCourses
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CoursesComponent);
